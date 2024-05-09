@@ -108,7 +108,7 @@ impl PageType {
                         link rel="stylesheet" href="/styles.css";
                         link rel="icon" href="/favicon.ico" sizes="any";
                         script src="/common.js" {}
-                        script src="https://unpkg.com/htmx.org@1.9.12" {}
+                        script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.min.js" {}
                         script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js" {}
                         title { (title.as_ref()) }
                     }
