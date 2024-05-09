@@ -1,0 +1,128 @@
+use std::convert::Infallible;
+
+use axum::{async_trait, extract::FromRequestParts, http::request::Parts};
+use maud::{html, Markup, DOCTYPE};
+
+pub fn column(markup: Markup) -> Markup {
+    html! {
+        div ."mx-3 flex items-center justify-center" {
+            div ."w-full prose prose-slate dark:prose-invert" {
+                (markup)
+            }
+        }
+    }
+}
+
+#[derive(Clone, Copy)]
+pub enum PageType {
+    Direct,
+    Boosted,
+    Full,
+}
+
+#[async_trait]
+impl<S> FromRequestParts<S> for PageType
+where
+    S: Send + Sync,
+{
+    type Rejection = Infallible;
+
+    async fn from_request_parts(parts: &mut Parts, _: &S) -> Result<Self, Self::Rejection> {
+        if matches!(parts.headers.get("HX-Boosted"), Some(v) if v == "true") {
+            return Ok(Self::Boosted);
+        }
+
+        if matches!(parts.headers.get("HX-Request"), Some(v) if v == "true") {
+            return Ok(Self::Direct);
+        }
+
+        return Ok(Self::Full);
+    }
+}
+
+impl PageType {
+    pub fn wrap<S: AsRef<str>>(self, title: S, content: Markup) -> Markup {
+        let navbar_separator = html! {
+            span ."text-sm text-slate-400 dark:text-slate-700" { "|" }
+        };
+        let navbar = html! {
+            div
+                .{
+                    "px-3 py-1.5 flex justify-center fixed "
+                    "top-0 left-0 w-full bg-slate-200 dark:bg-slate-900"
+                }
+                {
+                    div
+                        ."flex w-[65ch] text-slate-600 dark:text-slate-400 leading-none"
+                        {
+                            nav
+                                ."space-x-2"
+                                {
+                                    a href="/" { "Home" }
+                                    (navbar_separator)
+                                    a href="/posts" { "Posts" }
+                                }
+                            svg
+                                #toggle-dark-mode
+                                ."ml-auto text-slate-500 dark:text-slate-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                onclick="toggle_dark_mode()"
+                                title="Toggle Theme"
+                                width="20px"
+                                height="20px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                {
+                                    path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ;
+                                }
+                        }
+                    div
+                        #loading-bar
+                        .{
+                            "absolute -bottom-0.5 left-0 "
+                            "w-full h-0.5 "
+                            "bg-slate-400 dark:bg-slate-600 "
+                            "opacity-0 "
+                        }
+                        {}
+                }
+        };
+        match self {
+            PageType::Direct => content,
+            PageType::Boosted => html! {
+                title { (title.as_ref()) }
+                (navbar)
+                (content)
+            },
+            PageType::Full => html! {
+                (DOCTYPE)
+                html lang="en" {
+                    head {
+                        meta charset="UTF-8";
+                        meta name="viewport" content="width=device-width, initial-scale=1.0";
+                        link rel="stylesheet" href="/styles.css";
+                        link rel="icon" href="/favicon.ico" sizes="any";
+                        script src="/common.js" {}
+                        script src="https://unpkg.com/htmx.org@1.9.12" {}
+                        script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js" {}
+                        title { (title.as_ref()) }
+                    }
+                    body
+                        hx-boost="true"
+                        hx-ext="preload"
+                        hx-indicator="#loading-bar"
+                        ."bg-slate-100 dark:bg-slate-950 pt-8"
+                        {
+                            (navbar)
+                            (content)
+                        }
+                }
+            },
+        }
+    }
+}

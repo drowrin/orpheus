@@ -1,0 +1,10 @@
+[package]
+name = "lyre"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eyre = "0.6.12"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_yaml = "0.9.34"
+slug = "0.1.5"
