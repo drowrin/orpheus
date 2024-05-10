@@ -107,7 +107,7 @@ pub async fn post(
                 (PreEscaped(post_prose))
             }
         }),
-    ))
+    ).with_description(metadata.brief.clone()))
 }
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -160,6 +160,7 @@ pub async fn posts(
                         preload="mouseover"
                         preload-images="true"
                         { (post.title) }
+                    p { (post.brief) }
                 }
             }
         }
@@ -238,6 +239,7 @@ pub async fn posts(
             }),
         )
         .on_direct_request(posts_markup)
+        .with_description("Browse and filter all blog posts")
 }
 
 pub fn router() -> Router<AppState> {

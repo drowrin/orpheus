@@ -71,8 +71,20 @@ impl Page {
     }
 
     pub fn with_head(mut self, head: Markup) -> Self {
-        self.head = Some(head);
+        self.head = match self.head {
+            Some(current) => Some(html! {
+                (current)
+                (head)
+            }),
+            None => Some(head),
+        };
         self
+    }
+
+    pub fn with_description<S: AsRef<str>>(self, description: S) -> Self {
+        self.with_head(html! {
+            meta name="description" content=(description.as_ref());
+        })
     }
 
     pub fn on_direct_request(mut self, direct: Markup) -> Self {
@@ -85,6 +97,23 @@ impl From<Page> for Markup {
     fn from(page: Page) -> Self {
         let navbar_separator = html! {
             span ."text-sm text-slate-400 dark:text-slate-700" { "|" }
+        };
+        let has_head = page.head.is_some();
+        let head = html! {
+            head {
+                meta charset="UTF-8";
+                meta name="viewport" content="width=device-width, initial-scale=1.0";
+                link rel="stylesheet" href="/styles.css";
+                link rel="icon" href="/favicon.ico" sizes="any";
+                script src="/common.js" {}
+                script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.min.js" {}
+                script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js" {}
+                script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/head-support.js" {}
+                title { (page.title) }
+                @if let Some(append_head) = page.head {
+                    (append_head)
+                }
+            }
         };
         let navbar = html! {
             div
@@ -139,26 +168,21 @@ impl From<Page> for Markup {
                 None => page.content,
             },
             PageKind::Boosted => html! {
-                title { (page.title) }
+                @if has_head {
+                    (head)
+                } else {
+                    title { (page.title) }
+                }
                 (navbar)
                 (page.content)
             },
             PageKind::Full => html! {
                 (DOCTYPE)
+                (head)
                 html lang="en" {
-                    head {
-                        meta charset="UTF-8";
-                        meta name="viewport" content="width=device-width, initial-scale=1.0";
-                        link rel="stylesheet" href="/styles.css";
-                        link rel="icon" href="/favicon.ico" sizes="any";
-                        script src="/common.js" {}
-                        script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.min.js" {}
-                        script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js" {}
-                        title { (page.title) }
-                    }
                     body
                         hx-boost="true"
-                        hx-ext="preload"
+                        hx-ext="preload,head-support"
                         hx-indicator="#loading-bar"
                         ."bg-slate-100 dark:bg-slate-950 pt-8"
                         {
