@@ -11,6 +11,8 @@ struct Frontmatter {
     pub tagline: Option<String>,
     pub series: Option<String>,
     pub tags: Vec<String>,
+    pub published: String,
+    pub updated: Option<String>,
 }
 
 fn main() -> Result<()> {
@@ -39,6 +41,7 @@ fn main() -> Result<()> {
                 .filter(|l| !l.starts_with(['#']) && l.len() > 0)
                 .next()
                 .ok_or(eyre!("Empty content in {}", path.to_str().unwrap()))?;
+            let word_count = plain.split_whitespace().count();
 
             let metadata = MetaData {
                 title: fm.title,
@@ -50,6 +53,10 @@ fn main() -> Result<()> {
                     slug: slugify(s),
                 }),
                 tags: fm.tags.iter().map(|t| slugify(t)).collect(),
+                word_count,
+                reading_time: word_count / 240,
+                published: fm.published,
+                updated: fm.updated,
             };
 
             fs::write(

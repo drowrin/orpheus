@@ -16,6 +16,10 @@ pub struct MetaData {
     pub tagline: Option<String>,
     pub series: Option<Series>,
     pub tags: Vec<String>,
+    pub word_count: usize,
+    pub reading_time: usize,
+    pub published: String,
+    pub updated: Option<String>,
 }
 
 impl MetaData {
