@@ -1,3 +1,7 @@
+[workspace]
+
+members = ["lyre"]
+
 [package]
 name = "orpheus"
 version = "0.1.0"
