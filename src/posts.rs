@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
 
 use crate::{
-    page::{column, PageType},
+    page::{column, PageKind},
     state::{AppState, InitState},
 };
 
@@ -69,7 +69,7 @@ impl InitState for Posts {
 }
 
 pub async fn post(
-    page_type: PageType,
+    page_type: PageKind,
     Path(slug): Path<String>,
     State(posts): State<Posts>,
 ) -> Result<impl IntoResponse, ErrorResponse> {
@@ -121,7 +121,7 @@ pub struct PostsFilters {
 }
 
 pub async fn posts(
-    page_type: PageType,
+    page_type: PageKind,
     Query(query): Query<PostsFilters>,
     State(posts): State<Posts>,
 ) -> impl IntoResponse {
@@ -165,9 +165,7 @@ pub async fn posts(
         }
     };
 
-    match page_type {
-        PageType::Direct => posts_markup,
-        _ => page_type.wrap(
+    page_type.wrap(
             "Browse Posts",
             column(html! {
                 header ."mt-6" {
@@ -239,7 +237,7 @@ pub async fn posts(
                 main { (posts_markup) }
             }),
         )
-    }
+        .on_direct_request(posts_markup)
 }
 
 pub fn router() -> Router<AppState> {

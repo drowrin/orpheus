@@ -2,11 +2,11 @@ use axum::{response::IntoResponse, routing, Router};
 use maud::html;
 
 use crate::{
-    page::{column, PageType},
+    page::{column, PageKind},
     state::AppState,
 };
 
-pub async fn home_page(page_type: PageType) -> impl IntoResponse {
+pub async fn home_page(page_type: PageKind) -> impl IntoResponse {
     page_type.wrap(
         "Home",
         column(html! {
