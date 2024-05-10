@@ -12,6 +12,7 @@ pub struct Series {
 pub struct MetaData {
     pub title: String,
     pub slug: String,
+    pub brief: String,
     pub tagline: Option<String>,
     pub series: Option<Series>,
     pub tags: Vec<String>,
