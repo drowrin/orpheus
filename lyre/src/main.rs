@@ -18,37 +18,32 @@ fn main() -> Result<()> {
         let path = path.unwrap().path();
         if matches!(path.extension(), Some(ext) if ext == "md") {
             let name = path.file_name().unwrap();
-            let file = fs::read_to_string(&path)?;
-            let mut sections = file.split("---").skip(1);
+            let md = fs::read_to_string(&path)?;
+            let mut sections = md.split("---").skip(1);
             let fm: Frontmatter = serde_yaml::from_str(sections.next().ok_or(eyre!(
                 "Could not locate frontmatter in {}",
                 path.to_str().unwrap()
             ))?)
             .wrap_err(format!("In file: {}", path.to_str().unwrap()))?;
-            let content = sections.next().ok_or(eyre!(
+            sections.next().ok_or(eyre!(
                 "Could not locate content in {}",
                 path.to_str().unwrap()
             ))?;
-            let first_p = content
+
+            let mut plain_path = Path::new("./generated/posts/*").with_file_name(name);
+            plain_path.set_extension("txt");
+            let plain = fs::read_to_string(&plain_path)
+                .wrap_err(format!("File: {}", plain_path.to_str().unwrap()))?;
+            let first_p = plain
                 .lines()
-                .filter(|l| !l.starts_with(['#', '\n']))
+                .filter(|l| !l.starts_with(['#']) && l.len() > 0)
                 .next()
                 .ok_or(eyre!("Empty content in {}", path.to_str().unwrap()))?;
 
             let metadata = MetaData {
                 title: fm.title,
                 slug: name.to_str().unwrap().strip_suffix(".md").unwrap().into(),
-                brief: fm.brief.unwrap_or_else(|| {
-                    let mut brief = first_p.to_string();
-                    brief.truncate(160);
-
-                    if brief.len() == 160 {
-                        brief.truncate(157);
-                        brief = format!("{}...", brief);
-                    }
-
-                    brief
-                }),
+                brief: fm.brief.unwrap_or(first_p.to_string()),
                 tagline: fm.tagline,
                 series: fm.series.map(|s| Series {
                     name: s.clone(),
