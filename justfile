@@ -11,7 +11,7 @@
 
 @pandoc: generate-folders
     for file in `ls ./content/posts/`; do \
-        pandoc --from commonmark+attributes-smart+yaml_metadata_block+implicit_figures -o "./generated/posts/${file%.md}.html" "./content/posts/$file"; \
+        pandoc --lua-filter ./filters.lua -f commonmark+attributes-smart+yaml_metadata_block+implicit_figures -o "./generated/posts/${file%.md}.html" "./content/posts/$file"; \
         pandoc -f commonmark+attributes-smart+yaml_metadata_block -t plain --wrap=none -o "./generated/posts/${file%.md}.txt" "./content/posts/$file"; \
     done
 
