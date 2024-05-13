@@ -23,6 +23,8 @@
   )
 );
 
+@use "highlighting";
+
 html[data-theme="dark"] #toggle-dark-mode path {
   /* moon from heroicons */
   d: path(
