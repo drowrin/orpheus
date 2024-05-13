@@ -14,6 +14,7 @@ pub struct Frontmatter {
     pub brief: Option<String>,
     pub tagline: Option<String>,
     pub series: Option<String>,
+    #[serde(default)]
     pub tags: Vec<String>,
     pub published: String,
     pub updated: Option<String>,
