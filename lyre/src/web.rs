@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, time::SystemTime};
 
 use eyre::{Ok, Result, WrapErr};
 
@@ -11,7 +11,9 @@ pub fn directories() -> Result<()> {
 }
 
 pub fn javascript() -> Result<()> {
-    println!("Running Parcel...");
+    println!("Running parcel...");
+    let start = SystemTime::now();
+
     std::process::Command::new("npm.cmd")
         .args([
             "exec",
@@ -24,19 +26,27 @@ pub fn javascript() -> Result<()> {
         ])
         .output()?;
 
+    println!("Running parcel took {:?}", start.elapsed()?);
+
     Ok(())
 }
 
 pub fn favicon() -> Result<()> {
-    println!("Copying Favicon...");
+    println!("Copying favicon...");
+    let start = SystemTime::now();
+
     std::fs::copy("content/favicon.ico", "generated/static/favicon.ico")
         .wrap_err("content/favicon.ico is missing")?;
+
+    println!("Copying favicon took {:?}", start.elapsed()?);
 
     Ok(())
 }
 
 pub fn scss() -> Result<()> {
     println!("Processing SCSS...");
+    let start = SystemTime::now();
+
     let css = grass::from_path(
         "web/styles.scss",
         &grass::Options::default()
@@ -45,6 +55,8 @@ pub fn scss() -> Result<()> {
     )?;
 
     fs::write("generated/static/styles.css", css)?;
+
+    println!("Processing SCSS took {:?}", start.elapsed()?);
 
     Ok(())
 }

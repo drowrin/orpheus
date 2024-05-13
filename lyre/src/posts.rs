@@ -6,6 +6,7 @@ use slug::slugify;
 use std::{
     fs,
     path::{Path, PathBuf},
+    time::SystemTime,
 };
 
 pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
@@ -86,7 +87,9 @@ pub fn process_plain(path: &PathBuf) -> Result<(usize, String)> {
 }
 
 pub fn process() -> Result<()> {
-    println!("Rendering Posts...");
+    println!("Rendering posts...");
+    let start = SystemTime::now();
+
     for path in fs::read_dir("./content/posts")? {
         let path = path.unwrap().path();
 
@@ -123,6 +126,8 @@ pub fn process() -> Result<()> {
             )?;
         }
     }
+
+    println!("Rendering posts took {:?}", start.elapsed()?);
 
     Ok(())
 }
