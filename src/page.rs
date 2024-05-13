@@ -8,16 +8,6 @@ use axum::{
 };
 use maud::{html, Markup, DOCTYPE};
 
-pub fn column(markup: Markup) -> Markup {
-    html! {
-        div ."mx-3 flex items-center justify-center" {
-            div ."w-full prose prose-slate dark:prose-invert" {
-                (markup)
-            }
-        }
-    }
-}
-
 #[derive(Clone, Copy)]
 pub enum PageKind {
     Direct,
@@ -95,46 +85,41 @@ impl Page {
 
 impl From<Page> for Markup {
     fn from(page: Page) -> Self {
-        let navbar_separator = html! {
-            span ."text-sm text-slate-400 dark:text-slate-700" { "|" }
-        };
         let has_head = page.head.is_some();
+
         let head = html! {
             head {
                 meta charset="UTF-8";
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
-                link rel="stylesheet" href="/styles.css";
-                link rel="icon" href="/favicon.ico" sizes="any";
-                script src="/common.js" {}
-                script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.min.js" {}
-                script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js" {}
-                script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/head-support.js" {}
+                link
+                    rel="stylesheet"
+                    href={"/styles.css?v=" (include_str!("../generated/hashes/styles.css.hash"))};
+                link
+                    rel="icon"
+                    href={"/favicon.ico?v=" (include_str!("../generated/hashes/favicon.ico.hash"))}
+                    sizes="any";
+                script
+                    src={"/main.js?v=" (include_str!("../generated/hashes/styles.css.hash"))}
+                    {}
                 title { (page.title) }
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
             }
         };
+
         let navbar = html! {
-            div
-                .{
-                    "px-3 py-1.5 flex justify-center fixed "
-                    "top-0 left-0 w-full bg-slate-200 dark:bg-slate-900"
-                }
+           nav
                 {
-                    div
-                        ."flex w-[65ch] text-slate-600 dark:text-slate-400 leading-none"
+                    ul
                         {
-                            nav
-                                ."space-x-2"
-                                {
-                                    a href="/" { "Home" }
-                                    (navbar_separator)
-                                    a href="/posts" { "Posts" }
-                                }
+                            li { a href="/" { "Home" } }
+                            li { a href="/posts" { "Posts" } }
+                        }
+                    ul
+                        {
                             svg
                                 #toggle-dark-mode
-                                ."ml-auto text-slate-500 dark:text-slate-500"
                                 xmlns="http://www.w3.org/2000/svg"
                                 onclick="toggle_dark_mode()"
                                 title="Toggle Theme"
@@ -151,17 +136,9 @@ impl From<Page> for Markup {
                                     ;
                                 }
                         }
-                    div
-                        #loading-bar
-                        .{
-                            "absolute -bottom-0.5 left-0 "
-                            "w-full h-0.5 "
-                            "bg-slate-400 dark:bg-slate-600 "
-                            "opacity-0 "
-                        }
-                        {}
                 }
         };
+
         match page.kind {
             PageKind::Direct => match page.direct {
                 Some(direct) => direct,
@@ -173,8 +150,12 @@ impl From<Page> for Markup {
                 } else {
                     title { (page.title) }
                 }
-                (navbar)
-                (page.content)
+                header ."container" {
+                    (navbar)
+                }
+                main ."container" {
+                    (page.content)
+                }
             },
             PageKind::Full => html! {
                 (DOCTYPE)
@@ -184,10 +165,13 @@ impl From<Page> for Markup {
                         hx-boost="true"
                         hx-ext="preload,head-support"
                         hx-indicator="#loading-bar"
-                        ."bg-slate-100 dark:bg-slate-950 pt-8"
                         {
-                            (navbar)
-                            (page.content)
+                            header ."container" {
+                                (navbar)
+                            }
+                            main ."container" {
+                                (page.content)
+                            }
                         }
                 }
             },

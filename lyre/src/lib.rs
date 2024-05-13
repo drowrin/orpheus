@@ -2,6 +2,17 @@ use std::{error::Error, fs::File, path::Path};
 
 use serde::{Deserialize, Serialize};
 
+#[derive(Deserialize)]
+pub struct Frontmatter {
+    pub title: String,
+    pub brief: Option<String>,
+    pub tagline: Option<String>,
+    pub series: Option<String>,
+    pub tags: Vec<String>,
+    pub published: String,
+    pub updated: Option<String>,
+}
+
 #[derive(Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
 pub struct Series {
     pub name: String,

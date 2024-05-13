@@ -9,16 +9,25 @@ use maud::html;
 use crate::page::PageKind;
 
 pub fn error_page<T: AsRef<str>>(page_type: PageKind, status: StatusCode, message: T) -> Response {
-    let markup = page_type.wrap(&message, html! {
-        div ."h-screen flex items-center justify-center" {
-            div ."flex flex-col text-slate-800 dark:text-slate-400" {
-                span ."text-6xl" { (message.as_ref()) }
-                br;
-                a href="javascript:window.history.back();" ."place-self-center underline" { "go back" }
-            }
-        }
-    });
+    let markup = page_type.wrap(
+        &message,
+        html! {
+            div
+                {
+                    div
+                        {
+                            span
+                                { (message.as_ref()) }
+                            br;
+                            a
+                                href="javascript:window.history.back();"
+                                { "go back" }
+                        }
+                }
+        },
+    );
 
+    // TODO: maybe check for boosted instead, and let partials fail correctly?
     if let PageKind::Full = page_type {
         (status, markup).into_response()
     } else {

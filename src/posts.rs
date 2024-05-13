@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
 
 use crate::{
-    page::{column, PageKind},
+    page::PageKind,
     state::{AppState, InitState},
 };
 
@@ -85,28 +85,27 @@ pub async fn post(
 
     Ok(page_type.wrap(
         &metadata.title,
-        column(html! {
-            header ."mt-6 leading-none space-y-1.5" {
-                h1 ."text-4xl m-0" {
-                    (metadata.title)
-                }
-                @if let Some(series) = &metadata.series {
-                    p ."text-xl m-0" { a href={"/posts?series="(series.slug)} { (series.name) } }
-                }
-                @if let Some(tagline) = &metadata.tagline {
-                    p ."m-0 italic" { (tagline) }
-                }
-                div ."flex flex-wrap gap-2" {
-                    @for tag in &metadata.tags {
-                        a href={ "/posts?tag=" (tag) } { "#"(tag) }
+        html! {
+            hgroup
+                {
+                    h1
+                        {
+                            (metadata.title)
+                        }
+                    @if let Some(tagline) = &metadata.tagline {
+                        p
+                            { (tagline) }
                     }
                 }
+            @for tag in &metadata.tags {
+                a ."tag" href={ "/posts?tag=" (tag) } { "#"(tag) }
             }
-            hr ."mt-4 mb-2";
-            div ."mb-96" {
-                (PreEscaped(post_prose))
+            @if let Some(series) = &metadata.series {
+                a href={"/posts?series="(series.slug)} { (series.name) }
             }
-        }),
+            hr;
+            (PreEscaped(post_prose))
+        },
     ).with_description(metadata.brief.clone()))
 }
 
@@ -151,95 +150,88 @@ pub async fn posts(
     filtered_posts.sort_by_key(|m| &m.title);
 
     let posts_markup = html! {
-        div #posts ."flex flex-col" {
-            @for post in filtered_posts {
-                div ."w-full border border-solid border-slate-400/25 shadow my-1.5 p-2.5" {
-                    a
-                        ."text-xl"
-                        href={ "/posts/" (post.slug) }
-                        preload="mouseover"
-                        preload-images="true"
-                        { (post.title) }
-                    p { (post.brief) }
-                }
+        div
+            #posts
+            {
+                @for post in filtered_posts {
+                    article
+                        {
+                            a
+                                href={ "/posts/" (post.slug) }
+                                preload="mouseover"
+                                preload-images="true"
+                                { (post.title) }
+                            br;
+                            (post.brief)
+                        }
+                }  
             }
-        }
     };
 
     page_type.wrap(
-            "Browse Posts",
-            column(html! {
-                header ."mt-6" {
-                    h1 ."text-4xl" { "Browse Posts" }
-                }
-                form
-                    hx-get="/posts"
-                    hx-trigger="input changed delay:100ms from:#search, search, change"
-                    hx-target="main"
-                    hx-push-url="true"
-                    "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
-                    {
-                        hr ."mt-2 mb-3";
-                        div "flex not-prose" {
-                            input
-                                #search
-                                .{
-                                    ("w-1/2 mr-[-1px] text-slate-800 border-slate-300 bg-slate-50 ")
-                                    ("focus:outline-none focus:ring-0 focus:border-slate-300 focus:bg-white ")
-                                }
-                                "type"="search"
-                                name="search"
-                                value=[&query.search]
-                                placeholder="Search..."
-                            ;
-                            select
-                                .{
-                                    "w-1/2 border-slate-300 bg-slate-50 "
-                                    "focus:outline-none focus:ring-0 focus:border-slate-300 focus:bg-white "
-                                    @if query.series.is_some() { ("text-slate-800") }
-                                    @if query.series.is_none() { ("text-slate-500") }
-                                }
-                                name="series"
-                                {
+        "Browse Posts",
+        html! {
+            h1 { "Browse Posts" }
+            hr;
+            form
+                hx-get="/posts"
+                hx-trigger="input changed delay:100ms from:#search, search, change"
+                hx-target="#posts"
+                hx-push-url="true"
+                "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
+                {
+                    fieldset
+                        role="group"
+                        {
+                        input
+                            #search
+                            "type"="search"
+                            name="search"
+                            value=[&query.search]
+                            placeholder="Search..."
+                        ;
+                        select
+                            name="series"
+                            {
+                                option
+                                    value=""
+                                    selected[query.series.is_none()]
+                                    { "Select Series" }
+                                @for series in posts.series.clone() {
                                     option
-                                        value=""
-                                        selected[query.series.is_none()]
-                                        { "Select Series" }
-                                    @for series in posts.series.clone() {
-                                        option
-                                            value=(series.slug)
-                                            selected[matches!(
-                                                query.series,
-                                                Some(ref s) if s.clone() == series.slug
-                                            )]
-                                            { (series.name) }
-                                    }
-                                }
-                        }
-                        hr ."mt-3 mb-2";
-                        div ."flex flex-wrap gap-2 leading-none" {
-                            @for tag in posts.tags.clone() {
-                                div {
-                                    @let id = format!("checkbox-{tag}");
-                                    input
-                                        #(id)
-                                        "type"="checkbox"
-                                        .{"hidden peer"}
-                                        checked[query.tag.contains(&tag)]
-                                        name="tag"
-                                        value=(tag)
-                                    ;
-                                    label ."peer-checked:font-bold" "for"=(id) {"#" (tag)}
+                                        value=(series.slug)
+                                        selected[matches!(
+                                            query.series,
+                                            Some(ref s) if s.clone() == series.slug
+                                        )]
+                                        { (series.name) }
                                 }
                             }
                         }
-                        hr ."mt-3 mb-2";
-                    }
-                main { (posts_markup) }
-            }),
-        )
-        .on_direct_request(posts_markup)
-        .with_description("Browse and filter all blog posts")
+                    fieldset
+                        {
+                            @for tag in posts.tags.clone() {
+                                @let id = format!("checkbox-{tag}");
+                                input
+                                    #(id)
+                                    "type"="checkbox"
+                                    checked[query.tag.contains(&tag)]
+                                    name="tag"
+                                    value=(tag)
+                                ;
+                                label 
+                                    .tag
+                                    "for"=(id)
+                                    {"#" (tag)}
+                            }
+                        }
+                }
+            hr;
+            (posts_markup)
+        },
+    )
+    .on_direct_request(posts_markup)
+    .with_description("Browse and filter all blog posts")
 }
 
 pub fn router() -> Router<AppState> {
