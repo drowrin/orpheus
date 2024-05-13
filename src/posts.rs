@@ -176,7 +176,7 @@ pub async fn posts(
                 @for post in filtered_posts {
                     article {
                         (post_info(&post, html! {
-                            h4 { a
+                            h3 { a
                                 ."article-link"
                                 href={ "/posts/" (post.slug) }
                                 preload="mouseover"
@@ -185,7 +185,7 @@ pub async fn posts(
                             }
                         }))
 
-                        hr;
+                        hr style="margin: 0.5rem 0 0.4rem 0";
 
                         (post.brief)
                     }
