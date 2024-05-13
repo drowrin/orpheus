@@ -53,9 +53,24 @@
   }
 }
 
+.article-link {
+  color: var(--pico-h1-color);
+  text-decoration: none;
+}
+
+.article-link:hover {
+  color: var(--pico-primary);
+}
+
 .tag {
-  margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+  color: var(--pico-primary);
+  text-decoration: none;
+}
+
+[type="checkbox"] + label.tag {
+  text-decoration: none;
+  color: var(--pico-primary);
 }
 
 [type="checkbox"]:checked + label.tag {

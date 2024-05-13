@@ -11,7 +11,7 @@ use axum::{
 };
 use axum_extra::extract::Query;
 use lyre::{MetaData, Series};
-use maud::{html, PreEscaped};
+use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
 
@@ -68,12 +68,47 @@ impl InitState for Posts {
     }
 }
 
+pub fn post_info(post: &MetaData, title: Markup) -> Markup {
+    html! {
+        hgroup
+            style="margin: 0;"
+            {
+                (title)
+                @if let Some(tagline) = &post.tagline {
+                    p
+                        { (tagline) }
+                }
+            }
+        div style="display: flex; flex-wrap: wrap;" {
+            @if let Some(series) = &post.series {
+                a .tag href={"/posts?series="(series.slug)} { (series.name) }
+            }
+            div style="display: flex; flex-wrap: wrap;" {
+                    @for tag in &post.tags {
+                    a .tag href={ "/posts?tag=" (tag) } { "#"(tag) }
+                }
+            }
+        }
+        div
+            style="color: var(--pico-muted-color); margin-bottom: 0.5rem;"
+            {
+                small
+                    data-tooltip=[post.updated.as_ref().map(|u| format!("updated {}", u))]
+                    { (post.published) }
+                " - "
+                small
+                    data-tooltip={ (post.word_count) " words" }
+                    { (post.reading_time) " minutes" }
+            }
+    }
+}
+
 pub async fn post(
     page_type: PageKind,
     Path(slug): Path<String>,
     State(posts): State<Posts>,
 ) -> Result<impl IntoResponse, ErrorResponse> {
-    let metadata = posts.metadata.get(&slug).ok_or(StatusCode::NOT_FOUND)?;
+    let post = posts.metadata.get(&slug).ok_or(StatusCode::NOT_FOUND)?;
 
     let path = std::path::Path::new("./generated/posts")
         .join(slug.clone())
@@ -84,26 +119,10 @@ pub async fn post(
         .map_err(|_| StatusCode::NOT_FOUND)?;
 
     Ok(page_type
-        .builder(&metadata.title)
-        .with_description(metadata.brief.clone())
+        .builder(&post.title)
+        .with_description(post.brief.clone())
         .build(html! {
-            hgroup
-                {
-                    h1
-                        {
-                            (metadata.title)
-                        }
-                    @if let Some(tagline) = &metadata.tagline {
-                        p
-                            { (tagline) }
-                    }
-                }
-            @for tag in &metadata.tags {
-                a ."tag" href={ "/posts?tag=" (tag) } { "#"(tag) }
-            }
-            @if let Some(series) = &metadata.series {
-                a href={"/posts?series="(series.slug)} { (series.name) }
-            }
+            (post_info(&post, html!{ h1 {(post.title)} }))
             hr;
             (PreEscaped(post_prose))
         })
@@ -155,16 +174,21 @@ pub async fn posts(
             #posts
             {
                 @for post in filtered_posts {
-                    article
-                        {
-                            a
+                    article {
+                        (post_info(&post, html! {
+                            h4 { a
+                                ."article-link"
                                 href={ "/posts/" (post.slug) }
                                 preload="mouseover"
                                 preload-images="true"
                                 { (post.title) }
-                            br;
-                            (post.brief)
-                        }
+                            }
+                        }))
+
+                        hr;
+
+                        (post.brief)
+                    }
                 }
             }
     };
