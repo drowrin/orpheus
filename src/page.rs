@@ -125,16 +125,14 @@ impl From<Page> for Markup {
         };
 
         let navbar = html! {
-           nav
-                {
-                    ul
-                        {
+            div style="width: 100%; max-width: 65ch; margin: auto" {
+                nav {
+                        ul {
                             li { a href="/" { "Home" } }
                             li { a href="/posts" { "Posts" } }
                         }
-                    ul
-                        {
-                            li { svg
+                        ul {
+                            li style="display: flex; align-items: center" { svg
                                 #toggle-dark-mode
                                 xmlns="http://www.w3.org/2000/svg"
                                 onclick="toggle_dark_mode()"
@@ -153,7 +151,15 @@ impl From<Page> for Markup {
                                 }
                             }
                         }
-                }
+                    }
+                div
+                    style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%;"
+                    {
+                        div
+                            style="width: 100%; max-width: 65ch; margin: auto"
+                            { progress #loading-bar; }
+                    }
+            }
         };
 
         match page.kind {
@@ -167,10 +173,10 @@ impl From<Page> for Markup {
                 } else {
                     title { (page.title) }
                 }
-                header ."container" {
+                header {
                     (navbar)
                 }
-                main ."container" {
+                main {
                     (page.content)
                 }
             },
@@ -183,10 +189,10 @@ impl From<Page> for Markup {
                         hx-ext="preload,head-support"
                         hx-indicator="#loading-bar"
                         {
-                            header ."container" {
+                            header {
                                 (navbar)
                             }
-                            main ."container" {
+                            main {
                                 (page.content)
                             }
                         }

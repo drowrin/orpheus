@@ -26,31 +26,15 @@
 @use "highlighting";
 @use "icons";
 
+#loading-bar {
+  opacity: 0;
+  transition: opacity 0.2s;
+  height: 0.25rem;
+  margin: 0;
+}
+
 #loading-bar.htmx-request {
   opacity: 1;
-  animation: fadeIn 0.6s ease-in forwards, slide 0.8s ease-in-out infinite;
-}
-@keyframes slide {
-  0% {
-    transform: translateX(-100%);
-  }
-  20% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .article-link {
@@ -85,4 +69,22 @@
 /* pico changes search boxes to round by default, we disable this */
 [type="search"] {
   --pico-border-radius: inherit;
+}
+
+:root {
+  --pico-nav-element-spacing-vertical: 0.5rem;
+  --pico-block-spacing-vertical: 0.5rem;
+}
+
+body > header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--pico-background-color);
+  z-index: 900;
+}
+
+body > main {
+  padding-top: 5rem;
 }
