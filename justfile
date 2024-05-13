@@ -5,7 +5,7 @@
     cargo run -p lyre --features binary-deps
 
 @run options="": lyre
-    cargo shuttle run {{options}}
+    cargo shuttle run {{ options }}
 
 @dev: lyre
     ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo shuttle run --external
@@ -14,4 +14,4 @@
     cargo watch -cq -- just dev
 
 @deploy args="": lyre
-    cargo shuttle deploy {{args}}
+    cargo shuttle deploy {{ args }}
