@@ -1,5 +1,5 @@
 @lyre:
-    cargo run --manifest-path lyre/Cargo.toml 
+    cargo run --manifest-path lyre/Cargo.toml --features binary-deps --bin lyre
 
 @run options="": lyre
     cargo shuttle run {{options}}

@@ -4,11 +4,22 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-eyre = "0.6.12"
 serde = { version = "1.0.197", features = ["derive"] }
 serde_yaml = "0.9.34"
-slug = "0.1.5"
-grass = "0.13.2"
-pandoc = "0.8.11"
-sha2 = "0.10.8"
-base64 = "0.22.1"
+sha2 = { version = "0.10.8" }
+base64 = { version = "0.22.1" }
+
+eyre = { version = "0.6.12", optional = true }
+slug = { version = "0.1.5", optional = true }
+grass = { version = "0.13.2", optional = true }
+pandoc = { version = "0.8.11", optional = true }
+
+[lib]
+name = "lyre"
+
+[features]
+binary-deps = ["eyre", "slug", "grass", "pandoc"]
+
+[[bin]]
+name = "lyre"
+required-features = ["binary-deps"]

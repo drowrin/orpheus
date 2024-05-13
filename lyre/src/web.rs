@@ -20,7 +20,7 @@ pub fn javascript() -> Result<()> {
             "build",
             "--dist-dir",
             "./generated/static",
-            "./web/main.js",
+            "./web/entrypoint.js",
         ])
         .output()?;
 
