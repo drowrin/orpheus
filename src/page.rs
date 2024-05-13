@@ -125,7 +125,7 @@ impl From<Page> for Markup {
         };
 
         let navbar = html! {
-            div style="width: 100%; max-width: 65ch; margin: auto" {
+            div style="width: 100%; max-width: 65ch; margin: auto; z-index: 950;" {
                 nav {
                         ul {
                             li { a href="/" { "Home" } }
@@ -152,14 +152,14 @@ impl From<Page> for Markup {
                             }
                         }
                     }
-                div
-                    style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%;"
-                    {
-                        div
-                            style="width: 100%; max-width: 65ch; margin: auto"
-                            { progress #loading-bar; }
-                    }
             }
+            div
+                style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%; pointer-events: none"
+                {
+                    div
+                        style="width: 100%; max-width: 65ch; margin: auto"
+                        { progress #loading-bar; }
+                }
         };
 
         match page.kind {
