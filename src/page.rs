@@ -134,7 +134,7 @@ impl From<Page> for Markup {
                         }
                     ul
                         {
-                            svg
+                            li { svg
                                 #toggle-dark-mode
                                 xmlns="http://www.w3.org/2000/svg"
                                 onclick="toggle_dark_mode()"
@@ -151,6 +151,7 @@ impl From<Page> for Markup {
                                         stroke-linejoin="round"
                                     ;
                                 }
+                            }
                         }
                 }
         };
