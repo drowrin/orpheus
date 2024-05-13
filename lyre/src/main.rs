@@ -5,6 +5,7 @@ mod posts;
 mod web;
 
 fn main() -> Result<()> {
+    color_eyre::install()?;
     web::directories()?;
     web::javascript()?;
     web::favicon()?;
