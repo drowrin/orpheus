@@ -43,11 +43,11 @@ pub fn render_plain(from: &PathBuf) -> Result<PathBuf> {
         vec![
             MarkdownExtension::Attributes,
             MarkdownExtension::YamlMetadataBlock,
-            MarkdownExtension::ImplicitFigures,
         ],
     );
     doc.add_option(pandoc::PandocOption::NoWrap);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
+    doc.set_output_format(pandoc::OutputFormat::Plain, vec![]);
     doc.execute()?;
 
     Ok(target)
