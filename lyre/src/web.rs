@@ -1,6 +1,6 @@
 use std::{fs, time::SystemTime};
 
-use eyre::{Ok, Result, WrapErr};
+use eyre::{eyre, Ok, Result, WrapErr};
 
 pub fn directories() -> Result<()> {
     std::fs::create_dir_all("generated/posts/")?;
@@ -14,7 +14,7 @@ pub fn javascript() -> Result<()> {
     println!("Running parcel...");
     let start = SystemTime::now();
 
-    std::process::Command::new("npm.cmd")
+    let output = std::process::Command::new("npm.cmd")
         .args([
             "exec",
             "--",
@@ -25,6 +25,10 @@ pub fn javascript() -> Result<()> {
             "./web/entrypoint.js",
         ])
         .output()?;
+
+    if !output.status.success() {
+        return Err(eyre!("{}", String::from_utf8(output.stderr)?));
+    }
 
     println!("Running parcel took {:?}", start.elapsed()?);
 
