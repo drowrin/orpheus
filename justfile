@@ -1,4 +1,7 @@
-@lyre:
+@clean:
+    rm -r generated
+
+@lyre: clean
     cargo run -p lyre --features binary-deps
 
 @run options="": lyre
