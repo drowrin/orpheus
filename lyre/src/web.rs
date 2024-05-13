@@ -1,6 +1,6 @@
 use std::fs;
 
-use eyre::{eyre, Ok, Result, WrapErr};
+use eyre::{Ok, Result, WrapErr};
 
 pub fn directories() -> Result<()> {
     std::fs::create_dir_all("generated/posts/")?;
@@ -12,7 +12,7 @@ pub fn directories() -> Result<()> {
 
 pub fn javascript() -> Result<()> {
     println!("Running Parcel...");
-    let status = std::process::Command::new("npm.cmd")
+    std::process::Command::new("npm.cmd")
         .args([
             "exec",
             "--",
@@ -22,11 +22,7 @@ pub fn javascript() -> Result<()> {
             "./generated/static",
             "./web/main.js",
         ])
-        .status()?;
-
-    if !status.success() {
-        return Err(eyre!("Parcel did not exit successfully"));
-    }
+        .output()?;
 
     Ok(())
 }
