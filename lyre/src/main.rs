@@ -11,5 +11,6 @@ fn main() -> Result<()> {
     web::scss()?;
     posts::process()?;
     hash::process()?;
+    println!("Done!");
     Ok(())
 }
