@@ -83,9 +83,10 @@ pub async fn post(
         .await
         .map_err(|_| StatusCode::NOT_FOUND)?;
 
-    Ok(page_type.wrap(
-        &metadata.title,
-        html! {
+    Ok(page_type
+        .builder(&metadata.title)
+        .with_description(metadata.brief.clone())
+        .build(html! {
             hgroup
                 {
                     h1
@@ -105,8 +106,8 @@ pub async fn post(
             }
             hr;
             (PreEscaped(post_prose))
-        },
-    ).with_description(metadata.brief.clone()))
+        })
+    )
 }
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -164,13 +165,15 @@ pub async fn posts(
                             br;
                             (post.brief)
                         }
-                }  
+                }
             }
     };
 
-    page_type.wrap(
-        "Browse Posts",
-        html! {
+    page_type
+        .builder("Browse Posts")
+        .on_direct_request(posts_markup.clone())
+        .with_description("Browse and filter all blog posts")
+        .build(html! {
             h1 { "Browse Posts" }
             hr;
             form
@@ -228,10 +231,7 @@ pub async fn posts(
                 }
             hr;
             (posts_markup)
-        },
-    )
-    .on_direct_request(posts_markup)
-    .with_description("Browse and filter all blog posts")
+        })
 }
 
 pub fn router() -> Router<AppState> {

@@ -36,25 +36,31 @@ where
 }
 
 impl PageKind {
-    pub fn wrap<S: AsRef<str>>(self, title: S, content: Markup) -> Page {
-        Page::new(self, title, content)
+    pub fn builder<S: AsRef<str>>(self, title: S) -> PageBuilder {
+        PageBuilder::new(self, title)
     }
 }
 
-pub struct Page {
+pub struct PageBuilder {
     kind: PageKind,
     title: String,
-    content: Markup,
     head: Option<Markup>,
     direct: Option<Markup>,
 }
 
-impl Page {
-    pub fn new<S: AsRef<str>>(kind: PageKind, title: S, content: Markup) -> Self {
+pub struct Page {
+    content: Markup,
+    kind: PageKind,
+    title: String,
+    head: Option<Markup>,
+    direct: Option<Markup>,
+}
+
+impl PageBuilder {
+    pub fn new<S: AsRef<str>>(kind: PageKind, title: S) -> Self {
         Self {
             kind: kind,
             title: title.as_ref().into(),
-            content: content,
             head: None,
             direct: None,
         }
@@ -80,6 +86,16 @@ impl Page {
     pub fn on_direct_request(mut self, direct: Markup) -> Self {
         self.direct = Some(direct);
         self
+    }
+
+    pub fn build(self, content: Markup) -> Page {
+        Page {
+            content,
+            kind: self.kind,
+            title: self.title,
+            head: self.head,
+            direct: self.direct,
+        }
     }
 }
 
