@@ -181,7 +181,7 @@
   /* Properties specific to code blocks */
   pre {
     padding: var(--pico-spacing);
-    margin: var(--pico-spacing);
+    margin: var(--pico-spacing) 0;
     overflow: auto;
     border-radius: var(--pico-border-radius);
   }
@@ -509,7 +509,7 @@
   /* Properties specific to code blocks */
   pre {
     padding: var(--pico-spacing);
-    margin: var(--pico-spacing);
+    margin: var(--pico-spacing) 0;
     overflow: auto;
     border-radius: var(--pico-border-radius);
   }
