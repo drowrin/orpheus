@@ -89,3 +89,7 @@ body > header {
 body > main {
   padding-top: 5rem;
 }
+
+#series-select[data-selected=""] {
+  color: var(--pico-form-element-placeholder-color);
+}

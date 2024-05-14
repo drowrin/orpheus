@@ -218,9 +218,17 @@ pub async fn posts(
                             placeholder="Search..."
                         ;
                         select
+                            #series-select
+                            data-selected={
+                                @if let Some(series) = query.series.clone() {
+                                    (series)
+                                } @else { "" }
+                            }
+                            onchange="this.dataset.selected = this.value"
                             name="series"
                             {
                                 option
+                                    style="color: var(--pico-form-element-placeholder-color)"
                                     value=""
                                     selected[query.series.is_none()]
                                     { "Select Series" }
