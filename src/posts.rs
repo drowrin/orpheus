@@ -122,7 +122,7 @@ pub async fn post(
         .builder(&post.title)
         .with_description(post.brief.clone())
         .build(html! {
-            article {
+            article .prose {
                 (post_info(&post, html!{ h1 {(post.title)} }))
                 hr;
                 (PreEscaped(post_prose))
