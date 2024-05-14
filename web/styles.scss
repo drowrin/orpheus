@@ -88,6 +88,24 @@ body > header {
 
 body > main {
   padding-top: 4rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.padded-when-small {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: var(--pico-block-spacing-vertical)
+    var(--pico-block-spacing-horizontal);
+}
+
+@media (min-width: 576px) {
+  .padded-when-small {
+    max-width: 69ch;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 #series-select[data-selected=""] {

@@ -200,70 +200,72 @@ pub async fn posts(
         .on_direct_request(posts_markup.clone())
         .with_description("Browse and filter all blog posts")
         .build(html! {
-            h1 { "Browse Posts" }
-            hr;
-            form
-                hx-get="/posts"
-                hx-trigger="input changed delay:100ms from:#search, search, change"
-                hx-target="#posts"
-                hx-push-url="true"
-                "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
-                {
-                    fieldset
-                        role="group"
-                        {
-                        input
-                            #search
-                            "type"="search"
-                            name="search"
-                            value=[&query.search]
-                            placeholder="Search..."
-                        ;
-                        select
-                            #series-select
-                            data-selected={
-                                @if let Some(series) = query.series.clone() {
-                                    (series)
-                                } @else { "" }
-                            }
-                            onchange="this.dataset.selected = this.value"
-                            name="series"
+            div ."padded-when-small" {
+                h1 { "Browse Posts" }
+                hr;
+                form
+                    hx-get="/posts"
+                    hx-trigger="input changed delay:100ms from:#search, search, change"
+                    hx-target="#posts"
+                    hx-push-url="true"
+                    "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
+                    {
+                        fieldset
+                            role="group"
                             {
-                                option
-                                    style="color: var(--pico-form-element-placeholder-color)"
-                                    value=""
-                                    selected[query.series.is_none()]
-                                    { "Select Series" }
-                                @for series in posts.series.clone() {
+                            input
+                                #search
+                                "type"="search"
+                                name="search"
+                                value=[&query.search]
+                                placeholder="Search..."
+                            ;
+                            select
+                                #series-select
+                                data-selected={
+                                    @if let Some(series) = query.series.clone() {
+                                        (series)
+                                    } @else { "" }
+                                }
+                                onchange="this.dataset.selected = this.value"
+                                name="series"
+                                {
                                     option
-                                        value=(series.slug)
-                                        selected[matches!(
-                                            query.series,
-                                            Some(ref s) if s.clone() == series.slug
-                                        )]
-                                        { (series.name) }
+                                        style="color: var(--pico-form-element-placeholder-color)"
+                                        value=""
+                                        selected[query.series.is_none()]
+                                        { "Select Series" }
+                                    @for series in posts.series.clone() {
+                                        option
+                                            value=(series.slug)
+                                            selected[matches!(
+                                                query.series,
+                                                Some(ref s) if s.clone() == series.slug
+                                            )]
+                                            { (series.name) }
+                                    }
                                 }
                             }
-                        }
-                    fieldset
-                        {
-                            @for tag in posts.tags.clone() {
-                                @let id = format!("checkbox-{tag}");
-                                input
-                                    #(id)
-                                    "type"="checkbox"
-                                    checked[query.tag.contains(&tag)]
-                                    name="tag"
-                                    value=(tag)
-                                ;
-                                label 
-                                    .tag
-                                    "for"=(id)
-                                    {"#" (tag)}
+                        fieldset
+                            {
+                                @for tag in posts.tags.clone() {
+                                    @let id = format!("checkbox-{tag}");
+                                    input
+                                        #(id)
+                                        "type"="checkbox"
+                                        checked[query.tag.contains(&tag)]
+                                        name="tag"
+                                        value=(tag)
+                                    ;
+                                    label 
+                                        .tag
+                                        "for"=(id)
+                                        {"#" (tag)}
+                                }
                             }
-                        }
-                }
-            hr;
+                    }
+                hr;
+            }
             (posts_markup)
         })
 }
