@@ -24,7 +24,7 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
             MarkdownExtension::ImplicitFigures,
         ],
     );
-    doc.add_option(pandoc::PandocOption::LuaFilter("filters.lua".into()));
+    doc.add_option(pandoc::PandocOption::LuaFilter("pandoc/filters.lua".into()));
     doc.set_output(pandoc::OutputKind::File(target.clone()));
     doc.execute()?;
 
