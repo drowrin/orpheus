@@ -1,5 +1,5 @@
 @clean:
-    rm -r generated
+    rm -rf generated
 
 @lyre: clean
     cargo run -p lyre --features binary-deps
