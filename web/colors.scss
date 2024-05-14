@@ -63,7 +63,7 @@
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(#{$surface2}, 0.0375);
-  --pico-code-background-color: #{$crust};
+  --pico-code-background-color: #{$mantle};
   --pico-code-color: #{$text};
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
@@ -140,131 +140,132 @@
   code {
     /* Alert */
     span.al {
-      color: #ff0000;
+      color: #{$red};
       font-weight: bold;
     }
     /* Annotation */
     span.an {
-      color: #60a0b0;
+      color: #{$overlay2};
       font-weight: bold;
       font-style: italic;
     }
     /* Attribute */
     span.at {
-      color: #7d9029;
+      color: #{$blue};
     }
     /* BaseN */
     span.bn {
-      color: #40a070;
+      color: #{$teal};
     }
     /* BuiltIn */
     span.bu {
-      color: #008000;
+      color: #{$red};
     }
     /* ControlFlow */
     span.cf {
-      color: #007020;
+      color: #{$mauve};
       font-weight: bold;
     }
     /* Char */
     span.ch {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Constant */
     span.cn {
-      color: #880000;
+      color: #{$peach};
     }
     /* Comment */
     span.co {
-      color: #60a0b0;
+      color: #{$overlay1};
       font-style: italic;
     }
     /* CommentVar */
     span.cv {
-      color: #60a0b0;
+      color: #{$overlay2};
       font-weight: bold;
       font-style: italic;
     }
     /* Documentation */
     span.do {
-      color: #ba2121;
+      color: #{$overlay1};
       font-style: italic;
     }
     /* DataType */
     span.dt {
-      color: #902000;
+      color: #{$yellow};
     }
     /* DecVal */
     span.dv {
-      color: #40a070;
+      color: #{$peach};
     }
     /* Error */
     span.er {
-      color: #ff0000;
+      color: #{$red};
       font-weight: bold;
     }
     /* Extension */
     span.ex {
+      color: #{$teal};
     }
     /* Float */
     span.fl {
-      color: #40a070;
+      color: #{$peach};
     }
     /* Function */
     span.fu {
-      color: #06287e;
+      color: #{$blue};
     }
     /* Import */
     span.im {
-      color: #008000;
+      color: #{$yellow};
       font-weight: bold;
     }
     /* Information */
     span.in {
-      color: #60a0b0;
+      color: #{$teal};
       font-weight: bold;
       font-style: italic;
     }
     /* Keyword */
     span.kw {
-      color: #007020;
+      color: #{$mauve};
       font-weight: bold;
     }
     /* Operator */
     span.op {
-      color: #666666;
+      color: #{$sky};
     }
     /* Other */
     span.ot {
-      color: #007020;
+      color: #{$text};
     }
     /* Preprocessor */
     span.pp {
-      color: #bc7a00;
+      color: #{$yellow};
     }
     /* SpecialChar */
     span.sc {
-      color: #4070a0;
+      color: #{$green};
     }
     /* SpecialString */
     span.ss {
-      color: #bb6688;
+      color: #{$green};
     }
     /* String */
     span.st {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Variable */
     span.va {
-      color: #19177c;
+      color: #{$red};
     }
     /* VerbatimString */
     span.vs {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Warning */
     span.wa {
-      color: #60a0b0;
+      color: #{$yellow};
       font-weight: bold;
       font-style: italic;
     }
@@ -408,131 +409,132 @@
   code {
     /* Alert */
     span.al {
-      color: #ff0000;
+      color: #{$red};
       font-weight: bold;
     }
     /* Annotation */
     span.an {
-      color: #60a0b0;
+      color: #{$overlay2};
       font-weight: bold;
       font-style: italic;
     }
     /* Attribute */
     span.at {
-      color: #7d9029;
+      color: #{$blue};
     }
     /* BaseN */
     span.bn {
-      color: #40a070;
+      color: #{$teal};
     }
     /* BuiltIn */
     span.bu {
-      color: #008000;
+      color: #{$red};
     }
     /* ControlFlow */
     span.cf {
-      color: #007020;
+      color: #{$mauve};
       font-weight: bold;
     }
     /* Char */
     span.ch {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Constant */
     span.cn {
-      color: #880000;
+      color: #{$peach};
     }
     /* Comment */
     span.co {
-      color: #60a0b0;
+      color: #{$overlay1};
       font-style: italic;
     }
     /* CommentVar */
     span.cv {
-      color: #60a0b0;
+      color: #{$overlay2};
       font-weight: bold;
       font-style: italic;
     }
     /* Documentation */
     span.do {
-      color: #ba2121;
+      color: #{$overlay1};
       font-style: italic;
     }
     /* DataType */
     span.dt {
-      color: #902000;
+      color: #{$yellow};
     }
     /* DecVal */
     span.dv {
-      color: #40a070;
+      color: #{$peach};
     }
     /* Error */
     span.er {
-      color: #ff0000;
+      color: #{$red};
       font-weight: bold;
     }
     /* Extension */
     span.ex {
+      color: #{$teal};
     }
     /* Float */
     span.fl {
-      color: #40a070;
+      color: #{$peach};
     }
     /* Function */
     span.fu {
-      color: #06287e;
+      color: #{$blue};
     }
     /* Import */
     span.im {
-      color: #008000;
+      color: #{$yellow};
       font-weight: bold;
     }
     /* Information */
     span.in {
-      color: #60a0b0;
+      color: #{$teal};
       font-weight: bold;
       font-style: italic;
     }
     /* Keyword */
     span.kw {
-      color: #007020;
+      color: #{$mauve};
       font-weight: bold;
     }
     /* Operator */
     span.op {
-      color: #666666;
+      color: #{$sky};
     }
     /* Other */
     span.ot {
-      color: #007020;
+      color: #{$text};
     }
     /* Preprocessor */
     span.pp {
-      color: #bc7a00;
+      color: #{$yellow};
     }
     /* SpecialChar */
     span.sc {
-      color: #4070a0;
+      color: #{$green};
     }
     /* SpecialString */
     span.ss {
-      color: #bb6688;
+      color: #{$green};
     }
     /* String */
     span.st {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Variable */
     span.va {
-      color: #19177c;
+      color: #{$red};
     }
     /* VerbatimString */
     span.vs {
-      color: #4070a0;
+      color: #{$green};
     }
     /* Warning */
     span.wa {
-      color: #60a0b0;
+      color: #{$yellow};
       font-weight: bold;
       font-style: italic;
     }
