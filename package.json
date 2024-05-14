@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@catppuccin/palette": "^1.1.1",
     "@picocss/pico": "2.0.6",
     "htmx.org": "1.9.12",
     "parcel": "2.12.0"

@@ -55,7 +55,8 @@ pub fn scss() -> Result<()> {
         "web/styles.scss",
         &grass::Options::default()
             .style(grass::OutputStyle::Compressed)
-            .load_path("node_modules/@picocss/pico/scss/"),
+            .load_path("node_modules/@picocss/pico/scss/")
+            .load_path("node_modules/@catppuccin/palette/scss"),
     )?;
 
     fs::write("generated/static/styles.css", css)?;
