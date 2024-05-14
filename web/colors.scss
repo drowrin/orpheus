@@ -10,7 +10,7 @@
   --pico-color: #{$text};
   --pico-text-selection-color: #{color.adjust($overlay2, $alpha: -0.8125)};
   --pico-muted-color: #{$overlay1};
-  --pico-muted-border-color: #{$overlay1};
+  --pico-muted-border-color: #{color.adjust($overlay2, $alpha: -0.8125)};
   --pico-primary-background: var(--pico-primary);
   --pico-primary-border: var(--pico-primary-background);
   --pico-primary-underline: rgba(var(--pico-primary), 0.5);
@@ -338,7 +338,7 @@
   --pico-color: #{$text};
   --pico-text-selection-color: #{color.adjust($overlay2, $alpha: -0.8125)};
   --pico-muted-color: #{$overlay1};
-  --pico-muted-border-color: #{$overlay1};
+  --pico-muted-border-color: #{color.adjust($overlay2, $alpha: -0.8125)};
   --pico-primary-background: var(--pico-primary);
   --pico-primary-border: var(--pico-primary-background);
   --pico-primary-underline: rgba(var(--pico-primary), 0.5);
