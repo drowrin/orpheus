@@ -3,22 +3,23 @@
   $theme-color: "purple",
   $modules: (
     "forms/input-search": false,
+    "content/code": false,
   ),
   $breakpoints: (
     sm: (
-      viewport: 69ch,
+      viewport: var(--readable-width),
     ),
     md: (
-      viewport: 69ch,
+      viewport: var(--readable-width),
     ),
     lg: (
-      viewport: 69ch,
+      viewport: var(--readable-width),
     ),
     xl: (
-      viewport: 69ch,
+      viewport: var(--readable-width),
     ),
     xxl: (
-      viewport: 69ch,
+      viewport: var(--readable-width),
     ),
   )
 );
@@ -80,6 +81,7 @@ li:has(> #toggle-dark-mode) {
 :root {
   --pico-nav-element-spacing-vertical: 0.5rem;
   --pico-block-spacing-vertical: 0.5rem;
+  --readable-width: calc(65ch + (2 * var(--pico-spacing)));
 }
 
 body > header {
