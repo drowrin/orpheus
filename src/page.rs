@@ -125,7 +125,7 @@ impl From<Page> for Markup {
         };
 
         let navbar = html! {
-            div style="width: 100%; max-width: 65ch; margin: auto; z-index: 950;" {
+            div style="width: 100%; max-width: 69ch; margin: auto; z-index: 950;" {
                 nav {
                         ul {
                             li { a href="/" { "Home" } }
@@ -157,7 +157,7 @@ impl From<Page> for Markup {
                 style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%; pointer-events: none"
                 {
                     div
-                        style="width: 100%; max-width: 65ch; margin: auto"
+                        style="width: 100%; max-width: 69ch; margin: auto"
                         { progress #loading-bar; }
                 }
         };
@@ -170,7 +170,7 @@ impl From<Page> for Markup {
             PageKind::Boosted => html! {
                 @if has_head {
                     (head)
-                } else {
+                } @else {
                     title { (page.title) }
                 }
                 header {

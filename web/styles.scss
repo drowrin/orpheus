@@ -6,19 +6,19 @@
   ),
   $breakpoints: (
     sm: (
-      viewport: 65ch,
+      viewport: 69ch,
     ),
     md: (
-      viewport: 65ch,
+      viewport: 69ch,
     ),
     lg: (
-      viewport: 65ch,
+      viewport: 69ch,
     ),
     xl: (
-      viewport: 65ch,
+      viewport: 69ch,
     ),
     xxl: (
-      viewport: 65ch,
+      viewport: 69ch,
     ),
   )
 );
@@ -87,7 +87,7 @@ body > header {
 }
 
 body > main {
-  padding-top: 5rem;
+  padding-top: 4rem;
 }
 
 #series-select[data-selected=""] {
