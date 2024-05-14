@@ -111,3 +111,21 @@ body > main {
 #series-select[data-selected=""] {
   color: var(--pico-form-element-placeholder-color);
 }
+
+blockquote {
+  padding: calc(var(--pico-spacing) * 0.3) var(--pico-spacing)
+    calc(var(--pico-spacing) * 0.4) var(--pico-spacing);
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --pico-typography-spacing-top: 1.5rem;
+}
