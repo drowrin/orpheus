@@ -4,6 +4,8 @@ import "htmx.org";
 import "./fix_htmx_ext";
 import "htmx.org/dist/ext/preload";
 import "htmx.org/dist/ext/head-support";
+import "prismjs";
+import "prismjs/plugins/autoloader/prism-autoloader";
 
 if (
   localStorage.theme === "dark" ||

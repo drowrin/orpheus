@@ -1,11 +1,25 @@
-use std::{fs, time::SystemTime};
+use std::{fs, path::Path, time::SystemTime};
 
 use eyre::{eyre, Ok, Result, WrapErr};
 
 pub fn directories() -> Result<()> {
-    std::fs::create_dir_all("generated/posts/")?;
-    std::fs::create_dir_all("generated/static/")?;
-    std::fs::create_dir_all("generated/hashes/")?;
+    fs::create_dir_all("generated/posts/")?;
+    fs::create_dir_all("generated/static/")?;
+    fs::create_dir_all("generated/hashes/")?;
+
+    Ok(())
+}
+
+pub fn prism_components() -> Result<()> {
+    fs::create_dir_all("generated/static/components")?;
+
+    for path in fs::read_dir("./node_modules/prismjs/components")? {
+        let path = path?.path();
+        let name = path.file_name().unwrap();
+        if name.to_str().unwrap().ends_with(".min.js") {
+            fs::copy(&path, Path::new("generated/static/components/").join(name))?;
+        }
+    }
 
     Ok(())
 }

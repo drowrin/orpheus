@@ -25,6 +25,10 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter("pandoc/filters.lua".into()));
+    doc.add_option(pandoc::PandocOption::LuaFilter(
+        "pandoc/standard-code.lua".into(),
+    ));
+    doc.add_option(pandoc::PandocOption::NoHighlight);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
     doc.execute()?;
 

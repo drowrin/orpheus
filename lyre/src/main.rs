@@ -13,6 +13,7 @@ fn main() -> Result<()> {
     let started = SystemTime::now();
 
     web::directories()?;
+    web::prism_components()?;
     web::javascript()?;
     web::favicon()?;
     web::scss()?;

@@ -406,137 +406,196 @@
     }
   }
 
-  code {
-    /* Alert */
-    span.al {
-      color: #{$red};
-      font-weight: bold;
-    }
-    /* Annotation */
-    span.an {
-      color: #{$overlay2};
-      font-weight: bold;
-      font-style: italic;
-    }
-    /* Attribute */
-    span.at {
-      color: #{$blue};
-    }
-    /* BaseN */
-    span.bn {
-      color: #{$teal};
-    }
-    /* BuiltIn */
-    span.bu {
-      color: #{$red};
-    }
-    /* ControlFlow */
-    span.cf {
-      color: #{$mauve};
-      font-weight: bold;
-    }
-    /* Char */
-    span.ch {
-      color: #{$green};
-    }
-    /* Constant */
-    span.cn {
-      color: #{$peach};
-    }
-    /* Comment */
-    span.co {
-      color: #{$overlay1};
-      font-style: italic;
-    }
-    /* CommentVar */
-    span.cv {
-      color: #{$overlay2};
-      font-weight: bold;
-      font-style: italic;
-    }
-    /* Documentation */
-    span.do {
-      color: #{$overlay1};
-      font-style: italic;
-    }
-    /* DataType */
-    span.dt {
-      color: #{$yellow};
-    }
-    /* DecVal */
-    span.dv {
-      color: #{$peach};
-    }
-    /* Error */
-    span.er {
-      color: #{$red};
-      font-weight: bold;
-    }
-    /* Extension */
-    span.ex {
-      color: #{$teal};
-    }
-    /* Float */
-    span.fl {
-      color: #{$peach};
-    }
-    /* Function */
-    span.fu {
-      color: #{$blue};
-    }
-    /* Import */
-    span.im {
-      color: #{$yellow};
-      font-weight: bold;
-    }
-    /* Information */
-    span.in {
-      color: #{$teal};
-      font-weight: bold;
-      font-style: italic;
-    }
-    /* Keyword */
-    span.kw {
-      color: #{$mauve};
-      font-weight: bold;
-    }
-    /* Operator */
-    span.op {
-      color: #{$sky};
-    }
-    /* Other */
-    span.ot {
-      color: #{$text};
-    }
-    /* Preprocessor */
-    span.pp {
-      color: #{$yellow};
-    }
-    /* SpecialChar */
-    span.sc {
-      color: #{$green};
-    }
-    /* SpecialString */
-    span.ss {
-      color: #{$green};
-    }
-    /* String */
-    span.st {
-      color: #{$green};
-    }
-    /* Variable */
-    span.va {
-      color: #{$red};
-    }
-    /* VerbatimString */
-    span.vs {
-      color: #{$green};
-    }
-    /* Warning */
-    span.wa {
-      color: #{$yellow};
-      font-weight: bold;
-      font-style: italic;
-    }
+  /* Set the main properties of the code, code blocks, and inline code */
+  code,
+  pre {
+    background: #{$crust};
+    color: #{$text};
+    font-family: Firacode, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+      monospace;
+    font-size: 90%;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.25;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    /* The following properties are also standard */
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  /* Optional: What the code looks like when highlighted */
+  code::-moz-selection,
+  code ::-moz-selection,
+  pre::-moz-selection,
+  pre ::-moz-selection {
+    background: #{color.adjust($overlay2, $alpha: -0.8125)};
+    color: #{$text};
+  }
+
+  code::selection,
+  code ::selection,
+  pre::selection,
+  pre ::selection {
+    background: #{color.adjust($overlay2, $alpha: -0.8125)};
+    color: #{$text};
+  }
+
+  /* Properties specific to code blocks */
+  pre {
+    padding: var(--pico-spacing);
+    margin: var(--pico-spacing);
+    overflow: auto;
+    border-radius: var(--pico-border-radius);
+  }
+
+  article > pre {
+    margin: var(--pico-spacing) calc(-1 * var(--pico-spacing));
+  }
+
+  /* Properties specific to inline code */
+  :not(pre) > code {
+    padding: 0.1em;
+    border-radius: var(--pico-border-radius);
+    white-space: normal;
+  }
+
+  .token.comment {
+    color: #{$overlay2};
+  }
+
+  .token.prolog {
+    color: #{$overlay2};
+  }
+
+  .token.cdata {
+    color: #{$overlay2};
+  }
+
+  .token.doctype {
+    color: #{$overlay2};
+  }
+
+  .token.punctuation {
+    color: #{$overlay2};
+  }
+
+  .token.entity {
+    color: #{$peach};
+  }
+
+  .token.attr-name {
+    color: #{$yellow};
+  }
+
+  .token.class-name {
+    color: #{$yellow};
+  }
+
+  .token.boolean {
+    color: #{$teal};
+  }
+
+  .token.constant {
+    color: #{$peach};
+  }
+
+  .token.number {
+    color: #{$peach};
+  }
+
+  .token.atrule {
+    color: #{$mauve};
+  }
+
+  .token.keyword {
+    color: #{$mauve};
+  }
+
+  .token.property {
+    color: #{$blue};
+  }
+
+  .token.tag {
+    color: #{$yellow};
+  }
+
+  .token.symbol {
+    color: #{$red};
+  }
+
+  .token.deleted {
+    color: #{$red};
+  }
+
+  .token.important {
+    color: #{$red};
+  }
+
+  .token.selector {
+    color: #{$yellow};
+  }
+
+  .token.string {
+    color: #{$green};
+  }
+
+  .token.char {
+    color: #{$green};
+  }
+
+  .token.builtin {
+    color: #{$red};
+  }
+
+  .token.inserted {
+    color: #{$green};
+  }
+
+  .token.regex {
+    color: #{$pink};
+  }
+
+  .token.attr-value {
+    color: #{$green};
+  }
+
+  .token.variable {
+    color: #{$text};
+  }
+
+  .token.operator {
+    color: #{$sky};
+  }
+
+  .token.function {
+    color: #{$blue};
+  }
+
+  .token.url {
+    color: #{$blue};
+  }
+
+  /* The following rules are pretty similar across themes, but feel free to adjust them */
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  .token.namespace {
+    opacity: 0.7;
   }
 }
