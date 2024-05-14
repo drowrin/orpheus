@@ -135,4 +135,9 @@ h4,
 h5,
 h6 {
   --pico-typography-spacing-top: 1.5rem;
+  --pico-typography-spacing-vertical: 0.25rem;
+}
+
+figure {
+  margin-top: 0.5rem;
 }
