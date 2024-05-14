@@ -125,31 +125,35 @@ impl From<Page> for Markup {
         };
 
         let navbar = html! {
-            div style="width: 100%; max-width: 69ch; margin: auto; z-index: 950;" {
+            div style="width: 100%; max-width: 69ch; margin: auto; z-index: 95;" {
                 nav {
                         ul {
                             li { a href="/" { "Home" } }
                             li { a href="/posts" { "Posts" } }
                         }
                         ul {
-                            li style="display: flex; align-items: center" { svg
-                                #toggle-dark-mode
-                                xmlns="http://www.w3.org/2000/svg"
+                            li
+                                data-tooltip="Toggle Theme"
+                                data-placement="left"
+                                style="display: flex; align-items: center"
                                 onclick="toggle_dark_mode()"
-                                title="Toggle Theme"
-                                width="20px"
-                                height="20px"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke-width="1.5"
-                                stroke="currentColor"
                                 {
-                                    path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    ;
+                                    svg
+                                        #toggle-dark-mode
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20px"
+                                        height="20px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        {
+                                            path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ;
+                                        }
                                 }
-                            }
                         }
                     }
             }

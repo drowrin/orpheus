@@ -94,10 +94,12 @@ pub fn post_info(post: &MetaData, title: Markup) -> Markup {
             {
                 small
                     data-tooltip=[post.updated.as_ref().map(|u| format!("updated {}", u))]
+                    data-placement="right"
                     { (post.published) }
                 " - "
                 small
                     data-tooltip={ (post.word_count) " words" }
+                    data-placement="right"
                     { (post.reading_time) " minutes" }
             }
     }

@@ -27,6 +27,12 @@
 @use "icons";
 @use "colors";
 
+li:has(> #toggle-dark-mode) {
+  color: var(--pico-primary);
+  border: none;
+  cursor: pointer;
+}
+
 #loading-bar {
   opacity: 0;
   transition: opacity 0.2s;
@@ -83,7 +89,7 @@ body > header {
   width: 100%;
   max-width: 100%;
   background-color: var(--pico-background-color);
-  z-index: 900;
+  z-index: 90;
 }
 
 body > main {
