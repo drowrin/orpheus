@@ -34,6 +34,14 @@ pub async fn handle_error_pages(page_type: PageKind, request: Request, next: Nex
         return error_page(page_type, StatusCode::BAD_REQUEST, "Bad Request");
     }
 
+    if response.status() == StatusCode::SERVICE_UNAVAILABLE {
+        return error_page(
+            page_type,
+            StatusCode::SERVICE_UNAVAILABLE,
+            "Under construction",
+        );
+    }
+
     if response.status().is_client_error() {
         return error_page(page_type, response.status(), "Client Error");
     }
