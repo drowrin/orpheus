@@ -105,15 +105,13 @@ body > main {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: var(--pico-block-spacing-vertical)
-    var(--pico-block-spacing-horizontal);
+  padding: 0 var(--pico-block-spacing-horizontal);
 }
 
 @media (min-width: 576px) {
   .padded-when-small {
     max-width: 69ch;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0 0;
   }
 }
 
@@ -152,4 +150,12 @@ h6 {
 
 figure {
   margin-top: 0.5rem;
+}
+
+hr {
+  margin: calc(0.75 * var(--pico-spacing)) 0;
+}
+
+.prose hr {
+  margin: calc(0.5 * var(--pico-spacing)) 0;
 }

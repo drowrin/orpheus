@@ -203,7 +203,7 @@ pub async fn posts(
         .with_description("Browse and filter all blog posts")
         .build(html! {
             div ."padded-when-small" {
-                h1 { "Browse Posts" }
+                h1 style="margin-bottom: -0.3rem" { "Browse Posts" }
                 hr;
                 form
                     hx-get="/posts"
@@ -249,6 +249,7 @@ pub async fn posts(
                                 }
                             }
                         fieldset
+                            style="margin-bottom: -0.15rem;"
                             {
                                 @for tag in posts.tags.clone() {
                                     @let id = format!("checkbox-{tag}");
