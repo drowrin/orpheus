@@ -1,14 +1,10 @@
 --- standard-code: ouput code blocks with class="language-*" attributes
 -- © 2020 Aman Verma. Distributed under the MIT license.
 -- Copyright © 2018-2020 Aman Verma
-
 -- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
 -- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 -- The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
 
--- m4_include(languages.lua.m4)m4_dnl
 
 local function escape(s)
   -- Escape according to HTML 5 rules
@@ -68,10 +64,6 @@ end
 return {
   {
     CodeBlock = function(elem)
-      if FORMAT ~= 'html' then
-        return nil
-      end
-
       id = makeIdentifier(elem.identifier)
       classLang = getCodeClass(elem.classes)
       classReg = makeClasses(elem.classes)
@@ -79,7 +71,7 @@ return {
       local preCode = string.format(
         '<pre%s%s><code%s>%s</code></pre>', id, classReg, classLang, escape(elem.text)
       )
-      return pandoc.RawBlock('html', preCode, 'RawBlock')
+      return pandoc.RawBlock('html5', preCode)
     end,
 
   }
