@@ -17,11 +17,11 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     let mut doc = pandoc::new();
     doc.add_input(from);
     doc.set_input_format(
-        pandoc::InputFormat::Commonmark,
+        pandoc::InputFormat::CommonmarkX,
         vec![
             MarkdownExtension::Attributes,
-            MarkdownExtension::YamlMetadataBlock,
             MarkdownExtension::ImplicitFigures,
+            MarkdownExtension::AutolinkBareUris,
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter("pandoc/filters.lua".into()));
@@ -30,6 +30,13 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     ));
     doc.add_option(pandoc::PandocOption::NoHighlight);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
+    doc.set_output_format(
+        pandoc::OutputFormat::Html5,
+        vec![
+            MarkdownExtension::TaskLists,
+            MarkdownExtension::AsciiIdentifiers,
+        ],
+    );
     doc.execute()?;
 
     Ok(target)
