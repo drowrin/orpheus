@@ -82,6 +82,8 @@ li:has(> #toggle-dark-mode) {
   --pico-nav-element-spacing-vertical: 0.5rem;
   --pico-block-spacing-vertical: 0.5rem;
   --readable-width: calc(65ch + (2 * var(--pico-spacing)));
+  --navbar-height: 3.5rem;
+  scroll-padding-top: calc(var(--navbar-height) + (0.5 * var(--pico-spacing)));
 }
 
 body > header {
@@ -94,13 +96,9 @@ body > header {
 }
 
 body > main {
-  padding-top: 4rem;
+  padding-top: var(--navbar-height);
   padding-left: 0;
   padding-right: 0;
-}
-
-:target {
-  padding-top: 4rem;
 }
 
 .padded-when-small {

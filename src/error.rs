@@ -14,7 +14,7 @@ pub fn error_page<T: AsRef<str>>(page_type: PageKind, status: StatusCode, messag
             style={
                 "display: flex; flex-direction: column; "
                 "justify-content: center; align-items: center; "
-                "height: calc(100vh - 4rem); "
+                "height: calc(100vh - var(--navbar-height)); "
                 "font-size: 200%; "
             }
             {
