@@ -10,26 +10,16 @@ use crate::page::PageKind;
 
 pub fn error_page<T: AsRef<str>>(page_type: PageKind, status: StatusCode, message: T) -> Response {
     let markup = page_type.builder(&message).build(html! {
-        div
-            {
-                div
-                    {
-                        span
-                            { (message.as_ref()) }
-                        br;
-                        a
-                            href="javascript:window.history.back();"
-                            { "go back" }
-                    }
-            }
+        span { (message.as_ref()) }
+        br;
+        a href="javascript:window.history.back();" { "go back" }
     });
 
-    // TODO: maybe check for boosted instead, and let partials fail correctly?
-    if let PageKind::Full = page_type {
-        (status, markup).into_response()
-    } else {
+    if let PageKind::Boosted = page_type {
         // this is an htmx request, don't send an error code
         markup.into_response()
+    } else {
+        (status, markup).into_response()
     }
 }
 
