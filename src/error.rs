@@ -10,9 +10,18 @@ use crate::page::PageKind;
 
 pub fn error_page<T: AsRef<str>>(page_type: PageKind, status: StatusCode, message: T) -> Response {
     let markup = page_type.builder(&message).build(html! {
-        span { (message.as_ref()) }
-        br;
-        a href="javascript:window.history.back();" { "go back" }
+        div
+            style={
+                "display: flex; flex-direction: column; "
+                "justify-content: center; align-items: center; "
+                "height: calc(100vh - 4rem); "
+                "font-size: 200%; "
+            }
+            {
+                span { (message.as_ref()) }
+                br;
+                a href="javascript:window.history.back();" { "go back" }
+            }
     });
 
     if let PageKind::Boosted = page_type {
