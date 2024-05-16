@@ -1,11 +1,11 @@
 use eyre::{eyre, Ok, Result, WrapErr};
 
+use melody::{utils::in_dir_with_ext, Melody};
 use pandoc::MarkdownExtension;
 use slug::slugify;
 use std::{
     fs,
     path::{Path, PathBuf},
-    time::SystemTime,
 };
 use verse::{Frontmatter, MetaData, Series};
 
@@ -97,48 +97,67 @@ pub fn process_plain(path: &PathBuf) -> Result<(usize, String)> {
     Ok((plain.split_whitespace().count(), first_p.to_string()))
 }
 
-pub fn process() -> Result<()> {
-    println!("Rendering posts...");
-    let start = SystemTime::now();
-
-    for path in fs::read_dir("./content/posts")? {
-        let path = path.unwrap().path();
-
-        if matches!(path.extension(), Some(ext) if ext == "md") {
-            render_html(&path)?;
-
-            let name = path.file_name().unwrap();
-
-            let fm = parse_frontmatter(&path)?;
-
-            let (word_count, first_p) = process_plain(&path)?;
-
-            let metadata = MetaData {
-                title: fm.title,
-                slug: name.to_str().unwrap().strip_suffix(".md").unwrap().into(),
-                brief: fm.brief.unwrap_or(first_p),
-                tagline: fm.tagline,
-                series: fm.series.map(|s| Series {
-                    name: s.clone(),
-                    slug: slugify(s),
-                }),
-                tags: fm.tags.iter().map(|t| slugify(t)).collect(),
-                word_count,
-                reading_time: word_count / 240,
-                published: fm.published,
-                updated: fm.updated,
-            };
-
-            fs::write(
-                Path::new("./generated/posts")
-                    .join(name)
-                    .with_extension("yml"),
-                serde_yaml::to_string(&metadata)?,
-            )?;
-        }
+pub struct Posts;
+impl Melody for Posts {
+    fn name() -> &'static str {
+        "Posts"
     }
 
-    println!("Rendering posts took {:?}", start.elapsed()?);
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        in_dir_with_ext("./content/posts", ".md")
+    }
 
-    Ok(())
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Self::source().map(|source| {
+            source.into_iter().flat_map(|path| {
+                let path = path.into();
+                ["html", "txt", "yml"].into_iter().map(move |ext| {
+                    Path::new("./generated/posts/")
+                        .join(path.file_name().unwrap())
+                        .with_extension(ext)
+                })
+            })
+        })
+    }
+
+    fn perform() -> Result<()> {
+        for path in fs::read_dir("./content/posts")? {
+            let path = path.unwrap().path();
+
+            if matches!(path.extension(), Some(ext) if ext == "md") {
+                render_html(&path)?;
+
+                let name = path.file_name().unwrap();
+
+                let fm = parse_frontmatter(&path)?;
+
+                let (word_count, first_p) = process_plain(&path)?;
+
+                let metadata = MetaData {
+                    title: fm.title,
+                    slug: name.to_str().unwrap().strip_suffix(".md").unwrap().into(),
+                    brief: fm.brief.unwrap_or(first_p),
+                    tagline: fm.tagline,
+                    series: fm.series.map(|s| Series {
+                        name: s.clone(),
+                        slug: slugify(s),
+                    }),
+                    tags: fm.tags.iter().map(|t| slugify(t)).collect(),
+                    word_count,
+                    reading_time: word_count / 240,
+                    published: fm.published,
+                    updated: fm.updated,
+                };
+
+                fs::write(
+                    Path::new("./generated/posts")
+                        .join(name)
+                        .with_extension("yml"),
+                    serde_yaml::to_string(&metadata)?,
+                )?;
+            }
+        }
+
+        Ok(())
+    }
 }

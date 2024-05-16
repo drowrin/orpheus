@@ -1,81 +1,124 @@
-use std::{fs, path::Path, time::SystemTime};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
 
 use eyre::{eyre, Ok, Result, WrapErr};
+use melody::{utils::in_dir_with_ext, Melody};
 
-pub fn directories() -> Result<()> {
-    fs::create_dir_all("generated/posts/")?;
-    fs::create_dir_all("generated/static/")?;
-    fs::create_dir_all("generated/hashes/")?;
+pub struct PrismComponents;
+impl Melody for PrismComponents {
+    fn name() -> &'static str {
+        "Prism Components"
+    }
 
-    Ok(())
-}
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        in_dir_with_ext("./node_modules/prismjs/components", ".min.js")
+    }
 
-pub fn prism_components() -> Result<()> {
-    fs::create_dir_all("generated/static/components")?;
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Self::source().map(|source| {
+            source.into_iter().map(|path| {
+                Path::new("./generated/static/components/").join(path.into().file_name().unwrap())
+            })
+        })
+    }
 
-    for path in fs::read_dir("./node_modules/prismjs/components")? {
-        let path = path?.path();
-        let name = path.file_name().unwrap();
-        if name.to_str().unwrap().ends_with(".min.js") {
-            fs::copy(&path, Path::new("generated/static/components/").join(name))?;
+    fn perform() -> Result<()> {
+        for path in Self::source()? {
+            let path = path.into();
+            fs::copy(
+                &path,
+                Path::new("generated/static/components/").join(path.file_name().unwrap()),
+            )?;
         }
+
+        Ok(())
+    }
+}
+
+pub struct Parcel;
+impl Melody for Parcel {
+    fn name() -> &'static str {
+        "Parcel"
     }
 
-    Ok(())
-}
-
-pub fn javascript() -> Result<()> {
-    println!("Running parcel...");
-    let start = SystemTime::now();
-
-    let output = std::process::Command::new("npm.cmd")
-        .args([
-            "exec",
-            "--",
-            "parcel",
-            "build",
-            "--dist-dir",
-            "./generated/static",
-            "./web/main.js",
-        ])
-        .output()?;
-
-    if !output.status.success() {
-        return Err(eyre!("{}", String::from_utf8(output.stderr)?));
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        in_dir_with_ext("./web/", ".js")
     }
 
-    println!("Running parcel took {:?}", start.elapsed()?);
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(["generated/static/main.js"])
+    }
 
-    Ok(())
+    fn perform() -> Result<()> {
+        let output = std::process::Command::new("npm.cmd")
+            .args([
+                "exec",
+                "--",
+                "parcel",
+                "build",
+                "--dist-dir",
+                "./generated/static",
+                "./web/main.js",
+            ])
+            .output()?;
+
+        if !output.status.success() {
+            return Err(eyre!("{}", String::from_utf8(output.stderr)?));
+        }
+
+        Ok(())
+    }
 }
 
-pub fn favicon() -> Result<()> {
-    println!("Copying favicon...");
-    let start = SystemTime::now();
+pub struct Favicon;
+impl Melody for Favicon {
+    fn name() -> &'static str {
+        "Favicon"
+    }
 
-    std::fs::copy("content/favicon.ico", "generated/static/favicon.ico")
-        .wrap_err("content/favicon.ico is missing")?;
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(["content/favicon.ico"])
+    }
 
-    println!("Copying favicon took {:?}", start.elapsed()?);
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(["generated/static/favicon.ico"])
+    }
 
-    Ok(())
+    fn perform() -> Result<()> {
+        std::fs::copy("content/favicon.ico", "generated/static/favicon.ico")
+            .wrap_err("content/favicon.ico is missing")?;
+
+        Ok(())
+    }
 }
 
-pub fn scss() -> Result<()> {
-    println!("Processing SCSS...");
-    let start = SystemTime::now();
+pub struct SCSS;
+impl Melody for SCSS {
+    fn name() -> &'static str {
+        "SCSS"
+    }
 
-    let css = grass::from_path(
-        "web/styles.scss",
-        &grass::Options::default()
-            .style(grass::OutputStyle::Compressed)
-            .load_path("node_modules/@picocss/pico/scss/")
-            .load_path("node_modules/@catppuccin/palette/scss"),
-    )?;
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        in_dir_with_ext("./web/", ".scss")
+    }
 
-    fs::write("generated/static/styles.css", css)?;
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(["generated/static/styles.css"])
+    }
 
-    println!("Processing SCSS took {:?}", start.elapsed()?);
+    fn perform() -> Result<()> {
+        let css = grass::from_path(
+            "web/styles.scss",
+            &grass::Options::default()
+                .style(grass::OutputStyle::Compressed)
+                .load_path("node_modules/@picocss/pico/scss/")
+                .load_path("node_modules/@catppuccin/palette/scss"),
+        )?;
 
-    Ok(())
+        fs::write("generated/static/styles.css", css)?;
+
+        Ok(())
+    }
 }

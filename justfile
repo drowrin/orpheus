@@ -1,7 +1,7 @@
 @clean:
     rm -rf generated
 
-@lyre: clean
+@lyre:
     cargo run -p lyre --profile release
 
 @run options="": lyre

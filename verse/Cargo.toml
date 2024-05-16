@@ -3,12 +3,6 @@ name = "verse"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-name = "verse"
-path = "src/lib.rs"
-
 [dependencies]
 serde = { version = "1.0.197", features = ["derive"] }
 serde_yaml = "0.9.34"
-sha2 = { version = "0.10.8" }
-base64 = { version = "0.22.1" }
