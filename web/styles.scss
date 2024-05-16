@@ -214,3 +214,40 @@ hr {
     max-width: 65ch;
   }
 }
+
+code,
+pre {
+  font-family: Firacode, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 90%;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.25;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre {
+  padding: var(--pico-spacing);
+  margin: var(--pico-spacing) 0;
+  overflow: auto;
+  border-radius: var(--pico-border-radius);
+}
+
+article > pre {
+  margin: var(--pico-spacing) calc(-1 * var(--pico-spacing));
+}
+
+:not(pre) > code {
+  padding: 0.1em;
+  border-radius: var(--pico-border-radius);
+  white-space: normal;
+}

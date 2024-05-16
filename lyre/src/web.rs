@@ -1,41 +1,7 @@
-use std::{
-    fs,
-    path::{Path, PathBuf},
-};
+use std::{fs, path::PathBuf};
 
 use eyre::{eyre, Ok, Result, WrapErr};
 use melody::{utils::in_dir_with_ext, Melody};
-
-pub struct PrismComponents;
-impl Melody for PrismComponents {
-    fn name() -> &'static str {
-        "Prism Components"
-    }
-
-    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        in_dir_with_ext("./node_modules/prismjs/components", ".min.js")
-    }
-
-    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Self::source().map(|source| {
-            source.into_iter().map(|path| {
-                Path::new("./generated/static/components/").join(path.into().file_name().unwrap())
-            })
-        })
-    }
-
-    fn perform() -> Result<()> {
-        for path in Self::source()? {
-            let path = path.into();
-            fs::copy(
-                &path,
-                Path::new("generated/static/components/").join(path.file_name().unwrap()),
-            )?;
-        }
-
-        Ok(())
-    }
-}
 
 pub struct Parcel;
 impl Melody for Parcel {

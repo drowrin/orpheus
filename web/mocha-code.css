@@ -1,0 +1,559 @@
+.c-code {
+ color: #cdd6f4;
+ background-color: #1e1e2e;
+}
+
+.c-text, .c-source, .c-variable.c-other.c-readwrite, .c-punctuation.c-definition.c-variable {
+ color: #cdd6f4;
+}
+.c-punctuation {
+ color: #9399b2;
+}
+.c-comment, .c-punctuation.c-definition.c-comment {
+ color: #6c7086;
+font-style: italic;
+}
+.c-string, .c-punctuation.c-definition.c-string {
+ color: #a6e3a1;
+}
+.c-constant.c-character.c-escape {
+ color: #f5c2e7;
+}
+.c-constant.c-numeric, .c-variable.c-other.c-constant, .c-entity.c-name.c-constant, .c-constant.c-language.c-boolean, .c-constant.c-language.c-false, .c-constant.c-language.c-true, .c-keyword.c-other.c-unit.c-user-defined, .c-keyword.c-other.c-unit.c-suffix.c-floating-point {
+ color: #fab387;
+}
+.c-keyword, .c-keyword.c-operator.c-word, .c-keyword.c-operator.c-new, .c-variable.c-language.c-super, .c-support.c-type.c-primitive, .c-storage.c-type, .c-storage.c-modifier, .c-punctuation.c-definition.c-keyword {
+ color: #cba6f7;
+}
+.c-entity.c-name.c-tag.c-documentation {
+ color: #cba6f7;
+}
+.c-keyword.c-operator, .c-punctuation.c-accessor, .c-punctuation.c-definition.c-generic, .c-meta.c-function.c-closure .c-punctuation.c-section.c-parameters, .c-punctuation.c-definition.c-tag, .c-punctuation.c-separator.c-key-value {
+ color: #94e2d5;
+}
+.c-entity.c-name.c-function, .c-meta.c-function-call.c-method, .c-support.c-function, .c-support.c-function.c-misc, .c-variable.c-function {
+ color: #89b4fa;
+font-style: italic;
+}
+.c-entity.c-name.c-class, .c-entity.c-other.c-inherited-class, .c-support.c-class, .c-meta.c-function-call.c-constructor, .c-entity.c-name.c-struct {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-entity.c-name.c-enum {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-meta.c-enum .c-variable.c-other.c-readwrite, .c-variable.c-other.c-enummember {
+ color: #94e2d5;
+}
+.c-meta.c-property.c-object {
+ color: #94e2d5;
+}
+.c-meta.c-type, .c-meta.c-type-alias, .c-support.c-type, .c-entity.c-name.c-type {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-meta.c-annotation .c-variable.c-function, .c-meta.c-annotation .c-variable.c-annotation.c-function, .c-meta.c-annotation .c-punctuation.c-definition.c-annotation, .c-meta.c-decorator, .c-punctuation.c-decorator {
+ color: #fab387;
+}
+.c-variable.c-parameter, .c-meta.c-function.c-parameters {
+ color: #eba0ac;
+font-style: italic;
+}
+.c-constant.c-language, .c-support.c-function.c-builtin {
+ color: #f38ba8;
+}
+.c-entity.c-other.c-attribute-name.c-documentation {
+ color: #f38ba8;
+}
+.c-keyword.c-control.c-directive, .c-punctuation.c-definition.c-directive {
+ color: #f9e2af;
+}
+.c-punctuation.c-definition.c-typeparameters {
+ color: #89dceb;
+}
+.c-entity.c-name.c-namespace {
+ color: #f9e2af;
+}
+.c-support.c-type.c-property-name.c-css {
+ color: #89b4fa;
+}
+.c-variable.c-language.c-this, .c-variable.c-language.c-this .c-punctuation.c-definition.c-variable {
+ color: #f38ba8;
+}
+.c-variable.c-object.c-property {
+ color: #cdd6f4;
+}
+.c-string.c-template .c-variable, .c-string .c-variable {
+ color: #cdd6f4;
+}
+.c-keyword.c-operator.c-new {
+font-weight: bold;
+}
+.c-storage.c-modifier.c-specifier.c-extern.c-cpp {
+ color: #cba6f7;
+}
+.c-entity.c-name.c-scope-resolution.c-template.c-call.c-cpp, .c-entity.c-name.c-scope-resolution.c-parameter.c-cpp, .c-entity.c-name.c-scope-resolution.c-cpp, .c-entity.c-name.c-scope-resolution.c-function.c-definition.c-cpp {
+ color: #f9e2af;
+}
+.c-storage.c-type.c-class.c-doxygen {
+}
+.c-storage.c-modifier.c-reference.c-cpp {
+ color: #94e2d5;
+}
+.c-meta.c-interpolation.c-cs {
+ color: #cdd6f4;
+}
+.c-comment.c-block.c-documentation.c-cs {
+ color: #cdd6f4;
+}
+.c-source.c-css .c-entity.c-other.c-attribute-name.c-class.c-css, .c-entity.c-other.c-attribute-name.c-parent-selector.c-css .c-punctuation.c-definition.c-entity.c-css {
+ color: #f9e2af;
+}
+.c-punctuation.c-separator.c-operator.c-css {
+ color: #94e2d5;
+}
+.c-source.c-css .c-entity.c-other.c-attribute-name.c-pseudo-class {
+ color: #94e2d5;
+}
+.c-source.c-css .c-constant.c-other.c-unicode-range {
+ color: #fab387;
+}
+.c-source.c-css .c-variable.c-parameter.c-url {
+ color: #a6e3a1;
+}
+.c-support.c-type.c-vendored.c-property-name {
+ color: #89dceb;
+}
+.c-source.c-css .c-meta.c-property-value .c-variable, .c-source.c-css .c-meta.c-property-value .c-variable.c-other.c-less, .c-source.c-css .c-meta.c-property-value .c-variable.c-other.c-less .c-punctuation.c-definition.c-variable.c-less, .c-meta.c-definition.c-variable.c-scss {
+ color: #eba0ac;
+}
+.c-source.c-css .c-meta.c-property-list .c-variable, .c-meta.c-property-list .c-variable.c-other.c-less, .c-meta.c-property-list .c-variable.c-other.c-less .c-punctuation.c-definition.c-variable.c-less {
+ color: #89b4fa;
+}
+.c-keyword.c-other.c-unit.c-percentage.c-css {
+ color: #fab387;
+}
+.c-source.c-css .c-meta.c-attribute-selector {
+ color: #a6e3a1;
+}
+.c-keyword.c-other.c-definition.c-ini, .c-punctuation.c-support.c-type.c-property-name.c-json, .c-support.c-type.c-property-name.c-json, .c-punctuation.c-support.c-type.c-property-name.c-toml, .c-support.c-type.c-property-name.c-toml, .c-entity.c-name.c-tag.c-yaml, .c-punctuation.c-support.c-type.c-property-name.c-yaml, .c-support.c-type.c-property-name.c-yaml {
+ color: #89b4fa;
+}
+.c-constant.c-language.c-json, .c-constant.c-language.c-yaml {
+ color: #fab387;
+}
+.c-entity.c-name.c-type.c-anchor.c-yaml, .c-variable.c-other.c-alias.c-yaml {
+ color: #f9e2af;
+}
+.c-support.c-type.c-property-name.c-table, .c-entity.c-name.c-section.c-group-title.c-ini {
+ color: #f9e2af;
+}
+.c-constant.c-other.c-time.c-datetime.c-offset.c-toml {
+ color: #f5c2e7;
+}
+.c-punctuation.c-definition.c-anchor.c-yaml, .c-punctuation.c-definition.c-alias.c-yaml {
+ color: #f5c2e7;
+}
+.c-entity.c-other.c-document.c-begin.c-yaml {
+ color: #f5c2e7;
+}
+.c-markup.c-changed.c-diff {
+ color: #fab387;
+}
+.c-meta.c-diff.c-header.c-from-file, .c-meta.c-diff.c-header.c-to-file, .c-punctuation.c-definition.c-from-file.c-diff, .c-punctuation.c-definition.c-to-file.c-diff {
+ color: #89b4fa;
+}
+.c-markup.c-inserted.c-diff {
+ color: #a6e3a1;
+}
+.c-markup.c-deleted.c-diff {
+ color: #f38ba8;
+}
+.c-variable.c-other.c-env {
+ color: #89b4fa;
+}
+.c-string.c-quoted .c-variable.c-other.c-env {
+ color: #cdd6f4;
+}
+.c-support.c-function.c-builtin.c-gdscript {
+ color: #89b4fa;
+}
+.c-constant.c-language.c-gdscript {
+ color: #fab387;
+}
+.c-comment .c-meta.c-annotation.c-go {
+ color: #eba0ac;
+}
+.c-comment .c-meta.c-annotation.c-parameters.c-go {
+ color: #fab387;
+}
+.c-constant.c-language.c-go {
+ color: #fab387;
+}
+.c-variable.c-graphql {
+ color: #cdd6f4;
+}
+.c-string.c-unquoted.c-alias.c-graphql {
+ color: #f2cdcd;
+}
+.c-constant.c-character.c-enum.c-graphql {
+ color: #94e2d5;
+}
+.c-meta.c-objectvalues.c-graphql .c-constant.c-object.c-key.c-graphql .c-string.c-unquoted.c-graphql {
+ color: #f2cdcd;
+}
+.c-keyword.c-other.c-doctype, .c-meta.c-tag.c-sgml.c-doctype .c-punctuation.c-definition.c-tag, .c-meta.c-tag.c-metadata.c-doctype .c-entity.c-name.c-tag, .c-meta.c-tag.c-metadata.c-doctype .c-punctuation.c-definition.c-tag {
+ color: #cba6f7;
+}
+.c-entity.c-name.c-tag {
+ color: #89b4fa;
+}
+.c-text.c-html .c-constant.c-character.c-entity, .c-text.c-html .c-constant.c-character.c-entity .c-punctuation, .c-constant.c-character.c-entity.c-xml, .c-constant.c-character.c-entity.c-xml .c-punctuation, .c-constant.c-character.c-entity.c-js.c-jsx, .c-constant.c-charactger.c-entity.c-js.c-jsx .c-punctuation, .c-constant.c-character.c-entity.c-tsx, .c-constant.c-character.c-entity.c-tsx .c-punctuation {
+ color: #f38ba8;
+}
+.c-entity.c-other.c-attribute-name {
+ color: #f9e2af;
+}
+.c-support.c-class.c-component, .c-support.c-class.c-component.c-jsx, .c-support.c-class.c-component.c-tsx, .c-support.c-class.c-component.c-vue {
+ color: #f5c2e7;
+}
+.c-punctuation.c-definition.c-annotation, .c-storage.c-type.c-annotation {
+ color: #fab387;
+}
+.c-constant.c-other.c-enum.c-java {
+ color: #94e2d5;
+}
+.c-storage.c-modifier.c-import.c-java {
+ color: #cdd6f4;
+}
+.c-comment.c-block.c-javadoc.c-java .c-keyword.c-other.c-documentation.c-javadoc.c-java {
+}
+.c-meta.c-export .c-variable.c-other.c-readwrite.c-js {
+ color: #eba0ac;
+}
+.c-variable.c-other.c-constant.c-js, .c-variable.c-other.c-constant.c-ts, .c-variable.c-other.c-property.c-js, .c-variable.c-other.c-property.c-ts {
+ color: #cdd6f4;
+}
+.c-variable.c-other.c-jsdoc, .c-comment.c-block.c-documentation .c-variable.c-other {
+ color: #eba0ac;
+}
+.c-storage.c-type.c-class.c-jsdoc {
+}
+.c-support.c-type.c-object.c-console.c-js {
+ color: #cdd6f4;
+}
+.c-support.c-constant.c-node, .c-support.c-type.c-object.c-module.c-js {
+ color: #cba6f7;
+}
+.c-storage.c-modifier.c-implements {
+ color: #cba6f7;
+}
+.c-constant.c-language.c-null.c-js, .c-constant.c-language.c-null.c-ts, .c-constant.c-language.c-undefined.c-js, .c-constant.c-language.c-undefined.c-ts, .c-support.c-type.c-builtin.c-ts {
+ color: #cba6f7;
+}
+.c-variable.c-parameter.c-generic {
+ color: #f9e2af;
+}
+.c-keyword.c-declaration.c-function.c-arrow.c-js, .c-storage.c-type.c-function.c-arrow.c-ts {
+ color: #94e2d5;
+}
+.c-punctuation.c-decorator.c-ts {
+ color: #89b4fa;
+font-style: italic;
+}
+.c-keyword.c-operator.c-expression.c-in.c-js, .c-keyword.c-operator.c-expression.c-in.c-ts, .c-keyword.c-operator.c-expression.c-infer.c-ts, .c-keyword.c-operator.c-expression.c-instanceof.c-js, .c-keyword.c-operator.c-expression.c-instanceof.c-ts, .c-keyword.c-operator.c-expression.c-is, .c-keyword.c-operator.c-expression.c-keyof.c-ts, .c-keyword.c-operator.c-expression.c-of.c-js, .c-keyword.c-operator.c-expression.c-of.c-ts, .c-keyword.c-operator.c-expression.c-typeof.c-ts {
+ color: #cba6f7;
+}
+.c-support.c-function.c-macro.c-julia {
+ color: #94e2d5;
+font-style: italic;
+}
+.c-constant.c-language.c-julia {
+ color: #fab387;
+}
+.c-constant.c-other.c-symbol.c-julia {
+ color: #eba0ac;
+}
+.c-text.c-tex .c-keyword.c-control.c-preamble {
+ color: #94e2d5;
+}
+.c-text.c-tex .c-support.c-function.c-be {
+ color: #89dceb;
+}
+.c-constant.c-other.c-general.c-math.c-tex {
+ color: #f2cdcd;
+}
+.c-comment.c-line.c-double-dash.c-documentation.c-lua .c-storage.c-type.c-annotation.c-lua {
+ color: #cba6f7;
+}
+.c-comment.c-line.c-double-dash.c-documentation.c-lua .c-entity.c-name.c-variable.c-lua, .c-comment.c-line.c-double-dash.c-documentation.c-lua .c-variable.c-lua {
+ color: #cdd6f4;
+}
+.c-heading.c-1.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-1.c-markdown, .c-markup.c-heading.c-atx.c-1.c-mdx, .c-markup.c-heading.c-atx.c-1.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-setext.c-1.c-markdown, .c-markup.c-heading.c-heading-0.c-asciidoc {
+ color: #f38ba8;
+}
+.c-heading.c-2.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-2.c-markdown, .c-markup.c-heading.c-atx.c-2.c-mdx, .c-markup.c-heading.c-atx.c-2.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-setext.c-2.c-markdown, .c-markup.c-heading.c-heading-1.c-asciidoc {
+ color: #fab387;
+}
+.c-heading.c-3.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-3.c-markdown, .c-markup.c-heading.c-atx.c-3.c-mdx, .c-markup.c-heading.c-atx.c-3.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-heading-2.c-asciidoc {
+ color: #f9e2af;
+}
+.c-heading.c-4.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-4.c-markdown, .c-markup.c-heading.c-atx.c-4.c-mdx, .c-markup.c-heading.c-atx.c-4.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-heading-3.c-asciidoc {
+ color: #a6e3a1;
+}
+.c-heading.c-5.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-5.c-markdown, .c-markup.c-heading.c-atx.c-5.c-mdx, .c-markup.c-heading.c-atx.c-5.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-heading-4.c-asciidoc {
+ color: #89b4fa;
+}
+.c-heading.c-6.c-markdown .c-punctuation.c-definition.c-heading.c-markdown, .c-heading.c-6.c-markdown, .c-markup.c-heading.c-atx.c-6.c-mdx, .c-markup.c-heading.c-atx.c-6.c-mdx .c-punctuation.c-definition.c-heading.c-mdx, .c-markup.c-heading.c-heading-5.c-asciidoc {
+ color: #cba6f7;
+}
+.c-markup.c-bold {
+ color: #f38ba8;
+font-weight: bold;
+}
+.c-markup.c-italic {
+ color: #f38ba8;
+font-style: italic;
+}
+.c-punctuation.c-definition.c-link, .c-markup.c-underline.c-link {
+ color: #89b4fa;
+}
+.c-text.c-html.c-markdown .c-punctuation.c-definition.c-link.c-title, .c-string.c-other.c-link.c-title.c-markdown, .c-markup.c-link, .c-punctuation.c-definition.c-constant.c-markdown, .c-constant.c-other.c-reference.c-link.c-markdown, .c-markup.c-substitution.c-attribute-reference {
+ color: #b4befe;
+}
+.c-punctuation.c-definition.c-raw.c-markdown, .c-markup.c-inline.c-raw.c-string.c-markdown, .c-markup.c-raw.c-block.c-markdown {
+ color: #a6e3a1;
+}
+.c-fenced_code.c-block.c-language {
+ color: #89dceb;
+}
+.c-markup.c-fenced_code.c-block .c-punctuation.c-definition, .c-markup.c-raw .c-support.c-asciidoc {
+ color: #9399b2;
+}
+.c-markup.c-quote, .c-punctuation.c-definition.c-quote.c-begin {
+ color: #f5c2e7;
+}
+.c-meta.c-separator.c-markdown {
+ color: #94e2d5;
+}
+.c-punctuation.c-definition.c-list.c-begin.c-markdown, .c-markup.c-list.c-bullet {
+ color: #94e2d5;
+}
+.c-entity.c-other.c-attribute-name.c-multipart.c-nix, .c-entity.c-other.c-attribute-name.c-single.c-nix {
+ color: #89b4fa;
+}
+.c-variable.c-parameter.c-name.c-nix {
+ color: #cdd6f4;
+}
+.c-meta.c-embedded .c-variable.c-parameter.c-name.c-nix {
+ color: #b4befe;
+}
+.c-string.c-unquoted.c-path.c-nix {
+ color: #f5c2e7;
+}
+.c-support.c-attribute.c-builtin, .c-meta.c-attribute.c-php {
+ color: #f9e2af;
+}
+.c-meta.c-function.c-parameters.c-php .c-punctuation.c-definition.c-variable.c-php {
+ color: #eba0ac;
+}
+.c-constant.c-language.c-php {
+ color: #cba6f7;
+}
+.c-text.c-html.c-php .c-support.c-function {
+ color: #89dceb;
+}
+.c-keyword.c-other.c-phpdoc.c-php {
+}
+.c-support.c-variable.c-magic.c-python, .c-meta.c-function-call.c-arguments.c-python {
+ color: #cdd6f4;
+}
+.c-support.c-function.c-magic.c-python {
+ color: #89dceb;
+font-style: italic;
+}
+.c-variable.c-parameter.c-function.c-language.c-special.c-self.c-python, .c-variable.c-language.c-special.c-self.c-python {
+ color: #f38ba8;
+font-style: italic;
+}
+.c-keyword.c-control.c-flow.c-python, .c-keyword.c-operator.c-logical.c-python {
+ color: #cba6f7;
+}
+.c-storage.c-type.c-function.c-python {
+ color: #cba6f7;
+}
+.c-support.c-token.c-decorator.c-python, .c-meta.c-function.c-decorator.c-identifier.c-python {
+ color: #89dceb;
+}
+.c-meta.c-function-call.c-python {
+ color: #89b4fa;
+}
+.c-entity.c-name.c-function.c-decorator.c-python, .c-punctuation.c-definition.c-decorator.c-python {
+ color: #fab387;
+font-style: italic;
+}
+.c-constant.c-character.c-format.c-placeholder.c-other.c-python {
+ color: #f5c2e7;
+}
+.c-support.c-type.c-exception.c-python, .c-support.c-function.c-builtin.c-python {
+ color: #fab387;
+}
+.c-support.c-type.c-python {
+ color: #fab387;
+}
+.c-constant.c-language.c-python {
+ color: #cba6f7;
+}
+.c-meta.c-indexed-name.c-python, .c-meta.c-item-access.c-python {
+ color: #eba0ac;
+font-style: italic;
+}
+.c-storage.c-type.c-string.c-python {
+ color: #a6e3a1;
+font-style: italic;
+}
+.c-meta.c-function.c-parameters.c-python {
+}
+.c-string.c-regexp .c-punctuation.c-definition.c-string.c-begin, .c-string.c-regexp .c-punctuation.c-definition.c-string.c-end {
+ color: #f5c2e7;
+}
+.c-keyword.c-control.c-anchor.c-regexp {
+ color: #cba6f7;
+}
+.c-string.c-regexp.c-ts {
+ color: #cdd6f4;
+}
+.c-punctuation.c-definition.c-group.c-regexp, .c-keyword.c-other.c-back-reference.c-regexp {
+ color: #a6e3a1;
+}
+.c-punctuation.c-definition.c-character-class.c-regexp {
+ color: #f9e2af;
+}
+.c-constant.c-other.c-character-class.c-regexp {
+ color: #f5c2e7;
+}
+.c-constant.c-other.c-character-class.c-range.c-regexp {
+ color: #f5e0dc;
+}
+.c-keyword.c-operator.c-quantifier.c-regexp {
+ color: #94e2d5;
+}
+.c-constant.c-character.c-numeric.c-regexp {
+ color: #fab387;
+}
+.c-punctuation.c-definition.c-group.c-no-capture.c-regexp, .c-meta.c-assertion.c-look-ahead.c-regexp, .c-meta.c-assertion.c-negative-look-ahead.c-regexp {
+ color: #89b4fa;
+}
+.c-meta.c-annotation.c-rust, .c-meta.c-annotation.c-rust .c-punctuation, .c-meta.c-attribute.c-rust, .c-punctuation.c-definition.c-attribute.c-rust {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-meta.c-attribute.c-rust .c-string.c-quoted.c-double.c-rust, .c-meta.c-attribute.c-rust .c-string.c-quoted.c-single.c-char.c-rust {
+}
+.c-entity.c-name.c-function.c-macro.c-rules.c-rust, .c-storage.c-type.c-module.c-rust, .c-storage.c-modifier.c-rust, .c-storage.c-type.c-struct.c-rust, .c-storage.c-type.c-enum.c-rust, .c-storage.c-type.c-trait.c-rust, .c-storage.c-type.c-union.c-rust, .c-storage.c-type.c-impl.c-rust, .c-storage.c-type.c-rust, .c-storage.c-type.c-function.c-rust, .c-storage.c-type.c-type.c-rust {
+ color: #cba6f7;
+}
+.c-entity.c-name.c-type.c-numeric.c-rust {
+ color: #cba6f7;
+}
+.c-meta.c-generic.c-rust {
+ color: #fab387;
+}
+.c-entity.c-name.c-impl.c-rust {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-entity.c-name.c-module.c-rust {
+ color: #fab387;
+}
+.c-entity.c-name.c-trait.c-rust {
+ color: #f9e2af;
+font-style: italic;
+}
+.c-storage.c-type.c-source.c-rust {
+ color: #f9e2af;
+}
+.c-entity.c-name.c-union.c-rust {
+ color: #f9e2af;
+}
+.c-meta.c-enum.c-rust .c-storage.c-type.c-source.c-rust {
+ color: #94e2d5;
+}
+.c-support.c-macro.c-rust, .c-meta.c-macro.c-rust .c-support.c-function.c-rust, .c-entity.c-name.c-function.c-macro.c-rust {
+ color: #89b4fa;
+font-style: italic;
+}
+.c-storage.c-modifier.c-lifetime.c-rust, .c-entity.c-name.c-type.c-lifetime {
+ color: #89b4fa;
+font-style: italic;
+}
+.c-string.c-quoted.c-double.c-rust .c-constant.c-other.c-placeholder.c-rust {
+ color: #f5c2e7;
+}
+.c-meta.c-function.c-return-type.c-rust .c-meta.c-generic.c-rust .c-storage.c-type.c-rust {
+ color: #cdd6f4;
+}
+.c-meta.c-function.c-call.c-rust {
+ color: #89b4fa;
+}
+.c-punctuation.c-brackets.c-angle.c-rust {
+ color: #89dceb;
+}
+.c-constant.c-other.c-caps.c-rust {
+ color: #fab387;
+}
+.c-meta.c-function.c-definition.c-rust .c-variable.c-other.c-rust {
+ color: #eba0ac;
+}
+.c-meta.c-function.c-call.c-rust .c-variable.c-other.c-rust {
+ color: #cdd6f4;
+}
+.c-variable.c-language.c-self.c-rust {
+ color: #f38ba8;
+}
+.c-variable.c-other.c-metavariable.c-name.c-rust, .c-meta.c-macro.c-metavariable.c-rust .c-keyword.c-operator.c-macro.c-dollar.c-rust {
+ color: #f5c2e7;
+}
+.c-comment.c-line.c-shebang, .c-comment.c-line.c-shebang .c-punctuation.c-definition.c-comment, .c-comment.c-line.c-shebang, .c-punctuation.c-definition.c-comment.c-shebang.c-shell, .c-meta.c-shebang.c-shell {
+ color: #f5c2e7;
+font-style: italic;
+}
+.c-comment.c-line.c-shebang .c-constant.c-language {
+ color: #94e2d5;
+font-style: italic;
+}
+.c-meta.c-function-call.c-arguments.c-shell .c-punctuation.c-definition.c-variable.c-shell, .c-meta.c-function-call.c-arguments.c-shell .c-punctuation.c-section.c-interpolation, .c-meta.c-function-call.c-arguments.c-shell .c-punctuation.c-definition.c-variable.c-shell, .c-meta.c-function-call.c-arguments.c-shell .c-punctuation.c-section.c-interpolation {
+ color: #f38ba8;
+}
+.c-meta.c-string .c-meta.c-interpolation.c-parameter.c-shell .c-variable.c-other.c-readwrite {
+ color: #fab387;
+font-style: italic;
+}
+.c-source.c-shell .c-punctuation.c-section.c-interpolation, .c-punctuation.c-definition.c-evaluation.c-backticks.c-shell {
+ color: #94e2d5;
+}
+.c-entity.c-name.c-tag.c-heredoc.c-shell {
+ color: #cba6f7;
+}
+.c-string.c-quoted.c-double.c-shell .c-variable.c-other.c-normal.c-shell {
+ color: #cdd6f4;
+}
+.c-markup.c-heading.c-synopsis.c-man, .c-markup.c-heading.c-title.c-man, .c-markup.c-heading.c-other.c-man, .c-markup.c-heading.c-env.c-man {
+ color: #cba6f7;
+}
+.c-markup.c-heading.c-commands.c-man {
+ color: #89b4fa;
+}
+.c-markup.c-heading.c-env.c-man {
+ color: #f5c2e7;
+}
+.c-markup.c-heading.c-1.c-markdown {
+ color: #f38ba8;
+}
+.c-markup.c-heading.c-2.c-markdown {
+ color: #fab387;
+}
+.c-markup.c-heading.c-markdown {
+ color: #f9e2af;
+}

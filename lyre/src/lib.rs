@@ -15,7 +15,6 @@ pub fn main() -> Result<()> {
 
     melody::prepare()?;
 
-    <web::PrismComponents as Melody>::conduct()?;
     <web::Parcel as Melody>::conduct()?;
     <web::Favicon as Melody>::conduct()?;
     <web::SCSS as Melody>::conduct()?;

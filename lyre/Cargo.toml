@@ -19,3 +19,5 @@ grass = "0.13.2"
 pandoc = "0.8.11"
 verse = { path = "../verse" }
 melody = { path = "../melody" }
+syntect = "5.2.0"
+pandoc_ast = "0.8.6"

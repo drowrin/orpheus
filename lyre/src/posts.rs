@@ -2,12 +2,68 @@ use eyre::{eyre, Ok, Result, WrapErr};
 
 use melody::{utils::in_dir_with_ext, Melody};
 use pandoc::MarkdownExtension;
+use pandoc_ast::Block;
 use slug::slugify;
 use std::{
     fs,
     path::{Path, PathBuf},
 };
+use syntect::{
+    html::{ClassStyle, ClassedHTMLGenerator},
+    parsing::SyntaxSet,
+    util::LinesWithEndings,
+};
 use verse::{Frontmatter, MetaData, Series};
+
+fn code_highlighting(json: String) -> String {
+    let syntax_set = SyntaxSet::load_defaults_newlines();
+
+    pandoc_ast::filter(json, |mut pandoc| {
+        for block in &mut pandoc.blocks {
+            *block = match block {
+                Block::CodeBlock((ref id, ref classes, ref attrs), content) => {
+                    if classes.len() > 0 {
+                        let language = classes.first().unwrap();
+                        let syntax = syntax_set
+                            .find_syntax_by_extension(&language)
+                            .or(syntax_set.find_syntax_by_name(&language))
+                            .expect(format!("Unrecognized language \"{}\"", language).as_str());
+                        let mut html_generator = ClassedHTMLGenerator::new_with_class_style(
+                            syntax,
+                            &syntax_set,
+                            ClassStyle::SpacedPrefixed { prefix: "c-" },
+                        );
+                        for line in LinesWithEndings::from(content) {
+                            html_generator
+                                .parse_html_for_line_which_includes_newline(line)
+                                .unwrap();
+                        }
+                        let code = html_generator.finalize();
+                        let mut pre_classes = classes.join(" ");
+                        if pre_classes.len() > 0 {
+                            pre_classes = format!(" class=\"{}\"", pre_classes);
+                        }
+                        let code_classes = format!("language-{}", language);
+                        Block::RawBlock(
+                            pandoc_ast::Format("html5".into()),
+                            format!(
+                                "<pre{}><code class=\"{}\">{}\n</code></pre>",
+                                pre_classes, code_classes, code
+                            ),
+                        )
+                    } else {
+                        Block::CodeBlock(
+                            (id.to_owned(), classes.to_owned(), attrs.to_owned()),
+                            content.to_owned(),
+                        )
+                    }
+                }
+                _ => block.to_owned(),
+            }
+        }
+        pandoc
+    })
+}
 
 pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     let target = Path::new("./generated/posts/")
@@ -25,9 +81,7 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter("pandoc/filters.lua".into()));
-    doc.add_option(pandoc::PandocOption::LuaFilter(
-        "pandoc/standard-code.lua".into(),
-    ));
+    doc.add_filter(code_highlighting);
     doc.add_option(pandoc::PandocOption::NoHighlight);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
     doc.set_output_format(
