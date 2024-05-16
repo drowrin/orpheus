@@ -196,13 +196,9 @@ pub async fn posts(
                         }
                     }
                 } @else {
-                    div
-                    style={
-                        "display: flex; flex-direction: column; "
-                        "justify-content: center; align-items: center; "
-                        "font-size: 200%; "
-                    }
-                    { span { "no results" } }
+                    span
+                        style="font-size: 200%;"
+                        { "no results" }
                 }
             }
     };
