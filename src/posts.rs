@@ -177,22 +177,32 @@ pub async fn posts(
         div
             #posts
             {
-                @for post in filtered_posts {
-                    article {
-                        (post_info(&post, html! {
-                            h3 { a
-                                ."article-link"
-                                href={ "/posts/" (post.slug) }
-                                preload="mouseover"
-                                preload-images="true"
-                                { (post.title) }
-                            }
-                        }))
+                @if filtered_posts.len() > 0 {
+                    @for post in filtered_posts {
+                        article {
+                            (post_info(&post, html! {
+                                h3 { a
+                                    ."article-link"
+                                    href={ "/posts/" (post.slug) }
+                                    preload="mouseover"
+                                    preload-images="true"
+                                    { (post.title) }
+                                }
+                            }))
 
-                        hr style="margin: 0.5rem 0 0.4rem 0";
+                            hr style="margin: 0.5rem 0 0.4rem 0";
 
-                        (post.brief)
+                            (post.brief)
+                        }
                     }
+                } @else {
+                    div
+                    style={
+                        "display: flex; flex-direction: column; "
+                        "justify-content: center; align-items: center; "
+                        "font-size: 200%; "
+                    }
+                    { span { "no results" } }
                 }
             }
     };
@@ -209,6 +219,7 @@ pub async fn posts(
                     hx-get="/posts"
                     hx-trigger="input changed delay:100ms from:#search, search, change"
                     hx-target="#posts"
+                    hx-swap="outerHTML"
                     hx-push-url="true"
                     "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
                     {
