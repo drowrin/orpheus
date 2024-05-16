@@ -1,7 +1,7 @@
 use std::{fs, path::PathBuf, time::SystemTime};
 
 use eyre::{Ok, Result, WrapErr};
-use lyre::{generate_hash, hashed_path, HASH_PATHS};
+use verse::{generate_hash, hashed_path, HASH_PATHS};
 
 pub fn process() -> Result<()> {
     println!("Processing version hashes...");

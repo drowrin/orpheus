@@ -10,7 +10,7 @@ use axum::{
     routing, Router,
 };
 use axum_extra::extract::Query;
-use lyre::{MetaData, Series};
+use verse::{MetaData, Series};
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;

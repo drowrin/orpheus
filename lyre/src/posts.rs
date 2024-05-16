@@ -1,6 +1,5 @@
 use eyre::{eyre, Ok, Result, WrapErr};
 
-use lyre::{Frontmatter, MetaData, Series};
 use pandoc::MarkdownExtension;
 use slug::slugify;
 use std::{
@@ -8,6 +7,7 @@ use std::{
     path::{Path, PathBuf},
     time::SystemTime,
 };
+use verse::{Frontmatter, MetaData, Series};
 
 pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     let target = Path::new("./generated/posts/")

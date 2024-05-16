@@ -2,7 +2,7 @@
     rm -rf generated
 
 @lyre: clean
-    cargo run -p lyre --features binary-deps --profile release
+    cargo run -p lyre --profile release
 
 @run options="": lyre
     cargo shuttle run {{ options }}

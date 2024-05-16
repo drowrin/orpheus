@@ -1146,6 +1146,7 @@ dependencies = [
  "serde_yaml",
  "sha2",
  "slug",
+ "verse",
 ]
 
 [[package]]
@@ -1339,7 +1340,6 @@ dependencies = [
  "axum-extra",
  "axum-htmx",
  "http-body-util",
- "lyre",
  "maud",
  "serde",
  "serde_html_form",
@@ -1353,6 +1353,7 @@ dependencies = [
  "tower-http",
  "tower-livereload",
  "tracing",
+ "verse",
 ]
 
 [[package]]
@@ -2442,6 +2443,16 @@ name = "valuable"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "830b7e5d4d90034032940e4ace0d9a9a057e7a45cd94e6c007832e39edb82f6d"
+
+[[package]]
+name = "verse"
+version = "0.1.0"
+dependencies = [
+ "base64 0.22.1",
+ "serde",
+ "serde_yaml",
+ "sha2",
+]
 
 [[package]]
 name = "version_check"
