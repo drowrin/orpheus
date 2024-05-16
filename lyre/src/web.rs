@@ -45,16 +45,16 @@ impl Melody for Favicon {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(["content/favicon.ico"])
+        Ok(["content/favicon.svg"])
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(["generated/static/favicon.ico"])
+        Ok(["generated/static/favicon.svg"])
     }
 
     fn perform() -> Result<()> {
-        std::fs::copy("content/favicon.ico", "generated/static/favicon.ico")
-            .wrap_err("content/favicon.ico is missing")?;
+        std::fs::copy("content/favicon.svg", "generated/static/favicon.svg")
+            .wrap_err("content/favicon is missing")?;
 
         Ok(())
     }

@@ -112,7 +112,7 @@ impl From<Page> for Markup {
                     href={"/styles.css?v=" (include_str!("../generated/repertoire/SCSS.hash"))};
                 link
                     rel="icon"
-                    href={"/favicon.ico?v=" (include_str!("../generated/repertoire/Favicon.hash"))}
+                    href={"/favicon.svg?v=" (include_str!("../generated/repertoire/Favicon.hash"))}
                     sizes="any";
                 script
                     src={"/main.js?v=" (include_str!("../generated/repertoire/Parcel.hash"))}
