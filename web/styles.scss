@@ -1,31 +1,79 @@
+@use "sass:map";
 @use "pico" with (
-  $enable-semantic-container: true,
-  $theme-color: "purple",
   $modules: (
-    "forms/input-search": false,
+    "layout/section": false,
+    "layout/grid": false,
+    "content/embedded": false,
+    "content/table": false,
     "content/code": false,
+    "forms/input-color": false,
+    "forms/input-date": false,
+    "forms/input-file": false,
+    "forms/input-range": false,
+    "forms/input-search": false,
+    "components/accordion": false,
+    "components/dropdown": false,
+    "components/modal": false,
+    "components/loading": false,
   ),
   $breakpoints: (
-    sm: (
-      viewport: var(--readable-width),
-    ),
-    md: (
-      viewport: var(--readable-width),
-    ),
-    lg: (
-      viewport: var(--readable-width),
-    ),
-    xl: (
-      viewport: var(--readable-width),
-    ),
-    xxl: (
-      viewport: var(--readable-width),
-    ),
+    // Small (landscape phones)
+    // Font size: 17px
+    sm:
+      (
+        breakpoint: 660px,
+        viewport: var(--readable-width),
+        root-font-size: 106.25%
+      ),
+
+    // Medium (tablets)
+    // Font size: 18px
+    md:
+      (
+        breakpoint: 768px,
+        viewport: var(--readable-width),
+        root-font-size: 112.5%
+      ),
+
+    // Large
+    // Font size: 19px
+    lg:
+      (
+        breakpoint: 1024px,
+        viewport: var(--readable-width),
+        root-font-size: 118.75%
+      ),
+
+    // Extra large
+    // Font size: 20px
+    xl:
+      (
+        breakpoint: 1280px,
+        viewport: var(--readable-width),
+        root-font-size: 125%
+      ),
+
+    // Extra extra large
+    // Font size: 21px
+    xxl:
+      (
+        breakpoint: 1536px,
+        viewport: var(--readable-width),
+        root-font-size: 131.25%
+      ),
   )
 );
 
 @use "icons";
 @use "colors";
+
+:root {
+  --pico-nav-element-spacing-vertical: 0.5rem;
+  --pico-block-spacing-vertical: 0.5rem;
+  --readable-width: calc(65ch + (2 * var(--pico-spacing)));
+  --navbar-height: 3.5rem;
+  scroll-padding-top: calc(var(--navbar-height) + (0.5 * var(--pico-spacing)));
+}
 
 li:has(> #toggle-dark-mode) {
   color: var(--pico-primary);
@@ -54,7 +102,8 @@ li:has(> #toggle-dark-mode) {
 }
 
 .tag {
-  margin-right: 0.5rem;
+  margin-right: 0.35rem;
+  margin-inline-end: 0.35rem !important;
   color: var(--pico-primary);
   text-decoration: none;
 }
@@ -78,14 +127,6 @@ li:has(> #toggle-dark-mode) {
   --pico-border-radius: inherit;
 }
 
-:root {
-  --pico-nav-element-spacing-vertical: 0.5rem;
-  --pico-block-spacing-vertical: 0.5rem;
-  --readable-width: calc(65ch + (2 * var(--pico-spacing)));
-  --navbar-height: 3.5rem;
-  scroll-padding-top: calc(var(--navbar-height) + (0.5 * var(--pico-spacing)));
-}
-
 body > header {
   position: fixed;
   top: 0;
@@ -97,6 +138,9 @@ body > header {
 
 body > main {
   padding-top: var(--navbar-height);
+}
+
+.container {
   padding-left: 0;
   padding-right: 0;
 }
@@ -108,9 +152,9 @@ body > main {
   padding: 0 var(--pico-block-spacing-horizontal);
 }
 
-@media (min-width: 576px) {
+@media (min-width: map.get(map.get(pico.$breakpoints, "sm"), "breakpoint")) {
   .padded-when-small {
-    max-width: 69ch;
+    max-width: var(--readable-width);
     padding: 0 0;
   }
 }

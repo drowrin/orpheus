@@ -214,6 +214,7 @@ pub async fn posts(
                     {
                         fieldset
                             role="group"
+                            style="margin-bottom: 0.5rem;"
                             {
                             input
                                 #search
@@ -268,8 +269,8 @@ pub async fn posts(
                             }
                     }
                 hr;
+                (posts_markup)
             }
-            (posts_markup)
         })
 }
 

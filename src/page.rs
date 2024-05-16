@@ -125,37 +125,36 @@ impl From<Page> for Markup {
         };
 
         let navbar = html! {
-            div style="width: 100%; max-width: var(--readable-width); margin: auto; z-index: 95;" {
-                nav {
-                        ul {
-                            li { a href="/" { "Home" } }
-                            li { a href="/posts" { "Posts" } }
-                        }
-                        ul {
-                            li
-                                data-tooltip="Toggle Theme"
-                                data-placement="left"
-                                style="display: flex; align-items: center"
-                                onclick="toggle_dark_mode()"
-                                {
-                                    svg
-                                        #toggle-dark-mode
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="20px"
-                                        height="20px"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        {
-                                            path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            ;
-                                        }
-                                }
-                        }
+            nav ."container padded-when-small" {
+                    ul {
+                        li { a href="/" { "Home" } }
+                        li { a href="/posts" { "Posts" } }
                     }
+                    ul {
+                        li
+                            data-tooltip="Toggle Theme"
+                            data-placement="left"
+                            style="display: flex; align-items: center"
+                            onclick="toggle_dark_mode()"
+                            {
+                                svg
+                                    #toggle-dark-mode
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20px"
+                                    height="20px"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    {
+                                        path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ;
+                                    }
+                            }
+                    }
+
             }
             div
                 style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%; pointer-events: none"
@@ -180,7 +179,7 @@ impl From<Page> for Markup {
                 header {
                     (navbar)
                 }
-                main {
+                main .container {
                     (page.content)
                 }
             },
@@ -196,7 +195,7 @@ impl From<Page> for Markup {
                             header {
                                 (navbar)
                             }
-                            main {
+                            main .container {
                                 (page.content)
                             }
                         }
