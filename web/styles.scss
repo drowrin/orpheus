@@ -200,6 +200,17 @@ hr {
   margin: calc(0.75 * var(--pico-spacing)) 0;
 }
 
-.prose hr {
-  margin: calc(0.5 * var(--pico-spacing)) 0;
+.prose {
+  hr {
+    margin: calc(0.5 * var(--pico-spacing)) 0;
+  }
+  img {
+    max-width: calc(100vw - 2 * var(--pico-spacing));
+  }
+}
+
+@media (min-width: map.get(map.get(pico.$breakpoints, "sm"), "breakpoint")) {
+  .prose img {
+    max-width: 65ch;
+  }
 }
