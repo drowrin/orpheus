@@ -22,7 +22,7 @@ in progress project.
 - pre-process as much as possible before the server ever goes live, through an included companion tool, lyre
 - cache-busting parameters in release mode, live-reloading and disabled caching in dev mode
 - all live content sources isolated in a single directory, `content`
-- avoid
+- avoid as much client-side work as possible
 
 ### Roadmap
 
