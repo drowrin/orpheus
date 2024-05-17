@@ -1,6 +1,6 @@
-<hgroup class=".grid">
+<hgroup>
 
-# ![favicon](/favicon.svg){style="max-height: 0.75em"}Drowrin
+# ![](/favicon.svg "logo"){style="max-height: 0.75em"}Drowrin
 
 Software Engineering;  
 Media Reviews;  
