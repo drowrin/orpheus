@@ -1,4 +1,4 @@
-# <img src="content/favicon.svg" width="0.75em" /> Orpheus
+# <img src="content/favicon.svg" style="max-height: 0.75em" /> Orpheus
 
 My custom site generator.
 It's not really intended for general use, as it's very tightly coupled to my data.
