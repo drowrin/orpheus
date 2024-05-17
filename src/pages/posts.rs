@@ -15,10 +15,9 @@ use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
 
-use crate::{
-    page::PageKind,
-    state::{AppState, InitState},
-};
+use crate::state::{AppState, InitState};
+
+use super::page::PageKind;
 
 #[derive(Clone)]
 pub struct PostData {

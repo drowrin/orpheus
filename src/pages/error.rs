@@ -6,7 +6,7 @@ use axum::{
 };
 use maud::html;
 
-use crate::page::PageKind;
+use super::page::PageKind;
 
 pub fn error_page<T: AsRef<str>>(page_type: PageKind, status: StatusCode, message: T) -> Response {
     let markup = page_type.builder(&message).build(html! {

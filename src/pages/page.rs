@@ -109,13 +109,13 @@ impl From<Page> for Markup {
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
                 link
                     rel="stylesheet"
-                    href={"/styles.css?v=" (include_str!("../generated/repertoire/SCSS.hash"))};
+                    href={"/styles.css?v=" (include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/generated/repertoire/SCSS.hash")))};
                 link
                     rel="icon"
-                    href={"/favicon.svg?v=" (include_str!("../generated/repertoire/Favicon.hash"))}
+                    href={"/favicon.svg?v=" (include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/generated/repertoire/Favicon.hash")))}
                     sizes="any";
                 script
-                    src={"/main.js?v=" (include_str!("../generated/repertoire/Parcel.hash"))}
+                    src={"/main.js?v=" (include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/generated/repertoire/Parcel.hash")))}
                     {}
                 title { (page.title) }
                 @if let Some(append_head) = page.head {
