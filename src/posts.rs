@@ -191,7 +191,7 @@ pub async fn posts(
         })
         .collect();
 
-    filtered_posts.sort_by_key(|m| &m.published);
+    filtered_posts.sort_by(|a,b| b.published.cmp(&a.published));
 
     let posts_markup = html! {
         div

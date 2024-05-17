@@ -9,8 +9,7 @@ use crate::{
 
 pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl IntoResponse {
     let mut posts = posts.metadata.values().collect::<Vec<_>>();
-    posts.sort_by_key(|p| p.published.clone());
-    posts.reverse();
+    posts.sort_by(|a, b| b.published.cmp(&a.published));
 
     page_type.builder("Home").build(html! {
         div .padded-when-small {
