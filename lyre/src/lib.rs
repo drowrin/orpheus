@@ -5,6 +5,7 @@ use colored::*;
 use eyre::{Ok, Result};
 use melody::Melody;
 
+pub mod pages;
 pub mod posts;
 pub mod web;
 
@@ -19,6 +20,7 @@ pub fn main() -> Result<()> {
     <web::Favicon as Melody>::conduct()?;
     <web::SCSS as Melody>::conduct()?;
     <posts::Posts as Melody>::conduct()?;
+    <pages::Pages as Melody>::conduct()?;
 
     println!("{} in {:?}", "Done".green(), started.elapsed()?.yellow());
     Ok(())

@@ -13,9 +13,9 @@ use syntect::{
     parsing::SyntaxSet,
     util::LinesWithEndings,
 };
-use verse::{Frontmatter, MetaData, Series};
+use verse::{Frontmatter, PostMetaData, Series};
 
-fn code_highlighting(json: String) -> String {
+pub fn code_highlighting(json: String) -> String {
     let syntax_set = SyntaxSet::load_defaults_newlines();
 
     pandoc_ast::filter(json, |mut pandoc| {
@@ -80,7 +80,15 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
             MarkdownExtension::AutolinkBareUris,
         ],
     );
-    doc.add_option(pandoc::PandocOption::LuaFilter("pandoc/filters.lua".into()));
+    doc.add_option(pandoc::PandocOption::LuaFilter(
+        "pandoc/header-links.lua".into(),
+    ));
+    doc.add_option(pandoc::PandocOption::LuaFilter(
+        "pandoc/image-rebase.lua".into(),
+    ));
+    doc.add_option(pandoc::PandocOption::LuaFilter(
+        "pandoc/link-preload.lua".into(),
+    ));
     doc.add_filter(code_highlighting);
     doc.add_option(pandoc::PandocOption::NoHighlight);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
@@ -187,7 +195,7 @@ impl Melody for Posts {
 
                 let (word_count, first_p) = process_plain(&path)?;
 
-                let metadata = MetaData {
+                let metadata = PostMetaData {
                     title: fm.title,
                     slug: name.to_str().unwrap().strip_suffix(".md").unwrap().into(),
                     brief: fm.brief.unwrap_or(first_p),

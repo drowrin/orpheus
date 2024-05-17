@@ -3,6 +3,5 @@
 Secrets*.toml
 /generated
 /node_modules
-/content
 .parcel-cache
 .vscode

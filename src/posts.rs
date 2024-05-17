@@ -10,7 +10,7 @@ use axum::{
     routing, Router,
 };
 use axum_extra::extract::Query;
-use verse::{MetaData, Series};
+use verse::{PostMetaData, Series};
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
@@ -22,7 +22,7 @@ use crate::{
 
 #[derive(Clone)]
 pub struct PostData {
-    pub metadata: HashMap<String, MetaData>,
+    pub metadata: HashMap<String, PostMetaData>,
     pub series: Vec<Series>,
     pub tags: Vec<String>,
 }
@@ -42,7 +42,7 @@ impl InitState for Posts {
         for path in std::fs::read_dir("./generated/posts").unwrap() {
             let path = path.unwrap().path();
             if matches!(path.extension(), Some(ext) if ext == "yml") {
-                let md = MetaData::open(&path).unwrap();
+                let md = PostMetaData::open(&path).unwrap();
 
                 metadata.insert(md.slug.clone(), md);
             }
@@ -68,7 +68,7 @@ impl InitState for Posts {
     }
 }
 
-pub fn post_info(post: &MetaData, title: Markup) -> Markup {
+pub fn post_info(post: &PostMetaData, title: Markup) -> Markup {
     html! {
         hgroup
             style="margin: 0;"
@@ -105,6 +105,26 @@ pub fn post_info(post: &MetaData, title: Markup) -> Markup {
     }
 }
 
+pub fn post_card(post: &PostMetaData) -> Markup {
+    html! {
+        article {
+            (post_info(&post, html! {
+                h3 { a
+                    ."article-link"
+                    href={ "/posts/" (post.slug) }
+                    preload="mouseover"
+                    preload-images="true"
+                    { (post.title) }
+                }
+            }))
+
+            hr style="margin: 0.5rem 0 0.4rem 0";
+
+            span .truncate { (post.brief) }
+        }
+    }
+}
+
 pub async fn post(
     page_type: PageKind,
     Path(slug): Path<String>,
@@ -133,28 +153,6 @@ pub async fn post(
     )
 }
 
-
-
-pub fn post_card(post: &MetaData) -> Markup {
-    html! {
-        article {
-            (post_info(&post, html! {
-                h3 { a
-                    ."article-link"
-                    href={ "/posts/" (post.slug) }
-                    preload="mouseover"
-                    preload-images="true"
-                    { (post.title) }
-                }
-            }))
-
-            hr style="margin: 0.5rem 0 0.4rem 0";
-
-            span .truncate { (post.brief) }
-        }
-    }
-}
-
 #[derive(Clone, Deserialize, Serialize)]
 pub struct PostsFilters {
     #[serde(default)]
@@ -170,7 +168,7 @@ pub async fn posts(
     Query(query): Query<PostsFilters>,
     State(posts): State<Posts>,
 ) -> impl IntoResponse {
-    let mut filtered_posts: Vec<&MetaData> = posts
+    let mut filtered_posts: Vec<&PostMetaData> = posts
         .metadata
         .values()
         .filter(|m| {
@@ -193,7 +191,7 @@ pub async fn posts(
         })
         .collect();
 
-    filtered_posts.sort_by_key(|m| &m.title);
+    filtered_posts.sort_by_key(|m| &m.published);
 
     let posts_markup = html! {
         div

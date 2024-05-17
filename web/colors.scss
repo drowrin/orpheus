@@ -116,23 +116,22 @@
   --pico-tooltip-color: var(--pico-contrast-inverse);
   color-scheme: dark;
 
-  .prose {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #{$pink};
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .article-link {
+    color: #{$pink};
+  }
 
-    strong {
-      color: #{$sapphire};
-    }
+  strong {
+    color: #{$sapphire};
+  }
 
-    em {
-      color: #{$green};
-    }
+  em {
+    color: #{$green};
   }
 
   code,
@@ -273,23 +272,22 @@
   --pico-tooltip-color: var(--pico-contrast-inverse);
   color-scheme: dark;
 
-  .prose {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #{$lavender};
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .article-link {
+    color: #{$lavender};
+  }
 
-    strong {
-      color: #{$sapphire};
-    }
+  strong {
+    color: #{$sapphire};
+  }
 
-    em {
-      color: #{$green};
-    }
+  em {
+    color: #{$green};
   }
 
   code,

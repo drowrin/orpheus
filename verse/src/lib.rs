@@ -21,7 +21,7 @@ pub struct Series {
 }
 
 #[derive(Serialize, Deserialize, Clone)]
-pub struct MetaData {
+pub struct PostMetaData {
     pub title: String,
     pub slug: String,
     pub brief: String,
@@ -34,7 +34,7 @@ pub struct MetaData {
     pub updated: Option<String>,
 }
 
-impl MetaData {
+impl PostMetaData {
     pub fn open<P>(path: P) -> Result<Self, impl Error>
     where
         P: AsRef<Path>,

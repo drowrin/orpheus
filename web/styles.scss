@@ -1,7 +1,6 @@
 @use "sass:map";
 @use "pico" with (
   $modules: (
-    "layout/grid": false,
     "content/embedded": false,
     "content/table": false,
     "content/code": false,
@@ -93,7 +92,6 @@ li:has(> #toggle-dark-mode) {
 }
 
 .article-link {
-  color: var(--pico-h1-color);
   text-decoration: none;
 }
 
@@ -257,4 +255,8 @@ article > pre {
   -webkit-line-clamp: var(--truncate-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+section {
+  margin-bottom: calc(2 * var(--pico-spacing));
 }
