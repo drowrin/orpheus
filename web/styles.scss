@@ -256,3 +256,7 @@ article > pre {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.muted {
+  color: var(--pico-muted-color);
+}
