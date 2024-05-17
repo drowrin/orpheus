@@ -22,9 +22,9 @@ use crate::{
 
 #[derive(Clone)]
 pub struct PostData {
-    metadata: HashMap<String, MetaData>,
-    series: Vec<Series>,
-    tags: Vec<String>,
+    pub metadata: HashMap<String, MetaData>,
+    pub series: Vec<Series>,
+    pub tags: Vec<String>,
 }
 
 pub type Posts = Arc<PostData>;
@@ -133,6 +133,28 @@ pub async fn post(
     )
 }
 
+
+
+pub fn post_card(post: &MetaData) -> Markup {
+    html! {
+        article {
+            (post_info(&post, html! {
+                h3 { a
+                    ."article-link"
+                    href={ "/posts/" (post.slug) }
+                    preload="mouseover"
+                    preload-images="true"
+                    { (post.title) }
+                }
+            }))
+
+            hr style="margin: 0.5rem 0 0.4rem 0";
+
+            span .truncate { (post.brief) }
+        }
+    }
+}
+
 #[derive(Clone, Deserialize, Serialize)]
 pub struct PostsFilters {
     #[serde(default)]
@@ -179,21 +201,7 @@ pub async fn posts(
             {
                 @if filtered_posts.len() > 0 {
                     @for post in filtered_posts {
-                        article {
-                            (post_info(&post, html! {
-                                h3 { a
-                                    ."article-link"
-                                    href={ "/posts/" (post.slug) }
-                                    preload="mouseover"
-                                    preload-images="true"
-                                    { (post.title) }
-                                }
-                            }))
-
-                            hr style="margin: 0.5rem 0 0.4rem 0";
-
-                            (post.brief)
-                        }
+                        (post_card(post))
                     }
                 } @else {
                     span

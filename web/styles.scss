@@ -1,7 +1,6 @@
 @use "sass:map";
 @use "pico" with (
   $modules: (
-    "layout/section": false,
     "layout/grid": false,
     "content/embedded": false,
     "content/table": false,
@@ -72,6 +71,7 @@
   --pico-block-spacing-vertical: 0.5rem;
   --readable-width: calc(65ch + (2 * var(--pico-spacing)));
   --navbar-height: 3.5rem;
+  --truncate-lines: 3;
   scroll-padding-top: calc(var(--navbar-height) + (0.5 * var(--pico-spacing)));
 }
 
@@ -250,4 +250,11 @@ article > pre {
   padding: 0.1em;
   border-radius: var(--pico-border-radius);
   white-space: normal;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--truncate-lines);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
