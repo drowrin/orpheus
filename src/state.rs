@@ -1,4 +1,4 @@
-use crate::posts::Posts;
+use crate::pages::posts::Posts;
 
 #[derive(Clone)]
 pub struct AppState {

@@ -1,11 +1,9 @@
 use axum::{extract::State, response::IntoResponse, routing, Router};
 use maud::{html, PreEscaped};
 
-use crate::{
-    page::PageKind,
-    posts::{post_card, Posts},
-    state::AppState,
-};
+use crate::{page::PageKind, pages::posts::post_card, state::AppState};
+
+use super::posts::Posts;
 
 pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl IntoResponse {
     let mut posts = posts.metadata.values().collect::<Vec<_>>();
@@ -13,7 +11,7 @@ pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl 
 
     page_type.builder("Home").build(html! {
         div .padded-when-small {
-            (PreEscaped(include_str!("../generated/pages/home.html")))
+            (PreEscaped(include_str!("../../generated/pages/home.html")))
             section {
                 hgroup {
                     h2 { "Recent Posts" }

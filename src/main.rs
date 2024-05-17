@@ -4,19 +4,18 @@ use options::apply_options;
 use state::{AppState, InitState};
 use tower_http::{compression::CompressionLayer, services::ServeDir, trace::TraceLayer};
 
-mod error;
-mod home;
-mod options;
-mod page;
-mod posts;
-mod state;
+pub mod error;
+pub mod options;
+pub mod page;
+pub mod pages;
+pub mod state;
 
 #[shuttle_runtime::main]
 async fn main() -> shuttle_axum::ShuttleAxum {
     Ok(apply_options(
         Router::new()
-            .merge(posts::router())
-            .merge(home::router())
+            .merge(pages::posts::router())
+            .merge(pages::home::router())
             .fallback_service(ServeDir::new("./generated/static/"))
             .layer(from_fn(handle_error_pages))
             .with_state(AppState::init_state()),
