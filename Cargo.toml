@@ -30,7 +30,6 @@ tower = "0.4.13"
 axum-htmx = { version = "0.5.0", features = ["serde"] }
 axum-extra = { version = "0.9.3", features = ["query"] }
 tracing = "0.1.40"
-thiserror = "1.0.59"
 serde_html_form = "0.2.6"
 serde_json = "1.0.116"
 
