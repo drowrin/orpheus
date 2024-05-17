@@ -10,10 +10,10 @@ use axum::{
     routing, Router,
 };
 use axum_extra::extract::Query;
-use verse::{PostMetaData, Series};
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
 use tower_http::services::ServeDir;
+use verse::{PostMetaData, Series};
 
 use crate::state::{AppState, InitState};
 
@@ -148,8 +148,7 @@ pub async fn post(
                 hr;
                 (PreEscaped(post_prose))
             }
-        })
-    )
+        }))
 }
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -190,7 +189,7 @@ pub async fn posts(
         })
         .collect();
 
-    filtered_posts.sort_by(|a,b| b.published.cmp(&a.published));
+    filtered_posts.sort_by(|a, b| b.published.cmp(&a.published));
 
     let posts_markup = html! {
         div
@@ -273,7 +272,7 @@ pub async fn posts(
                                         name="tag"
                                         value=(tag)
                                     ;
-                                    label 
+                                    label
                                         .tag
                                         "for"=(id)
                                         {"#" (tag)}
