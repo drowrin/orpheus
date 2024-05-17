@@ -26,12 +26,20 @@ in progress project.
 
 ### Roadmap
 
-- read git history to determine post publication/update dates
 - more efficient caching scheme
 - rss feed generator
 - opengraph tags
 - "related posts" section
 - image format content negotiation
+- improve search
+
+#### Meta Roadmap
+
+Enhancements that are not direct upgrades to the website:
+
+- improve lyre errors
+- generate content templates
+- read git history to determine post publication/update dates
 
 ## Requirements
 
