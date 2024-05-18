@@ -45,6 +45,8 @@ impl Melody for Pages {
                         MarkdownExtension::HeaderAttributes,
                         MarkdownExtension::FencedCodeAttributes,
                         MarkdownExtension::InlineCodeAttributes,
+                        MarkdownExtension::Subscript,
+                        MarkdownExtension::Superscript,
                         MarkdownExtension::FencedDivs,
                         MarkdownExtension::ImplicitFigures,
                         MarkdownExtension::AutolinkBareUris,

@@ -78,6 +78,8 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
             MarkdownExtension::Attributes,
             MarkdownExtension::ImplicitFigures,
             MarkdownExtension::AutolinkBareUris,
+            MarkdownExtension::Subscript,
+            MarkdownExtension::Superscript,
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter(
