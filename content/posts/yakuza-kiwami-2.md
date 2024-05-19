@@ -9,6 +9,14 @@ tags:
   - yakuza
 ---
 
+I had heard so many good things about this one, but honestly is was my least
+favorite so far. I wonder if part of that is how low my expectations were thanks
+to the opinions I'd already heard, but even trying to ignore that, it was still
+a downgrade from the others. Not that I didn't like this game overall. There's
+still plenty to enjoy, and it's better than many other games I've played. If
+this is the lowest Yakuza gets for me, that's great. ~~kinda dreading 6 now
+though~~
+
 # Gameplay
 
 The new engine sucks (or at least it's terribly applied in this one).
@@ -16,17 +24,17 @@ The new engine sucks (or at least it's terribly applied in this one).
 **TL;DR** everything feels floatier and bouncier, like everything in the world is
 made of inflatable kickballs.
 
-It makes interacting with pretty much anything way
-more frustrating. It's apparently due to everything being tied to framerate. I
-tried capping my framerate, but the framerate cap in-game is broken. Setting it
-to 60 gave me under 20 fps most of the time. So I decided to uncap it and just
-deal with the jank. I still hate how this game looks compared to the previous 2.
-Everything is shiny and the contrast is cranked up by 5x. It's like they didn't
-know how to tastefully apply all the new effects the engine allowed, and just
-went with more-is-better. Because of this, I'm now kinda dreading 6, the first
-game to use this engine. 7 and onwards also use it, but they look way better so
-I guess by that point they figured out how to make it look good (and my combat
-complaints will go away in a turn based game).
+It makes interacting with pretty much anything way more frustrating. It's
+apparently due to everything being tied to framerate. I tried capping my
+framerate, but the framerate cap in-game is broken. Setting it to 60 gave me
+under 20 fps most of the time. So I decided to uncap it and just deal with the
+jank. I still hate how this game looks compared to the previous 2. Everything is
+shiny and the contrast is cranked up by 5x. It's like they didn't know how to
+tastefully apply all the new effects the engine allowed, and just went with
+more-is-better. Because of this, I'm now kinda dreading 6, the first game to use
+this engine. 7 and onwards also use it, but they look way better so I guess by
+that point they figured out how to make it look good (and my combat complaints
+will go away in a turn based game).
 
 ## Combat
 
