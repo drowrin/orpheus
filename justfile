@@ -17,7 +17,7 @@ set dotenv-filename := "secrets.env"
 
 @deploy: lyre
     echo "copying files..."
-    scp -rq ./generated $ORPHEUS_HOST:$ORPHEUS_DIR
+    scp -rq ./generated/* $ORPHEUS_HOST:$ORPHEUS_DIR
     echo "restarting container"
     ssh $ORPHEUS_HOST $ORPHEUS_RESTART
     echo "done"
