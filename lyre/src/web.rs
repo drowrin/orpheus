@@ -18,7 +18,8 @@ impl Melody for Parcel {
     }
 
     fn perform() -> Result<()> {
-        let output = std::process::Command::new("npm.cmd")
+        let cmd = if cfg!(windows) { "npm.cmd" } else { "npm" };
+        let output = std::process::Command::new(cmd)
             .args([
                 "exec",
                 "--",
