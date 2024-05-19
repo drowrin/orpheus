@@ -130,11 +130,11 @@ The original, epic campaign that started this group
 </hgroup>
 
 > A bunch of strangers seek a secret society after a series of strange dreams.
-> As they uncover more hidden truths, they discover a plot with the universe
-> at stake
+> As they uncover more hidden truths, they discover a plot with the universe at
+> stake
 
-This one starts a little spotty while we get started. I was new to this and
-we were all new to roleplaying with eachother. We soon find out style and our
+This one starts a little spotty while we get started. I was new to this and we
+were all new to roleplaying with eachother. We soon find out style and our
 footing, and it continually gets better as we go. I'm very proud of how it all
 ended, and think it is still some of my best work. I don't think I'll ever do
 another super-long campaign like this again (it spanned 4 years and 200
