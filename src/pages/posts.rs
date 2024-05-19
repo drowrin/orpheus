@@ -6,7 +6,7 @@ use std::{
 use axum::{
     extract::{FromRef, Path, State},
     http::StatusCode,
-    response::{ErrorResponse, IntoResponse, Redirect},
+    response::{ErrorResponse, IntoResponse},
     routing, Router,
 };
 use axum_extra::extract::Query;
@@ -287,10 +287,6 @@ pub async fn posts(
 
 pub fn router() -> Router<AppState> {
     Router::new()
-        .route(
-            "/posts/",
-            routing::get(|| async { Redirect::permanent("/posts") }),
-        )
         .route("/posts", routing::get(posts))
         .route("/posts/:post", routing::get(post))
         .nest_service("/img/", ServeDir::new("./content/img/"))

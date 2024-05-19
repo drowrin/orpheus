@@ -5,10 +5,10 @@
     cargo run -p lyre --profile release
 
 @run options="": lyre
-    cargo shuttle run {{ options }}
+    cargo run {{ options }}
 
 @dev: lyre
-    ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo shuttle run --external
+    ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo run
 
 @watch:
     cargo watch -cq -- just dev

@@ -52,7 +52,6 @@ several things must be installed locally for the project to run.
 - [just](https://github.com/casey/just)
 - [npm](https://www.npmjs.com/)
 - [cargo-watch](https://crates.io/crates/cargo-watch)
-- [cargo-shuttle](https://crates.io/crates/cargo-shuttle)
 
 ### Installation
 
@@ -61,9 +60,6 @@ npm install
 cargo build
 cargo build -p lyre --profile release
 ```
-
-See the [shuttle documentation](https://docs.shuttle.rs/getting-started/quick-start)
-to set up deployment
 
 ### Usage
 
@@ -74,7 +70,7 @@ just watch
 just lyre
 # delete all lyre-generated content
 just clean
-# render/generate content and then deploy to shuttle
+# render/generate content and then deploy
 just deploy
 ```
 
@@ -155,15 +151,14 @@ run a string builder than to serialize JSON, and compression handles HTML extrem
 The only other frontend code I use is a few lines for theme switching,
 and a few helper functions to pass into HTMX attributes.
 
-### Rust - Axum - Shuttle
+### Rust - Axum
 
 Putting these all together because they're pretty linked. Rust is a language I've
 always enjoyed using, but I've never applied it to a more longterm project like this.
 I wanted to change that, so here we are. I've found it fantastic for this purpose.
 I really like how Rust allows me to get a lot out of functional programming patterns
 if I choose to use them, and the type system is the best I've ever used.
-Axum is an extremely convenient and ergonomic web framework. Shuttle has been a
-very convenient place to deploy the site.
+Axum is an extremely convenient and ergonomic web framework.
 
 ### Maud
 

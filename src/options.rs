@@ -9,7 +9,6 @@ use axum::{
 };
 use tokio::time::sleep;
 use tower_livereload::LiveReloadLayer;
-use tracing::info;
 
 pub async fn no_cache(request: Request, next: Next) -> Response {
     let mut response = next.run(request).await;
@@ -32,7 +31,7 @@ pub fn apply_options(app: Router) -> Router {
     let mut app = app;
 
     if let Ok(options) = std::env::var("ORPHEUS_OPTIONS") {
-        info!("enabled: {options}");
+        println!("enabled: {options}");
 
         if options.contains("live_reload") {
             app = app

@@ -1,15 +1,19 @@
-use axum::{middleware::from_fn, Router};
+use axum::{extract::Request, middleware::from_fn, Router, ServiceExt};
 use options::apply_options;
 use state::{AppState, InitState};
-use tower_http::{compression::CompressionLayer, services::ServeDir, trace::TraceLayer};
+use tower::Layer;
+use tower_http::{
+    compression::CompressionLayer, normalize_path::NormalizePathLayer, services::ServeDir,
+    trace::TraceLayer,
+};
 
 pub mod options;
 pub mod pages;
 pub mod state;
 
-#[shuttle_runtime::main]
-async fn main() -> shuttle_axum::ShuttleAxum {
-    Ok(apply_options(
+#[tokio::main]
+async fn main() {
+    let router = apply_options(
         Router::new()
             .merge(pages::posts::router())
             .merge(pages::home::router())
@@ -20,6 +24,13 @@ async fn main() -> shuttle_axum::ShuttleAxum {
             .with_state(AppState::init_state()),
     )
     .layer(TraceLayer::new_for_http())
-    .layer(CompressionLayer::new())
-    .into())
+    .layer(CompressionLayer::new());
+
+    let app = NormalizePathLayer::trim_trailing_slash().layer(router);
+
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:8000").await.unwrap();
+
+    axum::serve(listener, ServiceExt::<Request>::into_make_service(app))
+        .await
+        .unwrap();
 }
