@@ -30,6 +30,8 @@ async fn main() {
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:8000").await.unwrap();
 
+    println!("Starting server...");
+
     axum::serve(listener, ServiceExt::<Request>::into_make_service(app))
         .await
         .unwrap();

@@ -1,3 +1,5 @@
+set dotenv-filename := "secrets.env"
+
 @clean:
     rm -rf generated
 
@@ -13,5 +15,16 @@
 @watch:
     cargo watch -cq -- just dev
 
-@deploy args="": lyre
-    cargo shuttle deploy {{ args }}
+@deploy: lyre
+    echo "copying files..."
+    scp -rq ./generated $ORPHEUS_HOST:$ORPHEUS_DIR
+    echo "restarting container"
+    ssh $ORPHEUS_HOST $ORPHEUS_RESTART
+    echo "done"
+
+@update:
+    echo "updating from git..."
+    ssh $ORPHEUS_HOST $ORPHEUS_UPDATE
+    echo "rebuilding..."
+    ssh $ORPHEUS_HOST $ORPHEUS_BUILD
+    echo "done"

@@ -1,7 +1,6 @@
 /target
-.shuttle-storage
-Secrets*.toml
 /generated
 /node_modules
 .parcel-cache
 .vscode
+secrets.env
