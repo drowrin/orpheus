@@ -260,3 +260,15 @@ article > pre {
 .muted {
   color: var(--pico-muted-color);
 }
+
+.article-image {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: map.get(map.get(pico.$breakpoints, "sm"), "breakpoint")) {
+  .article-image {
+    float: right;
+    width: 13rem;
+  }
+}

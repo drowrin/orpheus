@@ -1,9 +1,16 @@
-use axum::{http::StatusCode, response::IntoResponse, routing, Router};
+use axum::{response::IntoResponse, routing, Router};
+use maud::{html, PreEscaped};
 
 use crate::state::AppState;
 
-pub async fn podcasts() -> impl IntoResponse {
-    StatusCode::SERVICE_UNAVAILABLE
+use super::page::PageKind;
+
+pub async fn podcasts(page_kind: PageKind) -> impl IntoResponse {
+    page_kind.builder("Home").build(html! {
+        div .padded-when-small {
+            (PreEscaped(include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/generated/pages/podcasts.html"))))
+        }
+    })
 }
 
 pub fn router() -> Router<AppState> {
