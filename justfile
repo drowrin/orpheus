@@ -23,6 +23,10 @@ set dotenv-filename := "secrets.env"
     echo "done"
 
 @update:
+    if [[ `git status --porcelain` ]]; then \
+        echo "you have local uncomitted changes"; \
+        exit 1; \
+    fi
     echo "updating from git..."
     ssh $ORPHEUS_HOST $ORPHEUS_UPDATE
     echo "rebuilding..."
