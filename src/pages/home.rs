@@ -1,5 +1,6 @@
 use axum::{extract::State, response::IntoResponse, routing, Router};
 use maud::{html, PreEscaped};
+use tokio::fs;
 
 use crate::{pages::posts::post_card, state::AppState};
 
@@ -9,9 +10,13 @@ pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl 
     let mut posts = posts.metadata.values().collect::<Vec<_>>();
     posts.sort_by(|a, b| b.published.cmp(&a.published));
 
+    let markup = fs::read_to_string("generated/pages/home.html")
+        .await
+        .unwrap();
+
     page_type.builder("Home").build(html! {
         div .padded-when-small {
-            (PreEscaped(include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/generated/pages/home.html"))))
+            (PreEscaped(markup))
             section {
                 hgroup {
                     h2 { "Recent Posts" }
