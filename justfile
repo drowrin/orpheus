@@ -27,6 +27,10 @@ set dotenv-filename := "secrets.env"
         echo "you have local uncomitted changes"; \
         exit 1; \
     fi
+    if [[ `git diff origin/main..HEAD` ]]; then \
+        echo "you have unpushed commits"; \
+        exit 1; \
+    fi
     echo "updating from git..."
     ssh $ORPHEUS_HOST $ORPHEUS_UPDATE
     echo "rebuilding..."
