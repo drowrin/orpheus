@@ -156,6 +156,18 @@
     color: #{$text};
   }
 
+  .spoiler,
+  .spoiler > * {
+    background-color: hsl(234, 16%, 20%);
+    color: #{$base};
+  }
+  .spoiler:not(.revealed) {
+    color: transparent;
+  }
+  .spoiler:not(.revealed) > * {
+    opacity: 0;
+  }
+
   @import "latte-code";
 }
 
@@ -310,6 +322,18 @@
   pre ::selection {
     background: #{color.adjust($overlay2, $alpha: -0.8125)};
     color: #{$text};
+  }
+
+  .spoiler,
+  .spoiler > * {
+    background-color: hsl(240, 23%, 3%);
+    color: #{$text};
+  }
+  .spoiler:not(.revealed) {
+    color: transparent;
+  }
+  .spoiler:not(.revealed) > * {
+    opacity: 0;
   }
 
   @import "mocha-code";

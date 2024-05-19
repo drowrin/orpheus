@@ -91,6 +91,9 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     doc.add_option(pandoc::PandocOption::LuaFilter(
         "pandoc/link-preload.lua".into(),
     ));
+    doc.add_option(pandoc::PandocOption::LuaFilter(
+        "pandoc/spoilers.lua".into(),
+    ));
     doc.add_filter(code_highlighting);
     doc.add_option(pandoc::PandocOption::NoHighlight);
     doc.set_output(pandoc::OutputKind::File(target.clone()));
