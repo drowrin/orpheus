@@ -289,5 +289,5 @@ pub fn router() -> Router<AppState> {
     Router::new()
         .route("/posts", routing::get(posts))
         .route("/posts/:post", routing::get(post))
-        .nest_service("/img/", ServeDir::new("./content/img/"))
+        .nest_service("/img/", ServeDir::new("./generated/img/"))
 }

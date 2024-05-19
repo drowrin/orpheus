@@ -1,4 +1,7 @@
-use std::{fs, path::PathBuf};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
 
 use eyre::{eyre, Ok, Result, WrapErr};
 use melody::{utils::in_dir_with_ext, Melody};
@@ -85,6 +88,37 @@ impl Melody for SCSS {
         )?;
 
         fs::write("generated/static/styles.css", css)?;
+
+        Ok(())
+    }
+}
+
+pub struct Images;
+impl Melody for Images {
+    fn name() -> &'static str {
+        "Images"
+    }
+
+    fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(std::fs::read_dir("./content/img")?
+            .into_iter()
+            .map(|f| f.unwrap().path()))
+    }
+
+    fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
+        Ok(Self::source()?.into_iter().map(|p| {
+            let p: PathBuf = p.into();
+            Path::new("./generated/img").join(p.file_name().unwrap())
+        }))
+    }
+
+    fn perform() -> Result<()> {
+        for p in Self::source()? {
+            let p: PathBuf = p.into();
+            let t = Path::new("./generated/img").join(p.file_name().unwrap());
+
+            fs::copy(p, t)?;
+        }
 
         Ok(())
     }

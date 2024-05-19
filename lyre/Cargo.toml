@@ -3,9 +3,6 @@ name = "lyre"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-path = "src/lib.rs"
-
 [dependencies]
 serde = { version = "1.0.197", features = ["derive"] }
 serde_yaml = "0.9.34"
