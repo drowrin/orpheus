@@ -3,7 +3,7 @@ title: The D&D Stove
 published: 2024-03-28
 series: TTRPG Design Rants
 tagline: "Heartbreaking: the best person you know had an awful take"
-brief: |-
+brief: >-
   To me, the "D&D Stove" has too many buttons, too many knobs, and has a hand
   crank on the side that you must crank at exactly the correct rate. It doesn't
   "do that for me", it asks for a significant effort from the players and GM in
