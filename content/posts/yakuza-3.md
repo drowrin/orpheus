@@ -4,9 +4,8 @@ published: 2024-04-06
 series: Catching up on Yakuza in 2024
 tagline: 4/10 mainline games, 0/3 spinoff games
 tags:
-  - reviews
-  - games
-  - yakuza
+  - review
+  - game
 ---
 
 This is the "oldest" right now, since the preceding games were all re-remade,
