@@ -4,8 +4,8 @@ published: 2022-03-20
 series: TTRPG Design Rants
 tagline: or, Finding the Traditions I Hate
 tags:
-  - ttrpg
-  - opinion
+  - ttrpgs
+  - opinions
 ---
 
 I came to a realization recently, and felt compelled to write down some

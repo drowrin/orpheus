@@ -3,7 +3,7 @@ title: Brainstorming a Ranking Method
 published: 2024-04-14
 tagline: for naturally organizing media collections
 tags:
-  - software
+  - programming
   - brainstorming
 ---
 

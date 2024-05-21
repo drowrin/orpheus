@@ -4,8 +4,8 @@ published: 2024-03-07
 series: Catching up on Yakuza in 2024
 tagline: 3/10 mainline games, 0/3 spinoff games
 tags:
-  - review
-  - game
+  - reviews
+  - games
 ---
 
 I had heard so many good things about this one, but honestly is was my least

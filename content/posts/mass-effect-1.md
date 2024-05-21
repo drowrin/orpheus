@@ -4,8 +4,8 @@ published: 2024-04-18
 series: Finally Playing Mass Effect
 tagline: Frustratingly Close to Greatness
 tags:
-  - review
-  - game
+  - reviews
+  - games
 ---
 
 In my quest to tackle my backlog, I've finally hit the Mass Effect series. It's

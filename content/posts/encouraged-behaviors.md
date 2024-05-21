@@ -4,8 +4,8 @@ published: 2024-04-04
 series: TTRPG Design Rants
 tagline: and How Heart Does it Better
 tags:
-  - ttrpg
-  - opinion
+  - ttrpgs
+  - opinions
 ---
 
 _Heart: The City Beneath_ solves a (admittedly small) problem I have with most

@@ -11,8 +11,8 @@ brief: >-
   more detailed combat rules certainly doesn't make combat easier or more
   automatic.
 tags:
-  - ttrpg
-  - opinion
+  - ttrpgs
+  - opinions
 ---
 
 I'll preface this by saying: I love Brennan Lee Mulligan. He's

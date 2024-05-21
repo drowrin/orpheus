@@ -4,8 +4,8 @@ published: 2024-04-18
 series: TTRPG Design Rants
 tagline: or, Let Us Explore the Fiction Together
 tags:
-  - ttrpg
-  - opinion
+  - ttrpgs
+  - opinions
 ---
 
 Over the years of playing TTRPGs, I'm growing to dislike one thing more and
