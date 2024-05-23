@@ -22,46 +22,39 @@ pub trait Melody {
     fn name() -> &'static str;
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>>;
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>>;
-    fn perform() -> Result<()>;
+    fn perform(parts: impl Iterator<Item = PathBuf>) -> Result<()>;
 
-    fn generate_hash(paths: impl IntoIterator<Item = impl Into<PathBuf>>) -> Result<String> {
+    fn generate_hash(path: &PathBuf) -> Result<String> {
         let mut hasher = Sha256::new();
-
-        for path in paths {
-            let path = path.into();
-            hasher.update(fs::read(&path).context(format!("Path: {:?}", path))?);
-        }
+        hasher.update(fs::read(&path).context(format!("Path: {:?}", path))?);
 
         Ok(URL_SAFE_NO_PAD.encode(hasher.finalize()))
     }
 
-    fn source_hash() -> Result<String> {
-        Self::generate_hash(Self::source()?)
-    }
-
-    fn path() -> PathBuf {
+    fn hash_path(path: &PathBuf) -> PathBuf {
         Path::new("./generated/repertoire/")
             .join(Self::name())
+            .join(path.file_name().unwrap())
             .with_extension("hash")
     }
 
-    fn read() -> Result<String> {
-        Ok(fs::read_to_string(Self::path())?)
+    fn read_hash(path: &PathBuf) -> Result<String> {
+        Ok(fs::read_to_string(Self::hash_path(path))?)
     }
 
-    fn write(hash: String) -> Result<()> {
-        fs::write(Self::path(), hash)?;
+    fn write_hash(path: &PathBuf, hash: String) -> Result<()> {
+        fs::write(Self::hash_path(path), hash)?;
 
         Ok(())
     }
 
-    fn ready() -> Result<bool> {
-        let hash = match Self::read() {
+    fn ready(path: &PathBuf) -> Result<bool> {
+        let hash = match Self::read_hash(path) {
             Ok(sheet) => sheet,
             Err(_) => return Ok(false),
         };
 
-        if Self::source_hash()? != hash {
+        if Self::generate_hash(path)? != hash {
             return Ok(false);
         }
 
@@ -69,19 +62,23 @@ pub trait Melody {
     }
 
     fn conduct() -> Result<()> {
-        print!("{}", Self::name());
-        std::io::stdout().flush().unwrap();
+        let needs_rebuild: Vec<PathBuf> = Self::source()?
+            .into_iter()
+            .map(|p| p.into())
+            .filter(|p| {
+                if let Ok(v) = Self::ready(p) {
+                    return !v;
+                }
+                return true;
+            })
+            .collect();
 
-        let hash = match Self::read() {
-            Ok(sheet) => sheet,
-            Err(_) => String::default(),
-        };
-
-        let source = Self::source_hash()?;
-        if source == hash {
-            println!("{}", " cached".green());
+        if needs_rebuild.len() == 0 {
             return Ok(());
         }
+
+        print!("Rebuilding {}", Self::name());
+        std::io::stdout().flush().unwrap();
 
         let path_set = Self::rendition()?
             .into_iter()
@@ -93,13 +90,18 @@ pub trait Melody {
 
         let started = SystemTime::now();
 
-        Self::perform()?;
+        Self::perform(needs_rebuild.clone().into_iter())?;
 
         println!(
             " took {}",
             format!("{:?}", started.elapsed().unwrap()).yellow()
         );
 
-        Self::write(source)
+        fs::create_dir_all(Path::new("./generated/repertoire/").join(Self::name()))?;
+        for path in needs_rebuild {
+            Self::write_hash(&path, Self::generate_hash(&path)?)?;
+        }
+
+        Ok(())
     }
 }

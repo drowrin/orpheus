@@ -20,7 +20,7 @@ impl Melody for Parcel {
         Ok(["generated/static/main.js"])
     }
 
-    fn perform() -> Result<()> {
+    fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         let cmd = if cfg!(windows) { "npm.cmd" } else { "npm" };
         let output = std::process::Command::new(cmd)
             .args([
@@ -56,7 +56,7 @@ impl Melody for Favicon {
         Ok(["generated/static/favicon.svg"])
     }
 
-    fn perform() -> Result<()> {
+    fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         std::fs::copy("content/favicon.svg", "generated/static/favicon.svg")
             .wrap_err("content/favicon is missing")?;
 
@@ -78,7 +78,7 @@ impl Melody for SCSS {
         Ok(["generated/static/styles.css"])
     }
 
-    fn perform() -> Result<()> {
+    fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         let css = grass::from_path(
             "web/styles.scss",
             &grass::Options::default()
@@ -112,7 +112,7 @@ impl Melody for Images {
         }))
     }
 
-    fn perform() -> Result<()> {
+    fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         for p in Self::source()? {
             let p: PathBuf = p.into();
             let t = Path::new("./generated/img").join(p.file_name().unwrap());

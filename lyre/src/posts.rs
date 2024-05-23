@@ -187,10 +187,8 @@ impl Melody for Posts {
         })
     }
 
-    fn perform() -> Result<()> {
-        for path in fs::read_dir("./content/posts")? {
-            let path = path.unwrap().path();
-
+    fn perform(parts: impl Iterator<Item = PathBuf>) -> Result<()> {
+        for path in parts {
             if matches!(path.extension(), Some(ext) if ext == "md") {
                 render_html(&path)?;
 

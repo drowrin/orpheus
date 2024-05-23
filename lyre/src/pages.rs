@@ -1,7 +1,4 @@
-use std::{
-    fs,
-    path::{Path, PathBuf},
-};
+use std::path::{Path, PathBuf};
 
 use melody::{utils::in_dir_with_ext, Melody};
 use pandoc::MarkdownExtension;
@@ -27,10 +24,8 @@ impl Melody for Pages {
         }))
     }
 
-    fn perform() -> eyre::Result<()> {
-        for path in fs::read_dir("./content/pages")? {
-            let path = path.unwrap().path();
-
+    fn perform(parts: impl Iterator<Item = PathBuf>) -> eyre::Result<()> {
+        for path in parts {
             if matches!(path.extension(), Some(ext) if ext == "md") {
                 let target = Path::new("./generated/pages/")
                     .join(path.file_name().unwrap())
