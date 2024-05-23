@@ -980,18 +980,3 @@ By using Melody, the code for each Lyre step only needs to contain details for
 its specific implementation. All other common behavior is handled by Melody.
 This makes it very easy to make changes to the behavior of all Lyre steps at
 once.
-
-# Conclusion
-
-This has been a high-level overview of how this site ticks. The source code is
-always available [here](https://github.com/Drowrin/orpheus) for more detail.
-
-This site could definitely use more work. In the immediate term, I want to solve
-issues related to the growing number of posts I have started accumulating here.
-I need to make Lyre more efficient so that it doesn't re-render all posts for a
-spelling mistake in one single post. I need to implement pagination or infinite
-scrolling for the `Browse Posts` page. I need to use a more efficient caching
-scheme. I need to improve the search filter so that it doesn't only perform a
-verbatim search on titles.
-
-I'll be making more posts like this as I work all that out!
