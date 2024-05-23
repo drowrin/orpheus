@@ -39,10 +39,15 @@ pub trait Melody {
     }
 
     fn output_hash_path(path: &PathBuf) -> PathBuf {
-        Path::new("./generated/repertoire/")
-            .join(Self::name())
-            .join("output")
-            .join(path.file_name().unwrap())
+        Path::new("./generated/etag/")
+            .join(
+                path.iter()
+                    .filter(|p| {
+                        let p = p.to_str().unwrap();
+                        p != "." && p != "generated" && p != "pages" && p != "static"
+                    })
+                    .collect::<PathBuf>(),
+            )
             .with_extension("hash")
     }
 
@@ -95,18 +100,22 @@ pub trait Melody {
             format!("{:?}", started.elapsed().unwrap()).yellow()
         );
 
-        fs::create_dir_all(
-            Path::new("./generated/repertoire/")
-                .join(Self::name())
-                .join("output"),
-        )?;
+        let output_path_set = Self::rendition()?
+            .into_iter()
+            .map(|p| {
+                let p = p.into();
+                (p.clone(), Self::output_hash_path(&p))
+            })
+            .collect::<HashSet<_>>();
+
         for path in needs_rebuild {
+            fs::create_dir_all(Self::input_hash_path(&path).with_file_name(""))?;
             fs::write(Self::input_hash_path(&path), Self::generate_hash(&path)?)?;
         }
 
-        for path in Self::rendition()? {
-            let path = path.into();
-            fs::write(Self::output_hash_path(&path), Self::generate_hash(&path)?)?;
+        for (rendition_path, hash_path) in output_path_set {
+            fs::create_dir_all(hash_path.with_file_name(""))?;
+            fs::write(&hash_path, Self::generate_hash(&rendition_path)?)?;
         }
 
         Ok(())
