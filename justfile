@@ -4,16 +4,21 @@ set dotenv-filename := "secrets.env"
     rm -rf generated
 
 @lyre:
-    cargo run -p lyre --profile release
-
-@run options="": lyre
-    cargo run {{ options }}
+    cargo run -p lyre --release
 
 @dev: lyre
     ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo run
 
-@watch:
+@watch recipe:
     cargo watch -cq -- just dev
+
+@run:
+    ORPHEUS_OPTIONS=live_reload ./target/release/lyre && ./target/release/orpheus
+
+@author:
+    cargo build -p lyre --release
+    cargo build --release
+    cargo watch -cq -- just run
 
 @deploy: lyre
     echo "copying files..."
