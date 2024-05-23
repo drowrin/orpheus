@@ -141,7 +141,11 @@ pub async fn post(
 
     Ok(page_type
         .builder(&post.title)
-        .with_description(post.brief.clone())
+        .with_description(if let Some(tagline) = post.tagline.clone() {
+            format!("{tagline}\n---\n{}", post.brief.clone())
+        } else {
+            post.brief.clone()
+        })
         .build(html! {
             article .prose {
                 (post_info(&post, html!{ h1 {(post.title)} }))

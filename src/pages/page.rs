@@ -117,7 +117,7 @@ impl From<Page> for Markup {
                 script
                     src="/main.js"
                     {}
-                title { (page.title) }
+                title { "drowrin.com | " (page.title) }
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
