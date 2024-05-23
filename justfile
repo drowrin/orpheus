@@ -9,7 +9,7 @@ set dotenv-filename := "secrets.env"
 @dev: lyre
     ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo run
 
-@watch recipe:
+@watch:
     cargo watch -cq -- just dev
 
 @run:
