@@ -1,6 +1,7 @@
 use std::{
     collections::HashSet,
     fs,
+    io::Write,
     path::{Path, PathBuf},
     time::SystemTime,
 };
@@ -69,6 +70,7 @@ pub trait Melody {
 
     fn conduct() -> Result<()> {
         print!("{}", Self::name());
+        std::io::stdout().flush().unwrap();
 
         let hash = match Self::read() {
             Ok(sheet) => sheet,
