@@ -38,7 +38,9 @@ pub fn apply_options(app: Router) -> Router {
                 .layer(
                     LiveReloadLayer::new()
                         // don't inject anything into htmx requests
-                        .request_predicate(|r: &Request| r.headers().get("HX-Request").is_none()),
+                        .request_predicate(|r: &Request| r.headers().get("HX-Request").is_none())
+                        // faster live-reload
+                        .reload_interval(Duration::from_millis(100)),
                 )
                 .into();
         }
