@@ -13,7 +13,7 @@ set dotenv-filename := "secrets.env"
     cargo watch -cq -- just dev
 
 @run:
-    ORPHEUS_OPTIONS=live_reload ./target/release/lyre && ./target/release/orpheus
+    ./target/release/lyre && ORPHEUS_OPTIONS="live_reload" ./target/release/orpheus
 
 @author:
     cargo build -p lyre --release
