@@ -31,25 +31,23 @@ pub trait Melody {
         Ok(URL_SAFE_NO_PAD.encode(hasher.finalize()))
     }
 
-    fn hash_path(path: &PathBuf) -> PathBuf {
+    fn input_hash_path(path: &PathBuf) -> PathBuf {
         Path::new("./generated/repertoire/")
             .join(Self::name())
             .join(path.file_name().unwrap())
             .with_extension("hash")
     }
 
-    fn read_hash(path: &PathBuf) -> Result<String> {
-        Ok(fs::read_to_string(Self::hash_path(path))?)
-    }
-
-    fn write_hash(path: &PathBuf, hash: String) -> Result<()> {
-        fs::write(Self::hash_path(path), hash)?;
-
-        Ok(())
+    fn output_hash_path(path: &PathBuf) -> PathBuf {
+        Path::new("./generated/repertoire/")
+            .join(Self::name())
+            .join("output")
+            .join(path.file_name().unwrap())
+            .with_extension("hash")
     }
 
     fn ready(path: &PathBuf) -> Result<bool> {
-        let hash = match Self::read_hash(path) {
+        let hash = match fs::read_to_string(Self::input_hash_path(path)) {
             Ok(sheet) => sheet,
             Err(_) => return Ok(false),
         };
@@ -97,9 +95,18 @@ pub trait Melody {
             format!("{:?}", started.elapsed().unwrap()).yellow()
         );
 
-        fs::create_dir_all(Path::new("./generated/repertoire/").join(Self::name()))?;
+        fs::create_dir_all(
+            Path::new("./generated/repertoire/")
+                .join(Self::name())
+                .join("output"),
+        )?;
         for path in needs_rebuild {
-            Self::write_hash(&path, Self::generate_hash(&path)?)?;
+            fs::write(Self::input_hash_path(&path), Self::generate_hash(&path)?)?;
+        }
+
+        for path in Self::rendition()? {
+            let path = path.into();
+            fs::write(Self::output_hash_path(&path), Self::generate_hash(&path)?)?;
         }
 
         Ok(())
