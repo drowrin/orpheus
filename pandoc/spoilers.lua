@@ -7,13 +7,32 @@ function Para(elem)
     collection = pandoc.List()
 
     for _, c in ipairs(elem.content) do
-        if c.text ~= nil and string.find(c.text, "||") then
-            if next(collection) == nil then
-                table.insert(collection, pandoc.Str(string.sub(c.text, 3)))
+        if c.text ~= nil then
+            s, e = string.find(c.text, "||")
+            if s ~= nil then
+                before = string.sub(c.text, 1, s - 1)
+                after = string.sub(c.text, e + 1)
+                if next(collection) == nil then
+                    if before ~= "" then
+                        table.insert(newinlines, pandoc.Str(before))
+                    end
+                    table.insert(collection, pandoc.Str(after))
+                else
+                    if before ~= "" then
+                        table.insert(collection, pandoc.Str(before))
+                    end
+                    table.insert(newinlines, pandoc.Span(collection, attrs))
+                    if after ~= "" then
+                        table.insert(newinlines, pandoc.Str(after))
+                    end
+                    collection = pandoc.List()
+                end
             else
-                table.insert(collection, pandoc.Str(string.sub(c.text, 1, -3)))
-                table.insert(newinlines, pandoc.Span(collection, attrs))
-                collection = pandoc.List()
+                if next(collection) == nil then
+                    table.insert(newinlines, c)
+                else
+                    table.insert(collection, c)
+                end
             end
         else
             if next(collection) == nil then
