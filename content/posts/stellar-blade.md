@@ -62,7 +62,7 @@ every character lacked personality except Lily, and even she was just "increase
 cheeriness by 50%". I was also disappointed by how many side characters were
 just lifeless copypasted clones of each other, all in that same heavily
 obscuring armor--but that's not a dealbreaker on its own. Part of me wants to
-think ||this was all intentional||, but even if it was, I don't think it was
+think ||this was all intentional|| but even if it was, I don't think it was
 worth it.
 
 The main character designs were cool though. Especially some of the recurring
