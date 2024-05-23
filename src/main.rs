@@ -13,6 +13,7 @@ pub mod state;
 
 #[tokio::main]
 async fn main() {
+    let state = AppState::init_state();
     let router = apply_options(
         Router::new()
             .merge(pages::posts::router())
@@ -21,7 +22,8 @@ async fn main() {
             .merge(pages::projects::router())
             .fallback_service(ServeDir::new("./generated/static/"))
             .layer(from_fn(pages::error::handle_error_pages))
-            .with_state(AppState::init_state()),
+            .with_state(state.clone()),
+        state,
     )
     .layer(TraceLayer::new_for_http())
     .layer(CompressionLayer::new());

@@ -3,7 +3,7 @@ use std::time::SystemTime;
 use color_eyre::owo_colors::OwoColorize;
 use colored::*;
 use eyre::{Ok, Result};
-use melody::Melody;
+use melody::{finalize, Melody};
 
 pub mod pages;
 pub mod posts;
@@ -14,14 +14,16 @@ pub fn main() -> Result<()> {
 
     let started = SystemTime::now();
 
-    melody::prepare()?;
+    let mut state = melody::prepare()?;
 
-    <web::Parcel as Melody>::conduct()?;
-    <web::Favicon as Melody>::conduct()?;
-    <web::SCSS as Melody>::conduct()?;
-    <web::Images as Melody>::conduct()?;
-    <posts::Posts as Melody>::conduct()?;
-    <pages::Pages as Melody>::conduct()?;
+    <web::Parcel as Melody>::conduct(&mut state)?;
+    <web::Favicon as Melody>::conduct(&mut state)?;
+    <web::SCSS as Melody>::conduct(&mut state)?;
+    <web::Images as Melody>::conduct(&mut state)?;
+    <posts::Posts as Melody>::conduct(&mut state)?;
+    <pages::Pages as Melody>::conduct(&mut state)?;
+
+    finalize(state)?;
 
     println!("{} in {:?}", "Done".green(), started.elapsed()?.yellow());
     Ok(())

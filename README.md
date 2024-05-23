@@ -26,7 +26,6 @@ in progress project.
 
 ### Roadmap
 
-- more efficient caching scheme
 - more efficient css
 - rss feed generator
 - opengraph tags
