@@ -198,8 +198,10 @@ pub async fn posts(
         .collect();
 
     let skip = query.skip.unwrap_or(0);
-    let mut new_query = query.clone();
-    new_query.skip = Some(skip + CHUNK_SIZE);
+    let new_query = PostsFilters {
+        skip: Some(skip + CHUNK_SIZE),
+        ..query.clone()
+    };
 
     filtered_posts.sort_by(|a, b| b.published.cmp(&a.published));
     filtered_posts.drain(0..skip);
