@@ -4,7 +4,8 @@ use std::{
 };
 
 use eyre::{eyre, Ok, Result, WrapErr};
-use melody::{utils::in_dir_with_ext, Melody};
+use glob::glob;
+use melody::Melody;
 
 pub struct Parcel;
 impl Melody for Parcel {
@@ -13,7 +14,7 @@ impl Melody for Parcel {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        in_dir_with_ext("./web/", ".js")
+        Ok(glob("web/*.js")?.flatten())
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
@@ -71,7 +72,7 @@ impl Melody for SCSS {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        in_dir_with_ext("./web/", ".scss")
+        Ok(glob("web/*.scss")?.flatten())
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {

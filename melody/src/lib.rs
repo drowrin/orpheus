@@ -11,8 +11,6 @@ use colored::*;
 use eyre::{Context, Result};
 use sha2::{Digest, Sha256};
 
-pub mod utils;
-
 pub type ETags = HashMap<String, String>;
 
 pub fn prepare() -> Result<ETags> {

@@ -1,6 +1,6 @@
 use eyre::{eyre, Ok, Result, WrapErr};
-
-use melody::{utils::in_dir_with_ext, Melody};
+use glob::glob;
+use melody::Melody;
 use pandoc::MarkdownExtension;
 use pandoc_ast::Block;
 use slug::slugify;
@@ -171,7 +171,7 @@ impl Melody for Posts {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        in_dir_with_ext("./content/posts", ".md")
+        Ok(glob("content/posts/**/*.md")?.flatten())
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {

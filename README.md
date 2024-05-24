@@ -42,12 +42,6 @@ Enhancements that are not direct upgrades to the website:
 - generate content templates
 - read git history to determine post publication/update dates
 
-#### Possible Ideas
-
-Enhancements and features that require more design work and may or may not be included.
-
-- folder based series
-
 ## Requirements
 
 This project uses a bunch of disorganized tools that I find useful.

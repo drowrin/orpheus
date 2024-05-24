@@ -18,3 +18,4 @@ verse = { path = "../verse" }
 melody = { path = "../melody" }
 syntect = "5.2.0"
 pandoc_ast = "0.8.6"
+glob = "0.3.1"

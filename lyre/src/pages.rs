@@ -1,6 +1,7 @@
 use std::path::{Path, PathBuf};
 
-use melody::{utils::in_dir_with_ext, Melody};
+use glob::glob;
+use melody::Melody;
 use pandoc::MarkdownExtension;
 
 use crate::posts::code_highlighting;
@@ -12,7 +13,7 @@ impl Melody for Pages {
     }
 
     fn source() -> eyre::Result<impl IntoIterator<Item = impl Into<std::path::PathBuf>>> {
-        in_dir_with_ext("./content/pages", ".md")
+        Ok(glob("content/pages/*.md")?.flatten())
     }
 
     fn rendition() -> eyre::Result<impl IntoIterator<Item = impl Into<std::path::PathBuf>>> {
