@@ -18,7 +18,7 @@ set dotenv-filename := "secrets.env"
 @author:
     cargo build -p lyre --release
     cargo build --release
-    cargo watch -cq -- just run
+    cargo watch -w content -cq -- just run
 
 @deploy: clean lyre
     echo "copying files..."
