@@ -198,6 +198,9 @@ impl Melody for Posts {
 
                 let (word_count, first_p) = process_plain(&path)?;
 
+                let mut tags: Vec<String> = fm.tags.iter().map(|t| slugify(t)).collect();
+                tags.sort_by(|a, b| a.cmp(&b));
+
                 let metadata = PostMetaData {
                     title: fm.title,
                     slug: name.to_str().unwrap().strip_suffix(".md").unwrap().into(),
@@ -207,7 +210,7 @@ impl Melody for Posts {
                         name: s.clone(),
                         slug: slugify(s),
                     }),
-                    tags: fm.tags.iter().map(|t| slugify(t)).collect(),
+                    tags,
                     word_count,
                     reading_time: word_count / 240,
                     published: fm.published,
