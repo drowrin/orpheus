@@ -3,8 +3,8 @@ set dotenv-filename := "secrets.env"
 @clean:
     rm -rf generated
 
-@lyre:
-    cargo run -p lyre --release
+@lyre +args="build":
+    cargo run --release -p lyre -- {{ args }}
 
 @dev: lyre
     ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo run
@@ -13,7 +13,7 @@ set dotenv-filename := "secrets.env"
     cargo watch -cq -- just {{ recipes }} dev
 
 @run:
-    ./target/release/lyre && ORPHEUS_OPTIONS="live_reload" ./target/release/orpheus
+    ./target/release/lyre build && ORPHEUS_OPTIONS="live_reload" ./target/release/orpheus
 
 @author:
     cargo build -p lyre --release

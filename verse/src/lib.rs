@@ -2,7 +2,7 @@ use std::{error::Error, fs::File, path::Path};
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize, Default)]
 pub struct Frontmatter {
     pub title: String,
     pub brief: Option<String>,
