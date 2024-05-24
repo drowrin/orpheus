@@ -20,7 +20,7 @@ set dotenv-filename := "secrets.env"
     cargo build --release
     cargo watch -cq -- just run
 
-@deploy: lyre
+@deploy: clean lyre
     echo "copying files..."
     scp -rq ./generated/* $ORPHEUS_HOST:$ORPHEUS_DIR
     echo "restarting container"
