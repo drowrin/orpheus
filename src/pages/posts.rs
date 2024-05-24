@@ -19,6 +19,8 @@ use crate::state::{AppState, InitState};
 
 use super::page::PageKind;
 
+const CHUNK_SIZE: usize = 5;
+
 #[derive(Clone)]
 pub struct PostData {
     pub metadata: HashMap<String, PostMetaData>,
@@ -163,6 +165,8 @@ pub struct PostsFilters {
     series: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     search: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    skip: Option<usize>,
 }
 
 pub async fn posts(
@@ -193,22 +197,34 @@ pub async fn posts(
         })
         .collect();
 
+    let skip = query.skip.unwrap_or(0);
+    let mut new_query = query.clone();
+    new_query.skip = Some(skip + CHUNK_SIZE);
+
     filtered_posts.sort_by(|a, b| b.published.cmp(&a.published));
+    filtered_posts.drain(0..skip);
+    let more_after = filtered_posts.len() > CHUNK_SIZE;
+    filtered_posts.truncate(CHUNK_SIZE);
 
     let posts_markup = html! {
-        div
-            #posts
-            {
-                @if filtered_posts.len() > 0 {
-                    @for post in filtered_posts {
-                        (post_card(post))
-                    }
-                } @else {
-                    span
-                        style="font-size: 200%;"
-                        { "no results" }
+        @if filtered_posts.len() > 0 {
+            @if more_after {
+                @for post in &filtered_posts[0..filtered_posts.len()-1] {
+                    div { (post_card(post)) }
+                }
+                @if let Some(post) = filtered_posts.last() {
+                    div
+                        hx-get={"/posts?" (serde_html_form::to_string(new_query).unwrap())}
+                        hx-swap="afterend"
+                        hx-trigger="revealed"
+                        { (post_card(post)) }
+                }
+            } @else {
+                @for post in filtered_posts {
+                    div { (post_card(post)) }
                 }
             }
+        }
     };
 
     page_type
@@ -223,7 +239,7 @@ pub async fn posts(
                     hx-get="/posts"
                     hx-trigger="input changed delay:100ms from:#search, search, change"
                     hx-target="#posts"
-                    hx-swap="outerHTML"
+                    hx-swap="innerHTML"
                     hx-push-url="true"
                     "hx-on::config-request"="event.detail.parameters = remove_empty(event.detail.parameters)"
                     {
@@ -284,7 +300,7 @@ pub async fn posts(
                             }
                     }
                 hr;
-                (posts_markup)
+                div #posts { (posts_markup) }
             }
         })
 }
