@@ -59,7 +59,7 @@ pub struct Page {
 impl PageBuilder {
     pub fn new<S: AsRef<str>>(kind: PageKind, title: S) -> Self {
         Self {
-            kind: kind,
+            kind,
             title: title.as_ref().into(),
             head: None,
             direct: None,

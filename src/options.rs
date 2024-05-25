@@ -22,7 +22,7 @@ impl InitState for ETags {
         Arc::new(HashMap::from_iter(
             fs::read("generated/etags").unwrap().lines().map(|line| {
                 let line = line.unwrap();
-                let mut i = line.split(":");
+                let mut i = line.split(':');
                 (i.next().unwrap().to_string(), i.next().unwrap().to_string())
             }),
         ))
@@ -81,7 +81,7 @@ pub async fn no_cache(request: Request, next: Next) -> Response {
 pub async fn simulate_lag(request: Request, next: Next) -> Response {
     sleep(Duration::from_millis(200)).await;
 
-    return next.run(request).await;
+    next.run(request).await
 }
 
 pub fn apply_options(app: Router, state: AppState) -> Router {
@@ -91,15 +91,13 @@ pub fn apply_options(app: Router, state: AppState) -> Router {
         println!("enabled: {options}");
 
         if options.contains("live_reload") {
-            app = app
-                .layer(
-                    LiveReloadLayer::new()
-                        // don't inject anything into htmx requests
-                        .request_predicate(|r: &Request| r.headers().get("HX-Request").is_none())
-                        // faster live-reload
-                        .reload_interval(Duration::from_millis(100)),
-                )
-                .into();
+            app = app.layer(
+                LiveReloadLayer::new()
+                    // don't inject anything into htmx requests
+                    .request_predicate(|r: &Request| r.headers().get("HX-Request").is_none())
+                    // faster live-reload
+                    .reload_interval(Duration::from_millis(100)),
+            );
         }
 
         if options.contains("no_cache") {

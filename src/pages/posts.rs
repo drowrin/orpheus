@@ -209,7 +209,7 @@ pub async fn posts(
     filtered_posts.truncate(CHUNK_SIZE);
 
     let posts_markup = html! {
-        @if filtered_posts.len() > 0 {
+        @if !filtered_posts.is_empty() {
             @if more_after {
                 @for post in &filtered_posts[0..filtered_posts.len()-1] {
                     div { (post_card(post)) }
@@ -261,7 +261,7 @@ pub async fn posts(
                                 data-selected={
                                     @if let Some(series) = query.series.clone() {
                                         (series)
-                                    } @else { "" }
+                                    }
                                 }
                                 onchange="this.dataset.selected = this.value"
                                 name="series"
