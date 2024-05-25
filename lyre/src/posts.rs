@@ -22,12 +22,12 @@ pub fn code_highlighting(json: String) -> String {
         for block in &mut pandoc.blocks {
             *block = match block {
                 Block::CodeBlock((ref id, ref classes, ref attrs), content) => {
-                    if classes.len() > 0 {
+                    if !classes.is_empty() {
                         let language = classes.first().unwrap();
                         let syntax = syntax_set
-                            .find_syntax_by_extension(&language)
-                            .or(syntax_set.find_syntax_by_name(&language))
-                            .expect(format!("Unrecognized language \"{}\"", language).as_str());
+                            .find_syntax_by_extension(language)
+                            .or(syntax_set.find_syntax_by_name(language))
+                            .unwrap_or_else(|| panic!("Unrecognized language \"{}\"", language));
                         let mut html_generator = ClassedHTMLGenerator::new_with_class_style(
                             syntax,
                             &syntax_set,
@@ -40,7 +40,7 @@ pub fn code_highlighting(json: String) -> String {
                         }
                         let code = html_generator.finalize();
                         let mut pre_classes = classes.join(" ");
-                        if pre_classes.len() > 0 {
+                        if !pre_classes.is_empty() {
                             pre_classes = format!(" class=\"{}\"", pre_classes);
                         }
                         let code_classes = format!("language-{}", language);
@@ -132,7 +132,7 @@ pub fn render_plain(from: &PathBuf) -> Result<PathBuf> {
 }
 
 pub fn parse_frontmatter(path: &PathBuf) -> Result<Frontmatter> {
-    let md = fs::read_to_string(&path)?;
+    let md = fs::read_to_string(path)?;
     let mut sections = md.split("---").skip(1);
 
     let frontmatter = serde_yaml::from_str(sections.next().ok_or(eyre!(
@@ -151,14 +151,13 @@ pub fn parse_frontmatter(path: &PathBuf) -> Result<Frontmatter> {
 }
 
 pub fn process_plain(path: &PathBuf) -> Result<(usize, String)> {
-    let plain_path = render_plain(&path)?;
+    let plain_path = render_plain(path)?;
 
     let plain = fs::read_to_string(&plain_path)
         .wrap_err(format!("File: {}", plain_path.to_str().unwrap()))?;
     let first_p = plain
         .lines()
-        .filter(|l| !l.starts_with(['#']) && l.len() > 0)
-        .next()
+        .find(|l| !l.starts_with(['#']) && !l.is_empty())
         .ok_or(eyre!("Empty content in {}", plain_path.to_str().unwrap()))?;
 
     Ok((plain.split_whitespace().count(), first_p.to_string()))
@@ -198,8 +197,8 @@ impl Melody for Posts {
 
                 let (word_count, first_p) = process_plain(&path)?;
 
-                let mut tags: Vec<String> = fm.tags.iter().map(|t| slugify(t)).collect();
-                tags.sort_by(|a, b| a.cmp(&b));
+                let mut tags: Vec<String> = fm.tags.iter().map(slugify).collect();
+                tags.sort();
 
                 let metadata = PostMetaData {
                     title: fm.title,

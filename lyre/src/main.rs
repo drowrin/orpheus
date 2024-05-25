@@ -83,7 +83,11 @@ pub fn main() -> Result<()> {
                 stdin().read_line(&mut series)?;
                 series = series.trim().to_string();
 
-                let series = if series.len() > 0 { Some(series) } else { None };
+                let series = if !series.is_empty() {
+                    Some(series)
+                } else {
+                    None
+                };
 
                 let title = title.join(" ");
                 let frontmatter = Frontmatter {
@@ -101,7 +105,7 @@ pub fn main() -> Result<()> {
 
                 path = path.join(slugify(title)).with_extension("md");
 
-                fs::create_dir_all(&path.with_file_name(""))?;
+                fs::create_dir_all(path.with_file_name(""))?;
                 fs::write(
                     &path,
                     format!(

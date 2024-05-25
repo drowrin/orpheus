@@ -38,12 +38,12 @@ pub trait Melody {
 
     fn generate_hash(path: &PathBuf) -> Result<String> {
         let mut hasher = Sha256::new();
-        hasher.update(fs::read(&path).context(format!("Path: {:?}", path))?);
+        hasher.update(fs::read(path).context(format!("Path: {:?}", path))?);
 
         Ok(URL_SAFE_NO_PAD.encode(hasher.finalize()))
     }
 
-    fn input_hash_path(path: &PathBuf) -> PathBuf {
+    fn input_hash_path(path: &Path) -> PathBuf {
         Path::new("./generated/repertoire/")
             .join(Self::name())
             .join(path.file_name().unwrap())
@@ -66,10 +66,7 @@ pub trait Melody {
     fn make_etags(etags: &mut ETags) -> Result<()> {
         let output_path_set = Self::rendition()?
             .into_iter()
-            .map(|p| {
-                let p = p.into();
-                p
-            })
+            .map(|p| p.into())
             .collect::<HashSet<_>>();
         for rendition_path in output_path_set {
             let hash_path = rendition_path
@@ -99,11 +96,11 @@ pub trait Melody {
                 if let Ok(v) = Self::ready(p) {
                     return !v;
                 }
-                return true;
+                true
             })
             .collect();
 
-        if needs_rebuild.len() == 0 {
+        if needs_rebuild.is_empty() {
             return Self::make_etags(etags);
         }
 

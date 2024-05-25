@@ -101,9 +101,7 @@ impl Melody for Images {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(std::fs::read_dir("./content/img")?
-            .into_iter()
-            .map(|f| f.unwrap().path()))
+        Ok(std::fs::read_dir("./content/img")?.map(|f| f.unwrap().path()))
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
