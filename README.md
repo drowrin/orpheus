@@ -10,10 +10,7 @@ even if they might be overkill.
 
 My intention is to not compromise on the features I want for the site, while keeping it as efficient as I can.
 
-I'm still working on setting up the site before I fill it with content. I have more local content that
-I use to test the site, but it isn't polished enough to commit to the live site yet. I do have at least
-one post that I think is ready at this point, so it is included as an example. This is still very much a work
-in progress project.
+Check out the live site at [drowrin.com](https://drowrin.com)
 
 ## Features
 
