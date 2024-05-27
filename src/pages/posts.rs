@@ -6,14 +6,15 @@ use std::{
 use axum::{
     extract::{FromRef, Path, State},
     http::StatusCode,
-    response::{ErrorResponse, IntoResponse},
+    response::{ErrorResponse, IntoResponse, Response},
     routing, Router,
 };
 use axum_extra::extract::Query;
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
+use tantivy::{collector::TopDocs, doc, schema::OwnedValue, TantivyDocument};
 use tower_http::services::ServeDir;
-use verse::{PostMetaData, Series};
+use verse::{PostMetaData, SearchMeta, Series};
 
 use crate::state::{AppState, InitState};
 
@@ -26,6 +27,7 @@ pub struct PostData {
     pub metadata: HashMap<String, PostMetaData>,
     pub series: Vec<Series>,
     pub tags: Vec<String>,
+    pub search: Arc<SearchMeta>,
 }
 
 pub type Posts = Arc<PostData>;
@@ -65,6 +67,7 @@ impl InitState for Posts {
             metadata,
             series,
             tags,
+            search: Arc::new(SearchMeta::open().unwrap()),
         })
     }
 }
@@ -173,29 +176,40 @@ pub async fn posts(
     page_type: PageKind,
     Query(query): Query<PostsFilters>,
     State(posts): State<Posts>,
-) -> impl IntoResponse {
-    let mut filtered_posts: Vec<&PostMetaData> = posts
-        .metadata
-        .values()
-        .filter(|m| {
-            if let Some(series_slug) = &query.series {
-                match &m.series {
-                    Some(series) if series.slug.eq(series_slug) => (),
-                    _ => return false,
-                }
+) -> Response {
+    let mut filtered_posts: Vec<&PostMetaData> = if let Some(ref search) = query.search {
+        let searcher = posts.search.reader.searcher();
+        if let Ok(query) = posts.search.parser.parse_query(search) {
+            let results = searcher.search(&query, &TopDocs::with_limit(999)).unwrap();
+
+            results
+                .into_iter()
+                .flat_map(|(_, addr)| {
+                    let doc: TantivyDocument = searcher.doc(addr).unwrap();
+                    if let OwnedValue::Str(slug) = doc.get_first(posts.search.fields.slug).unwrap()
+                    {
+                        Some(posts.metadata.get(slug).unwrap())
+                    } else {
+                        None
+                    }
+                })
+                .collect()
+        } else {
+            return StatusCode::BAD_REQUEST.into_response();
+        }
+    } else {
+        posts.metadata.values().collect()
+    };
+
+    filtered_posts.retain(|m| {
+        if let Some(series_slug) = &query.series {
+            match &m.series {
+                Some(series) if series.slug.eq(series_slug) => (),
+                _ => return false,
             }
-            if let Some(search) = &query.search {
-                if !m
-                    .title
-                    .to_lowercase()
-                    .contains(search.to_lowercase().as_str())
-                {
-                    return false;
-                }
-            }
-            query.tag.iter().all(|t| m.tags.contains(t))
-        })
-        .collect();
+        }
+        query.tag.iter().all(|t| m.tags.contains(t))
+    });
 
     let skip = query.skip.unwrap_or(0);
     let new_query = PostsFilters {
@@ -203,7 +217,9 @@ pub async fn posts(
         ..query.clone()
     };
 
-    filtered_posts.sort_by(|a, b| b.published.cmp(&a.published));
+    if query.search.is_none() {
+        filtered_posts.sort_by(|a, b| b.published.cmp(&a.published));
+    }
     filtered_posts.drain(0..skip);
     let more_after = filtered_posts.len() > CHUNK_SIZE;
     filtered_posts.truncate(CHUNK_SIZE);
@@ -239,7 +255,7 @@ pub async fn posts(
                 hr;
                 form
                     hx-get="/posts"
-                    hx-trigger="input changed delay:100ms from:#search, search, change"
+                    hx-trigger="input changed delay:300ms from:#search, search, change"
                     hx-target="#posts"
                     hx-swap="innerHTML"
                     hx-push-url="true"
@@ -304,7 +320,7 @@ pub async fn posts(
                 hr;
                 div #posts { (posts_markup) }
             }
-        })
+        }).into_response()
 }
 
 pub fn router() -> Router<AppState> {

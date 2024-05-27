@@ -28,7 +28,6 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 - opengraph tags
 - "related posts" section
 - image format content negotiation
-- improve search
 - automatic table of contents
 
 #### Meta Roadmap

@@ -13,7 +13,8 @@ use syntect::{
     parsing::SyntaxSet,
     util::LinesWithEndings,
 };
-use verse::{Frontmatter, PostMetaData, Series};
+use tantivy::{doc, IndexWriter};
+use verse::{Frontmatter, PostMetaData, SearchMeta, Series};
 
 pub fn code_highlighting(json: String) -> String {
     let syntax_set = SyntaxSet::load_defaults_newlines();
@@ -150,10 +151,8 @@ pub fn parse_frontmatter(path: &PathBuf) -> Result<Frontmatter> {
     Ok(frontmatter)
 }
 
-pub fn process_plain(path: &PathBuf) -> Result<(usize, String)> {
-    let plain_path = render_plain(path)?;
-
-    let plain = fs::read_to_string(&plain_path)
+pub fn process_plain(plain_path: &PathBuf) -> Result<(usize, String)> {
+    let plain = fs::read_to_string(plain_path)
         .wrap_err(format!("File: {}", plain_path.to_str().unwrap()))?;
     let first_p = plain
         .lines()
@@ -187,6 +186,9 @@ impl Melody for Posts {
     }
 
     fn perform(parts: impl Iterator<Item = PathBuf>) -> Result<()> {
+        let search_meta = SearchMeta::open()?;
+        let mut index_writer: IndexWriter = search_meta.index.writer(50_000_000)?;
+
         for path in parts {
             if matches!(path.extension(), Some(ext) if ext == "md") {
                 render_html(&path)?;
@@ -195,7 +197,9 @@ impl Melody for Posts {
 
                 let fm = parse_frontmatter(&path)?;
 
-                let (word_count, first_p) = process_plain(&path)?;
+                let plain_path = render_plain(&path)?;
+                let raw_text = fs::read_to_string(&plain_path)?;
+                let (word_count, first_p) = process_plain(&plain_path)?;
 
                 let mut tags: Vec<String> = fm.tags.iter().map(slugify).collect();
                 tags.sort();
@@ -222,8 +226,17 @@ impl Melody for Posts {
                         .with_extension("yml"),
                     serde_yaml::to_string(&metadata)?,
                 )?;
+
+                index_writer.add_document(doc!(
+                    search_meta.fields.title => metadata.title,
+                    search_meta.fields.tagline => metadata.tagline.unwrap_or_default(),
+                    search_meta.fields.body => raw_text,
+                    search_meta.fields.slug => metadata.slug,
+                ))?;
             }
         }
+
+        index_writer.commit()?;
 
         Ok(())
     }
