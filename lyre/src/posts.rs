@@ -110,6 +110,34 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
     Ok(target)
 }
 
+pub fn render_toc(from: &PathBuf) -> Result<PathBuf> {
+    let target = Path::new("./generated/posts/")
+        .join(format!(
+            "{}{}",
+            from.with_extension("")
+                .file_name()
+                .unwrap()
+                .to_str()
+                .unwrap(),
+            "-toc"
+        ))
+        .with_extension("html");
+
+    let mut doc = pandoc::new();
+    doc.add_input(from);
+    doc.set_input_format(pandoc::InputFormat::CommonmarkX, vec![]);
+    doc.set_output(pandoc::OutputKind::File(target.clone()));
+    doc.add_option(pandoc::PandocOption::Standalone);
+    doc.add_option(pandoc::PandocOption::Template(
+        Path::new("pandoc/toc-only.html5").to_path_buf(),
+    ));
+    doc.set_toc();
+    doc.set_output_format(pandoc::OutputFormat::Html5, vec![]);
+    doc.execute()?;
+
+    Ok(target)
+}
+
 pub fn render_plain(from: &PathBuf) -> Result<PathBuf> {
     let target = Path::new("./generated/posts/")
         .join(from.file_name().unwrap())
@@ -192,6 +220,7 @@ impl Melody for Posts {
         for path in parts {
             if matches!(path.extension(), Some(ext) if ext == "md") {
                 render_html(&path)?;
+                render_toc(&path)?;
 
                 let name = path.file_name().unwrap();
 
