@@ -6,7 +6,7 @@ series:
 tags:
   - games
   - reviews
-published: 2024-06-01
+published: 2024-06-15
 updated:
 ---
 
