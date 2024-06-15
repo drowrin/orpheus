@@ -16,7 +16,12 @@ function Para(elem)
                     if before ~= "" then
                         table.insert(newinlines, pandoc.Str(before))
                     end
-                    table.insert(collection, pandoc.Str(after))
+                    s, e = string.find(after, "||")
+                    if s ~= nil then
+                        table.insert(newinlines, pandoc.Span(string.sub(after, 1, s - 1), attrs))
+                    else
+                        table.insert(collection, pandoc.Str(after))
+                    end
                 else
                     if before ~= "" then
                         table.insert(collection, pandoc.Str(before))
