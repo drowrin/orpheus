@@ -45,7 +45,7 @@ but I'll be pretty arbitrary with what I include. Also, I love XIV, but I'm
 going to exclude it and XI. This isn't meant to be about MMOs.
 
 [^1]:
-    "Best" is, of course, extremely subjective--and it's very complicated with
+    "Best" is, of course, extremely subjective---and it's very complicated with
     Final Fantasy. Many rereleases/remasters have extra content (sometimes even
     **cut** content), easier/more-convenient mechanics, and so on. In general, I'll
     pick the most recent remaster, even if it introduces some flaws, but there may
@@ -63,7 +63,7 @@ much all of them.
 Know of any other games I should include? Let me know!
 
 I've already played XV and XVI, and I don't intend to replay them as part of
-this blog series--but I may change my mind.
+this blog series---but I may change my mind.
 
 I've actually played a few more than that! At the time of writing this post,
 I've completed the NES/Famicom generation of Final Fantasy games: I, II, and
@@ -393,7 +393,7 @@ actually originally from the round world below.
 The warriors head down to see what this great new world is like, only to find it
 flooded, with only a few islands. After gaining the power of the Water Crystal
 on one of these islands, the flood drains away, and reveals the original
-continents. The people who lived here were preserved as statues--unpetrified
+continents. The people who lived here were preserved as statues---unpetrified
 when the flood receded.
 
 The warriors continue their adventures down here, seeking the final crystal and
@@ -412,7 +412,7 @@ Unei promise, however, that their souls will live on even though their bodies
 would die.
 
 In this tower, the warriors fall for a trap. They are paralyzed and surrounded
-by five dragons--the curse of Five Wyrms. Doga appears, claiming that the souls
+by five dragons---the curse of Five Wyrms. Doga appears, claiming that the souls
 of five filled with light were required to break this ancient curse. We see a
 montage as he flies through the realm, asking NPCs the warriors have helped
 along the way. They all immediately drop what they are doing and offer
@@ -426,7 +426,7 @@ themselves to revive the warriors, and transport them into the World of Darkness
 to defeat the Cloud of Darkness.
 
 Long ago, four Warriors of Darkness prevented a calamity known as the Flood of
-Light. Here, in the World of Darkness, they are trapped--bound by guardians set
+Light. Here, in the World of Darkness, they are trapped---bound by guardians set
 up by the Cloud of Darkness. Upon defeating each of these guardians, the
 Warriors of Light release the Warriors of Darkness. Together, both sets of
 warriors team up to defeat the Cloud of Darkness, in the name of balance.
