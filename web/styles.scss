@@ -282,3 +282,24 @@ article > pre {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+.footnote-back {
+  margin-left: 0.5rem;
+}
+
+#footnotes > ol {
+  padding-left: 0;
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+  li {
+    color: var(--pico-muted-color);
+  }
+}
+
+#footnotes > ol::before {
+  content: "Footnotes";
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-left: -1rem;
+}

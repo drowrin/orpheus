@@ -122,7 +122,8 @@
   h4,
   h5,
   h6,
-  .article-link {
+  .article-link,
+  #footnotes > ol::before {
     color: #{$pink};
   }
 
@@ -290,7 +291,8 @@
   h4,
   h5,
   h6,
-  .article-link {
+  .article-link,
+  #footnotes > ol::before {
     color: #{$lavender};
   }
 

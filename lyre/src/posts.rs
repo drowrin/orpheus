@@ -81,6 +81,7 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
             MarkdownExtension::AutolinkBareUris,
             MarkdownExtension::Subscript,
             MarkdownExtension::Superscript,
+            MarkdownExtension::Footnotes,
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter(
@@ -113,13 +114,12 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
 pub fn render_toc(from: &PathBuf) -> Result<PathBuf> {
     let target = Path::new("./generated/posts/")
         .join(format!(
-            "{}{}",
+            "{}-toc",
             from.with_extension("")
                 .file_name()
                 .unwrap()
                 .to_str()
                 .unwrap(),
-            "-toc"
         ))
         .with_extension("html");
 
