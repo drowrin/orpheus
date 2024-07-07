@@ -108,9 +108,9 @@ quality of more modern games. Really, really good job on this as well.
 Various releases of these games over the years have changed the gameplay in one
 way or another. Some have changed the magic system, or overhauled how the job
 system works, or how encounters work, or even more! It can be a pain to look up
-information on these games online, as you'll often reach a page that has
+information for these games online, as you'll often reach a page that has
 conflicting information based on what version is being discussed. These Pixel
-Remaster versions keeps it simple. They sticks very close to the combat and
+Remaster versions keep it simple. They stick very close to the combat and
 progression mechanics of the original, while offering some quality of life
 cherry-picked from older rereleases as well as some all new quality of life
 features of their own. In general, progression requires less grinding as fights
@@ -121,13 +121,13 @@ massive conveniences that made me really glad I'm playing these versions.
 They've got an auto-battle mode, which simply repeats the last action each
 character has taken, and speeds up the combat animations a bit. Since much of
 the combat is pretty simple (apply buffs, spam attacks, heal as needed) this
-cuts down on the tedium a huge amount. Additionally, the games are far less
-punishing due to being able to quick-save anywhere out of battle, and the
-ability to toggle random encounters on and off. You're still going to want a lot
-of random encounters to keep up with expected character progression, but I
-really enjoyed that control. Sometimes I'm down to run in a circle to farm
-encounters for xp (especially with auto-battle), and other times I just want to
-get down this corridor without being interrupted.
+cuts down on the tedium. Additionally, the games are far less punishing due to
+being able to quick-save anywhere out of battle, and the ability to toggle
+random encounters on and off. You're still going to want a lot of random
+encounters to keep up with expected character progression, but I really enjoyed
+having that control. Sometimes I'm down to run in a circle to farm encounters
+for xp (especially with auto-battle), and other times I just want to get through
+this corridor without being interrupted.
 
 I really enjoyed the Pixel Remasters. There are some 3D remakes of most of these
 games, but I highly recommend this experience instead.
