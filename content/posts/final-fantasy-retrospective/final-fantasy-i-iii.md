@@ -514,6 +514,13 @@ I really had fun with it though. The big spells (especially summons) were really
 fun both to acquire and to use. The later jobs had very cool abilities and I
 always wanted to upgrade to them.
 
+I appreciated that allies trailed behind you instead of taking up a party slot.
+It meant that I had full control over my party. It also meant I could turn
+around and ask questions of the following NPC, to help keep me on track. It was
+a useful guide, and helped me get attached to the characters more by seeing them
+follow me around, and talking to them in various situations to see their
+responses.
+
 Exploration content was cool. The game kept altering the travel methods
 available to me in order to change the play space I was allowed within. It
 consistently got larger and larger in more and more exciting ways. I got to sail
