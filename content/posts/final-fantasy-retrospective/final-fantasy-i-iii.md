@@ -367,8 +367,7 @@ of Final Fantasy.
 
 ### Story
 
-This one almost feels like a reimagining of the first story's concepts early
-concepts.
+This one almost feels like a reimagining of the first story's early concepts.
 
 We start with 4 orphans, being raised by a village. While exploring, they
 discover a crystal, and learn that they have been chosen as Warriors of
