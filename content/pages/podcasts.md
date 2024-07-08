@@ -110,6 +110,45 @@ Bonus content when a schedule dips, or whenever we're excited about a game
 </article>
 
 <article>
+<a href="https://www.youtube.com/watch?v=ueBCCOJ5PtM&list=PLKf-mXZAT29Vzm32TgUdWhHX5WprqIxtp">
+![](https://img.youtube.com/vi/KHG_amMghZk/maxresdefault.jpg){.article-image}
+</a>
+<hgroup>
+
+## Candlekeep
+
+Players: **Joanna, Liam, Ryan, Trevor**
+
+System: **Dungeons & Dragons 5th Edition**
+
+Vibes: _adventure, fantasy, mystery, tactical combat_
+
+Status: **Completed**
+
+Mysteries in and around Candlekeep, for some new players!
+
+</hgroup>
+
+> Our group of adventurers search for a tome esoteric enough to permit their
+> entry to Candlekeep. Each of them seeks different answers from its mysterious
+> archives
+
+A friend's campaign needed to take a hiatus, so I stepped in to cover their
+players with a short campaign in the meantime.
+
+We weren't sure how long the hiatus would need to be, so we decided on playing
+through some of the adventures from Candlekeep Mysteries until their original GM
+was ready to get things going again. That way, we could finish the campaign at
+the end of one of the short mysteries.
+
+We started at level 3, and got through _Book of the Raven_, _Shemshine's Bedtime
+Rhyme_, and _The Price of Beauty_.
+
+Some of these players stuck around for future campaigns of mine!
+
+</article>
+
+<article>
 <a href="https://www.youtube.com/watch?v=5NcYkJ_z-Eo&list=PLKf-mXZAT29UlgmR6D35Ba_d-7mSnurtg">
 ![](https://img.youtube.com/vi/5NcYkJ_z-Eo/maxresdefault.jpg){.article-image}
 </a>
@@ -121,7 +160,7 @@ Players: **Aria, Ashlee, Charlie, Keiran, Marcello, Nic, Skye, Taylor**
 
 System: **Dungeons & Dragons 5th Edition**
 
-Vibes _adventure, fantasy, tactical combat_
+Vibes: _adventure, fantasy, tactical combat_
 
 Status: **Completed**
 
