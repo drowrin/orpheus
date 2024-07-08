@@ -61,7 +61,7 @@ of creating this list, though I will be playing remasters/rereleases of pretty
 much all of them.
 
 > **UPDATE**: I decided to include a few more spinoffs, Crisis Core, Dirge of
-> Cerberus, A King's Tale, and Type 0---bringing this list to 23 (XXIII) games
+> Cerberus, A King's Tale, and Type 0---bringing this list to 25 (XXV) games
 
 Know of any other games I should include? Let me know!
 
