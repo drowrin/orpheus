@@ -7,7 +7,7 @@ tags:
   - games
   - reviews
 published: 2024-07-07
-updated:
+updated: 2024-07-08
 ---
 
 Final Fantasy is a series I adore. A couple managed to make it into my
@@ -60,10 +60,17 @@ I selected the original release entry for each of these games for the purposes
 of creating this list, though I will be playing remasters/rereleases of pretty
 much all of them.
 
+> **UPDATE**: I decided to include a few more spinoffs, Crisis Core and Type 0,
+> bringing this list to 23 (XXIII) games
+
 Know of any other games I should include? Let me know!
 
-I've already played XV and XVI, and I don't intend to replay them as part of
-this blog series---but I may change my mind.
+~~I've already played XV and XVI, and I don't intend to replay them as part of
+this blog series---but I may change my mind.~~
+
+> **UPDATE**: I've decided I _will_ be replaying both XV and XVI to get a
+> complete look at the series again. My taste in games might have changed since
+> I played XV. I'll probably be able to play XVI on PC by then, too.
 
 I've actually played a few more than that! At the time of writing this post,
 I've completed the NES/Famicom generation of Final Fantasy games: I, II, and
