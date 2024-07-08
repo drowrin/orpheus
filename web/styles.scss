@@ -303,3 +303,47 @@ article > pre {
   margin-bottom: 0.25rem;
   margin-left: -1rem;
 }
+
+#TOC {
+  display: block;
+  ul {
+    display: block;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  li {
+    display: block;
+    margin-left: 0.75rem;
+    padding: 0;
+  }
+  a {
+    padding: 0;
+    margin: 0;
+  }
+  > ul > li {
+    margin: 0;
+  }
+  padding: var(--pico-block-spacing-vertical)
+    var(--pico-block-spacing-horizontal);
+  margin: 0;
+  background-color: var(--pico-card-background-color);
+  border-radius: var(--pico-border-radius);
+  max-width: 12rem;
+  font-size: 90%;
+}
+
+#TOC::before {
+  content: "Table of Contents";
+}
+
+@media (min-width: map.get(map.get(pico.$breakpoints, "xl"), "breakpoint")) {
+  #toc-hr {
+    display: none;
+  }
+
+  #TOC {
+    position: fixed;
+    transform: translateX(calc(-100% - 1.5rem));
+    top: var(--navbar-height);
+  }
+}

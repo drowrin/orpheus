@@ -144,6 +144,14 @@ pub async fn post(
         .await
         .map_err(|_| StatusCode::NOT_FOUND)?;
 
+    let path_toc = std::path::Path::new("./generated/posts")
+        .join(format!("{}-toc", slug.clone()))
+        .with_extension("html");
+
+    let post_toc = tokio::fs::read_to_string(&path_toc)
+        .await
+        .map_err(|_| StatusCode::NOT_FOUND)?;
+
     Ok(page_type
         .builder(&post.title)
         .with_description(if let Some(tagline) = post.tagline.clone() {
@@ -153,8 +161,12 @@ pub async fn post(
         })
         .build(html! {
             article .prose {
-                (post_info(&post, html!{ h1 {(post.title)} }))
+                (post_info(&post, html!{ h1 #title {(post.title)} }))
                 hr;
+                @if post_toc.len() > 40 {
+                    (PreEscaped(post_toc))
+                    hr #toc-hr;
+                }
                 (PreEscaped(post_prose))
             }
         }))
