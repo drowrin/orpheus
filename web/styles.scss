@@ -326,10 +326,6 @@ article > pre {
   padding: var(--pico-block-spacing-vertical)
     var(--pico-block-spacing-horizontal);
   margin: 0;
-  background-color: var(--pico-card-background-color);
-  border-radius: var(--pico-border-radius);
-  max-width: 12rem;
-  font-size: 90%;
 }
 
 #TOC::before {
@@ -345,5 +341,9 @@ article > pre {
     position: fixed;
     transform: translateX(calc(-100% - 1.5rem));
     top: var(--navbar-height);
+    background-color: var(--pico-card-background-color);
+    border-radius: var(--pico-border-radius);
+    max-width: 12rem;
+    font-size: 90%;
   }
 }
