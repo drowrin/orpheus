@@ -243,8 +243,7 @@ experience. It was mostly neutral.
 
 ### Rating
 
-**6/10**
-
+**6/10**  
 _Playtime: 14 hours_
 
 Even if the combat wasn't my thing, I loved the style of this game. The music,
@@ -344,8 +343,7 @@ This system sucked.
 
 ### Rating
 
-**3/10**
-
+**3/10**  
 _Playtime: 8 hours_
 
 Everything about this game felt like it hated its players. It felt like it just
@@ -548,8 +546,7 @@ felt like a bonus instead of a requirement).
 
 ### Rating
 
-**7/10**
-
+**7/10**  
 _Playtime: 18 hours_
 
 This was not a flawless game, but it's easily my favorite of the three.
