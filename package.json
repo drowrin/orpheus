@@ -2,7 +2,7 @@
   "dependencies": {
     "@catppuccin/palette": "^1.2.0",
     "@picocss/pico": "2.0.6",
-    "htmx.org": "1.9.12",
+    "htmx.org": "2.0.1",
     "parcel": "2.12.0"
   }
 }
