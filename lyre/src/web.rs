@@ -3,42 +3,43 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use eyre::{eyre, Ok, Result, WrapErr};
+use eyre::{Ok, Result, WrapErr};
 use glob::glob;
 use melody::Melody;
 
-pub struct Parcel;
-impl Melody for Parcel {
+pub struct Javascript;
+impl Melody for Javascript {
     fn name() -> &'static str {
-        "Parcel"
+        "Javascript"
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(glob("web/*.js")?.flatten())
+        Ok(["package.json", "package-lock.json", "web/main.js"])
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(["generated/static/main.js"])
+        Ok([
+            "generated/static/main.js",
+            "generated/static/preload.js",
+            "generated/static/head-support.js",
+            "generated/static/htmx.js",
+        ])
     }
 
     fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
-        let cmd = if cfg!(windows) { "npm.cmd" } else { "npm" };
-        let output = std::process::Command::new(cmd)
-            .args([
-                "exec",
-                "--",
-                "parcel",
-                "build",
-                "--dist-dir",
-                "./generated/static",
-                "./web/main.js",
-            ])
-            .output()?;
-
-        if !output.status.success() {
-            return Err(eyre!("{}", String::from_utf8(output.stderr)?));
-        }
-
+        fs::copy("web/main.js", "generated/static/main.js")?;
+        fs::copy(
+            "node_modules/htmx.org/dist/htmx.js",
+            "generated/static/htmx.js",
+        )?;
+        fs::copy(
+            "node_modules/htmx-ext-preload/preload.js",
+            "generated/static/preload.js",
+        )?;
+        fs::copy(
+            "node_modules/htmx-ext-head-support/head-support.js",
+            "generated/static/head-support.js",
+        )?;
         Ok(())
     }
 }

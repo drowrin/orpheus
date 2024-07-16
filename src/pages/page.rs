@@ -117,6 +117,15 @@ impl From<Page> for Markup {
                 script
                     src="/main.js"
                     {}
+                script
+                    src="/htmx.js"
+                    {}
+                script
+                    src="/preload.js"
+                    {}
+                script
+                    src="head-support.js"
+                    {}
                 title { "drowrin.com | " (page.title) }
                 @if let Some(append_head) = page.head {
                     (append_head)

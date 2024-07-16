@@ -60,7 +60,7 @@ pub fn main() -> Result<()> {
 
             let mut state = melody::prepare()?;
 
-            <web::Parcel as Melody>::conduct(&mut state)?;
+            <web::Javascript as Melody>::conduct(&mut state)?;
             <web::Favicon as Melody>::conduct(&mut state)?;
             <web::SCSS as Melody>::conduct(&mut state)?;
             <web::Images as Melody>::conduct(&mut state)?;

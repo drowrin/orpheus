@@ -1,10 +1,5 @@
 "use strict";
 
-import "htmx.org";
-import "./fix_htmx_ext";
-import "htmx.org/dist/ext/preload";
-import "htmx.org/dist/ext/head-support";
-
 if (
   localStorage.theme === "dark" ||
   (!("theme" in localStorage) &&
