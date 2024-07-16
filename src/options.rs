@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::{collections::HashMap, fs, io::BufRead, path::Path, sync::Arc, time::Duration};
 
 use axum::{
@@ -102,8 +104,6 @@ pub fn apply_options(app: Router, state: AppState) -> Router {
 
         if options.contains("no_cache") {
             app = app.layer(from_fn(no_cache));
-        } else {
-            app = app.layer(from_fn_with_state(state, cache));
         }
 
         if options.contains("simulate_lag") {

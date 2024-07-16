@@ -124,7 +124,7 @@ impl From<Page> for Markup {
                     src="/preload.js"
                     {}
                 script
-                    src="head-support.js"
+                    src="/head-support.js"
                     {}
                 title { "drowrin.com | " (page.title) }
                 @if let Some(append_head) = page.head {
