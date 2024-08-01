@@ -14,7 +14,7 @@ use glob::glob;
 use inquire::{
     autocompletion::Replacement,
     validator::{ErrorMessage, Validation},
-    Autocomplete, CustomUserError, Select, Text,
+    Autocomplete, CustomUserError, MultiSelect, Select, Text,
 };
 use melody::{finalize, Melody};
 
@@ -133,43 +133,43 @@ fn ask_frontmatter(all_frontmatter: Vec<Frontmatter>) -> Result<Frontmatter> {
         })
         .prompt()?;
 
-    let tags_search_engine = SearchEngine::new()
-        .with_values(
-            all_frontmatter
-                .iter()
-                .flat_map(|f| f.tags.clone())
-                .collect::<HashSet<String>>()
-                .into_iter()
-                .collect(),
-        )
-        .with(|a, b| weighted_levenshtein_similarity(a, b));
-    let tags: Vec<String> = Text::new("Tags:")
-        .with_autocomplete(AutoCompleter {
-            suggestions: move |input| {
-                Ok(tags_search_engine
-                    .search(input)
-                    .into_iter()
-                    .map(|s| s.to_owned())
-                    .rev()
-                    .collect())
-            },
-            completion: |input, highlighted_suggestion| {
-                Ok(highlighted_suggestion.map(|suggestion| {
-                    input
-                        .split(&[',', ' ', '\t'])
-                        .filter(|s| !s.is_empty())
-                        .chain([suggestion.as_str()])
-                        .collect::<Vec<&str>>()
-                        .join(" ")
-                }))
-            },
-        })
-        .with_help_message("Leave blank for none")
-        .prompt()?
-        .split(&[',', ' ', '\t'])
-        .filter(|s| !s.is_empty())
-        .map(|s| s.to_string())
+    let all_tags = all_frontmatter
+        .iter()
+        .flat_map(|f| f.tags.clone())
+        .collect::<HashSet<String>>()
+        .into_iter()
         .collect();
+    // let tags_search_engine = SearchEngine::new()
+    //     .with_values(all_tags)
+    //     .with(|a, b| weighted_levenshtein_similarity(a, b));
+    let tags: Vec<String> = MultiSelect::new("Tags:", all_tags).prompt()?;
+    // let tags: Vec<String> = Text::new("Tags:")
+    //     .with_autocomplete(AutoCompleter {
+    //         suggestions: move |input| {
+    //             Ok(tags_search_engine
+    //                 .search(input)
+    //                 .into_iter()
+    //                 .map(|s| s.to_owned())
+    //                 .rev()
+    //                 .collect())
+    //         },
+    //         completion: |input, highlighted_suggestion| {
+    //             Ok(highlighted_suggestion.map(|suggestion| {
+    //                 input
+    //                     .split(&[',', ' ', '\t'])
+    //                     .filter(|s| !s.is_empty())
+    //                     .chain([suggestion.as_str()])
+    //                     .collect::<Vec<&str>>()
+    //                     .join(" ")
+    //             }))
+    //         },
+    //     })
+    //     .with_help_message("Leave blank for none")
+    //     .prompt()?
+    //     .split(&[',', ' ', '\t'])
+    //     .filter(|s| !s.is_empty())
+    //     .map(|s| s.to_string())
+    //     .collect();
 
     let series = if !series.is_empty() {
         Some(series)
