@@ -1,11 +1,21 @@
-use std::{collections::HashSet, fs, path::Path, result::Result as stdResult, time::SystemTime};
+use std::{
+    collections::{HashMap, HashSet},
+    fs,
+    path::{Path, PathBuf},
+    result::Result as stdResult,
+    time::SystemTime,
+};
 
 use chrono::Utc;
 use color_eyre::owo_colors::OwoColorize;
 use colored::*;
 use eyre::Result;
 use glob::glob;
-use inquire::{autocompletion::Replacement, Autocomplete, CustomUserError, Text};
+use inquire::{
+    autocompletion::Replacement,
+    validator::{ErrorMessage, Validation},
+    Autocomplete, CustomUserError, Select, Text,
+};
 use melody::{finalize, Melody};
 
 use clap::{Parser, Subcommand};
@@ -33,26 +43,7 @@ enum Commands {
     Build,
 
     /// Generate new empty content files from templates
-    Gen {
-        #[command(subcommand)]
-        template: Templates,
-    },
-}
-
-#[derive(Subcommand)]
-enum Templates {
-    /// Generates an empty post
-    Post {
-        /// Title of the post. Also used to generate the file name
-        #[arg(num_args(..), trailing_var_arg(true),)]
-        title: Vec<String>,
-    },
-    /// Generates an empty review post
-    Review {
-        /// Title of the post. Also used to generate the file name
-        #[arg(num_args(..), trailing_var_arg(true),)]
-        title: Vec<String>,
-    },
+    Gen,
 }
 
 #[derive(Clone)]
@@ -82,7 +73,7 @@ where
     }
 }
 
-fn ask_frontmatter(title: String, all_frontmatter: Vec<Frontmatter>) -> Result<Frontmatter> {
+fn ask_frontmatter(all_frontmatter: Vec<Frontmatter>) -> Result<Frontmatter> {
     let series_search_engine = SearchEngine::new()
         .with_values(
             all_frontmatter
@@ -93,17 +84,6 @@ fn ask_frontmatter(title: String, all_frontmatter: Vec<Frontmatter>) -> Result<F
                 .collect(),
         )
         .with(|a, b| weighted_levenshtein_similarity(b, a));
-    let tags_search_engine = SearchEngine::new()
-        .with_values(
-            all_frontmatter
-                .iter()
-                .flat_map(|f| f.tags.clone())
-                .collect::<HashSet<String>>()
-                .into_iter()
-                .collect(),
-        )
-        .with(|a, b| weighted_levenshtein_similarity(a, b));
-
     let series: String = Text::new("Series:")
         .with_autocomplete(AutoCompleter {
             suggestions: move |input| {
@@ -119,6 +99,50 @@ fn ask_frontmatter(title: String, all_frontmatter: Vec<Frontmatter>) -> Result<F
         .with_help_message("Leave blank for none")
         .prompt()?;
 
+    let titles_search_engine = SearchEngine::new()
+        .with_values(
+            all_frontmatter
+                .iter()
+                .filter(|f| f.series == Some(series.clone()))
+                .map(|f| f.title.clone())
+                .collect::<HashSet<String>>()
+                .into_iter()
+                .collect(),
+        )
+        .with(|a, b| weighted_levenshtein_similarity(b, a));
+    let title: String = Text::new("Title:")
+        .with_autocomplete(AutoCompleter {
+            suggestions: move |input| {
+                Ok(titles_search_engine
+                    .search(input)
+                    .into_iter()
+                    .map(|s| s.to_owned())
+                    .rev()
+                    .collect())
+            },
+            completion: |_, highlighted_suggestion| Ok(highlighted_suggestion),
+        })
+        .with_validator(|input: &str| {
+            Ok({
+                if input.is_empty() {
+                    Validation::Invalid(ErrorMessage::Custom("Please enter a title!".to_string()))
+                } else {
+                    Validation::Valid
+                }
+            })
+        })
+        .prompt()?;
+
+    let tags_search_engine = SearchEngine::new()
+        .with_values(
+            all_frontmatter
+                .iter()
+                .flat_map(|f| f.tags.clone())
+                .collect::<HashSet<String>>()
+                .into_iter()
+                .collect(),
+        )
+        .with(|a, b| weighted_levenshtein_similarity(a, b));
     let tags: Vec<String> = Text::new("Tags:")
         .with_autocomplete(AutoCompleter {
             suggestions: move |input| {
@@ -162,7 +186,7 @@ fn ask_frontmatter(title: String, all_frontmatter: Vec<Frontmatter>) -> Result<F
     })
 }
 
-fn gen_post(frontmatter: Frontmatter, template: &str) -> Result<()> {
+fn gen_post(frontmatter: Frontmatter) -> Result<()> {
     let mut path = Path::new("content").join("posts").to_path_buf();
 
     if let Some(series) = frontmatter.series.clone() {
@@ -173,13 +197,23 @@ fn gen_post(frontmatter: Frontmatter, template: &str) -> Result<()> {
         .join(slugify(frontmatter.title.clone()))
         .with_extension("md");
 
+    let templates: Vec<PathBuf> = glob("templates/**/*.md")?.flatten().collect();
+    let template_map: HashMap<String, PathBuf> = templates
+        .clone()
+        .into_iter()
+        .flat_map(|t| Some((t.with_extension("").file_name()?.to_str()?.to_string(), t)))
+        .collect();
+    let template_keys: Vec<&String> = template_map.keys().collect();
+
+    let selected_template = Select::new("Template:", template_keys).prompt()?;
+
     fs::create_dir_all(path.with_file_name(""))?;
     fs::write(
         &path,
         format!(
             "---\n{}---\n\n{}",
             serde_yaml::to_string(&frontmatter)?.replace(" null", ""),
-            template,
+            fs::read_to_string(template_map.get(selected_template).unwrap())?,
         ),
     )?;
 
@@ -228,16 +262,7 @@ pub fn main() -> Result<()> {
                 started.elapsed()?.yellow()
             );
         }
-        Commands::Gen { template } => match template {
-            Templates::Post { title } => gen_post(
-                ask_frontmatter(title.join(" "), all_frontmatter)?,
-                include_str!("../../templates/post.md"),
-            )?,
-            Templates::Review { title } => gen_post(
-                ask_frontmatter(title.join(" "), all_frontmatter)?,
-                include_str!("../../templates/review.md"),
-            )?,
-        },
+        Commands::Gen => gen_post(ask_frontmatter(all_frontmatter)?)?,
     }
 
     Ok(())
