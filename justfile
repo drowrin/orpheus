@@ -3,10 +3,10 @@ set dotenv-filename := "secrets.env"
 @clean:
     rm -rf generated
 
-@build args="":
+@build +args="":
     cargo build {{ args }}
 
-@lyre args="build":
+@lyre +args="build":
     ./target/release/lyre {{ args }}
 
 @gen: (lyre "gen")
@@ -14,7 +14,7 @@ set dotenv-filename := "secrets.env"
 @dev: (build "-p lyre") lyre
     ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag" cargo run
 
-@watch recipes="":
+@watch +recipes="":
     cargo watch -cq -- just {{ recipes }} dev
 
 @run:
