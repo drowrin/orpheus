@@ -131,11 +131,11 @@ pub fn main() -> Result<()> {
         Commands::Gen { template } => match template {
             Templates::Post { title } => gen_post(
                 ask_frontmatter(title.join(" "))?,
-                include_str!("../templates/post.md"),
+                include_str!("../../templates/post.md"),
             )?,
             Templates::Review { title } => gen_post(
                 ask_frontmatter(title.join(" "))?,
-                include_str!("../templates/review.md"),
+                include_str!("../../templates/review.md"),
             )?,
         },
     }
