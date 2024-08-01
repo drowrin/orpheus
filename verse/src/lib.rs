@@ -12,7 +12,7 @@ use tantivy::{
     Index, IndexReader, TantivyError,
 };
 
-#[derive(Deserialize, Serialize, Default)]
+#[derive(Deserialize, Serialize, Default, Clone)]
 pub struct Frontmatter {
     pub title: String,
     pub brief: Option<String>,
