@@ -47,6 +47,59 @@ enum Templates {
         #[arg(num_args(..), trailing_var_arg(true),)]
         title: Vec<String>,
     },
+    /// Generates an empty review post
+    Review {
+        /// Title of the post. Also used to generate the file name
+        #[arg(num_args(..), trailing_var_arg(true),)]
+        title: Vec<String>,
+    },
+}
+
+fn ask_frontmatter(title: String) -> Result<Frontmatter> {
+    print!("Series (leave blank for none): ");
+    stdout().flush()?;
+    let mut series = String::new();
+    stdin().read_line(&mut series)?;
+    series = series.trim().to_string();
+
+    let series = if !series.is_empty() {
+        Some(series)
+    } else {
+        None
+    };
+
+    Ok(Frontmatter {
+        title,
+        series: series.clone(),
+        published: Utc::now().format("%F").to_string(),
+        ..Default::default()
+    })
+}
+
+fn gen_post(frontmatter: Frontmatter, template: &str) -> Result<()> {
+    let mut path = Path::new("content").join("posts").to_path_buf();
+
+    if let Some(series) = frontmatter.series.clone() {
+        path = path.join(slugify(series));
+    }
+
+    path = path
+        .join(slugify(frontmatter.title.clone()))
+        .with_extension("md");
+
+    fs::create_dir_all(path.with_file_name(""))?;
+    fs::write(
+        &path,
+        format!(
+            "---\n{}---\n\n{}",
+            serde_yaml::to_string(&frontmatter)?.replace(" null", ""),
+            template,
+        ),
+    )?;
+
+    println!("Generated at: {}", path.to_str().unwrap().blue());
+
+    Ok(())
 }
 
 pub fn main() -> Result<()> {
@@ -76,46 +129,14 @@ pub fn main() -> Result<()> {
             );
         }
         Commands::Gen { template } => match template {
-            Templates::Post { title } => {
-                print!("Series (leave blank for none): ");
-                stdout().flush()?;
-                let mut series = String::new();
-                stdin().read_line(&mut series)?;
-                series = series.trim().to_string();
-
-                let series = if !series.is_empty() {
-                    Some(series)
-                } else {
-                    None
-                };
-
-                let title = title.join(" ");
-                let frontmatter = Frontmatter {
-                    title: title.clone(),
-                    series: series.clone(),
-                    published: Utc::now().format("%F").to_string(),
-                    ..Default::default()
-                };
-
-                let mut path = Path::new("content").join("posts").to_path_buf();
-
-                if let Some(series) = series {
-                    path = path.join(slugify(series));
-                }
-
-                path = path.join(slugify(title)).with_extension("md");
-
-                fs::create_dir_all(path.with_file_name(""))?;
-                fs::write(
-                    &path,
-                    format!(
-                        "---\n{}---\n\n# Content Here\n",
-                        serde_yaml::to_string(&frontmatter)?.replace(" null", "")
-                    ),
-                )?;
-
-                println!("Generated at: {}", path.to_str().unwrap().blue());
-            }
+            Templates::Post { title } => gen_post(
+                ask_frontmatter(title.join(" "))?,
+                include_str!("../templates/post.md"),
+            )?,
+            Templates::Review { title } => gen_post(
+                ask_frontmatter(title.join(" "))?,
+                include_str!("../templates/review.md"),
+            )?,
         },
     }
 
