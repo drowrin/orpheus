@@ -13,7 +13,7 @@ eyre = "0.6.12"
 color-eyre = "0.6.3"
 colored = "2.1.0"
 slug = "0.1.5"
-grass = "0.13.3"
+grass = "0.13.4"
 pandoc = "0.8.11"
 verse = { path = "../verse" }
 melody = { path = "../melody" }
