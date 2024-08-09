@@ -20,6 +20,7 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 - cache-busting parameters in release mode, live-reloading and disabled caching in dev mode
 - all live content sources isolated in a single directory, `content`
 - avoid as much client-side work as possible
+- automatic table of contents
 
 ### Roadmap
 
@@ -28,7 +29,6 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 - opengraph tags
 - "related posts" section
 - image format content negotiation
-- automatic table of contents
 
 #### Meta Roadmap
 
