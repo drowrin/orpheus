@@ -7,7 +7,7 @@ tags:
   - games
   - reviews
 published: 2024-08-08
-updated:
+updated: 2024-08-12
 ---
 
 We've arrived at the Final Fantasy game I was most looking forward to. It has a
@@ -59,8 +59,8 @@ had, it surpassed it. So many characters had really good custom animations for
 various emotions. They were very effective at assisting in telling the story.
 Even better, it did so without over-emphasizing everything cartoonishly like FFV
 did. There are still some charming animations that dip into it a little bit,
-especially stuff like rapidly flashing two very different sprites to show
-intensity. It's done tastefully. They struck a great balance here.
+especially stuff like rapidly flashing two poses to show intensity, but it's
+done tastefully. They struck a great balance here.
 
 I really appreciated the visual and audio tone set by the game. They stuck to it
 very consistently. All the colors have a cooler temperature than previous games
@@ -69,12 +69,13 @@ moments.
 
 The backdrop art was universally incredible. I really appreciated all of it. As
 I understand it, the Pixel Remasters helped _a lot_ with this for this game in
-particular. Everything is full of so much consistent detail and small touches.
+particular. Everything is full of so much consistent detail and so many small
+touches.
 
-There were also some awesome enemy art, especially for bosses. The final boss is
-iconic, for good reason, and was a great spectacle. Even if an random enemy here
-or there weren't great, the sprites in this game were all better than the
-sprites in any of the previous games. Gorgeous.
+There was also some awesome enemy art, especially for bosses. The final boss was
+a great spectacle, and is deservedly iconic. Even if a random enemy here or
+there wasn't great, the sprites in this game were all better than those of
+previous games. Gorgeous.
 
 This game had some amazing cinematic moments.
 
@@ -82,7 +83,8 @@ The intro to the game has that long, slow walk. Mechs marching across a snowy
 field. The music is somber, but determined. For a long time, the snowfield
 yields no landmarks, until slowly a mountain rises on the horizon. Then, the
 first glint of warm light, coming from a town that is being slowly revealed.
-It's stirring.
+That warm light is a spark of hope against the bleak backdrop, but you already
+know you're marching with intent to snuff it out. It's stirring.
 
 The musical performance put on by Celes is giving me goosebumps as I relisten to
 it as I write this. The fact that they put on an opera performance during the
@@ -104,48 +106,49 @@ Towards the end, I started to dislike the pacing and some of the general
 writing, but I think that's partially my fault. The game opens up in the
 latter-half. There's a lot of side-content to do. You can gather up the full
 cast, go on quests for powerful pieces of equipment, finish the side-stories of
-each of the part members, and so on. I wanted to see it _all_, so I did.
+each of the part members, and so on. I wanted to see it _all_, so I did. Some of
+it was great! Some of it...
 
-Unfortunately I didn't enjoy the writing quality of that content nearly as much.
-Part of it is that I just wasn't invested in a handful of party members. Some of
-this was great! I just would have had a better time with the game if I focused
-more on completing the main story and whatever side stories actually engaged me,
-and skipped the stories for characters I didn't really like. I do think that
-having a load of side-content I don't enjoy is a negative, but since it was my
-stubbornness that made me play it all, I won't let that affect my opinion of the
-game overall too much.
+Unfortunately I didn't enjoy large portions of that content. Part of it is that
+I just wasn't invested in a handful of party members. I would have had a better
+time with the game if I focused more on completing the main story and whatever
+side stories actually engaged me, and skipped the stories for characters I
+didn't really like.
 
 This left me feeling torn after finishing the game. It's taken me a long time to
 write this review, because there was this lingering feeling. I was conflicted. I
 felt like the story really fell off in the second half, and that made me want to
 lower the score, but I also remembered _loving_ it at the start, and I was
-satisfied by the ending. After coming to the above realization, and accepting
-that the highs of the game were truly high enough to outshine any of the lows,
-I'm back to thinking this is one of my all-time favorite games.
+satisfied by the ending. I do think that having a load of side-content I don't
+enjoy is a negative, but since it was my stubbornness that made me play it all,
+I won't let that affect my opinion of the game overall too much. After coming to
+that realization, and accepting that the highs of the game were truly high
+enough to outshine any of the lows, I'm back to thinking this is one of my
+all-time favorite games.
 
 Thinking back on the main events and the most important party-members' stories,
 it was a fantastic experience throughout.
 
-My main criticism of the main story writing is that I don't feel like we got
-quite enough out of the Espers. It was a very character-focused story, so I can
+My main criticism of the main story is that I don't feel like we got quite
+enough out of the Espers. It was a very character-focused story, so I can
 understand that there wasn't much room for anything else. I just would have
 liked to learn more about the Espers and their world. They're left as this
 mystical, mostly unexplained thing. We know who they are, what they can do, and
-their history (though largely through the human perspective). That's all cool,
-and it serves the story well. I just wish we learned more about their culture.
-It would have made me care about them more. Speaking of caring about them more,
-very few of them felt like anything more than an anthropomorphized piece of
-equipment. I enjoyed exploring the stories of those that received more detailed
-writing. I wish we got more of that. It's really the missed opportunities that
-get to me. I'd love to see an expanded version of this game someday, like the
-FFVII remakes are doing.
+bits of their history (though largely through the human perspective). That's all
+cool, and it serves the story well---I just wish we learned more about their
+culture. It would have made me care about them more. Speaking of caring about
+them more, very few of them felt like anything more than an anthropomorphized
+piece of equipment. I enjoyed exploring the stories of those that received more
+detailed writing. I wish we got more of that. It's really the missed
+opportunities that get to me. I'd love to see an expanded version of this game
+someday, like the FFVII remakes are doing.
 
 On to the good:
 
 I adored most of the cast. They were full of personality and good
 characterization. Their individual stories were engaging, and their interactions
-with each other were really good. There were many touching character moments and
-arcs throughout the story:
+with each other were really endearing. There were many touching character
+moments and arcs throughout the story:
 
 Celes || constantly trying to prove her loyalty, sacrificing herself for the
 others, and succeeding even in the most dire situations ||
@@ -166,9 +169,10 @@ to terms with his own grief ||
 
 I also really enjoyed the places where the story split into smaller groups. It
 let the story focus in on fewer characters, and let those personalities shine
-through. It also allowed the story to have much more content, and much more time
-to get to know the characters, without making it seem like the events of the
-main plot were taking a long time (since it all happened simultaneously).
+through. It also allowed the story to have much more content, and gave me much
+much more time to get to know the characters, without making it seem like the
+events of the main plot were taking a long time (since it all happened
+simultaneously).
 
 The main story was very enjoyable as well. It's hard to separate the "main plot"
 from the characters, as it's a very character-driven story. You might even say
@@ -221,7 +225,7 @@ tells Celes, now full of hope, to go and find the others. ||
 [^1]:
     || I looked it up and he _can_ die here, if you don't pick up on the
     pattern and are unlucky. If he does die, Celes despairs and attempts suicide.
-    She survives, and stumbles on Locke's bandana. Locke, ever the cheerful and
+    She survives, and happens to find Locke's bandana. Locke, ever the cheerful and
     determined spark of hope for the group, inspires Celes to find hope even in the
     darkest time. Either way, it is the bonds with her friends that provide Celes
     the support she needs to overcome Kefka's despair. ||
@@ -245,7 +249,7 @@ There are even elements of hope in the gameplay, too. For example, when ||
 waiting for Shadow, instead of accepting his sacrifice ||. That's an act of pure
 hope. The Desperation Attack mechanic is an expression of hope as well. A
 character on the brink of death can rise above the odds to unleash a massive
-unique attack, not giving in to the dire situation.
+unique attack.
 
 The final fight also emphasizes the themes, especially those of your shared
 bonds supporting you against despair. || You can queue up 12 party members. When
@@ -377,7 +381,7 @@ sluggishly, while still being too fast for the combat animations and gumming
 everything up in the queue mentioned above. Worse, during the times when you
 have access to fewer characters, there's the opposite problem. Nothing ever
 happens. You've got to wait a long time for the first moves to come out in
-combat, and then wait a while for the second moves, adn so on. It's just always
+combat, and then wait a while for the second moves, and so on. It's just always
 slow.
 
 I think they wanted to tweak the ATB system instead of just keeping the one FFV
