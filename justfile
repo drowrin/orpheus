@@ -18,7 +18,9 @@ set dotenv-filename := "secrets.env"
     cargo watch -cq -- just {{ recipes }} dev
 
 @run:
-    ./target/release/lyre build && ORPHEUS_OPTIONS="live_reload,no_cache" ./target/release/orpheus
+    ./target/release/lyre build
+    echo view at: http://127.0.0.1:8000/
+    ORPHEUS_OPTIONS="live_reload,no_cache" ./target/release/orpheus
 
 @author:
     cargo build -p lyre --release
