@@ -2,7 +2,7 @@
 
 ---
 
-# The Review {style="display: none"}
+# The Review
 
 ## Audio & Visuals
 

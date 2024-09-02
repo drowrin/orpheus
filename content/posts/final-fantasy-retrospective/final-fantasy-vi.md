@@ -45,7 +45,7 @@ It sets a very high bar for the rest of the series.
 
 ---
 
-# The Review {style="display: none"}
+# The Review
 
 ## Audio & Visuals
 

@@ -71,7 +71,7 @@ This has been the strongest swing of the pendulum so far.
 
 ---
 
-# The Review {style="display: none"}
+# The Review
 
 ## Audio & Visuals
 

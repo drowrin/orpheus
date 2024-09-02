@@ -31,7 +31,7 @@ games were reaching for, cherry-picks all the best bits, and improves on it all.
 
 ---
 
-# The Review {style="display: none"}
+# The Review
 
 ## Audio & Visuals
 
