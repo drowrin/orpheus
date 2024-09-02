@@ -116,6 +116,7 @@ pub fn post_card(post: &PostMetaData) -> Markup {
                 h3 { a
                     ."article-link"
                     href={ "/posts/" (post.slug) }
+                    hx-swap="innerHTML"
                     preload="mouseover"
                     preload-images="true"
                     { (post.title) }
