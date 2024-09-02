@@ -1,7 +1,7 @@
 ---
 title: Yakuza 3
 published: 2024-04-06
-series: Catching up on Yakuza in 2024
+series: Yakuza / Like a Dragon
 tagline: 4/10 mainline games, 0/3 spinoff games
 tags:
   - reviews

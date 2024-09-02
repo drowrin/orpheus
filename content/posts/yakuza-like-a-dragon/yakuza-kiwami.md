@@ -1,7 +1,7 @@
 ---
 title: Yakuza Kiwami
 published: 2024-03-03
-series: Catching up on Yakuza in 2024
+series: Yakuza / Like a Dragon
 tagline: 2/10 mainline games, 0/3 spinoff games
 tags:
   - reviews
