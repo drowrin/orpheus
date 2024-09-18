@@ -24,7 +24,7 @@ tower-http = { version = "0.5.2", features = [
     "compression-zstd",
     "normalize-path",
 ] }
-tower-livereload = "0.9.3"
+tower-livereload = "0.9.4"
 tower = "0.5.1"
 axum-htmx = { version = "0.6.0", features = ["serde"] }
 axum-extra = { version = "0.9.3", features = ["query"] }
