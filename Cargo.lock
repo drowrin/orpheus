@@ -2347,16 +2347,16 @@ checksum = "121c2a6cda46980bb0fcd1647ffaf6cd3fc79a013de288782836f6df9c48780e"
 
 [[package]]
 name = "tower-livereload"
-version = "0.9.3"
+version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57d7d9fecf1242d1c6a3cf8f7f3c2da94e6aac553bb7062ab6d03e16b9872fd0"
+checksum = "0eed2e2234e1daf043b5548205c29778f2655a00eba8fd980333506bb007f052"
 dependencies = [
  "bytes",
  "http",
  "http-body",
  "pin-project-lite",
  "tokio",
- "tower 0.4.13",
+ "tower 0.5.1",
 ]
 
 [[package]]
