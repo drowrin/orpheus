@@ -174,7 +174,7 @@ and leaning more on the aggressive side. It all made perfect sense to me. I
 could see it working a bit less well if you leaned Paragon in the first game
 though.
 
-The system at the end for making a big assult with your whole crew involved was
+The system at the end for making a big assault with your whole crew involved was
 very cool. I had really grown to like all the characters, so being forced to
 choose people to put into various jobs with different levels of risk was very
 effective. I also enjoyed feeling rewarded for understanding the strengths of my

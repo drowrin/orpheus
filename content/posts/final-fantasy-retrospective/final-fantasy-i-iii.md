@@ -24,7 +24,7 @@ stuck there. I'm hoping to finish at least one series by the end of the year,
 playtime be damned!
 
 I think in the short term, this is the series I'll make the most progress on,
-even though it is undoubtedly the longest. Regretably, my wrist isn't in shape
+even though it is undoubtedly the longest. Regrettably, my wrist isn't in shape
 to play a button mashing game like Yakuza, or a shooter like Mass Effect. On the
 other hand, the Final Fantasy series make for great Steam Deck games, and are
 much easier on my wrist. Plus, they're (mostly) comfy fantasy games, which I'm
@@ -214,7 +214,7 @@ Heal (everyone is currently at max health, wasting the spell) -> Boss attacks at
 the end of the round -> Boss goes first next round, before you can heal, killing
 everyone. Sometimes I'd also want to raise somebody and then drop a potion on
 them, but the potion would happen first and get wasted. Buffs would go off after
-the targetter character attacked. It's a mess.
+the targeting character attacked. It's a mess.
 
 I didn't find it particularly hard, at least. Once I got used to planning my
 trips and stocking up on the consumables I might need, it was straightforward,

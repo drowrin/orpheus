@@ -318,7 +318,7 @@ have allowed any of 3 events to trigger the `<form>`:
 - `input changed delay:100ms from:#search`  
   If the input changes in the `#search` element, after a period of 100ms without
   change, trigger the element. This allows us to respond to a user's search as
-  they type, without trigerring on every key press.
+  they type, without triggering on every key press.
 - `search`  
   If the user triggers the search by hitting enter, trigger the element.
 - `change`  
@@ -450,7 +450,7 @@ unergonomic, I just don't like the inheritance mental model in general.
 
 I also didn't like having a ton of separate files for all my templates. It
 required extra overhead to remember where everything was. The inheritance model
-excaberated this, as I often had to check multiple files to find something in
+exacerbated this, as I often had to check multiple files to find something in
 the chain of inheritance.
 
 I think this could be really cool in a different project. A larger project would

@@ -27,7 +27,7 @@ also skip all the way down to the [conclusion](#conclusion) if you prefer.
 I call this a **tragic masterpiece**---not because it's too dark and never has
 any hope or anything like that (though it absolutely is on the darker, more
 tragic side), but because of _how this game was (and is) being treated_.
-Microsoft did barely any marketting, then threw it on Gamepass day 1. Gamers^TM^
+Microsoft did barely any marketing, then threw it on Gamepass day 1. Gamers^TM^
 are bored because you can't grind for gear or go on sidequests. People look no
 further than the 8-hour playtime and dismiss it as overpriced, unfinished trash.
 
@@ -96,7 +96,7 @@ easily achievable shot with satisfying composition. I never felt like I was
 fighting with the camera to get a good angle, but I also never felt like it took
 away my control. It would perform subtle tricks like getting closer or further
 from Senua when I just happened to look at certain things, to help line
-everything up. This meant that no matter what I was doing, I was effortelssly
+everything up. This meant that no matter what I was doing, I was effortlessly
 looking at a **gorgeous** shot. This really helped me _immerse myself into the
 game_.
 
@@ -127,7 +127,7 @@ away, and more. Those details could easily get lost in the hectic, intense
 combat scenes, but they were included anyways. They seemed dynamic, not
 pre-programmed. Like, if I approached an enemy from their left flank and swung,
 barely clipping their thigh, that _exact spot_ is where a new cut would appear.
-It would allign with the angle of my swing and the length I cut as well. Really
+It would align with the angle of my swing and the length I cut as well. Really
 impressive.
 
 The visuals got really surreal and abstract sometimes, and the game pulled it
@@ -139,7 +139,7 @@ game played with blending reality and fiction constantly, and it was _very well
 backed by the visuals_.
 
 I was constantly enthralled by how this game looked, and the level of detail
-added a lot to the experience rather than just being a marketting thing. It
+added a lot to the experience rather than just being a marketing thing. It
 wasn't "this game is good _and_ it looks good too!", it truly used technology to
 elevate its storytelling to a new level. **One I've never seen before**. If I
 went to a movie theater for a modern animated film, I would not be disappointed
@@ -535,7 +535,7 @@ journey through Senua's own trauma. At the end, we learn that Illtauga's
 backstory is extremely similar to Senua's own. Both characters' villages were
 burned down. Both feel pain, regret, and anger. Both blame themselves for the
 death and suffering around them. This pain drove Illtauga to become a monster.
-Her self-blame turned her into a being of hellfire and dustruction just like the
+Her self-blame turned her into a being of hellfire and destruction just like the
 volcano that took everything from her. Senua realizes that she could have just
 as easily become a monster. Maybe she's already on that path---seeking revenge.
 Senua feels empathy for Illtauga. She confronts the giant, taking refuge from
@@ -561,7 +561,7 @@ accumulated during her journey. This time, all it takes to cure the monster is
 to reach out her hand, and give Seageirr a human touch. She tells him that she
 understands him. She knows him. She accepts him. The monster is no more.||
 
-The final controntation flips the script. ||The last giant is Aleifr,
+The final confrontation flips the script. ||The last giant is Aleifr,
 Thorgestr's father. Aleifr sought power, and he liked when people relied on him.
 When the hardships faded due to his leadership, people no longer needed him. So,
 he secretly created hardship for his people while offering to protect them from
@@ -606,7 +606,7 @@ the entire time. Everything magical or fantastical that Senua sees? It's her own
 hallucination. Even some of the other characters may be hallucinations. That's
 why so many of the challenges Senua faces mirror her own internal struggles.
 She's experiencing her _internal struggles_ as _external_, **because that's how
-her mind works**. The authors were able to turn the narrative metaphores into
+her mind works**. The authors were able to turn the narrative metaphors into
 physical things in such a beautiful, cinematic way. It adds a lot of layers to
 the storytelling. I'm sure each time I replay this, I'll notice another place
 that this comes into play.
@@ -643,7 +643,7 @@ me. Do not let the playtime of the game put you off. It's got more impact
 crammed into those 8 hour games than _almost any other game I've played_.
 
 **10/10.** I can not possibly give this game a higher score. I consider it one
-of the alltime greats---currently my 4th favorite game ever, beating out Alan
+of the all-time greats---currently my 4th favorite game ever, beating out Alan
 Wake 2. It's one of the now 6 games I've given a 10/10. I don't give that out
 lightly.
 

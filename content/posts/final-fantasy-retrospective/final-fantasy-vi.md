@@ -192,7 +192,7 @@ His rising influence represents that doubt growing. The destruction he causes
 along the way represents the pain that doubt causes. His betrayal and choice to
 destroy the world represents the despair of that doubt taking over. ||
 
-I had something spoiled for me before I started the game. It was innevitable. I
+I had something spoiled for me before I started the game. It was inevitable. I
 knew || Kefka was the true villain || (though this seemed obvious to me anyways,
 I'm clearly not in a position to say it was actually obvious without knowing it
 ahead of time). I knew that || Kefka won, temporarily ||, but I didn't know any

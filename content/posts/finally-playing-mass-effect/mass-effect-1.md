@@ -24,7 +24,7 @@ games. There were a couple things I'd consider possible plot holes ||mostly
 considering evidence and trust. Felt like pretty much anything considered
 evidence was extremely flimsy, and trust was given before I earned it and then
 denied after I earned it. Inconsistent|| but it didn't detract from the overall
-plot tooo much. Every time the plot "opened up" with a big reveal was very
+plot too much. Every time the plot "opened up" with a big reveal was very
 nicely handled. Love, love, loved all the lore dumps at various points. I loved
 how ||eldritch horror|| the ||Reapers|| felt. I loved the pressure of the
 missions always being a race to catch up to ||Saren||.

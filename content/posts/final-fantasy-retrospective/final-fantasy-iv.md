@@ -17,7 +17,7 @@ game_.
 
 I've seen this game pop up near the middle of a fair few "Favorite Final
 Fantasy" lists, and very rarely at the top. It's clear that the community _likes
-and respects_ this game, but it's not one of the alltime greats. Still, I think
+and respects_ this game, but it's not one of the all-time greats. Still, I think
 it's a foundational game for the series. I'm very glad I played it.
 
 It leans into the rich storytelling the series is known for, **hard**. It
@@ -111,8 +111,8 @@ that location. Cecil spends the rest of the game atoning, and putting all of his
 being into stopping the evil empire.
 
 This redemption story is powerful and touching. It's much, much more interesting
-than the "you're the hero of light, go save the day" or "we're desparate, and your
-actions never actually make us any less desparate" of the previous games.
+than the "you're the hero of light, go save the day" or "we're desperate, and your
+actions never actually make us any less desperate" of the previous games.
 
 The other characters also get a ton more time in the spotlight, and they're much
 more memorable. Like FFII, this game constantly swaps out who is in your party,
@@ -240,7 +240,7 @@ didn't really care about the lack of playstyle customization, because I was
 entertained by the content either way.
 
 This had by far the most fun gameplay so far. The ATB system was a big part of
-that. I also really appreciated the variety of playstyles offerred by the
+that. I also really appreciated the variety of playstyles offered by the
 different party members at various points throughout the playthrough, especially
 since those playstyles were handcrafted by the developers instead of left for me
 to attempt to cobble together myself. It's a great experience on it's own, but
