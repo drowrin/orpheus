@@ -22,15 +22,15 @@ impl Melody for Javascript {
             "generated/static/main.js",
             "generated/static/preload.js",
             "generated/static/head-support.js",
-            "generated/static/htmx.js",
+            "generated/static/htmx.min.js",
         ])
     }
 
     fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         fs::copy("web/main.js", "generated/static/main.js")?;
         fs::copy(
-            "node_modules/htmx.org/dist/htmx.js",
-            "generated/static/htmx.js",
+            "node_modules/htmx.org/dist/htmx.min.js",
+            "generated/static/htmx.min.js",
         )?;
         fs::copy(
             "node_modules/htmx-ext-preload/preload.js",

@@ -118,7 +118,7 @@ impl From<Page> for Markup {
                     src="/main.js"
                     {}
                 script
-                    src="/htmx.js"
+                    src="/htmx.min.js"
                     {}
                 script
                     src="/preload.js"
