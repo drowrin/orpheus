@@ -53,8 +53,7 @@ discord bot for managing TTRPG groups
 
 </hgroup>
 
-https://github.com/drowrin/modron  
-<sup class="muted">I haven't gotten around to renaming the repository yet</sup>
+https://github.com/drowrin/eurydice
 
 This isn't a dice roller or a any form of rules automation. There are endless
 solutions out there for that. This is an organization tool. It's designed to

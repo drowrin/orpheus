@@ -66,7 +66,7 @@ System: **Pathfinder 2nd Edition**
 
 Vibes _adventure, fantasy, tactical combat_
 
-Status: <ins>Ongoing</ins>
+Status: **Completed**
 
 Checking out Pathfinder 2e, with the Beginner Box and its followup
 
