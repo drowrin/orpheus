@@ -14,7 +14,3 @@
 
 **Rating: /10**  
 _Playtime: hours_
-
----
-
-# Next Up
