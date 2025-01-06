@@ -390,7 +390,7 @@ that did nothing special over the base game missions. It introduces a very cool
 character, that likely was supposed to be in the base game due to the lore
 implications. Indeed, I think many, many of the scenes in the game would have
 made significantly more sense if this character had been included from the
-start. Sad that the game got rushes to _this_ extent.
+start. Sad that the game got rushed to _this_ extent.
 
 #### Leviathan
 
@@ -467,7 +467,7 @@ constantly wished for it to just end.
 
 I've delayed this review long enough, so I'm not going to go into detail here.
 
-This was the best of the series when it game to combat. The loadout system was
+This was the best of the series when it came to combat. The loadout system was
 fun, and I enjoyed being able to equip very few weapons to keep my power
 cooldowns as low as possible. I wanted to use Biotics as often as possible, and
 it was fun that it allowed me to build in that direction.
