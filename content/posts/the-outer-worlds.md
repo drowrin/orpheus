@@ -1,7 +1,7 @@
 ---
 title: The Outer Worlds
 brief:
-tagline:
+tagline: Who are you and what have you done with Obsidian?
 series:
 tags:
   - games
