@@ -7,14 +7,6 @@ live actual plays
 
 </hgroup>
 
-I generally have two actual play livestreams per week. Scheduling
-issues sometimes mean that number dips, but sometimes I release a
-bonus episode on weekends. I also try to fill schedule gaps with
-oneshots when possible.
-
-I run a variety of systems, though I'm trending more and more
-towards narrative games over time.
-
 </section>
 
 <article>

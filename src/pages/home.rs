@@ -20,10 +20,6 @@ pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl 
             section {
                 hgroup {
                     h2 { "Recent Posts" }
-                    p {
-                        "check out my "
-                        a href="/posts" { "blog" }
-                    }
                 }
                 @for post in posts.into_iter().take(3) {
                     (post_card(post))
