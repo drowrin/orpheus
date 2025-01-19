@@ -78,6 +78,7 @@ impl PageBuilder {
     pub fn with_description<S: AsRef<str>>(self, description: S) -> Self {
         self.with_head(html! {
             meta name="description" content=(description.as_ref());
+            meta name="og:description" content=(description.as_ref());
         })
     }
 
@@ -124,7 +125,9 @@ impl From<Page> for Markup {
                 script
                     src="/head-support.js"
                     {}
-                title { "drowrin.com | " (page.title) }
+                title { "drowrin | " (page.title) }
+                meta name="og:title" content=(page.title);
+                meta name="og:site_name" content="drowrin.com";
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
