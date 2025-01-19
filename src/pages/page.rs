@@ -128,6 +128,7 @@ impl From<Page> for Markup {
                 title { "drowrin | " (page.title) }
                 meta name="og:title" content=(page.title);
                 meta name="og:site_name" content="drowrin.com";
+                meta name="og:type" content="website";
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
