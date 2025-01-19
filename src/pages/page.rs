@@ -1,9 +1,8 @@
 use std::convert::Infallible;
 
 use axum::{
-    async_trait,
     extract::FromRequestParts,
-    http::request::Parts,
+    http::{header, request::Parts, HeaderMap, HeaderValue},
     response::{IntoResponse, Response},
 };
 use maud::{html, Markup, DOCTYPE};
@@ -15,7 +14,6 @@ pub enum PageKind {
     Full,
 }
 
-#[async_trait]
 impl<S> FromRequestParts<S> for PageKind
 where
     S: Send + Sync,
@@ -31,7 +29,7 @@ where
             return Ok(Self::Direct);
         }
 
-        return Ok(Self::Full);
+        Ok(Self::Full)
     }
 }
 
@@ -216,9 +214,14 @@ impl From<Page> for Markup {
     }
 }
 
-#[async_trait]
 impl IntoResponse for Page {
     fn into_response(self) -> Response {
-        Markup::from(self).into_response()
+        let body = Markup::from(self).0;
+        let mut headers = HeaderMap::new();
+        headers.insert(
+            header::CONTENT_TYPE,
+            HeaderValue::from_static("text/html charset=utf-8"),
+        );
+        (headers, body).into_response()
     }
 }
