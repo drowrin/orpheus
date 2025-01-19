@@ -165,7 +165,10 @@ pub async fn post(
                 (post_info(&post, html!{ h1 #title {(post.title)} }))
                 hr;
                 @if post_toc.len() > 40 {
-                    (PreEscaped(post_toc))
+                    details #toc-details {
+                        summary { "Table of Contents" }
+                        (PreEscaped(post_toc))
+                    }
                     hr #toc-hr;
                 }
                 (PreEscaped(post_prose))

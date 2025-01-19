@@ -9,7 +9,7 @@
     "forms/input-file": false,
     "forms/input-range": false,
     "forms/input-search": false,
-    "components/accordion": false,
+    "components/accordion": true,
     "components/dropdown": false,
     "components/modal": false,
     "components/loading": false,
@@ -319,17 +319,23 @@ article > pre {
   a {
     padding: 0;
     margin: 0;
+    color: var(--pico-muted-color);
+  }
+  a:hover {
+    color: var(--pico-primary);
   }
   > ul > li {
     margin: 0;
   }
-  padding: var(--pico-block-spacing-vertical)
-    var(--pico-block-spacing-horizontal);
   margin: 0;
+  margin-top: var(--pico-block-spacing-vertical);
 }
 
-#TOC::before {
-  content: "Table of Contents";
+#toc-details {
+  margin-top: calc(2*var(--pico-block-spacing-vertical));
+  summary {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: map.get(map.get(pico.$breakpoints, "xl"), "breakpoint")) {
@@ -337,13 +343,20 @@ article > pre {
     display: none;
   }
 
-  #TOC {
+  #toc-details {
     position: fixed;
     transform: translateX(calc(-100% - 1.5rem));
     top: var(--navbar-height);
     background-color: var(--pico-card-background-color);
     border-radius: var(--pico-border-radius);
-    max-width: 12rem;
+    width: 12rem;
+    padding: var(--pico-block-spacing-vertical);
+    margin-top: 0;
+  }
+
+  #TOC {
+    overflow-y: scroll;
+    max-height: calc(100vh - var(--navbar-height) - 6*var(--pico-block-spacing-vertical));
     font-size: 90%;
   }
 }
