@@ -3,7 +3,7 @@ use std::convert::Infallible;
 use axum::{
     async_trait,
     extract::FromRequestParts,
-    http::{header, request::Parts, HeaderMap, HeaderValue},
+    http::request::Parts,
     response::{IntoResponse, Response},
 };
 use maud::{html, Markup, DOCTYPE};
@@ -31,7 +31,7 @@ where
             return Ok(Self::Direct);
         }
 
-        Ok(Self::Full)
+        return Ok(Self::Full);
     }
 }
 
@@ -80,7 +80,6 @@ impl PageBuilder {
     pub fn with_description<S: AsRef<str>>(self, description: S) -> Self {
         self.with_head(html! {
             meta name="description" content=(description.as_ref());
-            meta property="og:description" content=(description.as_ref());
         })
     }
 
@@ -127,10 +126,7 @@ impl From<Page> for Markup {
                 script
                     src="/head-support.js"
                     {}
-                title { "drowrin | " (page.title) }
-                meta property="og:title" content=(page.title);
-                meta property="og:site_name" content="drowrin.com";
-                meta property="og:type" content="website";
+                title { "drowrin.com | " (page.title) }
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
@@ -222,12 +218,6 @@ impl From<Page> for Markup {
 
 impl IntoResponse for Page {
     fn into_response(self) -> Response {
-        let body = Markup::from(self).0;
-        let mut headers = HeaderMap::new();
-        headers.insert(
-            header::CONTENT_TYPE,
-            HeaderValue::from_static("text/html charset=utf-8"),
-        );
-        (headers, body).into_response()
+        Markup::from(self).into_response()
     }
 }
