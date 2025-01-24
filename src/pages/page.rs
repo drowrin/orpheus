@@ -1,6 +1,7 @@
 use std::convert::Infallible;
 
 use axum::{
+    async_trait,
     extract::FromRequestParts,
     http::{header, request::Parts, HeaderMap, HeaderValue},
     response::{IntoResponse, Response},
@@ -14,6 +15,7 @@ pub enum PageKind {
     Full,
 }
 
+#[async_trait]
 impl<S> FromRequestParts<S> for PageKind
 where
     S: Send + Sync,
