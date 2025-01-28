@@ -2,9 +2,11 @@
 
 ---
 
-# The Review
+# The Review {style="display: none"}
 
-## Audio & Visuals
+## Visuals
+
+## Audio
 
 ## Story
 
