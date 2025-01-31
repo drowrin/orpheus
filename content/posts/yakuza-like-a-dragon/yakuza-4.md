@@ -1,7 +1,7 @@
 ---
 title: Yakuza 4
 brief:
-tagline: 5/10 mainline games, 0/3 spinoff games
+tagline: A fantastic evolution
 series: Yakuza / Like a Dragon
 tags:
   - games

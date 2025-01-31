@@ -1,7 +1,7 @@
 ---
 title: Yakuza 5
 brief:
-tagline: 6/10 mainline games, 0/3 spinoff games
+tagline: The MOST Yakuza of all time
 series: Yakuza / Like a Dragon
 tags:
   - reviews

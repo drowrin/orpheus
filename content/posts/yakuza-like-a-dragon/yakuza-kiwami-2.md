@@ -2,7 +2,7 @@
 title: Yakuza Kiwami 2
 published: 2024-03-07
 series: Yakuza / Like a Dragon
-tagline: 3/10 mainline games, 0/3 spinoff games
+tagline: A poorly timed remake of an overrated game
 tags:
   - reviews
   - games
@@ -13,8 +13,9 @@ favorite so far. I wonder if part of that is how low my expectations were thanks
 to the opinions I'd already heard, but even trying to ignore that, it was still
 a downgrade from the others. Not that I didn't like this game overall. There's
 still plenty to enjoy, and it's better than many other games I've played. If
-this is the lowest Yakuza gets for me, that's great. ~~kinda dreading 6 now
-though~~
+this is the lowest Yakuza gets for me, that's great.
+
+~~kinda dreading 6 now though~~
 
 # Gameplay
 

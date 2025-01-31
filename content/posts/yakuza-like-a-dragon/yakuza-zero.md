@@ -3,7 +3,7 @@ title: Yakuza Zero
 published: 2024-03-02
 updated: 2024-05-13
 series: Yakuza / Like a Dragon
-tagline: 1/10 mainline games, 0/3 spinoff games
+tagline: The Perfect Prequel
 tags:
   - reviews
   - games
