@@ -1,7 +1,7 @@
 use std::path::{Path, PathBuf};
 
+use crate::melody::Melody;
 use glob::glob;
-use melody::Melody;
 use pandoc::MarkdownExtension;
 
 use crate::posts::code_highlighting;
@@ -50,10 +50,10 @@ impl Melody for Pages {
                     ],
                 );
                 doc.add_option(pandoc::PandocOption::LuaFilter(
-                    "pandoc/image-rebase.lua".into(),
+                    "content/pandoc/image-rebase.lua".into(),
                 ));
                 doc.add_option(pandoc::PandocOption::LuaFilter(
-                    "pandoc/link-preload.lua".into(),
+                    "content/pandoc/link-preload.lua".into(),
                 ));
                 doc.add_filter(code_highlighting);
                 doc.add_option(pandoc::PandocOption::NoHighlight);

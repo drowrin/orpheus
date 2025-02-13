@@ -1,6 +1,6 @@
+use crate::melody::Melody;
 use eyre::{eyre, Ok, Result, WrapErr};
 use glob::glob;
-use melody::Melody;
 use pandoc::MarkdownExtension;
 use pandoc_ast::Block;
 use slug::slugify;
@@ -85,16 +85,16 @@ pub fn render_html(from: &PathBuf) -> Result<PathBuf> {
         ],
     );
     doc.add_option(pandoc::PandocOption::LuaFilter(
-        "pandoc/header-links.lua".into(),
+        "content/pandoc/header-links.lua".into(),
     ));
     doc.add_option(pandoc::PandocOption::LuaFilter(
-        "pandoc/image-rebase.lua".into(),
+        "content/pandoc/image-rebase.lua".into(),
     ));
     doc.add_option(pandoc::PandocOption::LuaFilter(
-        "pandoc/link-preload.lua".into(),
+        "content/pandoc/link-preload.lua".into(),
     ));
     doc.add_option(pandoc::PandocOption::LuaFilter(
-        "pandoc/spoilers.lua".into(),
+        "content/pandoc/spoilers.lua".into(),
     ));
     doc.add_filter(code_highlighting);
     doc.add_option(pandoc::PandocOption::NoHighlight);
@@ -129,7 +129,7 @@ pub fn render_toc(from: &PathBuf) -> Result<PathBuf> {
     doc.set_output(pandoc::OutputKind::File(target.clone()));
     doc.add_option(pandoc::PandocOption::Standalone);
     doc.add_option(pandoc::PandocOption::Template(
-        Path::new("pandoc/toc-only.html5").to_path_buf(),
+        Path::new("content/pandoc/toc-only.html5").to_path_buf(),
     ));
     doc.set_toc();
     doc.set_output_format(pandoc::OutputFormat::Html5, vec![]);

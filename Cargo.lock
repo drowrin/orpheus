@@ -1153,7 +1153,6 @@ dependencies = [
  "glob",
  "grass",
  "inquire",
- "melody",
  "pandoc",
  "pandoc_ast",
  "serde",
@@ -1210,16 +1209,6 @@ checksum = "dbefd235b0aadd181626f281e1d684e116972988c14c264e42069d5e8a5775cc"
 dependencies = [
  "instant",
  "log",
-]
-
-[[package]]
-name = "melody"
-version = "0.1.0"
-dependencies = [
- "base64",
- "colored",
- "eyre",
- "sha2",
 ]
 
 [[package]]

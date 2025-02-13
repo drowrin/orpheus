@@ -16,7 +16,6 @@ use inquire::{
     validator::{ErrorMessage, Validation},
     Autocomplete, CustomUserError, MultiSelect, Select, Text,
 };
-use melody::{finalize, Melody};
 
 use clap::{Parser, Subcommand};
 use simple_search::{
@@ -25,6 +24,7 @@ use simple_search::{
 use slug::slugify;
 use verse::Frontmatter;
 
+mod melody;
 pub mod pages;
 pub mod posts;
 pub mod web;
@@ -139,37 +139,8 @@ fn ask_frontmatter(all_frontmatter: Vec<Frontmatter>) -> Result<Frontmatter> {
         .collect::<HashSet<String>>()
         .into_iter()
         .collect();
-    // let tags_search_engine = SearchEngine::new()
-    //     .with_values(all_tags)
-    //     .with(|a, b| weighted_levenshtein_similarity(a, b));
+
     let tags: Vec<String> = MultiSelect::new("Tags:", all_tags).prompt()?;
-    // let tags: Vec<String> = Text::new("Tags:")
-    //     .with_autocomplete(AutoCompleter {
-    //         suggestions: move |input| {
-    //             Ok(tags_search_engine
-    //                 .search(input)
-    //                 .into_iter()
-    //                 .map(|s| s.to_owned())
-    //                 .rev()
-    //                 .collect())
-    //         },
-    //         completion: |input, highlighted_suggestion| {
-    //             Ok(highlighted_suggestion.map(|suggestion| {
-    //                 input
-    //                     .split(&[',', ' ', '\t'])
-    //                     .filter(|s| !s.is_empty())
-    //                     .chain([suggestion.as_str()])
-    //                     .collect::<Vec<&str>>()
-    //                     .join(" ")
-    //             }))
-    //         },
-    //     })
-    //     .with_help_message("Leave blank for none")
-    //     .prompt()?
-    //     .split(&[',', ' ', '\t'])
-    //     .filter(|s| !s.is_empty())
-    //     .map(|s| s.to_string())
-    //     .collect();
 
     let series = if !series.is_empty() {
         Some(series)
@@ -197,7 +168,7 @@ fn gen_post(frontmatter: Frontmatter) -> Result<()> {
         .join(slugify(frontmatter.title.clone()))
         .with_extension("md");
 
-    let templates: Vec<PathBuf> = glob("templates/**/*.md")?.flatten().collect();
+    let templates: Vec<PathBuf> = glob("content/templates/**/*.md")?.flatten().collect();
     let template_map: HashMap<String, PathBuf> = templates
         .clone()
         .into_iter()
@@ -247,14 +218,14 @@ pub fn main() -> Result<()> {
 
             let mut state = melody::prepare()?;
 
-            <web::Javascript as Melody>::conduct(&mut state)?;
-            <web::Favicon as Melody>::conduct(&mut state)?;
-            <web::SCSS as Melody>::conduct(&mut state)?;
-            <web::Images as Melody>::conduct(&mut state)?;
-            <posts::Posts as Melody>::conduct(&mut state)?;
-            <pages::Pages as Melody>::conduct(&mut state)?;
+            <web::Javascript as melody::Melody>::conduct(&mut state)?;
+            <web::Favicon as melody::Melody>::conduct(&mut state)?;
+            <web::SCSS as melody::Melody>::conduct(&mut state)?;
+            <web::Images as melody::Melody>::conduct(&mut state)?;
+            <posts::Posts as melody::Melody>::conduct(&mut state)?;
+            <pages::Pages as melody::Melody>::conduct(&mut state)?;
 
-            finalize(state)?;
+            melody::finalize(state)?;
 
             println!(
                 "{} in {:?}",

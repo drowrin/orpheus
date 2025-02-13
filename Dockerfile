@@ -9,7 +9,7 @@ FROM chef AS builder
 COPY --from=planner /orpheus/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN cargo build --release
+RUN cargo build -p orpheus --release
 
 FROM debian:bookworm-slim AS runtime
 WORKDIR /orpheus

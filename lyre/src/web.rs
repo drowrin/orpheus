@@ -3,9 +3,9 @@ use std::{
     path::{Path, PathBuf},
 };
 
+use crate::melody::Melody;
 use eyre::{Ok, Result, WrapErr};
 use glob::glob;
-use melody::Melody;
 
 pub struct Javascript;
 impl Melody for Javascript {
@@ -14,7 +14,7 @@ impl Melody for Javascript {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(["package.json", "package-lock.json", "web/main.js"])
+        Ok(["package.json", "package-lock.json", "content/web/main.js"])
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
@@ -27,7 +27,7 @@ impl Melody for Javascript {
     }
 
     fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
-        fs::copy("web/main.js", "generated/static/main.js")?;
+        fs::copy("content/web/main.js", "generated/static/main.js")?;
         fs::copy(
             "node_modules/htmx.org/dist/htmx.min.js",
             "generated/static/htmx.min.js",
@@ -73,7 +73,7 @@ impl Melody for SCSS {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(glob("web/*.scss")?.flatten())
+        Ok(glob("content/web/*.scss")?.flatten())
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
@@ -82,7 +82,7 @@ impl Melody for SCSS {
 
     fn perform(_: impl Iterator<Item = PathBuf>) -> Result<()> {
         let css = grass::from_path(
-            "web/styles.scss",
+            "content/web/styles.scss",
             &grass::Options::default()
                 .style(grass::OutputStyle::Compressed)
                 .load_path("node_modules/@picocss/pico/scss/")
