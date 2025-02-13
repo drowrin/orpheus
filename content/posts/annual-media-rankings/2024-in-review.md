@@ -1525,7 +1525,7 @@ art.
 
 Check out this art (from the first chapter, so not really spoilers):
 
-![](http://indiananimenetwork.com/wp-content/uploads/2021/05/choujin_x_1_8-3-1024x512.jpg "A panel from the first chapter of Choujin X")
+![](https://indiananimenetwork.com/wp-content/uploads/2021/05/choujin_x_1_8-3-1024x512.jpg "A panel from the first chapter of Choujin X")
 
 Every character in Choujin X is very well written, and the story is as much
 about the characters' personal arcs as it is about the main events of the world.
