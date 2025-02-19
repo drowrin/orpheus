@@ -1,5 +1,5 @@
 ---
-title: "Final Fantasy: V"
+title: "Final Fantasy V"
 brief:
 tagline: Trading story for gameplay, for better or worse
 series: Final Fantasy Retrospective
