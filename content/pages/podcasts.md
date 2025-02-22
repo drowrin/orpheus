@@ -10,6 +10,46 @@ live actual plays
 </section>
 
 <article>
+<a href="https://www.youtube.com/watch?v=aZjjpU05eUY&list=PLKf-mXZAT29VBdXWJT2CDWB83mTGBPArD&index=1&t=5s">
+![](https://img.youtube.com/vi/aZjjpU05eUY/maxresdefault.jpg){.article-image}
+</a>
+<hgroup>
+
+## Eminence
+
+Players: **Dan, Liam, Skye**
+
+System: **D&D 5e 2024**
+
+Vibes: _horror, fantasy, tactical combat_
+
+Status: <ins>Ongoing</ins>
+
+A campaign about the personal cost paid by those who dare to adventure
+
+</hgroup>
+
+> Those who travel to Drakkenheim must be either desperate or foolish. Each of
+> these three adventurers is here for a personal reason. Will they find what
+> they are looking for before they meet a terrible fate?
+
+This is our playthrough of the Dungeons of Drakkenheim adventure book, using the
+2024 D&D 5th Edition rules. It's a dark, lethal sandbox that explores what would
+happen if eldritch horror were to suddenly and violently break into a high
+fantasy world.
+
+This is my most "trying to do it the right way" podcast yet. It's not perfected,
+but it's much better produced than my earlier content. Everyone is recorded
+separately. The episodes are edited for clarity and flow. I'm using background
+music made for this kind of purpose, instead of trying to make stuff like video
+game music fit. A lot of care has gone into the Foundry interface that gets
+recorded. I've created a small homebrew willpower/sanity mechanic inspired by
+Delta Green, the Dark Dice podcast, and The Between. This has been a real
+passion project. One step closer to being a "real" podcast!
+
+</article>
+
+<article>
 <a href="https://www.youtube.com/watch?v=KizvCfQADg8&list=PLKf-mXZAT29VIblh2WSZo5HPgZuQ4rUcw">
 ![](https://img.youtube.com/vi/KizvCfQADg8/maxresdefault.jpg){.article-image}
 </a>
