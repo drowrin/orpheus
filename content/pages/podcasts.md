@@ -23,7 +23,7 @@ System: **Delta Green**
 
 Vibes: _horror, modern setting, narrative_
 
-Status: <ins>Ongoing</ins>
+Status: **Completed**
 
 A full Delta Green campaign starting before the characters became agents
 
