@@ -12,6 +12,14 @@ use tantivy::{
     Index, IndexReader, TantivyError,
 };
 
+#[derive(Deserialize, Serialize, Clone, Copy)]
+pub struct ToCDepth(pub u32);
+impl Default for ToCDepth {
+    fn default() -> Self {
+        Self(3)
+    }
+}
+
 #[derive(Deserialize, Serialize, Default, Clone)]
 pub struct Frontmatter {
     pub title: String,
@@ -22,6 +30,8 @@ pub struct Frontmatter {
     pub tags: Vec<String>,
     pub published: String,
     pub updated: Option<String>,
+    #[serde(default)]
+    pub toc_depth: ToCDepth,
 }
 
 #[derive(Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
@@ -42,6 +52,7 @@ pub struct PostMetaData {
     pub reading_time: usize,
     pub published: String,
     pub updated: Option<String>,
+    pub toc_depth: u32,
 }
 
 impl PostMetaData {

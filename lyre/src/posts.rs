@@ -123,6 +123,8 @@ pub fn render_toc(from: &PathBuf) -> Result<PathBuf> {
         ))
         .with_extension("html");
 
+    let toc_depth = parse_frontmatter(&from)?.toc_depth;
+
     let mut doc = pandoc::new();
     doc.add_input(from);
     doc.set_input_format(pandoc::InputFormat::CommonmarkX, vec![]);
@@ -131,6 +133,7 @@ pub fn render_toc(from: &PathBuf) -> Result<PathBuf> {
     doc.add_option(pandoc::PandocOption::Template(
         Path::new("content/pandoc/toc-only.html5").to_path_buf(),
     ));
+    doc.add_option(pandoc::PandocOption::TableOfContentsDepth(toc_depth.0));
     doc.set_toc();
     doc.set_output_format(pandoc::OutputFormat::Html5, vec![]);
     doc.execute()?;
@@ -247,6 +250,7 @@ impl Melody for Posts {
                     reading_time: word_count / 240,
                     published: fm.published,
                     updated: fm.updated,
+                    toc_depth: fm.toc_depth.0,
                 };
 
                 fs::write(
