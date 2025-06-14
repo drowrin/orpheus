@@ -1,7 +1,5 @@
 @use "sass:map";
-@use "pico" with (
-  $modules: (
-    "content/embedded": false,
+@use "pico" with ($modules: ("content/embedded": false,
     "content/table": false,
     "content/code": false,
     "forms/input-color": false,
@@ -14,53 +12,36 @@
     "components/modal": false,
     "components/loading": false,
   ),
-  $breakpoints: (
-    // Small (landscape phones)
+  $breakpoints: ( // Small (landscape phones)
     // Font size: 17px
-    sm:
-      (
-        breakpoint: 660px,
-        viewport: var(--readable-width),
-        root-font-size: 106.25%
-      ),
+    sm: (breakpoint: 660px,
+      viewport: var(--readable-width),
+      root-font-size: 106.25%),
 
     // Medium (tablets)
     // Font size: 18px
-    md:
-      (
-        breakpoint: 768px,
-        viewport: var(--readable-width),
-        root-font-size: 112.5%
-      ),
+    md: (breakpoint: 768px,
+      viewport: var(--readable-width),
+      root-font-size: 112.5%),
 
     // Large
     // Font size: 19px
-    lg:
-      (
-        breakpoint: 1024px,
-        viewport: var(--readable-width),
-        root-font-size: 118.75%
-      ),
+    lg: (breakpoint: 1024px,
+      viewport: var(--readable-width),
+      root-font-size: 118.75%),
 
     // Extra large
     // Font size: 20px
-    xl:
-      (
-        breakpoint: 1280px,
-        viewport: var(--readable-width),
-        root-font-size: 125%
-      ),
+    xl: (breakpoint: 1280px,
+      viewport: var(--readable-width),
+      root-font-size: 125%),
 
     // Extra extra large
     // Font size: 21px
-    xxl:
-      (
-        breakpoint: 1536px,
-        viewport: var(--readable-width),
-        root-font-size: 131.25%
-      ),
-  )
-);
+    xxl: (breakpoint: 1536px,
+      viewport: var(--readable-width),
+      root-font-size: 131.25%),
+  ));
 
 @use "icons";
 @use "colors";
@@ -106,12 +87,12 @@ li:has(> #toggle-dark-mode) {
   text-decoration: none;
 }
 
-[type="checkbox"] + label.tag {
+[type="checkbox"]+label.tag {
   text-decoration: none;
   color: var(--pico-primary);
 }
 
-[type="checkbox"]:checked + label.tag {
+[type="checkbox"]:checked+label.tag {
   font-weight: bold;
 }
 
@@ -125,7 +106,7 @@ li:has(> #toggle-dark-mode) {
   --pico-border-radius: inherit;
 }
 
-body > header {
+body>header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -134,7 +115,7 @@ body > header {
   z-index: 90;
 }
 
-body > main {
+body>main {
   padding-top: var(--navbar-height);
 }
 
@@ -162,11 +143,10 @@ body > main {
 }
 
 blockquote {
-  padding: calc(var(--pico-spacing) * 0.3) var(--pico-spacing)
-    calc(var(--pico-spacing) * 0.4) var(--pico-spacing);
+  padding: calc(var(--pico-spacing) * 0.3) var(--pico-spacing) calc(var(--pico-spacing) * 0.4) var(--pico-spacing);
 }
 
-blockquote > :last-child {
+blockquote> :last-child {
   margin-bottom: 0;
 }
 
@@ -202,6 +182,7 @@ hr {
   hr {
     margin: calc(0.5 * var(--pico-spacing)) 0;
   }
+
   img {
     max-width: calc(100vw - 2 * var(--pico-spacing));
   }
@@ -240,11 +221,11 @@ pre {
   border-radius: var(--pico-border-radius);
 }
 
-article > pre {
+article>pre {
   margin: var(--pico-spacing) calc(-1 * var(--pico-spacing));
 }
 
-:not(pre) > code {
+:not(pre)>code {
   padding: 0.1em;
   border-radius: var(--pico-border-radius);
   white-space: normal;
@@ -274,7 +255,7 @@ article > pre {
 }
 
 .spoiler,
-.spoiler > * {
+.spoiler>* {
   transition: color 0.3s, opacity 0.3s;
   cursor: pointer;
   padding: 0 0.25em 0.15em 0.25em;
@@ -287,16 +268,17 @@ article > pre {
   margin-left: 0.5rem;
 }
 
-#footnotes > ol {
+#footnotes>ol {
   padding-left: 0;
   margin-left: 1rem;
   margin-top: 1.5rem;
+
   li {
     color: var(--pico-muted-color);
   }
 }
 
-#footnotes > ol::before {
+#footnotes>ol::before {
   content: "Footnotes";
   font-size: 2rem;
   font-weight: bold;
@@ -306,33 +288,40 @@ article > pre {
 
 #TOC {
   display: block;
+
   ul {
     display: block;
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
+
   li {
     display: block;
     margin-left: 0.75rem;
     padding: 0;
   }
+
   a {
     padding: 0;
     margin: 0;
     color: var(--pico-muted-color);
   }
+
   a:hover {
     color: var(--pico-primary);
   }
-  > ul > li {
+
+  >ul>li {
     margin: 0;
   }
+
   margin: 0;
   margin-top: var(--pico-block-spacing-vertical);
 }
 
 #toc-details {
   margin-top: calc(2*var(--pico-block-spacing-vertical));
+
   summary {
     margin-bottom: 0;
   }
@@ -363,4 +352,13 @@ article > pre {
 
 small {
   color: var(--pico-muted-color);
+}
+
+article>details {
+  background-color: var(--pico-background-color);
+  padding: var(--pico-spacing);
+
+  :last-child {
+    margin-bottom: 0;
+  }
 }
