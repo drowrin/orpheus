@@ -384,39 +384,39 @@ It's true! There are some great tunes in here. I knew right from the
 [intro](https://youtu.be/XyBensMp_MA) that I was going to love this music
 direction. It's dramatic as hell.
 
-Speaking of drama, there's some top tier "such evil we now witness" music.
-[For example](https://youtu.be/Ff7P91YRP7U), or maybe
-[this one](https://youtu.be/ITyJ9EQLlNo), or here
-[take another](https://youtu.be/G7HyxzzPIHo), or this
-[haunted one](https://youtu.be/S3-x0Tahe60).
+Speaking of drama, there's some top tier "such evil we now witness" music. For
+example, [FITHOS LUSEC WECOS VINOSEC](https://youtu.be/Ff7P91YRP7U),
+[SUCCESSION OF WITCHES](https://youtu.be/ITyJ9EQLlNo),
+[Heresy](https://youtu.be/G7HyxzzPIHo), or
+[Adel](https://youtu.be/S3-x0Tahe60).
 
-There's more than just spooky stuff though, I've always loved
-[this iconic overworld theme](https://youtu.be/Tpfp5_5Xjms). I first heard it in
-FFXIV, and now I've finally experienced it in its original form! It's such a
+There's more than just spooky stuff though, I've always loved this iconic
+overworld theme, [Blue Fields](https://youtu.be/Tpfp5_5Xjms). I first heard it
+in FFXIV, and now I've finally experienced it in its original form! It's such a
 laid back exploration theme, with alternations between wonder and somberness.
 Something about it just hits different during the early story of FFVIII. The
 first time I hit the overworld and this played, it just felt so right.
 
 Those battle themes are also iconic.
-[This one is a classic](https://youtu.be/9ZbzWopOBTo), as is
-[this one](https://youtu.be/hSm6_VZuyok). Again, heard these a lot in FFXIV.
-They rock, hard.
+[The Landing](https://youtu.be/9ZbzWopOBTo) is a classic, as is
+[Force Your Way](https://youtu.be/hSm6_VZuyok). Again, heard these a lot in
+FFXIV. They rock, hard.
 
-This game had plenty of "spy movie" action, with
-[songs that matched](https://youtu.be/3IHTlHIRfVM). This hits so hard during
-tense moments.
+This game had plenty of "spy movie" action, with songs that matched, like
+[Never Look Back](https://youtu.be/3IHTlHIRfVM). This hits so hard during tense
+moments.
 
 And of course, what would a romance about overcoming depression be without some
-songs that melt your heart? [This one](https://youtu.be/FmvRtPBXxjQ) is so calm
+songs that melt your heart? [My Mind ](https://youtu.be/FmvRtPBXxjQ) is so calm
 and touching. The perfect music for a heart to heart.
-[This one](https://youtu.be/VrPQnadegBs) is devastating in context.
-[This one](https://youtu.be/ldbOpZmXp9Q) is more upbeat and playful, but man is
-it heartwarming. [This](https://youtu.be/_LkJe7vnyhk) is like a slower and
-sadder version of it, too, just in case we needed a more sad version of anything
-in this game.
+[Fragments of Memories](https://youtu.be/VrPQnadegBs) is devastating in context.
+[Ami](https://youtu.be/ldbOpZmXp9Q) is more upbeat and playful, but man is it
+heartwarming. [Where I Belong](https://youtu.be/_LkJe7vnyhk) is like a slower
+and sadder version of it, too, just in case we needed a more sad version of
+anything in this game.
 
 I can't possibly end this section without talking about
-[this track](https://youtu.be/OYpHS6ffvVc) which is an in-universe romance song
+[Eyes on Me](https://youtu.be/OYpHS6ffvVc) which is an in-universe romance song
 written about two of the prominent characters, which becomes the the theme of
 Squall and Rinoa's romance.
 
