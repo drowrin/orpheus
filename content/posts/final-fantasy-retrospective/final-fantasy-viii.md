@@ -349,6 +349,21 @@ even further ahead, the style FFVIII chose is the one that gets used for _all_
 I played the remastered version, which I highly recommend. I liked everything I
 saw. However, I'm still impressed by how the original looked.
 
+This was the first game in the series, and one of the first games in general, to
+use 3D motion capture. Way better and more natural looking than the robotic
+motions of FFVII. To be one of the first games to use a technology still in use
+today, it couldn't possibly be more ahead of its time. Fans at the time didn't
+know how good they were eating.
+
+Also, from my limited research, this was one of the first RPGs to pursue such a
+cinematic style. VII toyed with it in a few scenes, but largely stuck to more
+classic styles of cutscenes. To be fair, it's pretty hard to get those chibi
+character models to look cinematic. But just look at scenes like
+[this](https://youtu.be/LieneIWMbs0) from relatively early on. The closeups on
+the dancers, the sweeping camera angles, the lighting, the gameplay mixed in,
+it's all so good. I know "cinematic" has become a negative buzzword for games,
+but I think it actually applies here.
+
 This game often felt like it was being directed more like a movie, and that
 really helped sell the emotional parts for me. It knew when it was okay to let a
 moment sit in silence for a bit, and to let things slow down and drag out in
@@ -484,6 +499,94 @@ essentially at random and had no reasoning behind it.
 
 ...Well, at least they're self-aware.
 
+### Not enough setup
+
+One of the main things that holds me back from calling this my favorite Final
+Fantasy story is that a lot of plot points feel as though they were pulled out
+of thin air. That's not a unique thing to the series---in fact, it might as well
+be a hallmark of it. This might be the worst of the lot when it comes to this,
+though. As detailed as this story is, there are some plot points that aren't
+foreshadowed at all, and some that are just dropped entirely.
+
+||Adel|| is a potentially very interesting villain, who pops into the story at a
+time when the villain goalposts needed to be moved, only to be used as little
+more than a plot device in everyone else's schemes. Maybe she's not important,
+but I think she could have had a much larger impact had she been utilized
+earlier and given more screen time.
+
+Speaking of villains, this game keeps the true threat hidden just a little too
+long. The reveal is dramatic, but the way it was done makes it feel like the
+previous villain was rapidly ripped out from under the story, leaving it
+stumbling. It also doesn't feel like there's enough prior support from the plot.
+More scattered details, or whispers of her name, or anything really, could have
+helped a lot. This in combination with the above makes it feel like "who is the
+villain?" is a constantly moving target.
+
+On top of that, because Squall is so unmotivated at the start of the game, we,
+the players are left without any clear motivations for a long time. There's no
+clear villain. There's no clear goal. We're just doing this because we're told
+to. And again, that makes a lot of sense for how Squall feels at the time, but
+it doesn't make for a very engaging early story.
+
+Finally, one of the most controversial scenes in the game: basketball. I found
+the presentation of this scene touching. There's something picturesque about a
+heart to heart with friends under a sunset while casually shooting hoops on a
+court shattered by war. The scars of war cover the characters as well as their
+surroundings, but they still find a moment for some casual peace together. We
+get a bunch of really well executed flashbacks that do a lot to sell the
+emotions being talked about, and I love that too. That's not the problem though.
+The problem is that it is suddenly revealed ||that they all grew up in the same
+orphanage together, and that their Matron is the Sorceress they are trying to
+kill, and that they forgot all of this. They all have the exact same amnesia,
+woo!|| This, alone, isn't an issue either. Stories like that can really hit me
+right in the heart. The problem is the suddenness. VII does a much better job of
+foreshadowing very similar ||memory issues||, while it feels like this one
+didn't try at all. So, all at once, the characters relationships with each other
+and how they view their goal gets completely flipped. It's a bit much all at
+once.
+
+### Theories upon theories
+
+This game's story leaves a lot of details vague, asking us to interpret it as we
+will. I like this, even though I would appreciate some more detail in a few
+places. This has led to a number of fan theories that attempt to explain some of
+the crazier elements of the story. It's worth noting that all of these have been
+denied by the creators, but I think they're worth talking about.
+
+One of the most popular is that ||Squall is dead||. There's a point in the story
+where Squall is ||severely wounded||, and it is after this that all of the
+craziness of the story ramps up. This one is interesting, but I don't
+particularly like it, because it feels like it undermines a lot of the core
+themes. It feels more like an attempt to rationalize the story logically than to
+understand it emotionally.
+
+One I do like, is the very tragic ||Rinoa is Ultimecia||. In a world with all
+these crazy powers, time travel of consciousnesses, and memory loss, it's
+possible. I mainly feel attached to this one because it doesn't ever feel like
+we're given a satisfactory backstory for ||Ultimecia|, she is simply evil
+because she does bad things, and she does bad things because she is evil. This
+would also draw another parallel between Squall and Rinoa's relationship and
+that of ||Cid and Edea|| much like the parallel to Laguna and Julia. I'm also a
+sucker for tragedy, and this would be a _massive_ one.
+
+A half-baked one that I hold is that ||Time Compression|| has been active for
+the whole story. We see such a massive gap in technology levels, which feel like
+they are rising faster and faster as the story progresses. Almost as if they are
+being accelerated by something. We get glimpses of the past, we see futuristic
+technology, and we see it all mixed together in the present. Does that not sound
+like ||Time Compression: the past, present, and future all combined in a single
+moment||? This one has a lot of potential implications. Is the Junction system
+something born from ||futuristic tech brought to the past||, or a manifestation
+of fate making the ||time paradox|| possible? Are the main party coincidentally
+brought together because ||they are still together, in the past||? Was ||Adel's
+actions in the past, setting up Esthar for the future|| all a result of
+||Ultimecia's|| plan? Is the reason everything worked out so well that the human
+connections we see get formed throughout the story helped them choose from the
+||infinite possibility of compressed time|| the perfect outcome? There's a lot
+to think about, and it's a hard thing to get my head wrapped around, but I like
+it. I think there are a lot of hints suggesting it, but they could just be
+generic ||time travel|| hints.
+
 ### This is a story about...
 
 This is a complicated story. Not just because there are some concepts involved
@@ -602,6 +705,22 @@ one word: _"...whatever."_ Though this specific word choice was a localization
 flub, the core argument doesn't change much. Squall seems like an edgy teen who
 is hard to get attached to, because he doesn't care about anything. How do you
 enjoy the personality of a character who never lets their feelings slip?
+
+<details>
+<summary>A sidenote about VII</summary>
+
+I also had this issue with Cloud, until almost the very end of VII. He's
+distant, and mysterious. This is important, because he needs to be mysterious
+for the plot. We aren't allowed to peak inside Cloud's head nearly as much as
+Squall's, because of that mystery. Cloud also is not allowed much significant
+character development until very late in the game, because the mystery was
+holding him back.
+
+I had a much harder time connecting to Cloud. Squall feels, to me, like a much
+better implementation of Cloud's character type. I find it frustrating that
+Squall's quiet nature is pointed out as a flaw, while Cloud's is praised.
+
+</details>
 
 At the beginning of the story, Squall is emotionally distant (to put it
 lightly). He experienced some pretty rough trauma and put up many emotional
