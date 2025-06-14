@@ -247,17 +247,17 @@ level your enemies become. You effectively never get an edge by leveling up.
 Instead, you have to use the Junction system to get ahead of the curve.
 
 Interestingly, enemies becoming higher level means they will start carrying
-higher level magic. So, the higher level you become, you more magic you will
+higher level magic. So, the higher level you become, the more magic you will
 have to draw in order to stay ahead. Ideally, if you could max out 100 of every
 spell available to you at level 1, and then stay at level 1, you'd never have to
 draw spells again and you could stay powerful for the whole game.
 
 Even more interestingly, the designers seem to have realized this. Almost all
-forced story encounters give zero experience points, but do progress you
+forced story encounters give zero experience points, but do progress your
 Guardian Forces significantly.
 
-This makes every random encounter feel like not just a waste of your time, but a
-punishment.
+This makes every random encounter feel like not _just_ a waste of your time, but a
+**punishment**.
 
 This leads to a lot of tricks. If you can avoid gaining xp, that is better for
 your character power level. Some abilities take enemies out of action without
@@ -339,12 +339,12 @@ and it would feel perfectly natural.
 
 Of course, unifying around an art style meant picking one of the several options
 VII presented. I'm very glad they opted to go for the more "realistic" style
-instead of the chibi one used for most of VII's gameplay. That style was the
-thing I liked least about VII, and I'm already disappointed looking ahead at IX,
-even though they managed to clean the style up a lot. I've heard that IX looks
-that way largely due to fan feedback on VIII, which is a bummer. Looking even
-further ahead, the style FFVIII chose is the one that gets used for _all_ 3D
-Final Fantasy games after IX. I guess people just weren't ready for it yet.
+instead of the chibi one used for most of VII's gameplay. That chibi style was
+the thing I liked least about VII, and I'm already disappointed looking ahead at
+IX, even though they managed to clean the style up a lot. I've heard that IX
+looks that way largely due to fan feedback on VIII, which is a bummer. Looking
+even further ahead, the style FFVIII chose is the one that gets used for _all_
+3D Final Fantasy games after IX. I guess people just weren't ready for it yet.
 
 I played the remastered version, which I highly recommend. I liked everything I
 saw. However, I'm still impressed by how the original looked.
