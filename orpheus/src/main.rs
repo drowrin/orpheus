@@ -18,7 +18,6 @@ async fn main() {
         Router::new()
             .merge(pages::posts::router())
             .merge(pages::home::router())
-            .merge(pages::podcasts::router())
             .merge(pages::projects::router())
             .fallback_service(ServeDir::new("./generated/static/"))
             .layer(from_fn(pages::error::handle_error_pages))

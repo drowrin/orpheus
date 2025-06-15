@@ -138,7 +138,6 @@ impl From<Page> for Markup {
                     ul {
                         li { a href="/" { "Home" } }
                         li { a href="/posts" { "Posts" } }
-                        li { a href="/podcasts" { "Podcasts" } }
                         li { a href="/projects" { "Projects" } }
                     }
                     ul {
