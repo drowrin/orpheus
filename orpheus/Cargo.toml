@@ -28,4 +28,4 @@ http-body-util = "0.1.2"
 maud = { version = "0.26.0", features = ["axum"] }
 
 verse = { path = "../verse" }
-tantivy = "0.22.0"
+tantivy = "0.24.1"
