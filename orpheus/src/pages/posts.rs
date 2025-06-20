@@ -12,7 +12,7 @@ use axum::{
 use axum_extra::extract::Query;
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
-use tantivy::{collector::TopDocs, doc, schema::OwnedValue, TantivyDocument};
+use tantivy::{collector::TopDocs, doc, schema::Value, TantivyDocument};
 use tower_http::services::ServeDir;
 use verse::{PostMetaData, SearchMeta, Series};
 
@@ -202,12 +202,12 @@ pub async fn posts(
                 .into_iter()
                 .flat_map(|(_, addr)| {
                     let doc: TantivyDocument = searcher.doc(addr).unwrap();
-                    if let OwnedValue::Str(slug) = doc.get_first(posts.search.fields.slug).unwrap()
-                    {
-                        Some(posts.metadata.get(slug).unwrap())
-                    } else {
-                        None
-                    }
+                    let slug = doc
+                        .get_first(posts.search.fields.slug)
+                        .unwrap()
+                        .as_str()
+                        .unwrap();
+                    Some(posts.metadata.get(slug).unwrap())
                 })
                 .collect()
         } else {
