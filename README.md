@@ -21,21 +21,7 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 - all live content sources isolated in a single directory, `content`
 - avoid as much client-side work as possible
 - automatic table of contents
-
-### Roadmap
-
-- more efficient css
-- rss feed generator
-- opengraph tags
-- "related posts" section
-- image format content negotiation
-
-#### Meta Roadmap
-
-Enhancements that are not direct upgrades to the website:
-
-- improve lyre errors
-- read git history to determine post publication/update dates
+- preload page content and images when a user hovers over a relative link
 
 ## Requirements
 
