@@ -25,37 +25,9 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 
 ## Requirements
 
-This project uses a bunch of disorganized tools that I find useful.
-Perhaps someday I'll learn Nix and add a flake for this project, but for now
-several things must be installed locally for the project to run.
+This project uses [mise-en-place](https://mise.jdx.dev/) for dependency management.
 
-- [pandoc](https://pandoc.org/)
-- [just](https://github.com/casey/just)
-- [npm](https://www.npmjs.com/)
-- [cargo-watch](https://crates.io/crates/cargo-watch)
-
-### Installation
-
-```sh
-npm install
-cargo build
-cargo build -p lyre --profile release
-```
-
-### Usage
-
-```sh
-# live-reload the project as you make changes
-just watch
-# render/generate all content without running the server
-just lyre
-# delete all lyre-generated content
-just clean
-# render/generate content and then deploy
-just deploy
-```
-
-See the [justfile](/justfile) for all recipes.
+Run `mise install` to download dependencies, then run `mise tasks` to view all tasks.
 
 ## Organization
 

@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@catppuccin/palette": "^1.7.1",
-    "@picocss/pico": "2.1.1",
-    "htmx-ext-head-support": "^2.0.4",
-    "htmx-ext-preload": "^2.1.1",
-    "htmx.org": "2.0.5"
-  }
-}

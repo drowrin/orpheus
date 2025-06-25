@@ -14,7 +14,7 @@ impl Melody for Javascript {
     }
 
     fn source() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
-        Ok(["package.json", "package-lock.json", "content/web/main.js"])
+        Ok(["content/web/main.js"])
     }
 
     fn rendition() -> Result<impl IntoIterator<Item = impl Into<PathBuf>>> {
