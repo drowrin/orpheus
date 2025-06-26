@@ -1,8 +1,7 @@
 name: Mise Bump Tools
-on: workflow_dispatch
-# on:
-#   schedule:
-#     - cron: "0 6 * * 6" # 6am every Saturday
+on:
+  schedule:
+    - cron: "0 6 * * 6" # 6am every Saturday
 jobs:
   mise-bump:
     permissions:
