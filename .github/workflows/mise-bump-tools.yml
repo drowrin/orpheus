@@ -1,0 +1,17 @@
+name: Mise Bump Tools
+on: workflow_dispatch
+# on:
+#   schedule:
+#     - cron: "0 6 * * 6" # 6am every Saturday
+jobs:
+  mise-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - uses: jdx/mise-action@v2
+        with:
+          experimental: true
+      - run: mise upgrade --bump
+      - uses: peter-evans/create-pull-request@v7
