@@ -3,10 +3,10 @@ node = "24.2.0"
 pandoc = "3.7.0.2"
 rust = "1.87.0"
 watchexec = "2.3.2"
-"npm:@catppuccin/palette" = "^1.7.1"
+"npm:@catppuccin/palette" = "1.7.1"
 "npm:@picocss/pico" = "2.0.6"
-"npm:htmx-ext-head-support" = "^2.0.4"
-"npm:htmx-ext-preload" = "^2.1.1"
+"npm:htmx-ext-head-support" = "2.0.4"
+"npm:htmx-ext-preload" = "2.1.1"
 "npm:htmx.org" = "2.0.5"
 
 [env]
