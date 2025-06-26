@@ -22,7 +22,11 @@ jobs:
       - id: bump_check
         run: |
           would_bump=$(mise upgrade --bump --dry-run | awk -F' in ' '{print $1}')
-          echo "would_bump=$would_bump" >> "$GITHUB_OUTPUT"
+          {
+            echo 'would_bump<<EOF'
+            echo "$would_bump"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
       - run: mise upgrade --bump
       - uses: peter-evans/create-pull-request@v7
         with:
