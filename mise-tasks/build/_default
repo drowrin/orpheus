@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+#MISE alias='build:debug'
+#MISE description="debug build"
+#MISE sources=['Cargo.lock', 'orpheus/Cargo.toml', 'orpheus/src/**/*.rs', 'lyre/Cargo.toml', 'lyre/src/**/*.rs']
+#MISE outputs=['target/debug/orpheus', 'target/debug/lyre']
+
+cargo build -p lyre
+cargo build -p orpheus

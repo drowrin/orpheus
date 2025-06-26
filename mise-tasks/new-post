@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#MISE quiet=true
+#MISE description="generate a new post from a template"
+#MISE depends=['build:release']
+
+./target/release/lyre gen

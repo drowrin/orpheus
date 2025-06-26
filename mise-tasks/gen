@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+#MISE description="generate static content"
+#MISE depends=['build:release']
+#MISE sources=['content/**/*', 'node_modules/**/*']
+#MISE outputs=['generated/**/*']
+
+./target/release/lyre build

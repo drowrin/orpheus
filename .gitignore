@@ -1,6 +1,4 @@
 /target
 /generated
 /node_modules
-.parcel-cache
 .vscode
-secrets.env

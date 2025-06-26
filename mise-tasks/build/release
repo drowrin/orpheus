@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+#MISE description="release build"
+#MISE sources=['Cargo.lock', 'orpheus/Cargo.toml', 'orpheus/src/**/*.rs', 'lyre/Cargo.toml', 'lyre/src/**/*.rs']
+#MISE outputs=['target/release/orpheus', 'target/release/lyre']
+
+cargo build -p lyre --release
+cargo build -p orpheus --release

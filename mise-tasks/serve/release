@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#MISE description="run in debug mode"
+#MISE depends=['build:release', 'gen']
+
+export ORPHEUS_OPTIONS="live_reload,no_cache"
+
+echo "http://localhost:8000/"
+./target/release/orpheus || true
