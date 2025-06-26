@@ -19,7 +19,17 @@ jobs:
       - uses: jdx/mise-action@v2
         with:
           experimental: true
+      - id: bump_check
+        run: |
+          would_bump=$(mise upgrade --bump --dry-run | grep bump)
+          echo "would_bump=$would_bump" >> "$GITHUB_OUTPUT"
       - run: mise upgrade --bump
       - uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.generate-token.outputs.token }}
+          commit-message: bump mise tool versions
+          branch: bump-mise-tools
+          delete-branch: true
+          title: Bump mise tool versions
+          body: ${{ steps.bump_check.outputs.would_bump }}
+          labels: dependencies
