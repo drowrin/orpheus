@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+#MISE quiet=true
 #MISE alias='build:debug'
 #MISE description="debug build"
 #MISE sources=['Cargo.lock', 'orpheus/Cargo.toml', 'orpheus/src/**/*.rs', 'lyre/Cargo.toml', 'lyre/src/**/*.rs']
