@@ -8,5 +8,6 @@ jobs:
       - uses: jdx/mise-action@v2
       - uses: Swatinem/rust-cache@v2
       - run: |
+          mise install
           pwd
           ls
