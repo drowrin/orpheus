@@ -6,8 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
+        with:
+          experimental: true
       - uses: Swatinem/rust-cache@v2
       - run: |
-          mise ls --json
-          pwd
-          ls
+          mise run 'render:*'

@@ -16,6 +16,8 @@ jobs:
           private-key: ${{ secrets.DROWRIN_BOT_PRIVATE_KEY }}
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
+        with:
+          experimental: true
       - id: bump_check
         run: |
           would_bump=$(mise upgrade --bump --dry-run | awk -F' in ' '{print $1}')
