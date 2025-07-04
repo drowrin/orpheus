@@ -1,12 +1,9 @@
 /target
-.shuttle-storage
-Secrets*.toml
-.parcel-cache
 .vscode
 /content
 /generated
 /pandoc
 /web
-justfile
-package*.json
+mise.toml
+mise-tasks/
 README.me
