@@ -1,21 +1,13 @@
-#![allow(unused)]
-
-use std::{collections::HashMap, fs, io::BufRead, path::Path, sync::Arc, time::Duration};
-
 use axum::{
-    extract::{FromRef, Request, State},
-    http::{
-        header::{CACHE_CONTROL, ETAG, IF_NONE_MATCH},
-        HeaderValue, StatusCode,
-    },
-    middleware::{from_fn, from_fn_with_state, Next},
-    response::{IntoResponse, Response},
+    extract::Request,
+    http::{header::CACHE_CONTROL, HeaderValue},
+    middleware::{from_fn, Next},
+    response::Response,
     Router,
 };
+use std::time::Duration;
 use tokio::time::sleep;
 use tower_livereload::LiveReloadLayer;
-
-use crate::AppState;
 
 pub async fn no_cache(request: Request, next: Next) -> Response {
     let mut response = next.run(request).await;
@@ -34,7 +26,7 @@ pub async fn simulate_lag(request: Request, next: Next) -> Response {
     next.run(request).await
 }
 
-pub fn apply_options(app: Router, state: AppState) -> Router {
+pub fn apply_options(app: Router) -> Router {
     let mut app = app;
 
     if let Ok(options) = std::env::var("ORPHEUS_OPTIONS") {

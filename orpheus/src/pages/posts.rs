@@ -1,5 +1,5 @@
 use axum::{
-    extract::{Path, State},
+    extract::Path,
     http::StatusCode,
     response::{ErrorResponse, IntoResponse, Response},
     routing, Router,
@@ -7,15 +7,67 @@ use axum::{
 use axum_extra::extract::Query;
 use maud::{html, Markup, PreEscaped};
 use serde::{Deserialize, Serialize};
+use std::{
+    collections::{HashMap, HashSet},
+    sync::{Arc, OnceLock},
+};
 use tantivy::{collector::TopDocs, doc, schema::Value, TantivyDocument};
 use tower_http::services::ServeDir;
-use verse::PostMetaData;
-
-use crate::{AppState, Posts};
+use verse::{PostMetaData, SearchMeta, Series};
 
 use super::page::PageKind;
 
 const CHUNK_SIZE: usize = 5;
+
+#[derive(Clone)]
+pub struct PostData {
+    pub metadata: HashMap<String, PostMetaData>,
+    pub series: Vec<Series>,
+    pub tags: Vec<String>,
+    pub search: Arc<SearchMeta>,
+}
+
+static POSTS: OnceLock<PostData> = OnceLock::new();
+
+impl PostData {
+    pub fn global() -> &'static Self {
+        POSTS.get().expect("PostData is not initialized")
+    }
+
+    pub fn init_state() {
+        let mut metadata = HashMap::new();
+
+        for path in std::fs::read_dir("./generated/posts").unwrap() {
+            let path = path.unwrap().path();
+            if matches!(path.extension(), Some(ext) if ext == "yml") {
+                let md = PostMetaData::open(&path).unwrap();
+
+                metadata.insert(md.slug.clone(), md);
+            }
+        }
+
+        let collect_tags: HashSet<String> =
+            metadata.values().flat_map(|m| m.tags.clone()).collect();
+        let mut tags: Vec<String> = collect_tags.into_iter().collect();
+
+        tags.sort();
+
+        let collect_series: HashSet<Series> =
+            metadata.values().flat_map(|m| m.series.clone()).collect();
+        let mut series: Vec<Series> = collect_series.into_iter().collect();
+
+        series.sort_by_key(|s| s.slug.to_owned());
+
+        if let Err(_) = POSTS.set(PostData {
+            metadata,
+            series,
+            tags,
+            search: Arc::new(SearchMeta::open().unwrap()),
+        }) {
+            println!("WARNING: PostData initialized multiple times");
+        }
+    }
+}
 
 pub fn post_info(post: &PostMetaData, title: Markup) -> Markup {
     html! {
@@ -78,9 +130,11 @@ pub fn post_card(post: &PostMetaData) -> Markup {
 pub async fn post(
     page_type: PageKind,
     Path(slug): Path<String>,
-    State(posts): State<Posts>,
 ) -> Result<impl IntoResponse, ErrorResponse> {
-    let post = posts.metadata.get(&slug).ok_or(StatusCode::NOT_FOUND)?;
+    let post = PostData::global()
+        .metadata
+        .get(&slug)
+        .ok_or(StatusCode::NOT_FOUND)?;
 
     let path = std::path::Path::new("./generated/posts")
         .join(slug.clone())
@@ -133,14 +187,10 @@ pub struct PostsFilters {
     skip: Option<usize>,
 }
 
-pub async fn posts(
-    page_type: PageKind,
-    Query(query): Query<PostsFilters>,
-    State(posts): State<Posts>,
-) -> Response {
+pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Response {
     let mut filtered_posts: Vec<&PostMetaData> = if let Some(ref search) = query.search {
-        let searcher = posts.search.reader.searcher();
-        if let Ok(query) = posts.search.parser.parse_query(search) {
+        let searcher = PostData::global().search.reader.searcher();
+        if let Ok(query) = PostData::global().search.parser.parse_query(search) {
             let results = searcher.search(&query, &TopDocs::with_limit(999)).unwrap();
 
             results
@@ -148,18 +198,18 @@ pub async fn posts(
                 .flat_map(|(_, addr)| {
                     let doc: TantivyDocument = searcher.doc(addr).unwrap();
                     let slug = doc
-                        .get_first(posts.search.fields.slug)
+                        .get_first(PostData::global().search.fields.slug)
                         .unwrap()
                         .as_str()
                         .unwrap();
-                    Some(posts.metadata.get(slug).unwrap())
+                    Some(PostData::global().metadata.get(slug).unwrap())
                 })
                 .collect()
         } else {
             return StatusCode::BAD_REQUEST.into_response();
         }
     } else {
-        posts.metadata.values().collect()
+        PostData::global().metadata.values().collect()
     };
 
     filtered_posts.retain(|m| {
@@ -248,7 +298,7 @@ pub async fn posts(
                                         value=""
                                         selected[query.series.is_none()]
                                         { "Select Series" }
-                                    @for series in posts.series.clone() {
+                                    @for series in PostData::global().series.clone() {
                                         option
                                             value=(series.slug)
                                             selected[matches!(
@@ -262,7 +312,7 @@ pub async fn posts(
                         fieldset
                             style="margin-bottom: -0.15rem;"
                             {
-                                @for tag in posts.tags.clone() {
+                                @for tag in PostData::global().tags.clone() {
                                     @let id = format!("checkbox-{tag}");
                                     input
                                         #(id)
@@ -284,7 +334,7 @@ pub async fn posts(
         }).into_response()
 }
 
-pub fn router() -> Router<AppState> {
+pub fn router() -> Router {
     Router::new()
         .route("/posts", routing::get(posts))
         .route("/posts/:post", routing::get(post))

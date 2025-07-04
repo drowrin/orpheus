@@ -2,8 +2,6 @@ use axum::{response::IntoResponse, routing, Router};
 use maud::{html, PreEscaped};
 use tokio::fs;
 
-use crate::AppState;
-
 use super::page::PageKind;
 
 pub async fn projects(page_kind: PageKind) -> impl IntoResponse {
@@ -17,6 +15,6 @@ pub async fn projects(page_kind: PageKind) -> impl IntoResponse {
     })
 }
 
-pub fn router() -> Router<AppState> {
+pub fn router() -> Router {
     Router::new().route("/projects", routing::get(projects))
 }

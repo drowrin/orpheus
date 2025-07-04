@@ -1,12 +1,12 @@
-use axum::{extract::State, response::IntoResponse, routing, Router};
+use axum::{response::IntoResponse, routing, Router};
 use maud::html;
 
-use crate::{pages::posts::post_card, AppState, Posts};
+use crate::pages::posts::{post_card, PostData};
 
 use super::page::PageKind;
 
-pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl IntoResponse {
-    let mut posts = posts.metadata.values().collect::<Vec<_>>();
+pub async fn home_page(page_type: PageKind) -> impl IntoResponse {
+    let mut posts = PostData::global().metadata.values().collect::<Vec<_>>();
     posts.sort_by(|a, b| b.published.cmp(&a.published));
 
     page_type.builder("Home").build(html! {
@@ -37,6 +37,6 @@ pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl 
     })
 }
 
-pub fn router() -> Router<AppState> {
+pub fn router() -> Router {
     Router::new().route("/", routing::get(home_page))
 }
