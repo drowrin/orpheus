@@ -35,11 +35,10 @@ This project is split up into 4 parts, and a few directories for non-rust code.
 
 ### Orpheus
 
-The main project. This is the backend server code, with all the templates, logic,
-and state management. It's got code for intercepting HTMX headers and rendering
-the appropriate responses. It's got a bunch of middleware to attempt to apply as
-many best practices as I'm aware of. It's got endpoints for filtering and searching
-blog posts.
+The main project. This is the backend server code, with all the templates,
+logic, and state management. It's got code for intercepting HTMX headers and
+rendering the appropriate responses, as well as endpoints for filtering and
+searching blog posts.
 
 ### Lyre
 
