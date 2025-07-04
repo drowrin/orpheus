@@ -5,4 +5,4 @@
 
 export ORPHEUS_OPTIONS="live_reload,no_cache"
 
-mise watch --quiet --clear --restart gen ::: serve:release || true
+mise watch --quiet --clear --restart 'render:*' ::: serve:release || true

@@ -1,22 +1,30 @@
 use axum::{extract::State, response::IntoResponse, routing, Router};
-use maud::{html, PreEscaped};
-use tokio::fs;
+use maud::html;
 
-use crate::{pages::posts::post_card, state::AppState};
+use crate::{pages::posts::post_card, AppState, Posts};
 
-use super::{page::PageKind, posts::Posts};
+use super::page::PageKind;
 
 pub async fn home_page(page_type: PageKind, State(posts): State<Posts>) -> impl IntoResponse {
     let mut posts = posts.metadata.values().collect::<Vec<_>>();
     posts.sort_by(|a, b| b.published.cmp(&a.published));
 
-    let markup = fs::read_to_string("generated/pages/home.html")
-        .await
-        .unwrap();
-
     page_type.builder("Home").build(html! {
         div .padded-when-small {
-            (PreEscaped(markup))
+            hgroup {
+                h1 #drowrin {
+                    img
+                        src="/favicon.svg"
+                        title="logo"
+                        style="max-height: 0.75em";
+                    "Drowrin"
+                }
+                p {
+                    "Software Engineering;" br;
+                    "Media Reviews;" br;
+                    "TTRPGs;" br;
+                }
+            }
             section {
                 hgroup {
                     h2 { "Recent Posts" }

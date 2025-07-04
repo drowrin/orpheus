@@ -2,7 +2,7 @@
 
 #MISE quiet=true
 #MISE description="run in release mode"
-#MISE depends=['build:release', 'gen']
+#MISE depends=['build:release', 'render:*']
 
 export ORPHEUS_OPTIONS="live_reload,no_cache"
 

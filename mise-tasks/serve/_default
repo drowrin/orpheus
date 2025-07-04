@@ -2,7 +2,7 @@
 
 #MISE quiet=true
 #MISE description="run in debug mode"
-#MISE depends=['build', 'gen']
+#MISE depends=['build', 'render:*']
 
 export ORPHEUS_OPTIONS="live_reload,no_cache,simulate_lag"
 

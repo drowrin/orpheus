@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+
+#MISE hide=true
+#MISE quiet=true
+#MISE wait_for=['clean']
+#MISE sources=['content/posts/**/*.md', 'content/pandoc/*']
+#MISE outputs=['generated/posts/*.html', 'generated/posts/*.txt', 'generated/posts/*.yml']
+shopt -s globstar
+shopt -s nullglob
+
+md_ext=$(
+    IFS=""
+    ext=(
+        +attributes
+        +implicit_figures
+        +autolink_bare_uris
+        +subscript
+        +superscript
+        +footnotes
+    )
+    echo "${ext[*]}"
+)
+
+html_ext=$(
+    IFS=""
+    ext=(
+        +task_lists
+        +ascii_identifiers
+    )
+    echo "${ext[*]}"
+)
+
+mkdir -p generated/posts/
+
+for md_path in content/posts/**/*.md; do
+    post_name=$(basename "$md_path" .md)
+
+    txt_path="generated/posts/$post_name.txt"
+    yml_path="generated/posts/$post_name.yml"
+    toc_path="generated/posts/$post_name-toc.html"
+    html_path="generated/posts/$post_name.html"
+
+    source_modify_time=$(stat -c %Y "$md_path")
+    script_modify_time=$(stat -c %Y "$MISE_TASK_FILE")
+
+    if ((script_modify_time > source_modify_time)); then
+        source_modify_time="$script_modify_time"
+    fi
+
+    if [ ! -f "$txt_path" ] || (($(stat -c %Y "$txt_path") < source_modify_time)); then
+        pandoc "$md_path" \
+            -f commonmark+attributes+yaml_metadata_block \
+            -t plain \
+            -o "$txt_path" \
+            --wrap=none
+    fi
+
+    if [ ! -f "$yml_path" ] || (($(stat -c %Y "$yml_path") < source_modify_time)); then
+        awk '/^---$/ {i++} i==1 && NR!=1' "$md_path" | awk '/^---$/ {exit} {print}' >"$yml_path"
+
+        first_paragraph=$(grep -vE '^\s*#|^\s*$' "$txt_path" | head -n 1)
+        word_count=$(wc -w <"$txt_path")
+        reading_time=$((word_count / 240))
+        series_name=$(yq -r '.series' "$yml_path")
+        toc_depth=$(yq -r '.toc_depth // 3' "$yml_path")
+
+        export post_name
+        export first_paragraph
+        export word_count
+        export reading_time
+        export series_name
+        export toc_depth
+
+        yq -i '
+            .slug = strenv(post_name) |
+            .brief = (.brief // strenv(first_paragraph)) |
+            .word_count = env(word_count) |
+            .reading_time = env(reading_time) |
+            .toc_depth = env(toc_depth)
+        ' "$yml_path"
+
+        if [ "$series_name" != "null" ]; then
+            series_slug=$(s="${md_path%/*}" && echo "${s##*/}")
+            export series_slug
+            yq -i '
+                del(.series) |
+                .series.name = strenv(series_name) |
+                .series.slug = strenv(series_slug)
+            ' "$yml_path"
+        fi
+    fi
+
+    if [ ! -f "$html_path" ] || (($(stat -c %Y "$html_path") < source_modify_time)); then
+        pandoc "$md_path" \
+            -f "commonmark_x$md_ext" \
+            -t "html5$html_ext" \
+            -o "$html_path" \
+            --lua-filter content/pandoc/link-preload.lua \
+            --lua-filter content/pandoc/image-rebase.lua \
+            --lua-filter content/pandoc/spoilers.lua \
+            --lua-filter content/pandoc/header-links.lua
+    fi
+
+    if [ ! -f "$toc_path" ] || (($(stat -c %Y "$toc_path") < source_modify_time)); then
+        pandoc "$md_path" \
+            -f commonmark_x \
+            -t html5 \
+            -o "$toc_path" \
+            --standalone \
+            --toc \
+            "--toc-depth=$toc_depth" \
+            --template content/pandoc/toc-only.html5
+    fi
+
+done

@@ -15,59 +15,7 @@ use axum::{
 use tokio::time::sleep;
 use tower_livereload::LiveReloadLayer;
 
-use crate::state::{AppState, InitState};
-
-pub type ETags = Arc<HashMap<String, String>>;
-
-impl InitState for ETags {
-    fn init_state() -> Self {
-        Arc::new(HashMap::from_iter(
-            fs::read("generated/etags").unwrap().lines().map(|line| {
-                let line = line.unwrap();
-                let mut i = line.split(':');
-                (i.next().unwrap().to_string(), i.next().unwrap().to_string())
-            }),
-        ))
-    }
-}
-
-impl FromRef<AppState> for ETags {
-    fn from_ref(input: &AppState) -> Self {
-        input.etags.clone()
-    }
-}
-
-pub async fn cache(State(etags): State<ETags>, request: Request, next: Next) -> Response {
-    let path = Path::new(&request.uri().to_string())
-        .with_extension("")
-        .to_str()
-        .unwrap()
-        .to_string();
-    let maybe_etag = etags.get(&path);
-
-    if let Some(browser_etag) = request.headers().get(IF_NONE_MATCH) {
-        if let Some(etag) = maybe_etag {
-            if browser_etag.to_str().unwrap() == etag.as_str() {
-                return StatusCode::NOT_MODIFIED.into_response();
-            }
-        }
-    }
-
-    let mut response = next.run(request).await;
-
-    response.headers_mut().insert(
-        CACHE_CONTROL,
-        HeaderValue::from_static("private, max-age=3600"),
-    );
-
-    if let Some(etag) = maybe_etag {
-        response
-            .headers_mut()
-            .insert(ETAG, HeaderValue::from_str(etag).unwrap());
-    }
-
-    response
-}
+use crate::AppState;
 
 pub async fn no_cache(request: Request, next: Next) -> Response {
     let mut response = next.run(request).await;

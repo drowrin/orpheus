@@ -2,7 +2,7 @@ use axum::{response::IntoResponse, routing, Router};
 use maud::{html, PreEscaped};
 use tokio::fs;
 
-use crate::state::AppState;
+use crate::AppState;
 
 use super::page::PageKind;
 
