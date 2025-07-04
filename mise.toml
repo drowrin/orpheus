@@ -5,6 +5,7 @@ rust = "1.88.0"
 watchexec = "2.3.2"
 yq = "4.45.4"
 npm = "11.4.2"
+"npm:sass" = "1.89.2"
 
 [hooks]
 postinstall = '''
