@@ -16,4 +16,5 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
       - run: |
+          rustup override set "$(mise tool --active rust)"
           mise run 'render:*'
