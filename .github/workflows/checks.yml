@@ -9,5 +9,7 @@ jobs:
         with:
           experimental: true
       - uses: Swatinem/rust-cache@v2
+        with:
+          cache-workspace-crates: true
       - run: |
           mise run 'render:*'
