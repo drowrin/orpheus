@@ -168,8 +168,6 @@
   .spoiler:not(.revealed) > * {
     opacity: 0;
   }
-
-  @import "latte-code";
 }
 
 [data-theme="dark"] {
@@ -337,6 +335,4 @@
   .spoiler:not(.revealed) > * {
     opacity: 0;
   }
-
-  @import "mocha-code";
 }
