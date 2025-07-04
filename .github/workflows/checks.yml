@@ -15,6 +15,5 @@ jobs:
             ~/.cargo/registry/cache/
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
-      - run: |
-          rustup override set "$(mise tool --active rust)"
+      - run:
           mise run 'render:*'
