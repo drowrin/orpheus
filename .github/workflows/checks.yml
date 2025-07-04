@@ -15,5 +15,12 @@ jobs:
             ~/.cargo/registry/cache/
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
-      - run:
-          mise run 'render:*'
+      - run: |
+          mise run build:release ::: 'render:*'
+          timeout 3 ./mise-tasks/serve/release
+          if (($? == 124)); then
+              echo successfully ran for 3 seconds
+              exit 0
+          else
+              exit 2
+          fi
