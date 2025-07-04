@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#MISE hide=true
+#MISE quiet=true
+#MISE wait_for=['clean']
+#MISE sources=['content/img/**/*', 'content/favicon.svg']
+#MISE outputs=['generated/img/**/*', 'generated/static/favicon.svg']
+
+mkdir -p generated/static/
+cp content/favicon.svg generated/static/favicon.svg
+
+mkdir -p generated/img/
+cp -r content/img/. generated/img

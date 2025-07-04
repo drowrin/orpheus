@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+#MISE hide=true
+#MISE quiet=true
+#MISE wait_for=['clean']
+#MISE sources=['content/pages/*.md', 'content/pandoc/*.lua']
+#MISE outputs='generated/pages/*.html'
+
+md_ext=$(
+    IFS=""
+    ext=(
+        +attributes
+        +implicit_figures
+        +autolink_bare_uris
+        +subscript
+        +superscript
+        +footnotes
+    )
+    echo "${ext[*]}"
+)
+
+html_ext=$(
+    IFS=""
+    ext=(
+        +task_lists
+        +ascii_identifiers
+    )
+    echo "${ext[*]}"
+)
+
+mkdir -p generated/pages/
+
+for md_path in content/pages/*.md; do
+    name=$(basename "$md_path" .md)
+    html_path="generated/pages/$name.html"
+
+    pandoc "$md_path" \
+        -f "commonmark_x$md_ext" \
+        -t "html5$html_ext" \
+        -o "$html_path" \
+        --lua-filter content/pandoc/link-preload.lua \
+        --lua-filter content/pandoc/image-rebase.lua \
+        --lua-filter content/pandoc/spoilers.lua
+done

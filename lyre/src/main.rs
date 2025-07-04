@@ -3,13 +3,11 @@ use std::{
     fs,
     path::{Path, PathBuf},
     result::Result as stdResult,
-    time::SystemTime,
 };
 
 use chrono::Utc;
-use color_eyre::owo_colors::OwoColorize;
 use colored::*;
-use eyre::Result;
+use eyre::{eyre, Context, Result};
 use glob::glob;
 use inquire::{
     autocompletion::Replacement,
@@ -22,12 +20,8 @@ use simple_search::{
     levenshtein::base::weighted_levenshtein_similarity, search_engine::SearchEngine,
 };
 use slug::slugify;
-use verse::Frontmatter;
-
-mod melody;
-pub mod pages;
-pub mod posts;
-pub mod web;
+use tantivy::{doc, IndexWriter};
+use verse::{Frontmatter, SearchMeta};
 
 #[derive(Parser)]
 #[command(version, about, infer_subcommands = true)]
@@ -193,6 +187,25 @@ fn gen_post(frontmatter: Frontmatter) -> Result<()> {
     Ok(())
 }
 
+pub fn parse_frontmatter(path: &PathBuf) -> Result<Frontmatter> {
+    let md = fs::read_to_string(path)?;
+    let mut sections = md.split("---").skip(1);
+
+    let frontmatter = serde_yaml::from_str(sections.next().ok_or(eyre!(
+        "Could not locate frontmatter in {}",
+        path.to_str().unwrap()
+    ))?)
+    .wrap_err(format!("In file: {}", path.to_str().unwrap()))?;
+
+    // ensure we've at least got some content
+    sections.next().ok_or(eyre!(
+        "Could not locate content in {}",
+        path.to_str().unwrap()
+    ))?;
+
+    Ok(frontmatter)
+}
+
 pub fn main() -> Result<()> {
     color_eyre::install()?;
 
@@ -214,24 +227,32 @@ pub fn main() -> Result<()> {
 
     match args.command {
         Commands::Build => {
-            let started = SystemTime::now();
+            let search_meta = SearchMeta::open()?;
+            let mut index_writer: IndexWriter = search_meta.index.writer(50_000_000)?;
+            let paths = glob("content/posts/**/*.md")?;
+            for path in paths {
+                let path = path.unwrap();
+                if matches!(path.extension(), Some(ext) if ext == "md") {
+                    let name = path.file_name().unwrap();
 
-            let mut state = melody::prepare()?;
+                    let fm = parse_frontmatter(&path)?;
 
-            <web::Javascript as melody::Melody>::conduct(&mut state)?;
-            <web::Favicon as melody::Melody>::conduct(&mut state)?;
-            <web::SCSS as melody::Melody>::conduct(&mut state)?;
-            <web::Images as melody::Melody>::conduct(&mut state)?;
-            <posts::Posts as melody::Melody>::conduct(&mut state)?;
-            <pages::Pages as melody::Melody>::conduct(&mut state)?;
+                    let plain_path = Path::new("generated")
+                        .join("posts")
+                        .join(name)
+                        .with_extension("txt");
+                    let raw_text = fs::read_to_string(&plain_path)?;
 
-            melody::finalize(state)?;
+                    index_writer.add_document(doc!(
+                        search_meta.fields.title => fm.title,
+                        search_meta.fields.tagline => fm.tagline.unwrap_or_default(),
+                        search_meta.fields.body => raw_text,
+                        search_meta.fields.slug => name.to_str().unwrap().strip_suffix(".md").unwrap().to_string(),
+                    ))?;
+                }
+            }
 
-            println!(
-                "{} in {:?}",
-                "Lyre Completed".green(),
-                started.elapsed()?.yellow()
-            );
+            index_writer.commit()?;
         }
         Commands::Gen => gen_post(ask_frontmatter(all_frontmatter)?)?,
     }

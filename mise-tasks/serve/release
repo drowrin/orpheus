@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-#MISE description="run in debug mode"
-#MISE depends=['build:release', 'gen']
+#MISE quiet=true
+#MISE description="run in release mode"
+#MISE depends=['build:release', 'render:*']
 
 export ORPHEUS_OPTIONS="live_reload,no_cache"
 

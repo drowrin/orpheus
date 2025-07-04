@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#MISE hide=true
+#MISE quiet=true
+#MISE wait_for=['clean']
+#MISE sources=['content/web/**/*.scss', 'node_modules/@picocss/**/*.scss', 'node_modules/@catppuccin/**/*.scss']
+#MISE outputs='generated/static/styles.css'
+
+#TODO: this has a lot of deprecation warnings
+
+mkdir -p generated/static/
+sass content/web/styles.scss generated/static/styles.css \
+    -I node_modules/@picocss/pico/scss \
+    -I node_modules/@catppuccin/palette/scss
