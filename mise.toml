@@ -1,9 +1,9 @@
 [tools]
-node = "24.3.0"
-pandoc = "3.7.0.2"
 rust = "1.88.0"
 watchexec = "2.3.2"
+pandoc = "3.7.0.2"
 yq = "4.45.4"
+node = "24.3.0"
 npm = "11.4.2"
 "npm:sass" = "1.89.2"
 
