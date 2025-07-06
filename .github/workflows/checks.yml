@@ -16,7 +16,7 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
       - run: |
-          mise run build ::: 'render:*'
+          mise run --jobs 1 --prefix build ::: 'render:*'
           timeout 3 ./mise-tasks/serve/release || ret_val=$?
           if (($ret_val == 124)); then
               echo successfully ran for 3 seconds
