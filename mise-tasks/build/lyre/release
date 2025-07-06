@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+#MISE quiet=true
+#MISE description="release build lyre"
+#MISE sources=['Cargo.lock', 'src/lyre/Cargo.toml', 'src/lyre/src/**/*.rs']
+#MISE outputs=['target/release/lyre']
+
+cargo build -p lyre --release

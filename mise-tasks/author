@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #MISE description="run a hot-reloading server in release mode"
-#MISE depends=['build:release']
+#MISE depends=['build:release', 'build:lyre:release']
 
 export ORPHEUS_OPTIONS="live_reload,no_cache"
 
-mise watch --quiet --clear --restart 'render:*' ::: serve:release || true
+mise watch -w content --quiet --clear --restart serve:release || true

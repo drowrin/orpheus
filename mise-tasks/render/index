@@ -2,11 +2,15 @@
 
 #MISE hide=true
 #MISE quiet=true
-#MISE depends=['build:release', 'render:posts']
+#MISE depends=['build:lyre', 'render:posts']
 #MISE wait_for=['clean']
 #MISE sources=['content/posts/**/*.md']
 #MISE outputs=['generated/posts/index/*']
 
 mkdir -p generated/posts/index
 
-./target/release/lyre
+if [ -e ./target/release/lyre ]; then
+    ./target/release/lyre
+else
+    ./target/debug/lyre
+fi

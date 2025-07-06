@@ -3,9 +3,8 @@ set -e
 
 #MISE quiet=true
 #MISE alias='build:debug'
-#MISE description="debug build"
-#MISE sources=['Cargo.lock', 'orpheus/Cargo.toml', 'orpheus/src/**/*.rs', 'lyre/Cargo.toml', 'lyre/src/**/*.rs']
-#MISE outputs=['target/debug/orpheus', 'target/debug/lyre']
+#MISE description="debug build orpheus"
+#MISE sources=['Cargo.lock', 'src/orpheus/Cargo.toml', 'src/orpheus/src/**/*.rs']
+#MISE outputs=['target/debug/orpheus']
 
-cargo build -p lyre
 cargo build -p orpheus
