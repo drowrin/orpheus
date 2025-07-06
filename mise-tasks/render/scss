@@ -9,6 +9,4 @@
 #TODO: this has a lot of deprecation warnings
 
 mkdir -p generated/static/
-sass content/web/styles.scss generated/static/styles.css \
-    -I node_modules/@picocss/pico/scss \
-    -I node_modules/@catppuccin/palette/scss
+sass content/web/styles.scss generated/static/styles.css

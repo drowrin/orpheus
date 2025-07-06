@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "pico" with ($modules: ("content/embedded": false,
+@use "../../node_modules/@picocss/pico/scss/index" as pico with ($modules: ("content/embedded": false,
     "content/table": false,
     "content/code": false,
     "forms/input-color": false,
