@@ -6,14 +6,6 @@ description = "Orpheus companion tool -- manages, generates, and builds content"
 
 [dependencies]
 serde_yaml = "0.9.34"
-eyre = "0.6.12"
-color-eyre = "0.6.5"
-colored = "3.0.0"
-slug = "0.1.6"
 verse = { path = "../verse" }
 glob = "0.3.2"
-clap = { version = "4.5.40", features = ["derive"] }
-chrono = "0.4.41"
 tantivy = "0.24.1"
-inquire = "0.7.5"
-simple_search = "0.2.1"

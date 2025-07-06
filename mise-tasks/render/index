@@ -9,4 +9,4 @@
 
 mkdir -p generated/posts/index
 
-./target/release/lyre build
+./target/release/lyre
