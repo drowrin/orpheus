@@ -120,6 +120,9 @@ for md_path in content/posts/**/*.md; do
     pids+=("$!")
 done
 
-for pid in "${pids[@]}"; do
-    wait "$pid"
+for _ in "${!pids[@]}"; do
+    if ! wait -n; then
+        kill "${pids[@]}" 2>/dev/null
+        exit 1
+    fi
 done
