@@ -114,6 +114,12 @@ function render_post {
     fi
 }
 
+pids=""
 for md_path in content/posts/**/*.md; do
     render_post "$md_path" &
+    pids+=" $!"
+done
+
+for pid in $pids; do
+    wait $pid
 done
