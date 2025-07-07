@@ -32,7 +32,8 @@ html_ext=$(
 
 mkdir -p generated/posts/
 
-for md_path in content/posts/**/*.md; do
+function render_post {
+    md_path="$1"
     post_name=$(basename "$md_path" .md)
 
     txt_path="generated/posts/$post_name.txt"
@@ -111,5 +112,8 @@ for md_path in content/posts/**/*.md; do
             "--toc-depth=$toc_depth" \
             --template content/pandoc/toc-only.html5
     fi
+}
 
+for md_path in content/posts/**/*.md; do
+    render_post "$md_path" &
 done
