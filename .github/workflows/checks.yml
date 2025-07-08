@@ -15,7 +15,9 @@ jobs:
             ~/.cargo/registry/cache/
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
-      - run: |
+      - env:
+          RUSTUP_DIST_SERVER: "localhost"
+        run: |
           mise run --prefix build
           mise run 'render:*'
           timeout 3 ./mise-tasks/serve/_default || ret_val=$?
