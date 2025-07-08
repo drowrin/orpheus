@@ -16,7 +16,7 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
       - env:
-          RUSTUP_DIST_SERVER: "localhost"
+          RUSTUP_AUTO_INSTALL: 0
         run: |
           mise run --prefix build
           mise run 'render:*'
