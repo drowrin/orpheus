@@ -13,11 +13,10 @@ jobs:
           path: |
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
+            ~/.rustup/toolchains/
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
-      - env:
-          RUSTUP_AUTO_INSTALL: 0
-        run: |
+      - run: |
           mise run --prefix build
           mise run 'render:*'
           timeout 3 ./mise-tasks/serve/_default || ret_val=$?
