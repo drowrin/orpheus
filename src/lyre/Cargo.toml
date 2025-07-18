@@ -8,4 +8,4 @@ description = "Orpheus companion tool -- manages, generates, and builds content"
 serde_yaml = "0.9.34"
 verse = { path = "../verse" }
 glob = "0.3.2"
-tantivy = "0.24.1"
+tantivy = "0.24.2"
