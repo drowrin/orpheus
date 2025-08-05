@@ -93,8 +93,6 @@ template_path="content/templates/$template.md"
 
 gum confirm || exit 0
 
-printf -v published '%(%Y-%m-%d)T' -1
-
 frontmatter=$(
     export title
     export published
@@ -104,7 +102,6 @@ frontmatter=$(
     .title = env(title) |
     .tagline = "" |
     .tagline tag="!!null" |
-    .published = env(published) |
     (select(strenv(series) != "") | .series) = strenv(series) |
     (select(strenv(tags) != "") | .tags) = (env(tags) | split(" "))
     '''

@@ -65,6 +65,20 @@ function render_post {
         series_name=$(yq -r '.series' "$yml_path")
         toc_depth=$(yq -r '.toc_depth // 3' "$yml_path")
 
+        git_published=$(git log --follow --diff-filter=A --format="%as" -1 -- "$md_path")
+        export git_published
+
+        published=$(yq -r '.published // strenv(git_published)' "$yml_path")
+
+        fm_lines=$((2 + "$(wc -l < "$yml_path")"))
+        total_lines=$(wc -l < "$md_path")
+        revisions=$(git log --diff-filter=M --format="%as -- %s" --no-patch "-L$fm_lines,$total_lines:$md_path")
+
+        updated=$(echo "$revisions" | head -n 1 | awk -F' --' '{print $1}')
+
+        export published
+        export updated
+        export revisions
         export post_name
         export first_paragraph
         export word_count
@@ -73,6 +87,9 @@ function render_post {
         export toc_depth
 
         yq -i '
+            .published = strenv(published) |
+            .updated = strenv(updated) |
+            .revisions = strenv(revisions) |
             .slug = strenv(post_name) |
             .brief = (.brief // strenv(first_paragraph)) |
             .word_count = env(word_count) |
