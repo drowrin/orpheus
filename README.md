@@ -31,7 +31,8 @@ Run `mise install` to download dependencies, then run `mise tasks` to view all t
 
 ## Organization
 
-This project is split up into 4 parts, and a few directories for non-rust code.
+All Rust code is in `./src/`, split into three crates. Scripts are in `./mise-tasks/`.
+Post and page sources, images, and all web content (CSS, JS, and so on) is in `./content/`.
 
 ### Orpheus
 
@@ -42,43 +43,15 @@ searching blog posts.
 
 ### Lyre
 
-The companion tool. This tool handles rendering, generating, and caching static content
-for Orpheus to read. This includes markdown -> HTML, bundling javascript, running SASS,
-collecting metadata, creating plaintext versions of posts for use elsewhere, and creating
-hashes to be used in caching its own work as well as cache-busting in Orpheus. It's my
-all-in-one build tool for everything cargo doesn't handle.
+This used to handle all of the rendering, but that's all handled by scripts now.
+Currently, Lyre creates the search index. It will likely be removed when I change
+to another search solution.
 
 ### Verse
 
 A library containing common data formats between the other project parts. Generally used
 for serde struct definitions for custom files, so that Orpheus can read a file that Lyre
 generated.
-
-### Melody
-
-A trait and utility library used by Lyre. It provides a framework for build tasks with common
-logic. All a Lyre task needs to supply is a list of input files, a list of output files, and
-a function to run to accomplish that goal. Melody handles the rest: caching, hashing, timing,
-logging, (de)serialization, ensuring output directories are created, and more. It also provides
-utility functions, such as "my list of input files is all markdown files in ./content/posts".
-
-### Pandoc
-
-All my Lua pandoc filters live in one directory, `/pandoc`. They are separated out into a single
-file each so that they are easier to add/remove from different rendering pipelines.
-
-### Web
-
-This directory contains all my CSS and JS code. It's not much, but it's enough that a separate
-directory was a good idea. None of this gets served as-is. It all gets processed through SASS
-and a bundler and placed in `/generated/static`.
-
-### Content
-
-This is the only place actual content lives. Even the favicon lives here. Most of this gets
-processed into some other form by lyre before being served. The exception is the `img`
-subdirectory. Currently, Orpheus serves directly from `/content/img` to save storage space.
-This may change in the future with the addition of more image formats and content negotiation.
 
 ### Generated
 
@@ -134,35 +107,3 @@ implement any feature I can dream of using that feature. It's extremely powerful
 Plus, I'm pre-rendering all of my markdown into HTML before the server ever starts up,
 so having a parser as a crate isn't that important to me. Still, I'm using several crates
 to assist in working with Pandoc from Rust.
-
-### Pico CSS
-
-I tried a few different CSS frameworks (including Tailwind) before settling on this.
-The ability to get a good looking site based on semantic HTML alone is very pleasant.
-It's also easy to configure, and I can step out of it with inline styles or custom css
-where required (though I haven't found many places this was needed). It helps that Pico's
-defaults are very close to what I'd want anyways.
-
-### Syntect
-
-This is the crate I settled on for code highlighting. I wanted it to be done in the backend,
-not deferred to client-side javascript. Unfortunately, I found Pandoc's built in highlighting
-to be a little insufficient. Fortunately, I was able to use this crate as a Pandoc filter fairly
-easily. So now I've got HTML5 compliant code blocks, highlighted in custom themes with excellent
-language support. Plus it's all part of the same render step as the rest of the html, and not a
-second pass.
-
-The only downside is that the CSS classes are a little bulky. It's brought my CSS up to about 20kB.
-I might be able to perform some SASS tricks, and/or remove some languages I'm unlikely to use
-to bring this down in the future.
-
-### Parcel
-
-This seemed like the simplest bundler for the job, and it works great.
-Unfortunately, HTMX needs a bit of a hack to work with bundlers, but it isn't a big deal.
-I wanted to use a bundler and include npm in the project so that I could take advantage
-of dependency version watching tools like Dependabot. It also means I serve a little less
-JS overall, and in a single file that compresses better.
-
-Despite this being an external tool, I run it from lyre as part of the build process.
-This is definitely the longest build step, but I cache it and it rarely changes.
