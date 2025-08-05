@@ -31,8 +31,8 @@ Run `mise install` to download dependencies, then run `mise tasks` to view all t
 
 ## Organization
 
-All Rust code is in `./src/`, split into three crates. Scripts are in `./mise-tasks/`.
-Post and page sources, images, and all web content (CSS, JS, and so on) is in `./content/`.
+All Rust code is in `src/`, split into three crates. Scripts are in `.mise/tasks/`.
+Post and page sources, images, and all web content (CSS, JS, and so on) is in `content/`.
 
 ### Orpheus
 
@@ -52,11 +52,6 @@ to another search solution.
 A library containing common data formats between the other project parts. Generally used
 for serde struct definitions for custom files, so that Orpheus can read a file that Lyre
 generated.
-
-### Generated
-
-All content created by lyre will go in the `/generated` directory. This is the primary directory
-that Orpheus reads from. It is ignored by git, as it is essentially full of build artifacts.
 
 ## Technology Used
 
