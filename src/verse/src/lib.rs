@@ -51,7 +51,8 @@ pub struct PostMetaData {
     pub word_count: usize,
     pub reading_time: usize,
     pub published: String,
-    pub updated: Option<String>,
+    pub updated: String,
+    pub revisions: String,
     pub toc_depth: u32,
 }
 

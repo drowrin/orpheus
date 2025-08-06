@@ -72,9 +72,12 @@ function render_post {
 
         fm_lines=$((2 + "$(wc -l < "$yml_path")"))
         total_lines=$(wc -l < "$md_path")
-        revisions=$(git log --diff-filter=M --format="%as -- %s" --no-patch "-L$fm_lines,$total_lines:$md_path")
+        revisions=$(git log --diff-filter=M --format="%as: %s" --no-patch "-L$fm_lines,$total_lines:$md_path")
 
         updated=$(echo "$revisions" | head -n 1 | awk -F' --' '{print $1}')
+        if [ -z "$updated" ]; then
+            updated="$published"
+        fi
 
         export published
         export updated

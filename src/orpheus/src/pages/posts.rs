@@ -94,7 +94,13 @@ pub fn post_info(post: &PostMetaData, title: Markup) -> Markup {
             style="color: var(--pico-muted-color); margin-bottom: 0.5rem;"
             {
                 small
-                    data-tooltip=[post.updated.as_ref().map(|u| format!("updated {}", u))]
+                    data-tooltip=[
+                        if !post.revisions.is_empty() {
+                            Some(post.revisions.clone())
+                        } else {
+                            None
+                        }
+                    ]
                     data-placement="right"
                     { (post.published) }
                 " - "

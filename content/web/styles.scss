@@ -362,3 +362,8 @@ article>details {
     margin-bottom: 0;
   }
 }
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+  white-space: pre;
+}
