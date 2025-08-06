@@ -1,6 +1,5 @@
 ---
 title: Final Fantasy IX
-brief:
 tagline: An intentional step backwards
 series: Final Fantasy Retrospective
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Final Fantasy VI"
-brief:
 tagline: You sound like chapters from a self-help booklet!
 series: Final Fantasy Retrospective
 tags:

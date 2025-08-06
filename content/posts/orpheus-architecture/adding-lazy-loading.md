@@ -5,7 +5,6 @@ series: Orpheus Architecture
 tags:
   - projects
   - programming
-brief:
 ---
 
 I don't yet have **THAT** many posts, so this hasn't been a problem yet--but I

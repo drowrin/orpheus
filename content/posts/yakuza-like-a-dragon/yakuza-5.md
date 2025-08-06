@@ -1,6 +1,5 @@
 ---
 title: Yakuza 5
-brief:
 tagline: The MOST Yakuza of all time
 series: Yakuza / Like a Dragon
 tags:

@@ -1,6 +1,5 @@
 ---
 title: Post Template Generator
-brief:
 tagline: An Hour of Engineering to Save Myself Seconds
 series: Orpheus Architecture
 tags:

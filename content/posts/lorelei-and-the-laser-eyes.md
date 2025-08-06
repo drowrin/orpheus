@@ -1,8 +1,6 @@
 ---
 title: Lorelei and the Laser Eyes
-brief:
 tagline: Overcooked Masterpiece
-series:
 tags:
   - games
   - reviews

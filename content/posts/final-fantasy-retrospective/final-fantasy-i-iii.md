@@ -1,6 +1,5 @@
 ---
 title: "Final Fantasy I-III"
-brief:
 tagline: The Famicom/NES Generation, Pixel Remasters
 series: Final Fantasy Retrospective
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Final Fantasy VII"
-brief:
 tagline: A masterpiece for everyone but me, apparently
 series: Final Fantasy Retrospective
 tags:

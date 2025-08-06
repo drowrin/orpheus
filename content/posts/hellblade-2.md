@@ -1,8 +1,6 @@
 ---
 title: Hellblade 2 - Tragic Masterpiece
-brief:
 tagline: The Hardest Battles are Fought in the Mind
-series:
 tags:
   - games
   - reviews

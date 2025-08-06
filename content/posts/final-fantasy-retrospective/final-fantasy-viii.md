@@ -1,6 +1,5 @@
 ---
 title: Final Fantasy VIII
-brief:
 tagline: Ironically, a game ahead of its time
 series: Final Fantasy Retrospective
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Final Fantasy IV"
-brief:
 tagline: Where it all starts to come together
 series: Final Fantasy Retrospective
 tags:

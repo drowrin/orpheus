@@ -1,6 +1,5 @@
 ---
 title: Judgment
-brief:
 tagline: A modern noir story with its own extraordinary style
 series: Yakuza / Like a Dragon
 tags:

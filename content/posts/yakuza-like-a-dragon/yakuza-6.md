@@ -1,6 +1,5 @@
 ---
 title: Yakuza 6
-brief:
 tagline: Growing pains, unfortunately right at the end
 series: Yakuza / Like a Dragon
 tags:

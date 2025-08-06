@@ -1,6 +1,5 @@
 ---
 title: Mass Effect 3
-brief:
 tagline: Disappointing, but not for the reasons you probably expect
 series: Finally Playing Mass Effect
 tags:

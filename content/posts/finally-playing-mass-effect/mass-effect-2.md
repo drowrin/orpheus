@@ -1,6 +1,5 @@
 ---
 title: Mass Effect 2
-brief:
 tagline: Realizing the full potential of the series
 series: Finally Playing Mass Effect
 tags:

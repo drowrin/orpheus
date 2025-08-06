@@ -1,6 +1,5 @@
 ---
 title: Yakuza 4
-brief:
 tagline: A fantastic evolution
 series: Yakuza / Like a Dragon
 tags:
