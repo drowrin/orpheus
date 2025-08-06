@@ -19,7 +19,7 @@ jobs:
       - run: |
           mise run --prefix build
           mise run 'render:*'
-          timeout 3 ./mise-tasks/serve/_default || ret_val=$?
+          timeout 3 .mise/tasks/serve/_default || ret_val=$?
           if (($ret_val == 124)); then
               echo successfully ran for 3 seconds
               exit 0
