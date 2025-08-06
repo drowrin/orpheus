@@ -6,8 +6,6 @@ tags:
   - projects
   - programming
 brief:
-published: 2024-05-24
-updated:
 ---
 
 I don't yet have **THAT** many posts, so this hasn't been a problem yet--but I

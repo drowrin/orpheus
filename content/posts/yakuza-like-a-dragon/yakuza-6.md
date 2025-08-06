@@ -6,8 +6,6 @@ series: Yakuza / Like a Dragon
 tags:
   - reviews
   - games
-published: 2025-02-02
-updated:
 ---
 
 The third reimagining of the series in as many games. Everything is new:

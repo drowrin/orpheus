@@ -7,7 +7,6 @@ tags:
   - reviews
   - games
 published: 2025-01-26
-updated:
 ---
 
 The most ambitious. The most explosive. The most ridiculous. The most

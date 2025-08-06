@@ -6,8 +6,6 @@ series: Yakuza / Like a Dragon
 tags:
   - reviews
   - games
-published: 2025-02-17
-updated:
 ---
 
 This is Ryu Ga Gotoku's storytelling at its peak paired with the best gameplay

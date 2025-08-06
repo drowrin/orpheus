@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
   - games
   - reviews
-published: 2024-07-16
-updated:
 ---
 
 This was a major step forward in the gameplay of the series. For the first

@@ -4,7 +4,7 @@ set -e
 #MISE quiet=true
 #MISE alias='build:lyre:debug'
 #MISE description="debug build lyre"
-#MISE sources=['Cargo.lock', 'src/lyre/Cargo.toml', 'src/lyre/src/**/*.rs']
+#MISE sources=['Cargo.lock', 'src/lyre/Cargo.toml', 'src/lyre/src/**/*.rs', 'src/verse/Cargo.toml', 'src/verse/src/**/*.rs']
 #MISE outputs=['target/debug/lyre']
 
 cargo build -p lyre

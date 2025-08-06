@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
   - reviews
   - games
-published: 2025-02-19
-updated:
 ---
 
 This is the the first Final Fantasy game I ever attempted to play. I had heard

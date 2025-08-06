@@ -7,7 +7,6 @@ tags:
   - reviews
   - games
 published: 2024-10-03
-updated:
 ---
 
 I overall enjoyed my time with this game, especially the DLC. However, it had

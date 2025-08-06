@@ -6,8 +6,6 @@ series:
 tags:
   - games
   - reviews
-published: 2024-11-26
-updated:
 ---
 
 I _really_ wanted to love this one.

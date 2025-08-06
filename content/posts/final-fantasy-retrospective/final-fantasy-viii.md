@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
 - games
 - reviews
-published: 2025-06-13
-updated:
 toc_depth: 5
 ---
 

@@ -28,7 +28,7 @@ pub struct Frontmatter {
     pub series: Option<String>,
     #[serde(default)]
     pub tags: Vec<String>,
-    pub published: String,
+    pub published: Option<String>,
     pub updated: Option<String>,
     #[serde(default)]
     pub toc_depth: ToCDepth,

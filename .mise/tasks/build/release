@@ -3,7 +3,7 @@ set -e
 
 #MISE quiet=true
 #MISE description="release build"
-#MISE sources=['Cargo.lock', 'src/orpheus/Cargo.toml', 'src/orpheus/src/**/*.rs']
+#MISE sources=['Cargo.lock', 'src/orpheus/Cargo.toml', 'src/orpheus/src/**/*.rs', 'src/verse/Cargo.toml', 'src/verse/src/**/*.rs']
 #MISE outputs=['target/release/orpheus']
 
 cargo build -p orpheus --release

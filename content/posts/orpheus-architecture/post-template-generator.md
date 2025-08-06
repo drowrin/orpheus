@@ -6,8 +6,6 @@ series: Orpheus Architecture
 tags:
   - projects
   - programming
-published: 2024-05-25
-updated:
 ---
 
 I've written a good handful of posts for this site now, and I've discovered a

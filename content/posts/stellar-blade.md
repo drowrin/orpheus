@@ -1,7 +1,6 @@
 ---
 title: Stellar Blade
 tagline: Kill Bill outfit >>>>
-published: 2024-05-22
 brief: >-
   Solid 8/10 game. With a better story it could have been an easy 9 and made it
   onto my favorites list. Even without, the rest of the game holds up so well that

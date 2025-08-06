@@ -6,8 +6,6 @@ series:
 tags:
   - games
   - reviews
-published: 2025-01-09
-updated:
 ---
 
 Finished The Outer Worlds. Actually got all the way through it this time,

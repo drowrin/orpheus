@@ -6,8 +6,6 @@ series: Finally Playing Mass Effect
 tags:
   - games
   - reviews
-published: 2024-09-02
-updated:
 ---
 
 This game was a treat. It was laser-focused on the best parts of the series, and

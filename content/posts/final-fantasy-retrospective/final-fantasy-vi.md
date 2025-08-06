@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
   - games
   - reviews
-published: 2024-08-08
-updated: 2024-08-12
 ---
 
 We've arrived at the Final Fantasy game I was most looking forward to. It has a

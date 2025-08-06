@@ -6,8 +6,6 @@ series: Annual Media Rankings
 tags:
   - reviews
   - games
-published: 2025-01-16
-updated:
 ---
 
 Every year I've taken ranking and reviewing things a little more seriously. I

@@ -6,8 +6,6 @@ series:
 tags:
   - games
   - reviews
-published: 2024-06-15
-updated:
 ---
 
 This is a **beautiful work of art**. I don't think my words will do it justice,

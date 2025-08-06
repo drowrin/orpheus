@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
   - games
   - reviews
-published: 2024-07-07
-updated: 2024-07-08
 ---
 
 Final Fantasy is a series I adore. A couple managed to make it into my

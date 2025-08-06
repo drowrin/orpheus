@@ -6,8 +6,6 @@ series: Final Fantasy Retrospective
 tags:
   - games
   - reviews
-published: 2024-07-12
-updated:
 ---
 
 FFIV may not be the absolute best Final Fantasy, but it clearly serves as an
