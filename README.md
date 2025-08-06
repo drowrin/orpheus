@@ -22,6 +22,7 @@ Check out the live site at [drowrin.com](https://drowrin.com)
 - avoid as much client-side work as possible
 - automatic table of contents
 - preload page content and images when a user hovers over a relative link
+- automatic publish date and revision history from git commit messages
 
 ## Requirements
 
