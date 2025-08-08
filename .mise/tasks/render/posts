@@ -66,15 +66,25 @@ function render_post {
         toc_depth=$(yq -r '.toc_depth // 3' "$yml_path")
 
         git_published=$(git log --follow --diff-filter=A --format="%as" -1 -- "$md_path")
+        if [ -z "$git_published" ]; then
+            git_published=$(date '+%F')
+        fi
         export git_published
 
-        published=$(yq -r '.published // strenv(git_published)' "$yml_path")
+        git_history=$(git log --follow -- "$md_path")
 
-        fm_lines=$((2 + "$(wc -l < "$yml_path")"))
-        total_lines=$(wc -l < "$md_path")
-        revisions=$(git log --diff-filter=M --format="%as: %s" --no-patch "-L$fm_lines,$total_lines:$md_path")
+        if [ -z "$git_history" ]; then
+            published=$git_published
+        else
+            published=$(yq -r '.published // strenv(git_published)' "$yml_path")
 
-        updated=$(echo "$revisions" | head -n 1 | awk -F' --' '{print $1}')
+            fm_lines=$((2 + "$(wc -l < "$yml_path")"))
+            total_lines=$(wc -l < "$md_path")
+            revisions=$(git log --diff-filter=M --format="%as: %s" --no-patch "-L$fm_lines,$total_lines:$md_path")
+
+            updated=$(echo "$revisions" | head -n 1 | awk -F' --' '{print $1}')
+        fi
+
         if [ -z "$updated" ]; then
             updated="$published"
         fi
