@@ -560,7 +560,7 @@ understand it emotionally.
 One I do like, is the very tragic ||Rinoa is Ultimecia||. In a world with all
 these crazy powers, time travel of consciousnesses, and memory loss, it's
 possible. I mainly feel attached to this one because it doesn't ever feel like
-we're given a satisfactory backstory for ||Ultimecia|, she is simply evil
+we're given a satisfactory backstory for ||Ultimecia||, she is simply evil
 because she does bad things, and she does bad things because she is evil. This
 would also draw another parallel between Squall and Rinoa's relationship and
 that of ||Cid and Edea|| much like the parallel to Laguna and Julia. I'm also a
