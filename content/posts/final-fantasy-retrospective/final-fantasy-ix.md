@@ -289,7 +289,7 @@ So, I'm about to tear into this story. I apologize. I won't linger long on it.
 I'll start with the characters. I did not like this party. At all. Except for
 Vivi[^1]. Lets go down the list, in no particular order:
 
-Zidane---The least interesting and most annoying kind of Shōnen protagonist.
+- Zidane---The least interesting and most annoying kind of Shōnen protagonist.
 He's pulled directly from the big book of "don't make this D&D character".
 Tragic backstory, check. Orphan, check. Thief, check. Mysterious past and
 secret ||godlike power||, check. Unrepentant pervert who hits on literally
@@ -298,38 +298,38 @@ and it's never explained why ||he was made that way||. I don't like the goofy
 oversized gloves and shoes. At least he wasn't made intentionally ugly like
 most of the rest of the male cast.
 
-Steiner... For starters I can't stand the character design. He's made to be
+- Steiner... For starters I can't stand the character design. He's made to be
 big, dumb, ugly, and mad. The kind of cartoon character that'll turn red and
 have smoke come out of their ears. He was _almost_ interesting, with a
 self-doubt arc, but it was really hard to take seriously between the
 explosions of cartoonish, indignancy.
 
-Speaking of _almost interesting_, Freya. Her arc just sorta, goes nowhere.
+- Speaking of _almost interesting_, Freya. Her arc just sorta, goes nowhere.
 She's introduced, she has a tragic backstory, elements from her backstory come
 back but never actually get resolved. Then she's just in the background of the
 party the rest of the time. There was a lot of potential there, and I actually
 liked her character design (except for the crest on the front, I think that is
 a little too much).
 
-Quina was actively annoying and a net negative on the game for me. An unfunny
+- Quina was actively annoying and a net negative on the game for me. An unfunny
 at best and a little offensive at worst gag character included as an empty
 punching bag. Next.
 
-Amarant feels like an afterthought. Introduced super late. Basically no arc. A
+- Amarant feels like an afterthought. Introduced super late. Basically no arc. A
 really poor implementation of the "I just want to fight strong enemies"
 archetype.
 
-Eiko. There are some touches of interesting stuff, but she feels included only
+- Eiko. There are some touches of interesting stuff, but she feels included only
 to serve Garnet's character arc. Her only other personality trait is being
 head over heels for the main character, which just felt gross.
 
-Garnet was **fine**. Her arc feels resolved super early and I was constantly
+- Garnet was **fine**. Her arc feels resolved super early and I was constantly
 puzzled by the writing choices surrounding her. She doesn't feel like a
 realistic character, but rather a vague tale of a distant princess told
 through a picture book... but that story doesn't hold up to the closer
 inspection this game gives it.
 
-Vivi[^1] is perfect.
+- Vivi[^1] is perfect.
 
 <details>
 <summary>A brief aside about gender</summary>
