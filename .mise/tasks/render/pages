@@ -39,7 +39,8 @@ for md_path in content/pages/*.md; do
         -t "html5$html_ext" \
         -o "$html_path.no_spoiler" \
         --lua-filter content/pandoc/link-preload.lua \
-        --lua-filter content/pandoc/image-rebase.lua
+        --lua-filter content/pandoc/image-rebase.lua \
+        --lua-filter content/pandoc/quote-citations.lua
     
     content/pandoc/spoilers.sh "$html_path.no_spoiler" "$html_path"
 done
