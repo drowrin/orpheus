@@ -319,9 +319,8 @@ article>pre {
   margin-top: var(--pico-block-spacing-vertical);
 }
 
-#toc-details {
+details {
   margin-top: calc(2*var(--pico-block-spacing-vertical));
-
   summary {
     margin-bottom: 0;
   }
