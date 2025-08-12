@@ -136,6 +136,9 @@ function render_post {
     fi
 
     if [ ! -f "$toc_path" ] || (($(stat -c %Y "$toc_path") < source_modify_time)); then
+        if [ -z "$toc_depth" ]; then
+            toc_depth=$(yq -r '.toc_depth // 3' "$yml_path")
+        fi
         pandoc "$md_path" \
             -f commonmark_x \
             -t html5 \
