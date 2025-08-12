@@ -227,7 +227,7 @@ impact on my overall enjoyment.
 
 It's clear that this was their first attempt at this. There are a few noticeable
 oddities. For example, you are still able to rename the main character, so you
-never get to hear his voice spoken out loud for the entire game. Dialogue is
+never get to hear his name spoken out loud for the entire game. Dialogue is
 warped in awkward ways to avoid ever using the name Tidus. The same is true of
 the Aeons, but that's a little less noticeable. Line delivery was also
 frequently strangely paced due to a struggle to fit English lines in the same
