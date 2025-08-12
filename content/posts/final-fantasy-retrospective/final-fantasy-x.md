@@ -1,6 +1,6 @@
 ---
 title: Final Fantasy X
-tagline: 
+tagline: No matter how dark the night, morning always comes
 series: Final Fantasy Retrospective
 tags:
   - games
