@@ -1041,7 +1041,7 @@ Metaphorically, the Spira is dominated by words and deeds that happened a
 thousand years ago. ||There was a massive, terrible war. Zanarkand acted in
 desperation, and unleashed a terrible force upon the world with a simple goal:
 preserve the dream of Zanarkand. If any civilization gets too big, it is in
-danger of discovering dream Zanarkand and endangering is. Sin would stop that
+danger of discovering dream Zanarkand and endangering it. Sin would stop that
 from happening. If machina got too advanced, they might be used to discover and
 endanger dream Zanarkand. So the church banned the use of machina. Every rule,
 every part of the teachings, every lie---all were devised to protect dream
