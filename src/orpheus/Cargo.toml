@@ -24,4 +24,4 @@ serde_html_form = "0.2.7"
 maud = { version = "0.26.0", features = ["axum"] }
 
 verse = { path = "../verse" }
-tantivy = "0.24.2"
+tantivy = "0.25.0"
