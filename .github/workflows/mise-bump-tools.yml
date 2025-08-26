@@ -15,7 +15,7 @@ jobs:
           app-id: ${{ secrets.DROWRIN_BOT_APP_ID }}
           private-key: ${{ secrets.DROWRIN_BOT_PRIVATE_KEY }}
       - uses: actions/checkout@v5
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
         with:
           experimental: true
       - id: bump_check
