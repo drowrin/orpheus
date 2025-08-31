@@ -1,6 +1,6 @@
 ---
 title: Final Fantasy X-2
-tagline: Girls just wanna have fun
+tagline: JPop Sphere Hunters
 series: Final Fantasy Retrospective
 tags:
   - games
@@ -57,12 +57,12 @@ The tone of FFX-2 couldn't be more different than that of X. It's bouncy and
 animated. Every character is in constant motion, as if everyone is
 subconsciously nodding along to a beat. It's goofy and fun. Line delivery and
 cutscene direction is campy and pulpy. The main party lies somewhere between The
-Powerpuff Girls and Charlie's Angels. There's a karaoke scene. There's a
-bumbling group of villains similar to the Team Rocket Trio. The girls are
-simultaneously magical girls, treasure hunters, pop idols, and heroes. It's full
-of wonderfully sincere absurdity. All of this is on full display within the
-first 5 minutes. The game is not shy about its tone. It's a wild and chaotic
-time, and I loved every second of it.
+Powerpuff Girls and KPop Demon Hunters (but in the 2000s). There's a karaoke
+scene. There's a bumbling group of villains similar to the Team Rocket Trio. The
+girls are simultaneously magical girls, treasure hunters, pop idols, and heroes.
+It's full of wonderfully sincere absurdity. All of this is on full display
+within the first 5 minutes. The game is not shy about its tone. It's a wild and
+chaotic time, and I loved every second of it.
 
 While it has its own plot, FFX-2 also continued to expand on the extended
 epilogue that kicked off its existence. There's a ton that can be learned about
