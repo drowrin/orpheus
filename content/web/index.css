@@ -470,6 +470,10 @@ article h6 {
 
 hgroup {
   margin-bottom: 1rem;
+
+  p {
+    color: var(--color-muted);
+  }
 }
 
 article hgroup>*,
@@ -477,12 +481,13 @@ hgroup>* {
   margin: 0;
 }
 
-hgroup p {
-  color: var(--color-muted);
+figure {
+  margin: 0.5rem 0;
 }
 
-figure {
-  margin-top: 0.5rem;
+figcaption {
+  font-size: 90%;
+  color: var(--color-muted);
 }
 
 hr {
@@ -627,16 +632,6 @@ article>pre {
   margin: 0;
 }
 
-details {
-  margin: 1rem 0;
-  padding: 0.5rem;
-}
-
-details summary {
-  margin-bottom: 0;
-  line-height: 1;
-}
-
 @media (min-width: 142.5ch) {
   #toc-hr {
     display: none;
@@ -659,12 +654,45 @@ details summary {
   }
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+details {
+  margin: 1rem 0;
+  padding: 0.5rem;
+
+  summary {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+}
+
 article {
   width: 100%;
   background-color: var(--color-mantle);
   padding: 0.5rem 1rem;
   margin: 0 auto 0.5rem;
   max-width: 100%;
+
+  details {
+    background-color: var(--color-base);
+    padding: 1rem;
+  }
+
+  details:last-child {
+    margin-bottom: 0;
+  }
+
+  >p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 article:last-child {
@@ -678,78 +706,55 @@ article:last-child {
   }
 }
 
-article>details {
-  background-color: var(--color-base);
-  padding: 1rem;
-}
-
-article>details:last-child {
-  margin-bottom: 0;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-article>p:last-child {
-  margin-bottom: 0;
-}
-
-ul,
-ol {
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
 form {
   user-select: none;
-}
 
-fieldset {
-  border: none;
-  max-width: calc(100%);
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0.25rem;
-  line-height: 1;
-}
-
-fieldset input {
-  width: 50%;
-  height: 2.5rem;
-  padding: 0.5rem;
-  border-radius: 0;
-  border: 2px solid var(--color-mantle);
-  accent-color: var(--color-lavender);
-  background-color: var(--color-mantle);
-  z-index: 2;
-
-  &::placeholder {
-    color: var(--color-muted)
+  option {
+    color: var(--color-text);
   }
 
-  &:focus {
-    border: 2px solid var(--color-lavender);
-    outline: none;
+  fieldset {
+    border: none;
+    max-width: calc(100%);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+
+    input {
+      width: 50%;
+      height: 2.5rem;
+      padding: 0.5rem;
+      border-radius: 0;
+      border: 2px solid var(--color-mantle);
+      accent-color: var(--color-lavender);
+      background-color: var(--color-mantle);
+      z-index: 2;
+
+      &::placeholder {
+        color: var(--color-muted)
+      }
+
+      &:focus {
+        border: 2px solid var(--color-lavender);
+        outline: none;
+      }
+    }
+
+    select {
+      width: 50%;
+      height: 2.5rem;
+      padding: 0.5rem;
+      padding-right: 1.5rem;
+      border-radius: 0;
+      border: 2px solid var(--color-mantle);
+      accent-color: var(--color-lavender);
+      background-color: var(--color-mantle);
+
+      &:focus {
+        border: 2px solid var(--color-lavender);
+        outline: none;
+      }
+    }
   }
-}
-
-fieldset select {
-  width: 50%;
-  height: 2.5rem;
-  padding: 0.5rem;
-  padding-right: 1.5rem;
-  border-radius: 0;
-  border: 2px solid var(--color-mantle);
-  accent-color: var(--color-lavender);
-  background-color: var(--color-mantle);
-
-  &:focus {
-    border: 2px solid var(--color-lavender);
-    outline: none;
-  }
-}
-
-option {
-  color: var(--color-text);
 }
