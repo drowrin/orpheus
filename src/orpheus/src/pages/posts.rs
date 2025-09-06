@@ -112,10 +112,9 @@ pub fn post_info(post: &PostMetaData, title: Markup) -> Markup {
     }
 }
 
-pub fn post_card(post: &PostMetaData) -> Markup {
-    html! {
-        article {
-            (post_info(&post, html! {
+pub fn post_card(post: &PostMetaData, scroll_query: Option<PostsFilters>) -> Markup {
+    let content = html! {
+        (post_info(&post, html! {
                 h3 { a
                     ."article-link"
                     href={ "/posts/" (post.slug) }
@@ -129,6 +128,21 @@ pub fn post_card(post: &PostMetaData) -> Markup {
             hr style="margin: 0.5rem 0 0.4rem 0";
 
             span .truncate { (post.brief) }
+    };
+
+    html! {
+        @if let Some(new_query) = scroll_query {
+            article
+                hx-get={"/posts?" (serde_html_form::to_string(new_query).unwrap())}
+                hx-swap="afterend"
+                hx-trigger="revealed"
+                {
+                    (content)
+                }
+        } @else {
+            article {
+                (content)
+            }
         }
     }
 }
@@ -245,18 +259,14 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
         @if !filtered_posts.is_empty() {
             @if more_after {
                 @for post in &filtered_posts[0..filtered_posts.len()-1] {
-                    div { (post_card(post)) }
+                    (post_card(post, None))
                 }
                 @if let Some(post) = filtered_posts.last() {
-                    div
-                        hx-get={"/posts?" (serde_html_form::to_string(new_query).unwrap())}
-                        hx-swap="afterend"
-                        hx-trigger="revealed"
-                        { (post_card(post)) }
+                    (post_card(post, Some(new_query)))
                 }
             } @else {
                 @for post in filtered_posts {
-                    div { (post_card(post)) }
+                    (post_card(post, None))
                 }
             }
         }

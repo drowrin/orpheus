@@ -26,7 +26,7 @@ pub async fn home_page(page_type: PageKind) -> impl IntoResponse {
                     h2 { "Recent Posts" }
                 }
                 @for post in posts.into_iter().take(3) {
-                    (post_card(post))
+                    (post_card(post, None))
                 }
             }
         }
