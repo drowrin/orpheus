@@ -109,7 +109,7 @@ impl From<Page> for Markup {
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
                 link
                     rel="stylesheet"
-                    href="/styles.css";
+                    href="/index.css";
                 link
                     rel="icon"
                     href="/favicon.svg"

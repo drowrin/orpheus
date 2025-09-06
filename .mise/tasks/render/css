@@ -3,11 +3,11 @@
 #MISE hide=true
 #MISE quiet=true
 #MISE wait_for=['clean', 'render:pages', 'render:posts']
-#MISE sources=['content/web/**/styles.css']
-#MISE outputs='generated/static/styles.css'
+#MISE sources=['content/web/**/index.css']
+#MISE outputs='generated/static/index.css'
 
 mkdir -p generated/static/
-npx postcss content/web/styles.css > generated/static/styles.css
+npx postcss content/web/index.css > generated/static/index.css
 
 mkdir -p generated/static/fonts
 cp node_modules/@fontsource/*/files/*latin-400* generated/static/fonts/
