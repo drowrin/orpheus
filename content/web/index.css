@@ -663,8 +663,12 @@ article {
   width: 100%;
   background-color: var(--color-mantle);
   padding: 0.5rem 1rem;
-  margin: 0;
+  margin: 0 auto 0.5rem;
   max-width: 100%;
+}
+
+article:last-child {
+  margin: 0 auto;
 }
 
 @media (min-width: 80ch) {
@@ -702,7 +706,12 @@ form {
 }
 
 fieldset {
-  border: none
+  border: none;
+  max-width: calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+  line-height: 1;
 }
 
 fieldset input {

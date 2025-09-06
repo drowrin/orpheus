@@ -280,7 +280,6 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
                     {
                         fieldset
                             role="group"
-                            style="margin-bottom: 0.5rem;"
                             {
                             input
                                 #search
@@ -316,7 +315,6 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
                                 }
                             }
                         fieldset
-                            style="margin-bottom: -0.15rem;"
                             {
                                 @for tag in PostData::global().tags.clone() {
                                     @let id = format!("checkbox-{tag}");
@@ -334,7 +332,7 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
                                 }
                             }
                     }
-                hr;
+                hr style="margin-top: 0";
                 div #posts { (posts_markup) }
             }
         }).into_response()
