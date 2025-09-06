@@ -1,9 +1,14 @@
 {
+  "type": "module",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "cssnano": "^7.1.1",
+    "cssnano-preset-advanced": "^7.0.9",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  },
   "dependencies": {
-    "@catppuccin/palette": "^1.7.1",
-    "@picocss/pico": "^2.1.1",
-    "htmx-ext-head-support": "^2.0.4",
-    "htmx-ext-preload": "^2.1.1",
-    "htmx.org": "^2.0.6"
+    "@fontsource/atkinson-hyperlegible-mono": "^5.2.9",
+    "@fontsource/atkinson-hyperlegible-next": "^5.2.5"
   }
 }

@@ -21,7 +21,7 @@ pub async fn no_cache(request: Request, next: Next) -> Response {
 }
 
 pub async fn simulate_lag(request: Request, next: Next) -> Response {
-    sleep(Duration::from_millis(200)).await;
+    sleep(Duration::from_millis(500)).await;
 
     next.run(request).await
 }

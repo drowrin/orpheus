@@ -13,10 +13,6 @@ pub async fn home_page(page_type: PageKind) -> impl IntoResponse {
         div .padded-when-small {
             hgroup {
                 h1 #drowrin {
-                    img
-                        src="/favicon.svg"
-                        title="logo"
-                        style="max-height: 0.75em";
                     "Drowrin"
                 }
                 p {

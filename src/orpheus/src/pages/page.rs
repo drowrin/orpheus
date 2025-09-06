@@ -115,18 +115,15 @@ impl From<Page> for Markup {
                     href="/favicon.svg"
                     sizes="any";
                 script
-                    src="/main.js"
+                    src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"
                     {}
                 script
-                    src="/htmx.min.js"
+                    src="https://cdn.jsdelivr.net/npm/htmx-ext-preload@2.1.0"
                     {}
                 script
-                    src="/preload.js"
+                    src="https://cdn.jsdelivr.net/npm/htmx-ext-head-support@2.0.2"
                     {}
-                script
-                    src="/head-support.js"
-                    {}
-                title { "drowrin.com | " (page.title) }
+                title { (page.title) }
                 @if let Some(append_head) = page.head {
                     (append_head)
                 }
@@ -135,39 +132,15 @@ impl From<Page> for Markup {
 
         let navbar = html! {
             nav ."container padded-when-small" {
-                    ul {
-                        li { a href="/" { "Home" } }
-                        li { a href="/posts" { "Posts" } }
-                        li { a href="/projects" { "Projects" } }
-                    }
-                    ul {
-                        li
-                            data-tooltip="Toggle Theme"
-                            data-placement="left"
-                            style="display: flex; align-items: center"
-                            onclick="toggle_dark_mode()"
-                            {
-                                svg
-                                    #toggle-dark-mode
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20px"
-                                    height="20px"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    {
-                                        path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        ;
-                                    }
-                            }
-                    }
+                ul {
+                    li { a href="/" { "Home" } }
+                    li { a href="/posts" { "Posts" } }
+                    li { a href="/projects" { "Projects" } }
+                }
 
             }
             div
-                style="position: fixed; top: 1.75rem; left: 0; width: 100%; max-width: 100%; pointer-events: none"
+                style="position: fixed; top: 1rem; left: 0; width: 100%; max-width: 100%; pointer-events: none"
                 {
                     div
                         style="width: 100%; max-width: var(--readable-width); margin: auto"

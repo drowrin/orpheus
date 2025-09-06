@@ -4,12 +4,4 @@ watchexec = "2.3.2"
 pandoc = "3.7.0.2"
 yq = "4.47.1"
 gum = "0.16.2"
-node = "24.7.0"
-npm = "11.5.2"
-"npm:sass" = "1.91.0"
-
-[hooks]
-postinstall = '''
-echo '> npm install'
-npm install
-'''
+npm = "11.6.0"

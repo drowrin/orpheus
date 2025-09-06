@@ -91,7 +91,7 @@ pub fn post_info(post: &PostMetaData, title: Markup) -> Markup {
             }
         }
         div
-            style="color: var(--pico-muted-color); margin-bottom: 0.5rem;"
+            style="color: var(--color-muted); margin-bottom: 0.5rem;"
             {
                 small
                     data-tooltip=[
@@ -268,7 +268,7 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
         .with_description("Browse and filter all blog posts")
         .build(html! {
             div ."padded-when-small" {
-                h1 style="margin-bottom: -0.3rem" { "Browse Posts" }
+                h1 { "Browse Posts" }
                 hr;
                 form
                     hx-get="/posts"
@@ -300,7 +300,7 @@ pub async fn posts(page_type: PageKind, Query(query): Query<PostsFilters>) -> Re
                                 name="series"
                                 {
                                     option
-                                        style="color: var(--pico-form-element-placeholder-color)"
+                                        style="color: var(--color-muted)"
                                         value=""
                                         selected[query.series.is_none()]
                                         { "Select Series" }
