@@ -5,3 +5,9 @@ pandoc = "3.7.0.2"
 yq = "4.47.1"
 gum = "0.16.2"
 npm = "11.6.0"
+
+[hooks]
+postinstall = '''
+echo '> npm install'
+npm install
+'''
