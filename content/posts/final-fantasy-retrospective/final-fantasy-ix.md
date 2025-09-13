@@ -83,9 +83,9 @@ I really wish I liked how this game looked. It's technically extremely
 well-implemented for the time it released. The leap between these two images is
 insane:
 
-![A screenshot from the opening to Final Fantasy VII](/img/ps1-cloud.jpg)
+![A screenshot from the opening to Final Fantasy VII](../../img/ps1-cloud.jpg)
 
-![A screenshot from the opening to Final Fantasy IX](/img/final-fantasy-9-opening.jpg)
+![A screenshot from the opening to Final Fantasy IX](../../img/final-fantasy-9-opening.jpg)
 
 It's insane how far they came in 3 years, without a console generation leap.
 
@@ -171,7 +171,7 @@ your character will take a full turn's worth of animation time to do a potion
 drinking animation---every single time they take damage. This ability sounded
 amazing, so I put it on my whole party. Then I got hit by a single AOE, and...
 
-![](/img/51-years.jpg)
+![](../../img/51-years.jpg)
 
 I watched in horror as every round of combat now took four times longer. The
 whole time, everyone's ATB bars were maxed out, just waiting. This made turn

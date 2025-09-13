@@ -41,7 +41,7 @@ and
 series. Near the start of the year, before starting those projects, I posted
 this:
 
-![It's funny how incorrect this was](/img/2024-game-predictions.png "A very incorrect prediction about 2024 games"){style="width: 100%"}
+![It's funny how incorrect this was](../../img/2024-game-predictions.png "A very incorrect prediction about 2024 games"){style="width: 100%"}
 
 Two of the (very few) games I expected to come out never did. FFXIV Dawntrail
 and Tales of Kenzera: Zau _did_ release---but even though they were some of my
@@ -795,11 +795,11 @@ Once you're in the sandbox after the quest. You get a cozy, gorgeous loft
 apartment as a new home base. It's absolutely my new favorite home base. Instead
 of describing it, here are a few screenshots:
 
-[![](/img/WarframeBackroom1.jpg)](/img/WarframeBackroom1.jpg){hx-boost="false"
+[![](../../img/WarframeBackroom1.jpg)](../../img/WarframeBackroom1.jpg){hx-boost="false"
 target="\_blank"}
-[![](/img/WarframeBackroom2.jpg)](/img/WarframeBackroom2.jpg){hx-boost="false"
+[![](../../img/WarframeBackroom2.jpg)](../../img/WarframeBackroom2.jpg){hx-boost="false"
 target="\_blank"}
-[![](/img/WarframeBackroom3.jpg)](/img/WarframeBackroom3.jpg){hx-boost="false"
+[![](../../img/WarframeBackroom3.jpg)](../../img/WarframeBackroom3.jpg){hx-boost="false"
 target="\_blank"}
 
 Look at all the cozy furniture! It's a great mix of a 90's vibe and little bits
@@ -1444,7 +1444,7 @@ being a focus (though there are a few characters).
 
 I can't help but love this manga.
 
-![A summary of Undead Unluck](/img/hype-moments.jpg 'A meme indicating that this has "hype moments and aura" instead of good writing'){style="max-width: 20rem"}
+![A summary of Undead Unluck](../../img/hype-moments.jpg 'A meme indicating that this has "hype moments and aura" instead of good writing'){style="max-width: 20rem"}
 
 ### 4. One Piece {.unlisted}
 
@@ -1484,7 +1484,7 @@ longshot. Pair a romance/drama author who I really like with a comedy artist who
 I think has _the best_ comedic timing and delivery, and you've got a recipe for
 a romcom I'll **adore**.
 
-![A panel presented with the only context that the car is full of _friends_](/img/grandblue-dumping-trash.jpg 'A panel from Grand Blue in which Iori dives from a car while tied up, with a caption warning the reader that "dumping trash out of a moving vehicle is dangerous, do not attempt at home"')
+![A panel presented with the only context that the car is full of _friends_](../../img/grandblue-dumping-trash.jpg 'A panel from Grand Blue in which Iori dives from a car while tied up, with a caption warning the reader that "dumping trash out of a moving vehicle is dangerous, do not attempt at home"')
 
 While being extremely funny, this manga also has some really good romance,
 drama, and slice of life. It's legitimately touching. Those serious moments
