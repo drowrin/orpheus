@@ -5,7 +5,6 @@ series: Final Fantasy Retrospective
 tags:
 - reviews
 - games
-toc_depth: 3
 ---
 
 I went into this one really wanting to like it. The art style wasn't for me, but

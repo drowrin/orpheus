@@ -1,6 +1,6 @@
 ---
 title: Yakuza Kiwami
-published: 2024-03-03
+published: "2024-03-03"
 series: Yakuza / Like a Dragon
 tagline: A rough start with lots of heart
 tags:

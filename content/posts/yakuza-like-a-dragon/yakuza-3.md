@@ -1,6 +1,6 @@
 ---
 title: Yakuza 3
-published: 2024-04-06
+published: "2024-04-06"
 series: Yakuza / Like a Dragon
 tagline: Flawed but underrated
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Yakuza Zero
-published: 2024-03-02
+published: "2024-03-02"
 series: Yakuza / Like a Dragon
 tagline: The Perfect Prequel
 tags:

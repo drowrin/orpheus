@@ -1,6 +1,6 @@
 ---
 title: Perception Checks
-published: 2024-04-18
+published: "2024-04-18"
 series: TTRPG Design Rants
 tagline: or, Let Us Explore the Fiction Together
 tags:

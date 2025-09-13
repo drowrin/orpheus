@@ -5,7 +5,7 @@ series: Final Fantasy Retrospective
 tags:
 - games
 - reviews
-toc_depth: 5
+tocDepth: 5
 ---
 
 This game has one of the worst reputations in the series. New fans are
