@@ -1,6 +1,6 @@
 ---
 title: The D&D Stove
-published: 2024-03-28
+published: "2024-03-28"
 series: TTRPG Design Rants
 tagline: "Heartbreaking: the best person you know had an awful take"
 brief: >-

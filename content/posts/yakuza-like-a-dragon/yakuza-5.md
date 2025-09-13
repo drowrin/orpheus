@@ -5,7 +5,7 @@ series: Yakuza / Like a Dragon
 tags:
   - reviews
   - games
-published: 2025-01-26
+published: "2025-01-26"
 ---
 
 The most ambitious. The most explosive. The most ridiculous. The most

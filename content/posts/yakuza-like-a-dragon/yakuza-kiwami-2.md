@@ -1,6 +1,6 @@
 ---
 title: Yakuza Kiwami 2
-published: 2024-03-07
+published: "2024-03-07"
 series: Yakuza / Like a Dragon
 tagline: A poorly timed remake of an overrated game
 tags:

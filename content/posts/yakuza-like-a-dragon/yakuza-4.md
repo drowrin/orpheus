@@ -5,7 +5,7 @@ series: Yakuza / Like a Dragon
 tags:
   - games
   - reviews
-published: 2025-01-19
+published: "2025-01-19"
 ---
 
 The best since Zero. This introduced some very enjoyable twists to the Yakuza

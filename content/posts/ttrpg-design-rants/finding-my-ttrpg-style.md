@@ -1,6 +1,6 @@
 ---
 title: Finding My TTRPG Style
-published: 2022-03-20
+published: "2022-03-20"
 series: TTRPG Design Rants
 tagline: or, Finding the Traditions I Hate
 tags:

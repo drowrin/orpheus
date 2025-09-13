@@ -1,6 +1,6 @@
 ---
 title: Mass Effect 1
-published: 2024-04-18
+published: "2024-04-18"
 series: Finally Playing Mass Effect
 tagline: Frustratingly Close to Greatness
 tags:

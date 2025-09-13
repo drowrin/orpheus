@@ -812,7 +812,7 @@ file for this article, as an example:
 ```yaml
 ---
 title: The Making of this Site
-published: 2024-05-23
+published: "2024-05-23"
 series: Orpheus Architecture
 tagline: Everything Before the Site Went Live
 brief: >-

@@ -1,6 +1,6 @@
 ---
 title: Encouraged Behaviors
-published: 2024-04-04
+published: "2024-04-04"
 series: TTRPG Design Rants
 tagline: and How Heart Does it Better
 tags:

@@ -1,0 +1,41 @@
+---
+import 'modern-normalize/modern-normalize.css'
+import '@fontsource/atkinson-hyperlegible-next'
+import '@fontsource/atkinson-hyperlegible-mono'
+import '@/styles/global.css'
+
+import { ClientRouter } from 'astro:transitions'
+
+export interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    {description && <meta name="description" content={description} />}
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <header>
+      <nav class="container padded-when-small">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container padded-when-small">
+      <slot />
+    </main>
+  </body>
+</html>
