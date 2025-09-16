@@ -24,12 +24,6 @@ rendered.sort((a, b) => {
 const recent = rendered.slice(0, 3)
 ---
 
-<style is:global>
-  h1 a {
-    text-decoration: none;
-  }
-</style>
-
 <Layout title="Home">
   <hgroup>
     <h1 id="drowrin">Drowrin</h1>
@@ -46,6 +40,6 @@ const recent = rendered.slice(0, 3)
     <hgroup>
       <h2>Recent Posts</h2>
     </hgroup>
-    {recent.map((p) => <Post postId={p.p.id} brief link />)}
+    {recent.map((p) => <Post postId={p.p.id} card />)}
   </section>
 </Layout>

@@ -5,11 +5,10 @@ import { render } from 'astro:content'
 
 interface Props {
   postId: string
-  brief?: boolean
-  link?: boolean
+  card?: boolean
 }
 
-const { postId, brief, link } = Astro.props
+const { postId, card } = Astro.props
 
 const post = await getEntry('posts', postId)
 if (post === undefined) {
@@ -20,10 +19,16 @@ const { remarkPluginFrontmatter: fm, Content } = await render(post)
 const { tags } = post.data
 ---
 
+<style>
+  h1 a {
+    text-decoration: none;
+  }
+</style>
+
 <article class="prose" transition:name={`post.${postId}`} transition:animate="initial">
   <hgroup style="margin: 0;">
     <h1 id="title">
-      {link ? <a href={`/posts/${postId}`}>{fm.title}</a> : fm.title}
+      {card ? <a href={`/posts/${postId}`}>{fm.title}</a> : fm.title}
     </h1>
 
     {fm.tagline && <p>{fm.tagline}</p>}
@@ -53,5 +58,5 @@ const { tags } = post.data
     )
   }
   <hr />
-  {brief ? fm.brief : <Content />}
+  {card ? fm.brief : <Content />}
 </article>
