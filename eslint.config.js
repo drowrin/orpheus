@@ -2,7 +2,12 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
-    formatters: true,
+    formatters: {
+      astro: true,
+      css: true,
+      html: true,
+      markdown: false,
+    },
     astro: true,
     typescript: {
       tsconfigPath: 'tsconfig.json',
