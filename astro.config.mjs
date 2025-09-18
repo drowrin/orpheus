@@ -6,6 +6,9 @@ import wordcount from './src/plugins/wordcount.mjs'
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    layout: 'constrained',
+  },
   markdown: {
     remarkPlugins: [wordcount, gitdates, firstparagraph],
   },
