@@ -70,13 +70,14 @@
 
 :root {
   font-size: clamp(1rem, 0.875rem + 0.5vw, 1.5rem);
-  font-family: 'Atkinson Hyperlegible Next', 'Tahoma', system-ui, sans-serif;
+  font-family: var(--font-hyperlegible);
 }
 
 code,
 samp,
 pre {
-  font-family: 'Atkinson Hyperlegible Mono', 'Courier New', monospace;
+  font-family: var(--font-hyperlegible-mono);
+  font-size: 80%;
 }
 
 a {
