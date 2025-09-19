@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content'
 import slugify from 'slugify'
 import { render } from 'astro:content'
+import Typography from './Typography.astro'
 
 interface Props {
   postId: string
@@ -19,44 +20,63 @@ const { remarkPluginFrontmatter: fm, Content } = await render(post)
 const { tags } = post.data
 ---
 
-<style>
-  h1 a {
-    text-decoration: none;
-  }
-</style>
-
-<article class="prose" transition:name={`post.${postId}`} transition:animate="initial">
-  <hgroup style="margin: 0;">
-    <h1 id="title">
-      {card ? <a href={`/posts/${postId}`}>{fm.title}</a> : fm.title}
-    </h1>
+<article transition:name={`post.${postId}`} transition:animate="initial">
+  <hgroup>
+    {
+      card ? (
+        <h3>
+          <a href={`/posts/${postId}`}>{fm.title}</a>
+        </h3>
+      ) : (
+        <h1>{fm.title}</h1>
+      )
+    }
 
     {fm.tagline && <p>{fm.tagline}</p>}
+
+    <small>
+      {
+        (tags.length > 0 || fm.series) && (
+          <ul>
+            <li>{fm.series && <a href={`/posts?series=${slugify(fm.series)}`}>{fm.series}</a>}</li>
+            {tags.length > 0 &&
+              (tags as string[]).map((tag) => (
+                <li>
+                  <a href={`/posts?tag=${tag}`}>{'#' + tag}</a>
+                </li>
+              ))}
+          </ul>
+        )
+      }
+      {fm.revisions ? fm.published : fm.published} - {fm.readingTime} - {fm.wordCount} words
+    </small>
   </hgroup>
-  {
-    (tags.length > 0 || fm.series) && (
-      <>
-        <div style="display: flex; flex-wrap: wrap;">
-          {fm.series && (
-            <a class="tag" href={`/posts?series=${slugify(fm.series)}`}>
-              {fm.series}
-            </a>
-          )}
-          {tags.length > 0 &&
-            (tags as string[]).map((tag) => (
-              <a class="tag" href={`/posts?tag=${tag}`}>
-                {'#' + tag}
-              </a>
-            ))}
-        </div>
-        <div>
-          {fm.revisions ? <small data-tooltip={fm.revisions}>{fm.published}</small> : <small>{fm.published}</small>}
-          {' - '}
-          <small data-tooltip={fm.wordCount + ' words'}>{fm.readingTime}</small>
-        </div>
-      </>
-    )
-  }
   <hr />
-  {card ? fm.brief : <Content />}
+
+  <Typography>{card ? <p>{fm.brief}</p> : <Content />}</Typography>
 </article>
+
+<style>
+  article {
+    margin: 0;
+
+    hgroup {
+      margin-inline: 1rem;
+      margin-block: 0;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 0.25rem;
+      list-style: none;
+      padding: 0;
+      margin-block: 0;
+    }
+
+    hr {
+      margin-block: 0.5rem;
+      margin-inline: 1rem;
+    }
+  }
+</style>

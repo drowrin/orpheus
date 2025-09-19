@@ -4,6 +4,7 @@ import '@/styles/global.css'
 
 import { Font } from 'astro:assets'
 import { ClientRouter } from 'astro:transitions'
+import Nav from '@/components/Nav.astro'
 
 export interface Props {
   title: string
@@ -27,16 +28,33 @@ const { title, description } = Astro.props
   </head>
   <body>
     <header>
-      <nav class="container padded-when-small">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/posts">Posts</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </nav>
+      <Nav />
     </header>
-    <main class="container padded-when-small">
+    <main>
       <slot />
     </main>
   </body>
 </html>
+
+<style>
+  body {
+    background-color: var(--color-crust);
+    color: var(--color-text);
+    caret-color: var(--color-rosewater);
+    max-width: var(--main-width);
+    margin: auto;
+  }
+
+  main {
+    padding-top: var(--navbar-height);
+
+    > * {
+      margin-inline: 1rem;
+      margin-block-end: 1rem;
+    }
+  }
+
+  :root {
+    scroll-padding-top: calc(var(--navbar-height) + 0.5rem);
+  }
+</style>
