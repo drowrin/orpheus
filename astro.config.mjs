@@ -1,7 +1,9 @@
 // @ts-check
+import compress from 'astro-compress'
 import { defineConfig, fontProviders } from 'astro/config'
 import firstparagraph from './src/plugins/firstparagraph.mjs'
 import gitdates from './src/plugins/gitdates.mjs'
+
 import wordcount from './src/plugins/wordcount.mjs'
 
 // https://astro.build/config
@@ -10,10 +12,12 @@ export default defineConfig({
     defaultStrategy: 'viewport',
     prefetchAll: true,
   },
+
   image: {
     layout: 'constrained',
     responsiveStyles: true,
   },
+
   markdown: {
     remarkPlugins: [wordcount, gitdates, firstparagraph],
     shikiConfig: {
@@ -23,6 +27,7 @@ export default defineConfig({
       },
     },
   },
+
   experimental: {
     fonts: [
       {
@@ -42,4 +47,8 @@ export default defineConfig({
       },
     ],
   },
+
+  integrations: [compress({
+    CSS: false,
+  })],
 })
