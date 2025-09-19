@@ -6,6 +6,10 @@ import wordcount from './src/plugins/wordcount.mjs'
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: {
+    defaultStrategy: 'viewport',
+    prefetchAll: true,
+  },
   image: {
     layout: 'constrained',
     responsiveStyles: true,
