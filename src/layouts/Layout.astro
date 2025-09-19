@@ -1,9 +1,8 @@
 ---
 import 'modern-normalize/modern-normalize.css'
-import '@fontsource/atkinson-hyperlegible-next'
-import '@fontsource/atkinson-hyperlegible-mono'
 import '@/styles/global.css'
 
+import { Font } from 'astro:assets'
 import { ClientRouter } from 'astro:transitions'
 
 export interface Props {
@@ -20,6 +19,8 @@ const { title, description } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-hyperlegible" preload />
+    <Font cssVariable="--font-hyperlegible-mono" />
     {description && <meta name="description" content={description} />}
     <title>{title}</title>
     <ClientRouter />
