@@ -3,3 +3,85 @@ import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Posts"> <p>under construction</p></Layout>
+
+<style>
+  [type='checkbox'] + label.tag {
+    text-decoration: none;
+    color: var(--color-blue);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  [type='checkbox']:checked + label.tag {
+    font-weight: bold;
+  }
+
+  [type='checkbox']:has(+ label.tag) {
+    display: none;
+  }
+
+  .tag {
+    margin-right: 0.35rem;
+    margin-inline-end: 0.35rem !important;
+    text-decoration: none;
+  }
+
+  #series-select[data-selected=''] {
+    color: var(--color-muted);
+  }
+
+  form {
+    user-select: none;
+
+    option {
+      color: var(--color-text);
+    }
+
+    fieldset {
+      border: none;
+      max-width: calc(100%);
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+
+      input {
+        width: 50%;
+        height: 2.5rem;
+        padding: 0.5rem;
+        border-radius: 0;
+        border: 2px solid var(--color-mantle);
+        accent-color: var(--color-lavender);
+        background-color: var(--color-mantle);
+        z-index: 2;
+
+        &::placeholder {
+          color: var(--color-muted);
+        }
+
+        &:focus {
+          border: 2px solid var(--color-lavender);
+          outline: none;
+        }
+      }
+
+      select {
+        width: 50%;
+        height: 2.5rem;
+        padding: 0.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0;
+        border: 2px solid var(--color-mantle);
+        accent-color: var(--color-lavender);
+        background-color: var(--color-mantle);
+
+        &:focus {
+          border: 2px solid var(--color-lavender);
+          outline: none;
+        }
+      }
+    }
+  }
+</style>

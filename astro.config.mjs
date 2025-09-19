@@ -16,6 +16,12 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [wordcount, gitdates, firstparagraph],
+    shikiConfig: {
+      themes: {
+        light: 'catppuccin-latte',
+        dark: 'catppuccin-mocha',
+      },
+    },
   },
   experimental: {
     fonts: [

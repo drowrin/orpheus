@@ -1,0 +1,160 @@
+<prose>
+  <slot />
+</prose>
+
+<style>
+  prose {
+    margin: 0;
+
+    > * {
+      margin-inline: 1rem;
+      margin-block-start: 0;
+      margin-block-end: 1rem;
+    }
+
+    p {
+      margin-top: 0;
+      code {
+        text-wrap: auto;
+      }
+    }
+
+    hr {
+      margin-block: 0.5rem;
+    }
+
+    > ul,
+    > ol {
+      padding-left: 1rem;
+    }
+
+    del {
+      color: var(--color-red);
+      text-decoration: line-through;
+    }
+
+    s {
+      text-decoration: line-through;
+    }
+
+    u {
+      text-decoration: underline;
+    }
+
+    mark {
+      background-color: var(--color-mauve);
+    }
+
+    i,
+    em {
+      color: var(--color-green);
+    }
+
+    b,
+    strong {
+      color: var(--color-sapphire);
+    }
+
+    small {
+      color: var(--color-muted);
+    }
+
+    blockquote {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      margin-inline: 0;
+
+      background-color: var(--color-base);
+
+      & > :last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    details {
+      background-color: var(--color-base);
+      margin-inline: 0;
+      padding: 1rem;
+
+      summary {
+        line-height: 1;
+      }
+
+      > *:not(:first-child) {
+        margin-block-start: 1rem;
+      }
+
+      & > :last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+
+      .header-link {
+        display: none;
+        margin-left: 0.5rem;
+        text-decoration: none;
+      }
+
+      &:hover .header-link {
+        display: inline;
+      }
+    }
+
+    figcaption {
+      font-size: 80%;
+      color: var(--color-muted);
+    }
+
+    pre {
+      padding: 0.5rem 1rem;
+      margin-inline: 0;
+      overflow: auto;
+    }
+
+    code,
+    pre {
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      line-height: 1.25;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    .spoiler,
+    .spoiler > * {
+      transition:
+        color 0.3s,
+        opacity 0.3s;
+      cursor: pointer;
+      padding: 0 0.25em 0.15em 0.25em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      background-color: light-dark(hsl(234, 16%, 20%), hsl(240, 23%, 3%));
+      color: light-dark(var(--color-crust), var(--color-text));
+    }
+
+    .spoiler:not(.revealed) {
+      color: transparent;
+    }
+
+    .spoiler:not(.revealed) > * {
+      opacity: 0;
+    }
+  }
+</style>
