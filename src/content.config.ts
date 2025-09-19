@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content'
 
 const posts = defineCollection({
   loader: glob({
-    base: 'content/posts',
+    base: 'src/content/posts',
     pattern: '**/*.md',
     generateId: ({ entry }) => entry.split('/').at(-1)!.split('.').at(0)!,
   }),
