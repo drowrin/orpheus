@@ -9,8 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/atkinson-hyperlegible-mono": "^5.2.9",
-    "@fontsource/atkinson-hyperlegible-next": "^5.2.6",
     "astro": "^5.13.7",
     "mdast-util-to-string": "^4.0.0",
     "modern-normalize": "^3.0.1",

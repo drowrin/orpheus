@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/atkinson-hyperlegible-mono':
-        specifier: ^5.2.9
-        version: 5.2.9
-      '@fontsource/atkinson-hyperlegible-next':
-        specifier: ^5.2.6
-        version: 5.2.6
       astro:
         specifier: ^5.13.7
         version: 5.13.7(@types/node@24.5.0)(lightningcss@1.30.1)(rollup@4.50.2)(typescript@5.9.2)(yaml@2.8.1)
@@ -427,12 +421,6 @@ packages:
   '@eslint/plugin-kit@0.3.5':
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@fontsource/atkinson-hyperlegible-mono@5.2.9':
-    resolution: {integrity: sha512-iC6o/KFE7jYPENsRbvPAQbys1FIW6BGisnj01ZoAM30wcw8K5jCtURm85kdkh8L/aw+psb+KLe9PsUsEXnrdEA==}
-
-  '@fontsource/atkinson-hyperlegible-next@5.2.6':
-    resolution: {integrity: sha512-jyHprkNrzRXAOnTrWLeYHndMhVNDKapWA/v/8cZMJJbN5WS3PjxanqevOxN5OqfK4NiXiz9vaatijnzxjX2CGg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3198,10 +3186,6 @@ snapshots:
     dependencies:
       '@eslint/core': 0.15.2
       levn: 0.4.1
-
-  '@fontsource/atkinson-hyperlegible-mono@5.2.9': {}
-
-  '@fontsource/atkinson-hyperlegible-next@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 
