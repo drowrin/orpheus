@@ -2,7 +2,6 @@
 import { getEntry } from 'astro:content'
 import slugify from 'slugify'
 import { render } from 'astro:content'
-import Typography from './Typography.astro'
 
 interface Props {
   postId: string
@@ -20,7 +19,7 @@ const { remarkPluginFrontmatter: fm, Content } = await render(post)
 const { tags } = post.data
 ---
 
-<article transition:name={`post.${postId}`} transition:animate="initial">
+<article class="post" transition:name={`post.${postId}`} transition:animate="initial" data-pagefind-body>
   <hgroup>
     {
       card ? (
@@ -28,7 +27,7 @@ const { tags } = post.data
           <a href={`/posts/${postId}`}>{fm.title}</a>
         </h3>
       ) : (
-        <h1>{fm.title}</h1>
+        <h1 data-pagefind-meta="title">{fm.title}</h1>
       )
     }
 
@@ -37,27 +36,39 @@ const { tags } = post.data
     <small>
       {
         (tags.length > 0 || fm.series) && (
-          <ul>
-            <li>{fm.series && <a href={`/posts?series=${slugify(fm.series)}`}>{fm.series}</a>}</li>
+          <ul data-pagefind-meta={tags.length > 0 ? `tags:${tags.join(', ')}` : null}>
+            {fm.series && (
+              <li
+                data-pagefind-filter={`series:${slugify(fm.series, { lower: true })}`}
+                data-pagefind-meta={`series:${fm.series}`}
+              >
+                <a href={`/posts?series=${slugify(fm.series, { lower: true })}`}>{fm.series}</a>
+              </li>
+            )}
+
             {tags.length > 0 &&
               (tags as string[]).map((tag) => (
-                <li>
+                <li data-pagefind-filter={`tag:${tag}`}>
                   <a href={`/posts?tag=${tag}`}>{'#' + tag}</a>
                 </li>
               ))}
           </ul>
         )
       }
-      {fm.revisions ? fm.published : fm.published} - {fm.readingTime} - {fm.wordCount} words
+      <span data-pagefind-meta="published" data-pagefind-sort="published">{fm.published}</span>
+      {' - '}
+      <span data-pagefind-meta="reading time">{fm.readingTime}</span>
+      {' - '}
+      <span data-pagefind-meta="word count" data-pagefind-sort="word count">{fm.wordCount} words</span>
     </small>
   </hgroup>
   <hr />
 
-  <Typography>{card ? <p>{fm.brief}</p> : <Content />}</Typography>
+  <prose>{card ? <p>{fm.brief}</p> : <Content />}</prose>
 </article>
 
 <style>
-  article {
+  article.post {
     margin: 0;
 
     hgroup {

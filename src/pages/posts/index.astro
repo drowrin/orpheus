@@ -1,87 +1,122 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import { getAllSeries, getAllTags } from '@/utils'
+
+const allSeries = await getAllSeries()
+const allTags = await getAllTags()
 ---
 
-<Layout title="Posts"> <p>under construction</p></Layout>
+<Layout title="Posts">
+  <div id="search"></div>
+  <div>
+    <section>
+      <h2>Browse by Series</h2>
+      <ul>
+        {
+          allSeries.entries().map(([slug, series]) => (
+            <li>
+              <a href={`/series/${slug}`}>
+                {series.name} ({series.posts.length})
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <h2>Browse by Tag</h2>
+      <ul>
+        {
+          allTags.entries().map(([tag, { posts }]) => (
+            <li>
+              <a href={`/tags/${tag}`}>
+                #{tag} ({posts.length})
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const search = new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+      showImages: false,
+      debounceTimeoutMs: 200,
+      excerptLength: 30,
+    })
+
+    const urlParams = new URLSearchParams(window.location.search)
+
+    const tags = urlParams.getAll('tag')
+    if (tags != null) {
+      search.triggerFilters({ tag: tags })
+    }
+
+    const series = urlParams.get('series')
+    if (series != null) {
+      search.triggerFilters({ series: [series] })
+    }
+
+    const s = urlParams.get('s')
+    if (s != null) {
+      search.triggerSearch(s)
+    }
+  })
+</script>
 
 <style>
-  [type='checkbox'] + label.tag {
-    text-decoration: none;
-    color: var(--color-blue);
+  #search {
+    --pagefind-ui-primary: var(--color-primary);
+    --pagefind-ui-text: var(--color-text);
+    --pagefind-ui-background: var(--color-base);
+    --pagefind-ui-border: var(--color-overlay0);
+    --pagefind-ui-tag: var(--color-base);
+    --pagefind-ui-border-radius: 0;
+    --pagefind-ui-font: var(--font-hyperlegible);
 
-    &:hover {
-      color: var(--color-primary);
-    }
-  }
-
-  [type='checkbox']:checked + label.tag {
-    font-weight: bold;
-  }
-
-  [type='checkbox']:has(+ label.tag) {
-    display: none;
-  }
-
-  .tag {
-    margin-right: 0.35rem;
-    margin-inline-end: 0.35rem !important;
-    text-decoration: none;
-  }
-
-  #series-select[data-selected=''] {
-    color: var(--color-muted);
-  }
-
-  form {
-    user-select: none;
-
-    option {
+    & :global(mark) {
+      background-color: var(--color-selection);
       color: var(--color-text);
+      font-weight: bold;
     }
 
-    fieldset {
-      border: none;
-      max-width: calc(100%);
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 0.25rem;
-      line-height: 1;
-
-      input {
-        width: 50%;
-        height: 2.5rem;
-        padding: 0.5rem;
-        border-radius: 0;
-        border: 2px solid var(--color-mantle);
-        accent-color: var(--color-lavender);
-        background-color: var(--color-mantle);
-        z-index: 2;
-
-        &::placeholder {
-          color: var(--color-muted);
-        }
-
-        &:focus {
-          border: 2px solid var(--color-lavender);
-          outline: none;
-        }
-      }
-
-      select {
-        width: 50%;
-        height: 2.5rem;
-        padding: 0.5rem;
-        padding-right: 1.5rem;
-        border-radius: 0;
-        border: 2px solid var(--color-mantle);
-        accent-color: var(--color-lavender);
-        background-color: var(--color-mantle);
-
-        &:focus {
-          border: 2px solid var(--color-lavender);
-          outline: none;
-        }
-      }
+    .pagefind-ui__drawer {
+      gap: 0;
+      column-gap: 1rem;
+      margin-block-start: 0.5rem;
     }
+
+    .pagefind-ui__results-area {
+      margin: 0;
+    }
+
+    .pagefind-ui__filter-panel {
+      margin: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  li {
+    background-color: var(--color-base);
+    padding: 0.1rem;
+  }
+
+  h2 {
+    margin-block: 0;
   }
 </style>

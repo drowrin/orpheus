@@ -2,7 +2,6 @@
 import type { MarkdownLayoutProps } from 'astro'
 import Layout from './Layout.astro'
 import { type Props as LayoutProps } from './Layout.astro'
-import Typography from '@/components/Typography.astro'
 
 type Props = MarkdownLayoutProps<LayoutProps>
 
@@ -10,7 +9,5 @@ const { frontmatter } = Astro.props
 ---
 
 <Layout {...frontmatter}>
-  <Typography>
-    <slot />
-  </Typography>
+  <prose><slot /></prose>
 </Layout>
