@@ -1,7 +1,8 @@
 // @ts-check
-import compress from 'astro-compress'
 import { defineConfig, fontProviders } from 'astro/config'
+
 import firstparagraph from './src/plugins/firstparagraph.mjs'
+
 import gitdates from './src/plugins/gitdates.mjs'
 
 import wordcount from './src/plugins/wordcount.mjs'
@@ -47,11 +48,4 @@ export default defineConfig({
       },
     ],
   },
-
-  integrations: [
-    compress({
-      CSS: false,
-      HTML: false,
-    }),
-  ],
 })

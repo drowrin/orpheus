@@ -1,0 +1,20 @@
+---
+import Post from '@/components/Post.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllTags } from '@/utils'
+
+export async function getStaticPaths() {
+  const tags = await getAllTags()
+  return [...tags.keys().map((tag) => ({ params: { tag } }))]
+}
+
+const { tag } = Astro.params
+
+const allTags = await getAllTags()
+const { posts } = allTags.get(tag)!
+---
+
+<Layout title={`#${tag}`}>
+  <h1>{`Posts tagged #${tag}`}</h1>
+  {posts.map((p) => <Post postId={p.id} card />)}
+</Layout>
