@@ -48,7 +48,10 @@ export default defineConfig({
     ],
   },
 
-  integrations: [compress({
-    CSS: false,
-  })],
+  integrations: [
+    compress({
+      CSS: false,
+      HTML: false,
+    }),
+  ],
 })

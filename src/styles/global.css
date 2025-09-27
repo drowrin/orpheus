@@ -115,7 +115,7 @@ h6 {
 }
 
 hgroup {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
 
   p {
     color: var(--color-muted);
@@ -123,7 +123,7 @@ hgroup {
 }
 
 hgroup > * {
-  margin: 0;
+  margin-block: 0;
 }
 
 hr {
