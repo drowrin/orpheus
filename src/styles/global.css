@@ -135,6 +135,10 @@ hr {
   height: 0;
 }
 
+small {
+  color: var(--color-muted);
+}
+
 prose {
   margin: 0;
 
@@ -185,10 +189,6 @@ prose {
   b,
   strong {
     color: var(--color-sapphire);
-  }
-
-  small {
-    color: var(--color-muted);
   }
 
   blockquote {
