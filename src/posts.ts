@@ -1,3 +1,4 @@
+import type { MarkdownHeading } from 'astro'
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 import type { CollectionEntry } from 'astro:content'
 import type { ReadTimeResults } from 'reading-time'
@@ -22,6 +23,8 @@ export interface Post {
   readingTime: ReadTimeResults
   brief?: string
   Content: AstroComponentFactory
+  headings: MarkdownHeading[]
+  tocDepth: number
 }
 
 function gitHistory(p: CollectionEntry<'posts'>) {
@@ -65,7 +68,7 @@ function getBrief(p: CollectionEntry<'posts'>) {
 }
 
 async function transformPost(p: CollectionEntry<'posts'>) {
-  const { Content } = await render(p)
+  const { Content, headings } = await render(p)
 
   return {
     ...gitHistory(p),
@@ -80,6 +83,8 @@ async function transformPost(p: CollectionEntry<'posts'>) {
         },
     id: p.id,
     Content,
+    headings,
+    tocDepth: p.data.tocDepth ?? 3,
     readingTime: getReadingTime(p.body!),
     brief: getBrief(p),
   } satisfies Post

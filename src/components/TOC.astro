@@ -1,0 +1,83 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+export interface Props {
+  headings: MarkdownHeading[]
+  tocDepth: number
+}
+
+const { headings, tocDepth } = Astro.props
+
+const displayHeadings = headings.filter((h) => h.depth <= tocDepth)
+
+type TocEntry = {
+  slug: string
+  text: string
+  depth: number
+  children: TocEntry[]
+}
+
+const toc: TocEntry[] = []
+const stack = []
+
+for (const h of displayHeadings) {
+  const node: TocEntry = { ...h, children: [] }
+
+  while (stack.length && stack[stack.length - 1].depth >= node.depth) {
+    stack.pop()
+  }
+
+  if (stack.length === 0) {
+    toc.push(node)
+  } else {
+    const parent = stack[stack.length - 1]
+    parent.children.push(node)
+  }
+
+  stack.push(node)
+}
+
+function renderTocNodes(nodes: TocEntry[]): string | undefined {
+  if (nodes.length === 0) {
+    return undefined
+  }
+
+  const rendered = nodes.map((n) => `<li><a href="#${n.slug}">${n.text}</a>${renderTocNodes(n.children) ?? ''}</li>`)
+  return `<ol>${rendered.join('')}</ol>`
+}
+---
+
+<details open>
+  <summary>Table of Contents</summary>
+  <nav aria-label="Table of contents" set:html={renderTocNodes(toc)} />
+</details>
+<hr />
+
+<style>
+  details {
+    margin-inline: 1rem;
+    margin-block: 0.5rem;
+    ol {
+      list-style: none;
+      padding-inline-start: 1rem;
+    }
+    nav > ol:first-of-type {
+      margin-block-start: 0.5rem;
+    }
+  }
+
+  @media (min-width: 122ch) {
+    hr {
+      display: none;
+    }
+
+    details {
+      width: 12rem;
+      padding: 0.5rem;
+      position: fixed;
+      transform: translateX(calc(-100% - 1rem));
+      top: var(--navbar-height);
+      margin-block: 0;
+    }
+  }
+</style>
