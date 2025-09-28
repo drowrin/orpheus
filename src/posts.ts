@@ -98,15 +98,23 @@ export async function getPost(id: string) {
   return transformPost(entry)
 }
 
-export async function getAllPosts() {
-  const collection = await getCollection('posts')
+export const getAllPosts = (() => {
+  let allPosts: Post[] | undefined
 
-  const posts: Post[] = await Promise.all(collection.map(transformPost))
+  return async function () {
+    if (allPosts !== undefined) {
+      return allPosts
+    }
 
-  posts.sort((a, b) => b.published.localeCompare(a.published))
+    const collection = await getCollection('posts')
 
-  return posts
-}
+    allPosts = await Promise.all(collection.map(transformPost))
+
+    allPosts.sort((a, b) => b.published.localeCompare(a.published))
+
+    return allPosts
+  }
+})()
 
 export async function getAllTags() {
   const posts = await getAllPosts()
