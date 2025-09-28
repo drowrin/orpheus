@@ -1,0 +1,25 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Post from '@/components/Post.astro'
+
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }))
+}
+
+const { id } = Astro.params
+const { post } = Astro.props
+
+const {
+  remarkPluginFrontmatter: { brief, title, tagline },
+} = await render(post)
+---
+
+<Layout title={title} description={tagline ? `${tagline}\n---\n${brief}` : brief}>
+  <Post postId={id} />
+</Layout>

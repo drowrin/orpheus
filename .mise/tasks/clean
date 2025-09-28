@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-#MISE quiet=true
-#MISE description="delete generated static content"
-
-rm -rf generated

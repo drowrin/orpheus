@@ -1,0 +1,44 @@
+// @ts-check
+import { defineConfig, fontProviders } from 'astro/config'
+
+// https://astro.build/config
+export default defineConfig({
+  prefetch: {
+    defaultStrategy: 'viewport',
+    prefetchAll: true,
+  },
+
+  image: {
+    layout: 'constrained',
+    responsiveStyles: true,
+  },
+
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'catppuccin-latte',
+        dark: 'catppuccin-mocha',
+      },
+    },
+  },
+
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.fontsource(),
+        name: 'Atkinson Hyperlegible Next',
+        cssVariable: '--font-hyperlegible',
+        fallbacks: ['Tahoma', 'system-ui', 'sans-serif'],
+        subsets: ['latin'],
+      },
+      {
+        provider: fontProviders.fontsource(),
+        name: 'Fira Code',
+        cssVariable: '--font-hyperlegible-mono',
+        fallbacks: ['Courier New', 'monospace'],
+        subsets: ['latin'],
+        featureSettings: 'liga on',
+      },
+    ],
+  },
+})

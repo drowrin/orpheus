@@ -1,9 +1,0 @@
-/target
-.vscode
-/content
-/generated
-/pandoc
-/web
-mise.toml
-mise-tasks/
-README.me

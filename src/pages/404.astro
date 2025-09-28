@@ -1,0 +1,22 @@
+---
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title="Not Found">
+  <div>
+    <span>Not Found</span>
+    <br />
+    <a href="javascript:window.history.back();">go back</a>
+  </div>
+</Layout>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - var(--navbar-height));
+    font-size: 200%;
+  }
+</style>

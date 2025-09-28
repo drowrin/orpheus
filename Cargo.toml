@@ -1,3 +1,0 @@
-[workspace]
-members = ["src/orpheus", "src/lyre", "src/verse"]
-resolver = "3"

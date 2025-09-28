@@ -1,0 +1,60 @@
+---
+import 'modern-normalize/modern-normalize.css'
+import '@/styles/global.css'
+
+import { Font } from 'astro:assets'
+import { ClientRouter } from 'astro:transitions'
+import Nav from '@/components/Nav.astro'
+
+export interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-hyperlegible" />
+    <Font cssVariable="--font-hyperlegible-mono" />
+    {description && <meta name="description" content={description} />}
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: var(--color-crust);
+    color: var(--color-text);
+    caret-color: var(--color-rosewater);
+    max-width: var(--main-width);
+    margin: auto;
+  }
+
+  main {
+    padding-top: var(--navbar-height);
+
+    > * {
+      margin-inline: 1rem;
+      margin-block-end: 1rem;
+    }
+  }
+
+  :root {
+    scroll-padding-top: calc(var(--navbar-height) + 0.5rem);
+  }
+</style>
