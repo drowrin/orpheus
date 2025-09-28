@@ -1,12 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
 
-import firstparagraph from './src/plugins/firstparagraph.mjs'
-
-import gitdates from './src/plugins/gitdates.mjs'
-
-import wordcount from './src/plugins/wordcount.mjs'
-
 // https://astro.build/config
 export default defineConfig({
   prefetch: {
@@ -20,7 +14,6 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [wordcount, gitdates, firstparagraph],
     shikiConfig: {
       themes: {
         light: 'catppuccin-latte',

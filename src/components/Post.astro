@@ -1,7 +1,5 @@
 ---
-import { getEntry } from 'astro:content'
-import slugify from 'slugify'
-import { render } from 'astro:content'
+import { getPost } from '@/posts'
 
 interface Props {
   postId: string
@@ -10,13 +8,12 @@ interface Props {
 
 const { postId, card } = Astro.props
 
-const post = await getEntry('posts', postId)
+const post = await getPost(postId)
 if (post === undefined) {
   throw new Error(`${postId} does not refer to an existing post`)
 }
 
-const { remarkPluginFrontmatter: fm, Content } = await render(post)
-const { tags } = post.data
+const { title, tagline, series, tags, published, readingTime, Content, brief } = post
 ---
 
 <article class="post" transition:name={`post.${postId}`} transition:animate="initial" data-pagefind-body>
@@ -24,25 +21,22 @@ const { tags } = post.data
     {
       card ? (
         <h3>
-          <a href={`/posts/${postId}`}>{fm.title}</a>
+          <a href={`/posts/${postId}`}>{title}</a>
         </h3>
       ) : (
-        <h1 data-pagefind-meta="title">{fm.title}</h1>
+        <h1 data-pagefind-meta="title">{title}</h1>
       )
     }
 
-    {fm.tagline && <p>{fm.tagline}</p>}
+    {tagline && <p>{tagline}</p>}
 
     <small>
       {
-        (tags.length > 0 || fm.series) && (
+        (tags.length > 0 || series) && (
           <ul data-pagefind-meta={tags.length > 0 ? `tags:${tags.join(', ')}` : null}>
-            {fm.series && (
-              <li
-                data-pagefind-filter={`series:${slugify(fm.series, { lower: true })}`}
-                data-pagefind-meta={`series:${fm.series}`}
-              >
-                <a href={`/posts?series=${slugify(fm.series, { lower: true })}`}>{fm.series}</a>
+            {series && (
+              <li data-pagefind-filter={`series:${series.slug}`} data-pagefind-meta={`series:${series.name}`}>
+                <a href={`/posts?series=${series.slug}`}>{series.name}</a>
               </li>
             )}
 
@@ -55,16 +49,23 @@ const { tags } = post.data
           </ul>
         )
       }
-      <span data-pagefind-meta="published" data-pagefind-sort="published">{fm.published}</span>
+      <span data-pagefind-meta="published" data-pagefind-sort="published">{published}</span>
       {' - '}
-      <span data-pagefind-meta="reading time">{fm.readingTime}</span>
+      <span data-pagefind-meta="reading time">{readingTime.text}</span>
       {' - '}
-      <span data-pagefind-meta="word count" data-pagefind-sort="word count">{fm.wordCount} words</span>
+      <span data-pagefind-meta="word count" data-pagefind-sort="word count">{readingTime.words} words</span>
     </small>
   </hgroup>
   <hr />
-
-  <prose>{card ? <p>{fm.brief}</p> : <Content />}</prose>
+  {
+    card ? (
+      <prose set:html={brief} />
+    ) : (
+      <prose>
+        <Content />
+      </prose>
+    )
+  }
 </article>
 
 <style>
