@@ -1,27 +1,10 @@
 ---
-import { getCollection } from 'astro:content'
+import { getAllPosts } from '@/posts'
 import Layout from '../layouts/Layout.astro'
-import { render } from 'astro:content'
 import Post from '@/components/Post.astro'
 
-const posts = await getCollection('posts')
-const rendered = await Promise.all(posts.map((p) => render(p).then((r) => ({ r, p }))))
-rendered.sort((a, b) => {
-  const aPub = a.r.remarkPluginFrontmatter.published
-  const bPub = b.r.remarkPluginFrontmatter.published
-
-  if (aPub < bPub) {
-    return 1
-  }
-
-  if (aPub > bPub) {
-    return -1
-  }
-
-  return 0
-})
-
-const recent = rendered.slice(0, 3)
+const posts = await getAllPosts()
+const recent = posts.slice(0, 3)
 ---
 
 <Layout title="Home">
@@ -39,5 +22,5 @@ const recent = rendered.slice(0, 3)
   <hgroup>
     <h2>Recent Posts</h2>
   </hgroup>
-  {recent.map((p) => <Post postId={p.p.id} card />)}
+  {recent.map((p) => <Post postId={p.id} card />)}
 </Layout>

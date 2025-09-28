@@ -12,6 +12,8 @@ const posts = defineCollection({
     tagline: z.string().optional(),
     series: z.string().optional(),
     tags: z.array(z.string()).default([]),
+    published: z.string().optional(),
+    brief: z.string().optional(),
   }),
 })
 
