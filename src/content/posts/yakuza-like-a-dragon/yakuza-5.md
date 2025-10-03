@@ -93,7 +93,7 @@ playable female character in the series, and she's done so well. It's shown time
 and time again that she is every bit as brave, determined, and dependable as the
 men of the series.
 
-![My honest reaction, but with more tears](https://preview.redd.it/xwrdtw19xhyc1.jpeg?auto=webp&s=6ced5bd51a2966425868f3fe2fef0b8889b0db50){style="max-width: 15rem"}
+![My honest reaction, but with more tears](../../img/haruka.webp){style="max-width: 15rem"}
 
 This game also deserves some credit for setting up Yakuza Zero to be such a wild
 success. All of the best parts of Yakuza 5 were used as foundations for Yakuza

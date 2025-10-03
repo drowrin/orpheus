@@ -186,7 +186,7 @@ skill in more ways than just picking better options. I'm no longer surprised it
 became such a classic, beloved system. I went from dreading playing the rest of
 the series due to this, to being more excited than ever before.
 
-![Basically, me](https://i.imgflip.com/3eglcz.png)
+![Basically, me](../../img/chicken-thoughts.png)
 
 This game got rid of the job change system introduced by FFIII. As much as I
 enjoyed that part of FFIII, I don't think that was a mistake. This game took

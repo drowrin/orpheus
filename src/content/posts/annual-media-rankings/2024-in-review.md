@@ -370,7 +370,7 @@ In order, from 10 to 1:
 **Capcom**  
 _RPG_ / _Action_ / _Fantasy_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co833w.jpg){style="max-width: 20rem"}
+![](../../img/dragons-dogma-ii-cover.jpg){style="max-width: 20rem"}
 
 This one was controversial. It's a complicated, multifaceted situation. Some
 hated the business decisions made around the game, such as selling an extra
@@ -446,7 +446,7 @@ Still, even with all that, it deserves a place in my top 10.
 **Bloober Team**  
 _Horror_ / _Psychological-Horror_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5l7s.jpg){style="max-width: 20rem"}
+![](../../img/silent-hill-2-cover.jpg){style="max-width: 20rem"}
 
 This game was so intense that I couldn't handle more than an hour or so at a
 time. That single hour felt like many more, every time. I am _shocked_ that this
@@ -502,7 +502,7 @@ top notch. It absolutely deserves this spot.
 **Red Candle Games**  
 _Metroidvania_ / _Soulslike_ / _Sci-fi_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4l2s.jpg){style="max-width: 20rem"}
+![](../../img/nine-sols-cover.jpg){style="max-width: 20rem"}
 
 Remember how I foreshadowed that Lies of P was the best non-FromSoft SoulsLike I
 had played **so far**? Yeah. We're here.
@@ -555,7 +555,7 @@ is 100% a game you need to play.
 **FromSoftware**  
 _SoulsLike_ / _Fantasy_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7sly.jpg){style="max-width: 20rem"}
+![](../../img/shadow-of-the-erdtree-cover.jpg){style="max-width: 20rem"}
 
 This is FromSoftware continuing their tradition of massive DLC releases that are
 better than their base games. Shadow of the Erdtree is _stellar_. It's so large
@@ -603,7 +603,7 @@ ring, and I **love** this.
 **Polychroma Games**  
 _Visual Novel_ / _Slice of Life_ / _Drama_ / _Sci-fi_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7r5n.jpg){style="max-width: 20rem"}
+![](../../img/until-then-cover.jpg){style="max-width: 20rem"}
 
 Until Then. Is. So. Good.
 
@@ -671,7 +671,7 @@ acting too! I would pay full price for that, tbh.
 **Wrong Organ**  
 _Horror_ / _Sci-fi_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co70oi.jpg){style="max-width: 20rem"}
+![](../../img/mouthwashing-cover.jpg){style="max-width: 20rem"}
 
 The best horror game of the year. Likely the best horror game I've played.
 
@@ -698,7 +698,7 @@ spoil it, and you should really just play it yourself, so I'll shut up.
 **Ninja Theory**  
 _Walking Simulator_ / _Action_ / _Dark-Fantasy_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co81i4.jpg){style="max-width: 20rem"}
+![](../../img/hellblade-ii-cover.jpg){style="max-width: 20rem"}
 
 There was a time, earlier this year, when I had no doubts that this would be my
 game of the year. This game impacted me deeply, and I think it's a true
@@ -721,7 +721,7 @@ more games like it.
 **Digital Extremes**  
 _Looter-Shooter_ / _Live-Service_ / _Dating-Sim_ / _Space-Opera_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6zsk.jpg){style="max-width: 20rem"}
+![](../../img/warframe-1999-cover.jpg){style="max-width: 20rem"}
 
 In July of 2022, Warframe's leadership changed amicably. The old team leads were
 moving on to new projects within Digital Extremes, passing the Warframe baton to
@@ -894,7 +894,7 @@ it an 11/10 if I could.
 **Studio Zero**  
 _JRPG_ / _High-Fantasy_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8d9t.jpg){style="max-width: 20rem"}
+![](../../img/metaphor-rephantasia-cover.jpg){style="max-width: 20rem"}
 
 At the time of writing, this is my favorite JRPG ever.
 
@@ -972,7 +972,7 @@ _Until..._
 **sunset visitor 斜陽過客**  
 _Visual Novel_ / _Walking Simulator_ / _Drama_ / _Sci-fi_
 
-![](https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co87zq.jpg){style="max-width: 20rem"}
+![](../../img/1000xresist-cover.jpg){style="max-width: 20rem"}
 
 1000xResist is such a monumental game that my words can't come close to doing it
 justice. I will try, because I also can't stay silent on it.
@@ -1139,7 +1139,7 @@ In order from 10 to 1:
 **Pretending to be People**  
 _Comedy_ / _Horror_ - _Delta Green_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/425a7ec0-cfd0-0136-3246-08b04944ede4.webp "The logo for Pretending to be People"){style="max-width: 250px; width: 100%"}
+![](../../img/pretending-to-be-people-cover.webp "The logo for Pretending to be People"){style="max-width: 250px; width: 100%"}
 
 I found these guys in 2023 and binged everything they had, then continued
 listening throughout 2024 and beyond. I love these goofballs.
@@ -1163,7 +1163,7 @@ like this. If you also happen to like horror, I think you'll _love_ this.
 **Chaosium**  
 _Horror_ - _Call of Cthulhu 7e_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/837744d0-1073-013d-5dc6-0acc26574db2.webp "The logo for Bookshops of Arkham"){style="max-width: 250px; width: 100%"}
+![](../../img/bookshops-of-arkham-cover.webp "The logo for Bookshops of Arkham"){style="max-width: 250px; width: 100%"}
 
 This is one I recommend watching instead of listening to. Chaosium put on a
 really cool production for this. All the players and the GM are in costume. They
@@ -1183,7 +1183,7 @@ for the "at the table" vibe of the other I list here.
 **The Chaos Engine Podcast**  
 _Horror_ / _Comedy_ - _Delta Green_
 
-![](https://storage.pinecast.net/podcasts/bde2ccdd-3316-460b-b456-1e3d3ca67f17/artwork/468468c3-e223-480c-a6f0-fcaaa1bb2648/Delta-Green-Dark-Thoughts-alt-clean.png.jpg "The logo for Dark Thoughts"){style="max-width: 250px; width: 100%"}
+![](../../img/dark-thoughts-cover.jpg "The logo for Dark Thoughts"){style="max-width: 250px; width: 100%"}
 
 A series of Delta Green stories that has the most "at the table" feel of
 anything here. It's lightly edited, mostly to clean up the audio, but is
@@ -1208,7 +1208,7 @@ about the hobby itself as crafting a listenable podcast out of it.
 **My First Dungeon**  
 _Fantasy_ / _Adventure_ - _The Wildsea_
 
-![](https://media.redcircle.com/images/2024/6/18/14/3e35011a-11a1-432a-815e-ebb34214c869_77-7d4a7aba68fa_mfd_wildsea_heroart3000sq_v1.0.jpg "The logo for The Wildsea"){style="max-width: 250px; width: 100%"}
+![](../../img/wildsea-cover.jpg "The logo for The Wildsea"){style="max-width: 250px; width: 100%"}
 
 My First Dungeon focuses on roleplaying, including stuff like recording music
 in-character. This makes their productions very pleasant to listen to, and
@@ -1235,7 +1235,7 @@ grabs you.
 **The Glass Cannon Network**  
 _Horror_ / _Drama_ - _Call of Cthulhu 7e_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/c55c4190-ae46-013c-867e-0e6512c1d1f5.webp "The logo for Time for Chaos"){style="max-width: 250px; width: 100%"}
+![](../../img/time-for-chaos-cover.webp "The logo for Time for Chaos"){style="max-width: 250px; width: 100%"}
 
 An actual play of the legendary Masks of Nyarlethotep campaign, for Call of
 Cthulhu 7e.
@@ -1257,7 +1257,7 @@ It's a hell of a vibe, and one of the best shows on the network.
 **Ain't Slayed Nobody**  
 _Horror_ / _Drama_ / _Mystery_ - _The Between_
 
-![](https://assets.pippa.io/shows/632da7cf6d7ffa0012565ffa/1734448657972-b21695dc-6bc0-43eb-83ac-fc2ff247abca.jpeg "The logo for The Between"){style="max-width: 250px; width: 100%"}
+![](../../img/the-between-cover.jpeg "The logo for The Between"){style="max-width: 250px; width: 100%"}
 
 This is a series showing off the recent crowdfunding hit,
 [The Between](https://youtu.be/WTFQJvNhKzw). The Ain't Slayed Nobody crew is
@@ -1279,7 +1279,7 @@ This game is clever, and it's potential is on full display here.
 **Stories & Lies**  
 _Horror_ / _Drama_ - _Delta Green_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/5a6c3560-6568-013b-f22f-0acc26574db2.webp "The logo for Stories & Lies"){style="max-width: 250px; width: 100%"}
+![](../../img/stories-and-lies-cover.webp "The logo for Stories & Lies"){style="max-width: 250px; width: 100%"}
 
 The most serious horror/drama campaign podcast on the list, and it pulls it off
 fantastically.
@@ -1306,7 +1306,7 @@ Well done.
 **The Glass Cannon Network**  
 _Fantasy_ / _Adventure_ / _Drama_ / _Comedy_ - _Pathfinder 2e_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/5abd0390-4ab6-013c-f710-0acc26574db2.webp "The logo for Blood of the Wild"){style="max-width: 250px; width: 100%"}
+![](../../img/blood-of-the-wild-cover.webp "The logo for Blood of the Wild"){style="max-width: 250px; width: 100%"}
 
 This show is food for the soul.
 
@@ -1331,7 +1331,7 @@ actual play driven by great character moments, it can't be beat.
 **The Glass Cannon Network**  
 _Horror_ / _Comedy_ / _Drama_ - _Delta Green_
 
-![](https://static.pocketcasts.com/discover/images/webp/200/cfa78a20-5ae7-013c-9ef3-0acc26574db2.webp "The logo for Get in the Trunk"){style="max-width: 250px; width: 100%"}
+![](../../img/get-in-the-trunk-cover.webp "The logo for Get in the Trunk"){style="max-width: 250px; width: 100%"}
 
 This is the show that originally got me into Delta Green, and opened the door to
 the wide world of Delta Green/Call of Cthulhu actual plays that I love so much.
@@ -1363,7 +1363,7 @@ _need_ more.
 **Transplanar RPG**  
 _Fantasy_ / _Drama_ - _The Wildsea_ / _City of Mist_ / _Court of Blades_
 
-![](https://pbcdn1.podbean.com/imglogo/ep-logo/pbblog10039206/CHAOS_Podcast_Album_Cover_Arc_3_Smaller.png "The logo for The Chaos Protocol"){style="max-width: 250px; width: 100%"}
+![](../../img/chaos-protocol-cover.png "The logo for The Chaos Protocol"){style="max-width: 250px; width: 100%"}
 
 The Chaos Protocol is wildly ambitious. It uses a different game for each arc,
 while maintaining character continuity and an overarching plot. It's a grand,
@@ -1418,7 +1418,7 @@ In order from 5 to 1:
 **Yoshifumi Tozuka**  
 _Action_ / _Comedy_ / _Romance_ / _Supernatural_ / _Sci-Fi_
 
-![](https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx114791-Rj07uWUnsgLY.jpg "Cover art for Undead Unluck"){style="max-width: 20rem"}
+![](../../img/undeaad-unluck-cover.jpg "Cover art for Undead Unluck"){style="max-width: 20rem"}
 
 I don't typically like the term "guilty pleasure". One should be allowed to
 enjoy things without fear of "guilt" caused by others' judgement (unless the
@@ -1451,7 +1451,7 @@ I can't help but love this manga.
 **Eiichirou Oda**  
 _Action_ / _Adventure_ / _Comedy_ / _Fantasy_
 
-![](https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30013-ulXvn0lzWvsz.jpg "Cover art for One Piece"){style="max-width: 20rem"}
+![](../../img/one-piece-cover.jpg "Cover art for One Piece"){style="max-width: 20rem"}
 
 As long as One Piece is still releasing, it will continue to find a place on my
 lists.
@@ -1471,7 +1471,7 @@ One Piece is legendary for a reason. I'll leave it at that.
 **Kenji Inoue** (Story) / **Kimitake Yoshioka** (Art)  
 _Comedy_ / _Romance_ / _Slice of Life_
 
-![](https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx87395-QGyh7Fc3YV3G.jpg "Cover art for Grand Blue"){style="max-width: 20rem"}
+![](../../img/grand-blue-cover.jpg "Cover art for Grand Blue"){style="max-width: 20rem"}
 
 Grand Blue is a manga about  
 ~~diving~~  
@@ -1500,7 +1500,7 @@ I'm always excited to see new chapters. I need more!
 **Sui Ishida**  
 _Action_ / _Drama_ / _Fantasy_ / _Psychological_
 
-![](https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx126693-mdjfDqofsPgq.jpg "Cover art for Choujin X"){style="max-width: 20rem"}
+![](../../img/choujin-x-cover.jpg "Cover art for Choujin X"){style="max-width: 20rem"}
 
 I'm a huge fan of Sui Ishida. Tokyo Ghoul was my favorite manga for a long time.
 Over the course of that manga, Ishida continued to improve as an artist and
@@ -1522,7 +1522,7 @@ art.
 
 Check out this art (from the first chapter, so not really spoilers):
 
-![](https://indiananimenetwork.com/wp-content/uploads/2021/05/choujin_x_1_8-3-1024x512.jpg "A panel from the first chapter of Choujin X")
+![](../../img/choujin-x-art.jpg "A panel from the first chapter of Choujin X")
 
 Every character in Choujin X is very well written, and the story is as much
 about the characters' personal arcs as it is about the main events of the world.
@@ -1536,7 +1536,7 @@ Choujin X is a masterpiece.
 **Yukinobu Tatsu**  
 _Action_ / _Romance_ / _Comedy_ / _Drama_ / _Sci-Fi_ / _Supernatural_
 
-![](https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx132029-jIm1KsPcIwIl.jpg "Cover art for Dandadan"){style="max-width: 20rem"}
+![](../../img/dandadan-cover.jpg "Cover art for Dandadan"){style="max-width: 20rem"}
 
 My second favorite thing about Dandadan is that every character thinks it's a
 different genre, and they all think they're the main character. My favorite
@@ -1622,7 +1622,7 @@ In order from 3 to 1:
 **Bring Me The Horizon**  
 _~~really hard to nail down a genre, but~~ Metalcore ~~mostly?~~_
 
-![](https://i.scdn.co/image/ab67616d0000b273df51a3d66223e5b01813e0c4 "album art for POST HUMAN: NeX GEn"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
+![](../../img/post-human-nex-gen-cover.jpg "album art for POST HUMAN: NeX GEn"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
 
 I _really_ like Bring Me The Horizon. I also love weird, experimental-feeling
 art (in any medium). This feels like BMTH's most experimental album yet, and
@@ -1652,7 +1652,7 @@ my favorite BMTH album.
 **Synestia** / **Disembodied Tyrant**  
 _Deathcore_
 
-![](https://f4.bcbits.com/img/a1034549317_16.jpg "album art for The Poetic Edda"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
+![](../../img/the-poetic-edda-cover.jpg "album art for The Poetic Edda"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
 
 DEATHCORE. VIVALDI.
 
@@ -1672,7 +1672,7 @@ be listening to it right now instead.
 **Freedom Call**  
 _Power Metal_
 
-![](https://f4.bcbits.com/img/a2676174053_65 "album art for Silver Romance"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
+![](../../img/silver-romance-cover.jpg "album art for Silver Romance"){style="border-radius: 5px; width: 100%; max-width: 20rem"}
 
 To be honest: I wasn't going to include a music section at all. I just really
 wanted to write about _Silver Romance_. This whole section was constructed
