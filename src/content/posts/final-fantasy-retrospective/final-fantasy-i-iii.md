@@ -577,4 +577,4 @@ my comfy, happy place right now.
 
 As far as I've heard, it's only up from here! I'm looking forward to it.
 
-![As Producer and director of FFXIV, Naoki Yoshida always says:<br>"Please look forward to it."](https://preview.redd.it/7mt307nleko91.jpg?auto=webp&s=1f2b7ed9e059a9712597d7cb5f17748e843e55da 'Producer and director of FFXIV, Naoki Yoshida, in front of a fire, captioned "Please look forward to it."')
+![As Producer and director of FFXIV, Naoki Yoshida always says:<br>"Please look forward to it."](../../img/please-look-forward-to-it.webp 'Producer and director of FFXIV, Naoki Yoshida, in front of a fire, captioned "Please look forward to it."')

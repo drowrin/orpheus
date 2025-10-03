@@ -111,7 +111,7 @@ saturday-morning-cartoon story.
 
 > Bartz, why did you and your companions risk everything, completely unprompted?
 
-> ![--- Bartz](https://media1.tenor.com/m/XnGK5CaQTt4AAAAd/ah-eto-bleh-anime.gif)
+> ![--- Bartz](../../img/ah-eto-bleh.gif)
 
 Exdeath was a character fitting such a silly name. He was evil. That was the
 entire personality. Why did he do what he did? _He's evil!_ Did anything drive him
@@ -238,7 +238,7 @@ last used action in this battle. This got really silly when I used the Red
 Mage's Dual Cast ability to twin-summon Bahamut, one of the strongest spells in
 the game, and then had the rest of my party Mimic this.
 
-![8x Bahamut per round. The boss was very dead.](https://i.kym-cdn.com/photos/images/newsfeed/001/798/217/449.gif)
+![8x Bahamut per round. The boss was very dead.](../../img/louisoix.gif)
 
 This job system really made me enjoy _getting into random encounters_, to the
 point that I often sought them out. It gave me that "just one more fight"
