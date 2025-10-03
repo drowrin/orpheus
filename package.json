@@ -8,7 +8,7 @@
     "postcss-cli": "^11.0.1"
   },
   "dependencies": {
-    "@fontsource/atkinson-hyperlegible-mono": "^5.2.9",
+    "@fontsource/atkinson-hyperlegible-mono": "^5.2.10",
     "@fontsource/atkinson-hyperlegible-next": "^5.2.7"
   }
 }
