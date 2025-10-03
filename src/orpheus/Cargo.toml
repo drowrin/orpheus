@@ -5,7 +5,7 @@ edition = "2021"
 include = ["generated", "content", "web"]
 
 [dependencies]
-axum = { version = "0.7.6", features = ["macros"] }
+axum = { version = "0.8.6", features = ["macros"] }
 axum-extra = { version = "0.9.3", features = ["query"] }
 tokio = { version = "1.47.1", features = ["full"] }
 tower = "0.5.2"
