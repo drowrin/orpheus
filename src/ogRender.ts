@@ -93,7 +93,7 @@ const iconPath = path.join(process.cwd(), 'public', 'favicon.svg')
 const iconBase64 = `data:image/svg+xml;base64,${fs.readFileSync(iconPath).toString('base64')}`
 
 export async function ogRender(input: RenderFunctionInput) {
-  if (input.pathname.startsWith('/posts/') && !input.pathname.endsWith('/')) {
+  if (input.pathname.startsWith('posts/') && input.pathname !== 'posts/') {
     return renderPost(input)
   }
 
