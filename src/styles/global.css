@@ -61,7 +61,7 @@
 
   /* Spacing */
 
-  --navbar-height: 2.5rem;
+  --navbar-height: 2rem;
   --readable-width: 50ch;
   --main-width: clamp(0px, calc(var(--readable-width) + 2rem), calc(100vw));
 }
@@ -274,14 +274,14 @@ prose {
   }
 
   img {
-    @media (width > 40ch) {
+    @media (width > 25ch) {
       margin-inline: 0;
       width: 100%;
     }
   }
 
   figure {
-    @media (width > 40ch) {
+    @media (width > 25ch) {
       margin-inline: 0;
       width: 100%;
     }
