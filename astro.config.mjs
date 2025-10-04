@@ -6,7 +6,6 @@ import detailsBlock from './src/plugins/details-block'
 import emdash from './src/plugins/emdash'
 import quoteCitation from './src/plugins/quote-citation'
 import removeNewlines from './src/plugins/remove-newlines'
-import spoilers from './src/plugins/spoilers'
 
 export default defineConfig({
   site: 'https://drowrin.com',
@@ -35,7 +34,6 @@ export default defineConfig({
     rehypePlugins: [
       emdash,
       removeNewlines,
-      spoilers,
       quoteCitation,
       detailsBlock,
       rehypeFigure,
