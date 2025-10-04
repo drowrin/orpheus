@@ -18,3 +18,9 @@ const { posts } = allTags.get(tag)!
   <h1>{`Posts tagged #${tag}`}</h1>
   {posts.map((p) => <Post postId={p.id} card />)}
 </Layout>
+
+<style>
+  h1 {
+    margin-block-start: 0;
+  }
+</style>
