@@ -1,6 +1,3 @@
-// @ts-check
-
-// @ts-ignore
 import rehypeFigure from '@microflash/rehype-figure'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
@@ -10,7 +7,6 @@ import quoteCitation from './src/plugins/quote-citation'
 import removeNewlines from './src/plugins/remove-newlines'
 import spoilers from './src/plugins/spoilers'
 
-// https://astro.build/config
 export default defineConfig({
   prefetch: {
     defaultStrategy: 'viewport',
@@ -31,7 +27,6 @@ export default defineConfig({
       },
     },
     remarkPlugins: [
-      // @ts-ignore
       remarkAttributes,
     ],
     rehypePlugins: [
