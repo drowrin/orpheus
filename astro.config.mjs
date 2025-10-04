@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
+import spoilers from './src/plugins/spoilers'
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
         dark: 'catppuccin-mocha',
       },
     },
+    rehypePlugins: [spoilers],
   },
 
   experimental: {
