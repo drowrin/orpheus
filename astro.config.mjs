@@ -1,7 +1,10 @@
+import fs from 'node:fs'
 import sitemap from '@astrojs/sitemap'
 import rehypeFigure from '@microflash/rehype-figure'
+import opengraphImages from 'astro-opengraph-images'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
+import { ogRender } from './src//ogRender'
 import detailsBlock from './src/plugins/details-block'
 import emdash from './src/plugins/emdash'
 import quoteCitation from './src/plugins/quote-citation'
@@ -60,5 +63,22 @@ export default defineConfig({
     ],
   },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap(),
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: 'Atkinson Hyperlegible Next',
+            weight: 400,
+            style: 'normal',
+            data: fs.readFileSync(
+              'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff',
+            ),
+          },
+        ],
+      },
+      render: ogRender,
+    }),
+  ],
 })

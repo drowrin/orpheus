@@ -12,10 +12,11 @@ const { tag } = Astro.params
 
 const allTags = await getAllTags()
 const { posts } = allTags.get(tag)!
+const title = `Posts tagged #${tag}`
 ---
 
-<Layout title={`#${tag}`}>
-  <h1>{`Posts tagged #${tag}`}</h1>
+<Layout title={title} description={`${posts.length} Posts`}>
+  <h1>{title}</h1>
   {posts.map((p) => <Post postId={p.id} card />)}
 </Layout>
 

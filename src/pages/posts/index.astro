@@ -1,12 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import { getAllSeries, getAllTags } from '@/posts'
+import { getCollection } from 'astro:content'
+
+const totalPosts = (await getCollection('posts')).length
 
 const allSeries = await getAllSeries()
 const allTags = await getAllTags()
 ---
 
-<Layout title="Posts">
+<Layout title="All Posts" description={`${totalPosts} Posts`}>
   <div id="search"></div>
   <div>
     <section>
