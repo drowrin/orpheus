@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
+import remarkAttributes from 'remark-attributes'
 import detailsBlock from './src/plugins/details-block'
 import emdash from './src/plugins/emdash'
 import quoteCitation from './src/plugins/quote-citation'
@@ -26,6 +27,10 @@ export default defineConfig({
         dark: 'catppuccin-mocha',
       },
     },
+    remarkPlugins: [
+      // @ts-ignore
+      remarkAttributes,
+    ],
     rehypePlugins: [
       emdash,
       removeNewlines,
