@@ -1,3 +1,4 @@
+import sitemap from '@astrojs/sitemap'
 import rehypeFigure from '@microflash/rehype-figure'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
@@ -60,4 +61,6 @@ export default defineConfig({
       },
     ],
   },
+
+  integrations: [sitemap()],
 })
