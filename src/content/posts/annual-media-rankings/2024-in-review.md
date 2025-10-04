@@ -795,12 +795,9 @@ Once you're in the sandbox after the quest. You get a cozy, gorgeous loft
 apartment as a new home base. It's absolutely my new favorite home base. Instead
 of describing it, here are a few screenshots:
 
-[![](../../img/WarframeBackroom1.jpg)](../../img/WarframeBackroom1.jpg){hx-boost="false"
-target="\_blank"}
-[![](../../img/WarframeBackroom2.jpg)](../../img/WarframeBackroom2.jpg){hx-boost="false"
-target="\_blank"}
-[![](../../img/WarframeBackroom3.jpg)](../../img/WarframeBackroom3.jpg){hx-boost="false"
-target="\_blank"}
+![](../../img/WarframeBackroom1.jpg)
+![](../../img/WarframeBackroom2.jpg)
+![](../../img/WarframeBackroom3.jpg)
 
 Look at all the cozy furniture! It's a great mix of a 90's vibe and little bits
 of sci-fi my character introduced when they moved in. It's grungy and _lived
