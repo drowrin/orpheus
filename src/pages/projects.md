@@ -1,16 +1,10 @@
 ---
 title: Projects
+tagline: I write code
 layout: ../layouts/MarkdownLayout.astro
 ---
 
 <section>
-<hgroup>
-
-# Projects
-
-I write code
-
-</hgroup>
 
 My open source projects typically fall into one of two categories:
 
@@ -30,7 +24,7 @@ because I use them.
 
 </section>
 
-<article>
+<section>
 <hgroup>
 
 ## Orpheus
@@ -47,9 +41,9 @@ personal blog. I've tried a few site generators out there, but nothing beats
 doing your own tinkering. If I want a feature, I'll make it! I'll get the
 opportunity to learn more along the way too.
 
-</article>
+</section>
 
-<article>
+<section>
 <hgroup>
 
 ## Eurydice
@@ -67,4 +61,4 @@ has features for automatically including character names in discord nicknames
 when a session is live, managing session-zero type notes like safety tools,
 scheduling sessions and performing "ready checks", and so on.
 
-</article>
+</section>

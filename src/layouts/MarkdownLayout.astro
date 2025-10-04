@@ -3,11 +3,25 @@ import type { MarkdownLayoutProps } from 'astro'
 import Layout from './Layout.astro'
 import { type Props as LayoutProps } from './Layout.astro'
 
-type Props = MarkdownLayoutProps<LayoutProps>
+type Props = MarkdownLayoutProps<LayoutProps & { tagline?: string }>
 
 const { frontmatter } = Astro.props
 ---
 
 <Layout {...frontmatter}>
-  <prose><slot /></prose>
+  <article>
+    <hgroup>
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.tagline ? <p>{frontmatter.tagline}</p> : undefined}
+    </hgroup>
+    <prose>
+      <slot />
+    </prose>
+  </article>
 </Layout>
+
+<style>
+  hgroup {
+    margin-inline: 1rem;
+  }
+</style>
