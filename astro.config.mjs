@@ -1,4 +1,7 @@
 // @ts-check
+
+// @ts-ignore
+import rehypeFigure from '@microflash/rehype-figure'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
 import detailsBlock from './src/plugins/details-block'
@@ -37,6 +40,7 @@ export default defineConfig({
       spoilers,
       quoteCitation,
       detailsBlock,
+      rehypeFigure,
     ],
   },
 
