@@ -8,6 +8,8 @@ import removeNewlines from './src/plugins/remove-newlines'
 import spoilers from './src/plugins/spoilers'
 
 export default defineConfig({
+  site: 'https://drowrin.com',
+
   prefetch: {
     defaultStrategy: 'viewport',
     prefetchAll: true,
