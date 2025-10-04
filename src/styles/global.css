@@ -200,6 +200,11 @@ prose {
     & > :last-child {
       margin-block-end: 0;
     }
+
+    footer {
+      font-size: 80%;
+      color: var(--color-muted);
+    }
   }
 
   details {

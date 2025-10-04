@@ -1,5 +1,8 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
+import emdash from './src/plugins/emdash'
+import quoteCitation from './src/plugins/quote-citation'
+import removeNewlines from './src/plugins/remove-newlines'
 import spoilers from './src/plugins/spoilers'
 
 // https://astro.build/config
@@ -15,13 +18,14 @@ export default defineConfig({
   },
 
   markdown: {
+    smartypants: true,
     shikiConfig: {
       themes: {
         light: 'catppuccin-latte',
         dark: 'catppuccin-mocha',
       },
     },
-    rehypePlugins: [spoilers],
+    rehypePlugins: [emdash, removeNewlines, spoilers, quoteCitation],
   },
 
   experimental: {
