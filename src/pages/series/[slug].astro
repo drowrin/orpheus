@@ -14,7 +14,7 @@ const allSeries = await getAllSeries()
 const series = allSeries.get(slug)!
 ---
 
-<Layout title={series.name}>
+<Layout title={series.name} description={`${series.posts.length} Posts`}>
   <h1>{series.name}</h1>
   {series.posts.map((p) => <Post postId={p.id} card />)}
 </Layout>

@@ -5,9 +5,14 @@ import Post from '@/components/Post.astro'
 
 const posts = await getAllPosts()
 const recent = posts.slice(0, 3)
+const description = `\
+Software Engineering;
+Media Reviews;
+TTRPGs;
+`
 ---
 
-<Layout title="Home">
+<Layout title="Home" description={description}>
   <hgroup>
     <h1>Drowrin</h1>
     <p>

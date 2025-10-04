@@ -2,10 +2,10 @@
 import Layout from '@/layouts/Layout.astro'
 import Post from '@/components/Post.astro'
 
-import { getCollection, render } from 'astro:content'
+import { getAllPosts } from '@/posts'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts')
+  const posts = await getAllPosts()
   return posts.map((post) => ({
     params: { id: post.id },
     props: { post },
@@ -14,12 +14,9 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params
 const { post } = Astro.props
-
-const {
-  remarkPluginFrontmatter: { brief, title, tagline },
-} = await render(post)
+const { title, description } = post
 ---
 
-<Layout title={title} description={tagline ? `${tagline}\n---\n${brief}` : brief}>
+<Layout title={title} description={description} largeImage>
   <Post postId={id} />
 </Layout>

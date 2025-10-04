@@ -22,7 +22,7 @@ const { title, tagline, series, tags, published, readingTime, Content, brief, he
     {
       card ? (
         <h3>
-          <a href={`/posts/${postId}`}>{title}</a>
+          <a href={`/posts/${postId}/`}>{title}</a>
         </h3>
       ) : (
         <h1 data-pagefind-meta="title">{title}</h1>
@@ -37,14 +37,14 @@ const { title, tagline, series, tags, published, readingTime, Content, brief, he
           <ul data-pagefind-meta={tags.length > 0 ? `tags:${tags.join(', ')}` : null}>
             {series && (
               <li data-pagefind-filter={`series:${series.slug}`} data-pagefind-meta={`series:${series.name}`}>
-                <a href={`/series/${series.slug}`}>{series.name}</a>
+                <a href={`/series/${series.slug}/`}>{series.name}</a>
               </li>
             )}
 
             {tags.length > 0 &&
               (tags as string[]).map((tag) => (
                 <li data-pagefind-filter={`tag:${tag}`}>
-                  <a href={`/tags/${tag}`}>{'#' + tag}</a>
+                  <a href={`/tags/${tag}/`}>{'#' + tag}</a>
                 </li>
               ))}
           </ul>

@@ -22,6 +22,7 @@ export interface Post {
   revisions?: string
   readingTime: ReadTimeResults
   brief?: string
+  description: string
   Content: AstroComponentFactory
   headings: MarkdownHeading[]
   tocDepth: number
@@ -67,8 +68,14 @@ function getBrief(p: CollectionEntry<'posts'>) {
   )
 }
 
+function getDescription(brief: string) {
+  return brief.replace(/<[^>]*>/g, '').replace(/\r\n|\n|\r/g, ' ')
+}
+
 async function transformPost(p: CollectionEntry<'posts'>) {
   const { Content, headings } = await render(p)
+
+  const brief = getBrief(p)
 
   return {
     ...gitHistory(p),
@@ -86,7 +93,8 @@ async function transformPost(p: CollectionEntry<'posts'>) {
     headings,
     tocDepth: p.data.tocDepth ?? 3,
     readingTime: getReadingTime(p.body!),
-    brief: getBrief(p),
+    brief,
+    description: getDescription(brief),
   } satisfies Post
 }
 
