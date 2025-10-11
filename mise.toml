@@ -4,7 +4,7 @@ watchexec = "2.3.2"
 pandoc = "3.8"
 yq = "4.47.2"
 gum = "0.17.0"
-npm = "11.6.1"
+npm = "11.6.2"
 
 [hooks]
 postinstall = '''
