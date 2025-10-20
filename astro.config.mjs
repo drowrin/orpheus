@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import sitemap from '@astrojs/sitemap'
 import rehypeFigure from '@microflash/rehype-figure'
+import ViteYaml from '@modyfi/vite-plugin-yaml'
 import opengraphImages from 'astro-opengraph-images'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
@@ -60,6 +61,12 @@ export default defineConfig({
         subsets: ['latin'],
         featureSettings: 'liga on',
       },
+    ],
+  },
+
+  vite: {
+    plugins: [
+      ViteYaml(),
     ],
   },
 

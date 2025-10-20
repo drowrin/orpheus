@@ -6,7 +6,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": [
+      "@modyfi/vite-plugin-yaml/modules"
+    ]
   },
   "include": [
     ".astro/types.d.ts",

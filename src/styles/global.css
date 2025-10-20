@@ -63,7 +63,7 @@
 
   --navbar-height: 2rem;
   --readable-width: 50ch;
-  --main-width: clamp(0px, calc(var(--readable-width) + 2rem), calc(100vw));
+  --main-width: clamp(0px, calc(var(--readable-width) + 2rem), 100vw);
 }
 
 /* Typography */
