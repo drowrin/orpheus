@@ -1,0 +1,96 @@
+---
+import 'modern-normalize/modern-normalize.css'
+import '@/styles/global.css'
+import { SEO, type Props as SeoProps } from 'astro-seo'
+import { getImagePath } from 'astro-opengraph-images'
+
+import { Font } from 'astro:assets'
+import { ClientRouter } from 'astro:transitions'
+import Nav from '@/components/Nav.astro'
+
+export interface Props {
+  title: string
+  description?: string
+  largeImage?: boolean
+}
+
+const { title, description, largeImage } = Astro.props
+
+let seoProps: SeoProps = {
+  titleTemplate: '%s - Drowrin.com',
+  title: title,
+  description: description,
+
+  openGraph: {
+    basic: {
+      title,
+      type: 'website',
+      image: getImagePath({ url: Astro.url, site: Astro.site }),
+      url: Astro.url,
+    },
+    optional: {
+      description,
+    },
+  },
+
+  extend: {
+    link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'sitemap', href: '/sitemap-index.xml' },
+    ],
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'generator', content: Astro.generator },
+      { name: 'color-scheme', content: 'dark light' },
+      { name: 'theme-color', content: '#b4befe' },
+    ],
+  },
+  charset: 'utf-8',
+}
+
+if (largeImage) {
+  seoProps.twitter = {
+    card: 'summary_large_image',
+  }
+}
+---
+
+<html lang="en">
+  <head>
+    <SEO {...seoProps} />
+    <Font cssVariable="--font-hyperlegible" />
+    <Font cssVariable="--font-hyperlegible-mono" />
+    <ClientRouter />
+  </head>
+  <body>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: var(--color-crust);
+    color: var(--color-text);
+    caret-color: var(--color-rosewater);
+    max-width: var(--main-width);
+    margin: auto;
+  }
+
+  main {
+    padding-top: var(--navbar-height);
+
+    > :not(article) {
+      margin-inline: 1rem;
+      margin-block-end: 1rem;
+    }
+  }
+
+  :root {
+    scroll-padding-top: calc(var(--navbar-height) + 0.5rem);
+  }
+</style>

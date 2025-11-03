@@ -1,0 +1,31 @@
+---
+import { getAllPosts } from '@/posts'
+import Layout from '../layouts/Layout.astro'
+import Post from '@/components/Post.astro'
+
+const posts = await getAllPosts()
+const recent = posts.slice(0, 3)
+const description = `\
+Software Engineering;
+Media Reviews;
+TTRPGs;
+`
+---
+
+<Layout title="Home" description={description}>
+  <hgroup>
+    <h1>Drowrin</h1>
+    <p>
+      Software Engineering;
+      <br />
+      Media Reviews;
+      <br />
+      TTRPGs;
+      <br />
+    </p>
+  </hgroup>
+  <hgroup>
+    <h2>Recent Posts</h2>
+  </hgroup>
+  {recent.map((p) => <Post postId={p.id} card />)}
+</Layout>

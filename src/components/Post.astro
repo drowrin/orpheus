@@ -1,0 +1,96 @@
+---
+import { getPost } from '@/posts'
+import TOC from './TOC.astro'
+
+interface Props {
+  postId: string
+  card?: boolean
+}
+
+const { postId, card } = Astro.props
+
+const post = await getPost(postId)
+if (post === undefined) {
+  throw new Error(`${postId} does not refer to an existing post`)
+}
+
+const { title, tagline, series, tags, published, readingTime, Content, brief, headings, tocDepth } = post
+---
+
+<article class="post" transition:name={`post.${postId}`} transition:animate="initial" data-pagefind-body>
+  <hgroup>
+    {
+      card ? (
+        <h3>
+          <a href={`/posts/${postId}/`}>{title}</a>
+        </h3>
+      ) : (
+        <h1 data-pagefind-meta="title">{title}</h1>
+      )
+    }
+
+    {tagline && <p>{tagline}</p>}
+
+    <small class="tags">
+      {
+        (tags.length > 0 || series) && (
+          <ul data-pagefind-meta={tags.length > 0 ? `tags:${tags.join(', ')}` : null}>
+            {series && (
+              <li data-pagefind-filter={`series:${series.slug}`} data-pagefind-meta={`series:${series.name}`}>
+                <a href={`/series/${series.slug}/`}>{series.name}</a>
+              </li>
+            )}
+
+            {tags.length > 0 &&
+              (tags as string[]).map((tag) => (
+                <li data-pagefind-filter={`tag:${tag}`}>
+                  <a href={`/tags/${tag}/`}>{'#' + tag}</a>
+                </li>
+              ))}
+          </ul>
+        )
+      }
+      <span data-pagefind-meta="published" data-pagefind-sort="published">{published}</span>
+      {' - '}
+      <span data-pagefind-meta="reading time">{readingTime.text}</span>
+      {' - '}
+      <span data-pagefind-meta="word count" data-pagefind-sort="word count">{readingTime.words} words</span>
+    </small>
+  </hgroup>
+  <hr />
+  {
+    card ? (
+      <prose set:html={brief} />
+    ) : (
+      <>
+        <TOC headings={headings} tocDepth={tocDepth} />
+        <prose>
+          <Content />
+        </prose>
+      </>
+    )
+  }
+</article>
+
+<style>
+  article.post {
+    hgroup {
+      margin-inline: 1rem;
+      margin-block: 0;
+    }
+
+    .tags ul {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 0.25rem;
+      list-style: none;
+      padding: 0;
+      margin-block: 0;
+    }
+
+    hr {
+      margin-block: 0.5rem;
+      margin-inline: 1rem;
+    }
+  }
+</style>
