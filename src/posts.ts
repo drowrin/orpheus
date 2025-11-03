@@ -34,9 +34,11 @@ function gitHistory(p: CollectionEntry<'posts'>) {
     published = p.data.published
       ?? execSync(
         `git log --follow --diff-filter=A --format="%as" -1 -- "${p.filePath}"`,
+        { stdio: ['pipe', 'pipe', 'ignore'] },
       ).toString().trim()
   }
-  catch {
+  catch {}
+  if (published == null || published.length === 0) {
     published = new Date().toISOString().split('T')[0]
   }
 
@@ -50,6 +52,7 @@ function gitHistory(p: CollectionEntry<'posts'>) {
   try {
     revisions = execSync(
       `git log --diff-filter=M --format="%as: %s" --no-patch "-L${fmLines},${totalLines}:${p.filePath}"`,
+      { stdio: ['pipe', 'pipe', 'ignore'] },
     ).toString().trim()
     updated = revisions.split('\n')[0].split(':')[0]
   }
@@ -62,9 +65,12 @@ function getBrief(p: CollectionEntry<'posts'>) {
   if (p.data.brief !== undefined) {
     return `<p>${p.data.brief}</p>`
   }
-  return p.rendered!.html.substring(
-    p.rendered!.html.indexOf('<p'),
-    p.rendered!.html.indexOf('</p>'),
+  if (p.rendered === undefined) {
+    throw new Error('Generating automatic brief from MDX files is not supported')
+  }
+  return p.rendered.html.substring(
+    p.rendered.html.indexOf('<p'),
+    p.rendered.html.indexOf('</p>'),
   )
 }
 
