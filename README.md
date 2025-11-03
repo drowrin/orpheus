@@ -1,4 +1,4 @@
-# <img src="content/favicon.svg" width="24" /> Orpheus
+# <img src="public/favicon.svg" width="24" /> Orpheus
 
 My blog! Powered by Astro.
 
