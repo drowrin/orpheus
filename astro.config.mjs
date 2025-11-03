@@ -11,6 +11,8 @@ import emdash from './src/plugins/emdash'
 import quoteCitation from './src/plugins/quote-citation'
 import removeNewlines from './src/plugins/remove-newlines'
 
+import mdx from '@astrojs/mdx';
+
 export default defineConfig({
   site: 'https://drowrin.com',
 
@@ -70,22 +72,19 @@ export default defineConfig({
     ],
   },
 
-  integrations: [
-    sitemap(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: 'Atkinson Hyperlegible Next',
-            weight: 400,
-            style: 'normal',
-            data: fs.readFileSync(
-              'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff',
-            ),
-          },
-        ],
-      },
-      render: ogRender,
-    }),
-  ],
+  integrations: [sitemap(), opengraphImages({
+    options: {
+      fonts: [
+        {
+          name: 'Atkinson Hyperlegible Next',
+          weight: 400,
+          style: 'normal',
+          data: fs.readFileSync(
+            'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff',
+          ),
+        },
+      ],
+    },
+    render: ogRender,
+  }), mdx()],
 })
