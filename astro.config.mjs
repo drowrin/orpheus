@@ -1,17 +1,20 @@
 import fs from 'node:fs'
+import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import rehypeFigure from '@microflash/rehype-figure'
 import ViteYaml from '@modyfi/vite-plugin-yaml'
 import opengraphImages from 'astro-opengraph-images'
 import { defineConfig, fontProviders } from 'astro/config'
 import remarkAttributes from 'remark-attributes'
-import { ogRender } from './src//ogRender'
-import detailsBlock from './src/plugins/details-block'
-import emdash from './src/plugins/emdash'
-import quoteCitation from './src/plugins/quote-citation'
-import removeNewlines from './src/plugins/remove-newlines'
-
-import mdx from '@astrojs/mdx';
+import { ogRender } from './src/ogRender'
+import rehypeBrief from './src/plugins/brief'
+import rehypeDetailsBlock from './src/plugins/details-block'
+import rehypeEmdash from './src/plugins/emdash'
+import remarkGitHistory from './src/plugins/git-history'
+import rehypeQuoteCitation from './src/plugins/quote-citation'
+import remarkReadingTime from './src/plugins/reading-time'
+import rehypeRemoveNewlines from './src/plugins/remove-newlines'
+import remarkSeriesSlug from './src/plugins/series-slug'
 
 export default defineConfig({
   site: 'https://drowrin.com',
@@ -36,13 +39,17 @@ export default defineConfig({
     },
     remarkPlugins: [
       remarkAttributes,
+      remarkGitHistory,
+      remarkReadingTime,
+      remarkSeriesSlug,
     ],
     rehypePlugins: [
-      emdash,
-      removeNewlines,
-      quoteCitation,
-      detailsBlock,
+      rehypeQuoteCitation,
+      rehypeBrief,
       rehypeFigure,
+      rehypeRemoveNewlines,
+      rehypeEmdash,
+      rehypeDetailsBlock,
     ],
   },
 
