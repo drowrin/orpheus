@@ -135,7 +135,7 @@ than you've heard.
 
 # The Review
 
-This is not a flawless videogame, but it's a damn good one. As you read, please
+This is not a flawless video game, but it's a damn good one. As you read, please
 keep both of those things in mind. When I'm defending the game, I'm also aware
 that it is flawed. Despite pointing out the flaws, I love the overall package.
 
@@ -277,7 +277,7 @@ stopping by all the NPCs for conversations. Maybe you just want to get on with
 the story and keep the pacing as tight as possible. If that's you, I actually
 think the supposed flaws in the structure of the game may be features for you.
 
-I want to talk more about when this game "opens up". It doesn't exactly have an
+I want to talk more about when this game "opens up." It doesn't exactly have an
 Airship Moment, but something like it. It does, ironically, happen immediately
 after you crash-land your airship. Before this point, areas were pretty linear.
 There were small offshoots you could explore for loot and optional encounters,
@@ -422,7 +422,7 @@ halfway to a new ability? A tenth? Can I buy an ability right now? I miss the
 excitement of leveling up and seeing what changes about the character. Instead,
 this system asks you to repeatedly check through several layers of menus to see
 if you can get a tiny increase or not---and I do mean tiny. There's a saying in
-the speedrunning community for this game, "stats don't matter". They are
+the speedrunning community for this game, "stats don't matter." They are
 constantly hunting for new ways to cut Crystarium Points from the run, because
 they can beat every story fight without hardly allocating points at all. The
 combat effectiveness gains are so tiny in this game that accessing the menu to
@@ -502,7 +502,7 @@ flexibility---and that's really what it is! It's just presented in a way that
 implies something it can't live up to.
 
 Overall, this progression system was above average. It overpromised and turned
-out "just okay". That's what has drawn it all this hate. There have been far,
+out "just okay." That's what has drawn it all this hate. There have been far,
 far worse progression systems even in some of the most beloved entries in the
 series! Being mediocre at worst ain't so bad.
 
@@ -849,7 +849,7 @@ memories.
 
 [Ragnarok](https://music.youtube.com/watch?v=3-Lp2WfNmac) is a super unsettling
 choir and organ piece that is extremely rich with detail and texture. It's the
-kind of fantasy track that plays in "the ancient holy place", but _something is
+kind of fantasy track that plays in "the ancient holy place," but _something is
 wrong here_. This is "the ancient holy place" but _god has abandoned us_. It's a
 dark, powerful hymn. I love it.
 
@@ -922,7 +922,7 @@ out. [This clip](https://youtu.be/RsSY4svjABA) from an interview of Vanille's
 voice actress, Georgia van Cuylenburg, explains several things. She was asked to
 emulate the Japanese performance, including "anime noises" (which clearly made
 her uncomfortable) while also maintaining her Australian accent. She ends the
-interview by requesting viewers to "give Vanille time, I hope she grows on you".
+interview by requesting viewers to "give Vanille time, I hope she grows on you."
 It seems to me that she was pretty over-directed.
 
 The game was also developed in extreme secrecy, and that certainly didn't help.
@@ -1083,7 +1083,7 @@ placed as narrative tools.
 Third, FFXIII uses a few too many made up fantasy words. There are already
 plenty of good words that could have filled the same roles easily enough. It's
 neat that Fal'Cie, l'Cie, and Cie'th all share some fantasy etymology, but
-"god", "champion", and "fallen" would have been easier to remember and more
+"god," "champion," and "fallen" would have been easier to remember and more
 descriptive. Some people like unique words like this in fiction, but I'm a fan
 of using the words we've already got. FFXIII also throws in acronyms and
 multiple military organizations that look similar enough to be confused with
@@ -1443,12 +1443,12 @@ grand purpose, ||to find and open the divine gate.|| If something was not born
 with an explicit purpose, it can be given one at any time. Even without gods and
 magic, society places expectations on its members to fulfil certain roles.
 
-What this story shows time and time again, is that such externally-assigned
+What this story shows time and time again, is that such externally assigned
 purposes are not ultimately what you should follow. They are dangerous,
 exploitative by nature, and don't bring true happiness to those who succeed. In
 fact, those whose purpose runs its course, success or failure, are set aside as
 tools. We see l'Cie either turned to crystal or zombie-like Cie'th upon
-completing the task laid out for them. ||Cocoon was born specifically to die||
+completing the task laid out for them. ||Cocoon was born specifically to die.||
 We even see Fal'Cie die when their purpose is complete.
 
 Instead, this game shows how one can use the situation and gifts given to them
@@ -1477,7 +1477,7 @@ On the other side, Fal'Cie are created by other Fal'Cie and fit into a strict
 hierarchy of service and purpose. This is the toxic definition of family shown
 by the antagonists. Every evil deed is performed to seek the approval of one's
 progenitors. Barthandelus, arguably the main antagonist, is even doing so ||out
-of the desire to see his absentee mother again after centuries of missing her||.
+of the desire to see his absentee mother again after centuries of missing her.||
 
 The literal final boss of the game plays with this theme too. ||Orphan, as a
 concept, can not exist without parents who lived long enough to birth it and
@@ -1487,7 +1487,7 @@ dead.||
 
 #### People are People, No Matter Where They're From
 
-The people of Cocoon believe that "Pulse is hell". That phrase is uttered
+The people of Cocoon believe that "Pulse is hell." That phrase is uttered
 verbatim many times throughout the story by residents of Cocoon. Nobody can ever
 really elaborate on why. That belief has been strongly ingrained into the
 culture for so long that nobody questions the reasoning anymore. The government
