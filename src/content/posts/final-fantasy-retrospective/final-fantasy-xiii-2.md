@@ -819,257 +819,255 @@ In that spirit, I've unwritten the story section.
 
 >! ||All right fine, here's the rest||
 >
-
-Jokes aside, that's not entirely true. It's true for the entire _middle_ of the
-game, but the very beginning and very end actually do matter.
-
-The beginning: ||In the process of FFXIII's ending being unwritten, Lightning
-was brought to Valhalla to become Etro's Champion. Also, Chaos changed the rules
-of magic so that anyone with natural talent for it can use it, instead of being
-only a l'Cie thing. Though that second one feels more like a retcon for gameplay
-purposes, since the battle system still uses magic and the story no longer cares
-about Fal'Cie. Still, it technically is a lasting change on the world.||
-
-The end: ||Caius wins. Etro dies. Chaos floods the world, or something. It's not
-super clear. Serah dies. Lightning takes Etro's throne, crystallizing herself so
-that she can preserve Serah's memory for eternity. Oh, and Cocoon falls too,
-just to top it all off. To be continued!||
-
-The rest of the game, >90% of the content, is spent running through the timeline
-trying to ||stop Cocoon from falling, over and over. Whoever tied a bunch of
-knots in the timeline did so by inventing new ridiculous ways for Cocoon to fall
-every hundred years or so. It's all random, unexplained nonsense too. For
-example, there's a giant Flan dissolving the crystal pillar, weakening it! The
-original timeline didn't have it, and it's too big to simply kill. So the
-solution is to figure out why it got here. Turns out, in an entirely different
-part of the timeline, a dragon suddenly showed up and ate all the Flans in the
-world by opening up its mouth and vacuuming them up in one big bite. Its stomach
-is a portal to that specific time and place with the giant Flan. Don't ask how
-it lives like that, or why this magic doesn't follow the established rules of
-the world at all, or what the other implications are. That's just the solution,
-okay? Go kill it. The entire game is like that---a series of random, illogical,
-inconsistent schemes played for shock value.||
-
-||Yeah, the ending to FFXIII, which was so wonderful? Let's just repeat the
-stakes of that one over and over with no buildup or logic. Themes? Who needs
-those. Our studies have already shown that players got emotional when we almost
-dropped Cocoon. Clearly, that's all we need. There was certainly nothing else in
-that writing that contributed to the players emotions in any way. We just need
-to keep hitting that same "emotional stakes" button and it will keep working
-without us doing anything! Genius!||
-
-I mentioned earlier that the story literally unwrites itself, but it also kind
-of does it in spirit. It loves to throw out random twists for shock value, only
-to retcon them into nothingburgers later on. For example, ||Caius randomly shows
-up in one of the levels you visit, with ridiculous cartoon villain monologues
-about how "you can't find the real truth of this world, I'll kill you first." He
-also apparently turned everyone in this level into Cieth, the mindless zombies
-of FFXIII, which are created when a l'Cie fails to complete their Focus. What is
-he talking about? How does he have Fal'Cie powers? Why is he so crazy and **so**
-unbelievably evil all of a sudden? Up to this point, he's just been weirdly
-mysterious and has opposed the party with relatively honorable tactics even if
-his goals are different. Turns out, he was an illusion, a fake person created by
-a computer program. In a completely different timeline, we defeat that computer.
-All that stuff he was saying, all the powers he displayed? Made up by the
-computer.||
-
-After the third time the game pulled something like that, I stopped
-taking any twists or stakes seriously. I was right every time. Every single
-twist and every single threat were piles of dust waiting to be blown away by
-convenient wind later on in the story.
-
-That disconnected feeling is constantly present in this game's writing. It feels
-like a pulpy TV show that throws out random ideas every season and attempts to
-retcon everything back together later on. New twists need to be constantly
-invented and left unresolved so that a nice supply of loose threads are
-available for season finales to take advantage of. Who cares if a few get left
-unresolved permanently? They were never _intended_ to be resolved in the first
-place, only to shock the audience and make them wonder what a resolution **might
-look like**.
-
-### Characters
- 
-- Serah was more of a MacGuffin for FFXIII than a real character. All of her
-  characterization was delivered in flashbacks to benefit other characters'
-  arcs. In this game, she has three ~~personalities~~ stereotypes that feel
-  written by different people, which pop up at random times in a failed attempt
-  at making her seem complex. At any point in time she's either a ditzy airhead,
-  a scolding grade school teacher, or she matches Jack Garland's parody-level of
-  obsession in ~~KILLING CHAOS~~ finding Lightning.
-- Noel was invented as a marketing tool to keep the game from being too girly.
-  Square Enix apparently specifically didn't want this to be too much like
-  FFX-2. I see that as a major mistake, because FFX-2 kicks ass. So they added a
-  character with the personality of a fish trying way too hard to be manly.
-  Great.
-- Hope's character is essentially entirely rewritten. He's now just the
-  stereotypical nerd who supports the main cast. He randomly invents new
-  technology whenever the authors wrote themselves into a corner.
-- Alyssa basically shouldn't exist. ||She exists only for shock value that she
-  disappears in the "correct" timeline, but you only even learn this if you dig
-  deep.||
-- Caius is incredibly inconsistently written, flip-flopping between cartoonishly
-  evil villain seeking the end of the world and sympathetic villain who just has
-  a different worldview.
-- Yeul is this game's Serah. ||Which makes it a bit on-the-nose that their fates
-  end up intertwined.|| Yeul made such a non-impact on me that I actually had to
-  go look up her name while writing this.
-
-That's pretty rough. One of the reasons I love FFXIII so much is that the
-character writing worked really well for me. The characters' arcs wove together
-in interesting ways, and I really cared about every one of them. The character
-arcs of FFXIII-2 are shallow and simple, exist entirely isolated from each
-other, and contradict themselves. It feels like the writing work was split
-between multiple teams that each worked on different parts of the game
-simultaneously without much communication.
-
-What really gets to me about the main characters is that  
-**nobody on the dev team cared either.**
-
-Let's take a look at the game's official cover:
-
-![The PS3 cover for FFXIII-2](../../img/ffxiii-2-cover-ps3.jpg)
-
-It's Lightning! In her new outfit! As a smaller part of the image, on the right,
-you can see the game's logo. Who's that? Lightning again! Also Caius, the
-villain, so small on the cover he can barely be seen. The supposed main
-characters, Serah and Noel are nowhere to be seen.
-
-To be clear, I'm not complaining about this cover or the logo. They're both
-great aesthetically. It's just funny that Lightning appears in this game for
-about 5 minutes, but she's so prominently displayed. It's kind of fitting. Those
-5 minutes of screen time she gets are more important to the world than anything
-the main characters do during the entire game. This is really Lightning and
-Caius's story, but we go on a spinoff adventure that amounts to nothing from the
-perspective of unimportant characters instead.
-
-### Tone
-
-I mentioned above that the writing feels like that of a pulpy TV show. I think
-that was intentional, or at least they were aware of it while making the game.
-The tone constantly feels like a Saturday morning cartoon. Sections of the story
-are separated into "episodes" with a new paradox to be untangled every week.
-Every time you load a save, you're greeted with a "Previously on FFXIII-2..."
-supercut of recent cutscenes. You've even got a cute team mascot.
-
-It ended up impossible for this game to maintain any sense of stakes with this
-tone. Any time it tried to take itself more seriously for a moment, the tension
-was assassinated by an out of place joke or villain dialogue suddenly becoming
-cartoonish. Any time a mature theme (or anything resembling a theme at all,
-really) peeked out from behind cover, it got sniped by a bullet with "Kupo!"
-written on it. Any sticky situation the party found themselves in was dismantled
-with a sudden new invention or a new property of time magic we'd never heard of
-before (then the characters would turn to the camera and explain this new
-magical property as if they had understood it perfectly all along, of course).
-
-I don't hate that tone, by itself. The problem is that this game tries to have
-its cake and eat it too. It tries to make big swings at the Fabula Nova
-Crystallis setting. It tries to set up emotional stakes. It tries to be
-dramatic. Worst of all, ||it tried to pull off a depressing, tragic ending.||
-
-I'm puzzled when I compare this game to FFX-2, a game I love. It also went for a
-silly tone, and it also had some extremely good moments of emotional payoff.
-It's even got the magical girl transformations and (far more) girly tone. I
-think that the difference is that FFX-2 never undermined itself, and it also
-played with the existing themes and emotional stakes set up by FFX instead of
-trying to invent everything on its own.
-
-### World
-
-It seems weird to talk about the world of FFXIII-2, since I already talked about
-how much I loved it in FFXIII. However, this is really me expanding on the last
-point of the previous section: FFXIII-2 doesn't build on top of FFXIII, it
-throws as much of it away as it can in order to tell its own story.
-
-Fal'Cie? No longer relevant. They show up as a tiny part of a story arc here or
-there, but in the same way "magic exists in the world" does, not as a critical
-part of the themes and storytelling of the game. Everyone can just do magic now.
-Humans can just create super-factories in the wilderness with no Fal'Cie
-resources now, despite having relied on Fal'Cie for all manufacturing before.
-
-Political factions and intrigue? Nah, everybody just gets along now. There's one
-central government dedicated to science. They've had the same leader for 600
-years. Not because he's immortal, but because he goes into stasis for hundreds
-of years at a time and nobody has any problem with this. Every new generation
-simply waits on the leader with plot armor to come back.
-
-Oh yeah, the Goddess can bestow parts of her body onto mortals? Some body parts
-are good, and some are bad, but she always means well. She's trying her best.
-Unfortunately, with all of her omnipotence, omnipresence, and omniscience, she's
-very eepy right now.
-
-There's time travel now. Always existed apparently. Just somehow the timeline is
-only malleable or something after the events of the first game. Convenient.
-
-Look, this story could have taken place in any fantasy world. It could have
-taken place in its own fantasy world. All it really needs is an eepy goddess and
-magic. They didn't _have_ to use FFXIII to tell this story---it doesn't use any
-of the unique and interesting parts of the setting, not does it play with any of
-the original themes at all---but they did. What's funny is that FFXIII actually
-_didn't even fit the requirements_ because magic is only for l'Cie, so they had
-to change FFXIII's world to fit this new story. Hell, even the **characters**
-that were brought back from FFXIII had to be changed to fit this new story.
-
-It all started making more sense when I learned that Jun Eishima joined the
-writing team for this story. She wrote the FFXIII novellas. I didn't much like
-those books. They _also_ throw away FFXIII lore in order to inject random ideas.
-
-In one of those stories, Snow goes off on an adventure and befriends a Cactaur.
-It later turns out that the Cactaur was a Fal'Cie all along, despite not at all
-looking like a Fal'Cie. It then does a whole bunch of magic that has nothing to
-do with Fal'Cie magic, and decides to stick with Snow as a companion despite
-_the whole Fal'Cie thing_ being sticking to a specific task they were ordered to
-do. It's like she just wanted to tell a story about having a Cactaur buddy, and
-took a hammer to it until it fit the FFXIII world. It's bad fanfiction. Guess
-what idea was abandoned in FFXIII-2? Yeah. Snow appears, but not his Cactaur
-buddy. I guess she lost interest in that random idea.
-
-I'm really disappointed that this was how Fabula Nova Crystallis was treated. It
-was one of my favorite Final Fantasy settings by far. It's rough to see it paved
-over by random whim. I'm hoping Lightning Returns will bring back some of the
-good stuff.
-
-## The Illusion of Agency
-
-This doesn't really fit under Gameplay or Story, so it has its own section.
-
-This game tries _really_ hard to make the player feel like they have agency. I
-think this was a response to the "linearity" of FFXIII. However, I don't think
-it accomplishes it at all.
-
-The closest it gets are those quicktime events that let you choose which attack
-you want to use. There is an exact linear order you are expected to visit every
-level in, and choosing incorrectly leads to both narrative and gameplay issues.
-No dialogue choices change anything. There is precisely one solution to every
-scenario. Well, sort of...
-
-After you've beaten the game, you can go back and get all sorts of "paradox
-endings" that are non-canon. These are usually little "what if?" scenarios that
-break the story and would prevent you from progressing if they occurred. They
-aren't all necessary "bad" endings, but they all would block you from reaching
-the true ending for one reason or another. For example, due to an important
-character dying. If the game was really trying to give the player freedom and
-agency, why not unlock these endings right away? Just show them as dead ends and
-put the player back before they did those things. I would have found that a lot
-more engaging, and stumbling into them and then trying to figure out the right
-solution would have been fun.
-
-But that's not the worst it gets. The worst moment in the entire game is right
-at the end. ||At the end of the final boss, you are given a quicktime event
-finisher sequence like normal. However, at the end of the sequence, in the same
-format used to ask you what attack you'd like to use, it presents the options
-"Mercy" and "Kill." If you hit Mercy, Noel stops his blade before it stabs Caius
-in the chest. Caius then leans forward and kills himself on Noel's sword
-anyways. Wonderful, the choice meant nothing. Might as well just go for the kill
-right away then, right? If you choose kill, Noel takes the mercy option anyways,
-leading to Caius killing himself on your sword again. It's not just a pointless
-option, it's a nested, double pointless option! I wish I was joking. By the way,
-Caius being killed by Noel is how he wins, and apparently whatever magic
-involved in that somehow doesn't care that Caius actually killed himself. It
-only matters that Noel was holding the sword. Makes me wonder why Caius never
-did something like this in all the years he helped raise Noel. Apparently,
-because Noel wouldn't have been "strong enough to reject the heart of Chaos" or
-some nonsense like that. Oh yeah, then Serah dies to a magic heart attack. Man,
-this ending is a mess.||
+> 
+> Jokes aside, that's not entirely true. It's true for the entire _middle_ of the
+> game, but the very beginning and very end actually do matter.
+> 
+> The beginning: ||In the process of FFXIII's ending being unwritten, Lightning
+> was brought to Valhalla to become Etro's Champion. Also, Chaos changed the rules
+> of magic so that anyone with natural talent for it can use it, instead of being
+> only a l'Cie thing. Though that second one feels more like a retcon for gameplay
+> purposes, since the battle system still uses magic and the story no longer cares
+> about Fal'Cie. Still, it technically is a lasting change on the world.||
+> 
+> The end: ||Caius wins. Etro dies. Chaos floods the world, or something. It's not
+> super clear. Serah dies. Lightning takes Etro's throne, crystallizing herself so
+> that she can preserve Serah's memory for eternity. Oh, and Cocoon falls too,
+> just to top it all off. To be continued!||
+> 
+> The rest of the game, >90% of the content, is spent running through the timeline
+> trying to ||stop Cocoon from falling, over and over. Whoever tied a bunch of
+> knots in the timeline did so by inventing new ridiculous ways for Cocoon to fall
+> every hundred years or so. It's all random, unexplained nonsense too. For
+> example, there's a giant Flan dissolving the crystal pillar, weakening it! The
+> original timeline didn't have it, and it's too big to simply kill. So the
+> solution is to figure out why it got here. Turns out, in an entirely different
+> part of the timeline, a dragon suddenly showed up and ate all the Flans in the
+> world by opening up its mouth and vacuuming them up in one big bite. Its stomach
+> is a portal to that specific time and place with the giant Flan. Don't ask how
+> it lives like that, or why this magic doesn't follow the established rules of
+> the world at all, or what the other implications are. That's just the solution,
+> okay? Go kill it. The entire game is like that---a series of random, illogical,
+> inconsistent schemes played for shock value.||
+> 
+> ||Yeah, the ending to FFXIII, which was so wonderful? Let's just repeat the
+> stakes of that one over and over with no buildup or logic. Themes? Who needs
+> those. Our studies have already shown that players got emotional when we almost
+> dropped Cocoon. Clearly, that's all we need. There was certainly nothing else in
+> that writing that contributed to the players emotions in any way. We just need
+> to keep hitting that same "emotional stakes" button and it will keep working
+> without us doing anything! Genius!||
+> 
+> I mentioned earlier that the story literally unwrites itself, but it also kind
+> of does it in spirit. It loves to throw out random twists for shock value, only
+> to retcon them into nothingburgers later on. For example, ||Caius randomly shows
+> up in one of the levels you visit, with ridiculous cartoon villain monologues
+> about how "you can't find the real truth of this world, I'll kill you first." He
+> also apparently turned everyone in this level into Cieth, the mindless zombies
+> of FFXIII, which are created when a l'Cie fails to complete their Focus. What is
+> he talking about? How does he have Fal'Cie powers? Why is he so crazy and **so**
+> unbelievably evil all of a sudden? Up to this point, he's just been weirdly
+> mysterious and has opposed the party with relatively honorable tactics even if
+> his goals are different. Turns out, he was an illusion, a fake person created by
+> a computer program. In a completely different timeline, we defeat that computer.
+> All that stuff he was saying, all the powers he displayed? Made up by the
+> computer.||
+> 
+> After the third time the game pulled something like that, I stopped
+> taking any twists or stakes seriously. I was right every time. Every single
+> twist and every single threat were piles of dust waiting to be blown away by
+> convenient wind later on in the story.
+> 
+> That disconnected feeling is constantly present in this game's writing. It feels
+> like a pulpy TV show that throws out random ideas every season and attempts to
+> retcon everything back together later on. New twists need to be constantly
+> invented and left unresolved so that a nice supply of loose threads are
+> available for season finales to take advantage of. Who cares if a few get left
+> unresolved permanently? They were never _intended_ to be resolved in the first
+> place, only to shock the audience and make them wonder what a resolution **might
+> look like**.
+> 
+> ### Characters
+>  
+> - Serah was more of a MacGuffin for FFXIII than a real character. All of her
+>   characterization was delivered in flashbacks to benefit other characters'
+>   arcs. In this game, she has three ~~personalities~~ stereotypes that feel
+>   written by different people, which pop up at random times in a failed attempt
+>   at making her seem complex. At any point in time she's either a ditzy airhead,
+>   a scolding grade school teacher, or she matches Jack Garland's parody-level of
+>   obsession in ~~KILLING CHAOS~~ finding Lightning.
+> - Noel was invented as a marketing tool to keep the game from being too girly.
+>   Square Enix apparently specifically didn't want this to be too much like
+>   FFX-2. I see that as a major mistake, because FFX-2 kicks ass. So they added a
+>   character with the personality of a fish trying way too hard to be manly.
+>   Great.
+> - Hope's character is essentially entirely rewritten. He's now just the
+>   stereotypical nerd who supports the main cast. He randomly invents new
+>   technology whenever the authors wrote themselves into a corner.
+> - Alyssa basically shouldn't exist. ||She exists only for shock value that she
+>   disappears in the "correct" timeline, but you only even learn this if you dig
+>   deep.||
+> - Caius is incredibly inconsistently written, flip-flopping between cartoonishly
+>   evil villain seeking the end of the world and sympathetic villain who just has
+>   a different worldview.
+> - Yeul is this game's Serah. ||Which makes it a bit on-the-nose that their fates
+>   end up intertwined.|| Yeul made such a non-impact on me that I actually had to
+>   go look up her name while writing this.
+> 
+> That's pretty rough. One of the reasons I love FFXIII so much is that the
+> character writing worked really well for me. The characters' arcs wove together
+> in interesting ways, and I really cared about every one of them. The character
+> arcs of FFXIII-2 are shallow and simple, exist entirely isolated from each
+> other, and contradict themselves. It feels like the writing work was split
+> between multiple teams that each worked on different parts of the game
+> simultaneously without much communication.
+> 
+> What really gets to me about the main characters is that  
+> **nobody on the dev team cared either.**
+> 
+> Let's take a look at the game's official cover:
+> 
+> ![The PS3 cover for FFXIII-2](../../img/ffxiii-2-cover-ps3.jpg)
+> 
+> It's Lightning! In her new outfit! As a smaller part of the image, on the right,
+> you can see the game's logo. Who's that? Lightning again! Also Caius, the
+> villain, so small on the cover he can barely be seen. The supposed main
+> characters, Serah and Noel are nowhere to be seen.
+> 
+> To be clear, I'm not complaining about this cover or the logo. They're both
+> great aesthetically. It's just funny that Lightning appears in this game for
+> about 5 minutes, but she's so prominently displayed. It's kind of fitting. Those
+> 5 minutes of screen time she gets are more important to the world than anything
+> the main characters do during the entire game. This is really Lightning and
+> Caius's story, but we go on a spinoff adventure that amounts to nothing from the
+> perspective of unimportant characters instead.
+> 
+> ### Tone
+> 
+> I mentioned above that the writing feels like that of a pulpy TV show. I think
+> that was intentional, or at least they were aware of it while making the game.
+> The tone constantly feels like a Saturday morning cartoon. Sections of the story
+> are separated into "episodes" with a new paradox to be untangled every week.
+> Every time you load a save, you're greeted with a "Previously on FFXIII-2..."
+> supercut of recent cutscenes. You've even got a cute team mascot.
+> 
+> It ended up impossible for this game to maintain any sense of stakes with this
+> tone. Any time it tried to take itself more seriously for a moment, the tension
+> was assassinated by an out of place joke or villain dialogue suddenly becoming
+> cartoonish. Any time a mature theme (or anything resembling a theme at all,
+> really) peeked out from behind cover, it got sniped by a bullet with "Kupo!"
+> written on it. Any sticky situation the party found themselves in was dismantled
+> with a sudden new invention or a new property of time magic we'd never heard of
+> before (then the characters would turn to the camera and explain this new
+> magical property as if they had understood it perfectly all along, of course).
+> 
+> I don't hate that tone, by itself. The problem is that this game tries to have
+> its cake and eat it too. It tries to make big swings at the Fabula Nova
+> Crystallis setting. It tries to set up emotional stakes. It tries to be
+> dramatic. Worst of all, ||it tried to pull off a depressing, tragic ending.||
+> 
+> I'm puzzled when I compare this game to FFX-2, a game I love. It also went for a
+> silly tone, and it also had some extremely good moments of emotional payoff.
+> It's even got the magical girl transformations and (far more) girly tone. I
+> think that the difference is that FFX-2 never undermined itself, and it also
+> played with the existing themes and emotional stakes set up by FFX instead of
+> trying to invent everything on its own.
+> 
+> ### World
+> 
+> It seems weird to talk about the world of FFXIII-2, since I already talked about
+> how much I loved it in FFXIII. However, this is really me expanding on the last
+> point of the previous section: FFXIII-2 doesn't build on top of FFXIII, it
+> throws as much of it away as it can in order to tell its own story.
+> 
+> Fal'Cie? No longer relevant. They show up as a tiny part of a story arc here or
+> there, but in the same way "magic exists in the world" does, not as a critical
+> part of the themes and storytelling of the game. Everyone can just do magic now.
+> Humans can just create super-factories in the wilderness with no Fal'Cie
+> resources now, despite having relied on Fal'Cie for all manufacturing before.
+> 
+> Political factions and intrigue? Nah, everybody just gets along now. There's one
+> central government dedicated to science. They've had the same leader for 600
+> years. Not because he's immortal, but because he goes into stasis for hundreds
+> of years at a time and nobody has any problem with this. Every new generation
+> simply waits on the leader with plot armor to come back.
+> 
+> Oh yeah, the Goddess can bestow parts of her body onto mortals? Some body parts
+> are good, and some are bad, but she always means well. She's trying her best.
+> Unfortunately, with all of her omnipotence, omnipresence, and omniscience, she's
+> very eepy right now.
+> 
+> There's time travel now. Always existed apparently. Just somehow the timeline is
+> only malleable or something after the events of the first game. Convenient.
+> 
+> Look, this story could have taken place in any fantasy world. It could have
+> taken place in its own fantasy world. All it really needs is an eepy goddess and
+> magic. They didn't _have_ to use FFXIII to tell this story---it doesn't use any
+> of the unique and interesting parts of the setting, not does it play with any of
+> the original themes at all---but they did. What's funny is that FFXIII actually
+> _didn't even fit the requirements_ because magic is only for l'Cie, so they had
+> to change FFXIII's world to fit this new story. Hell, even the **characters**
+> that were brought back from FFXIII had to be changed to fit this new story.
+> 
+> It all started making more sense when I learned that Jun Eishima joined the
+> writing team for this story. She wrote the FFXIII novellas. I didn't much like
+> those books. They _also_ throw away FFXIII lore in order to inject random ideas.
+> 
+> In one of those stories, Snow goes off on an adventure and befriends a Cactaur.
+> It later turns out that the Cactaur was a Fal'Cie all along, despite not at all
+> looking like a Fal'Cie. It then does a whole bunch of magic that has nothing to
+> do with Fal'Cie magic, and decides to stick with Snow as a companion despite
+> _the whole Fal'Cie thing_ being sticking to a specific task they were ordered to
+> do. It's like she just wanted to tell a story about having a Cactaur buddy, and
+> took a hammer to it until it fit the FFXIII world. It's bad fanfiction. Guess
+> what idea was abandoned in FFXIII-2? Yeah. Snow appears, but not his Cactaur
+> buddy. I guess she lost interest in that random idea.
+> 
+> I'm really disappointed that this was how Fabula Nova Crystallis was treated. It
+> was one of my favorite Final Fantasy settings by far. It's rough to see it paved
+> over by random whim. I'm hoping Lightning Returns will bring back some of the
+> good stuff.
+> 
+> ## The Illusion of Agency
+> 
+> This game tries _really_ hard to make the player feel like they have agency. I
+> think this was a response to the "linearity" of FFXIII. However, I don't think
+> it accomplishes it at all.
+> 
+> The closest it gets are those quicktime events that let you choose which attack
+> you want to use. There is an exact linear order you are expected to visit every
+> level in, and choosing incorrectly leads to both narrative and gameplay issues.
+> No dialogue choices change anything. There is precisely one solution to every
+> scenario. Well, sort of...
+> 
+> After you've beaten the game, you can go back and get all sorts of "paradox
+> endings" that are non-canon. These are usually little "what if?" scenarios that
+> break the story and would prevent you from progressing if they occurred. They
+> aren't all necessary "bad" endings, but they all would block you from reaching
+> the true ending for one reason or another. For example, due to an important
+> character dying. If the game was really trying to give the player freedom and
+> agency, why not unlock these endings right away? Just show them as dead ends and
+> put the player back before they did those things. I would have found that a lot
+> more engaging, and stumbling into them and then trying to figure out the right
+> solution would have been fun.
+> 
+> But that's not the worst it gets. The worst moment in the entire game is right
+> at the end. ||At the end of the final boss, you are given a quicktime event
+> finisher sequence like normal. However, at the end of the sequence, in the same
+> format used to ask you what attack you'd like to use, it presents the options
+> "Mercy" and "Kill." If you hit Mercy, Noel stops his blade before it stabs Caius
+> in the chest. Caius then leans forward and kills himself on Noel's sword
+> anyways. Wonderful, the choice meant nothing. Might as well just go for the kill
+> right away then, right? If you choose kill, Noel takes the mercy option anyways,
+> leading to Caius killing himself on your sword again. It's not just a pointless
+> option, it's a nested, double pointless option! I wish I was joking. By the way,
+> Caius being killed by Noel is how he wins, and apparently whatever magic
+> involved in that somehow doesn't care that Caius actually killed himself. It
+> only matters that Noel was holding the sword. Makes me wonder why Caius never
+> did something like this in all the years he helped raise Noel. Apparently,
+> because Noel wouldn't have been "strong enough to reject the heart of Chaos" or
+> some nonsense like that. Oh yeah, then Serah dies to a magic heart attack. Man,
+> this ending is a mess.||
 
 # Final Thoughts
 
