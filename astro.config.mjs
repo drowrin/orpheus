@@ -5,6 +5,7 @@ import rehypeFigure from '@microflash/rehype-figure'
 import ViteYaml from '@modyfi/vite-plugin-yaml'
 import opengraphImages from 'astro-opengraph-images'
 import { defineConfig, fontProviders } from 'astro/config'
+import rehypeShiftHeading from 'rehype-shift-heading'
 import remarkAttributes from 'remark-attributes'
 import { ogRender } from './src/ogRender'
 import rehypeBrief from './src/plugins/brief'
@@ -50,6 +51,7 @@ export default defineConfig({
       rehypeRemoveNewlines,
       rehypeEmdash,
       rehypeDetailsBlock,
+      [rehypeShiftHeading, { shift: 1 }],
     ],
   },
 
