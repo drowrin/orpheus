@@ -18,7 +18,7 @@
     "@modyfi/vite-plugin-yaml": "^1.1.1",
     "astro": "^5.13.7",
     "astro-opengraph-images": "^1.13.1",
-    "astro-seo": "^0.8.4",
+    "astro-seo": "^1.1.0",
     "mdast-util-to-string": "^4.0.0",
     "modern-normalize": "^3.0.1",
     "pagefind": "^1.4.0",
