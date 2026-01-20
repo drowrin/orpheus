@@ -1,100 +1,54 @@
 import type { MarkdownHeading } from 'astro'
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 import type { CollectionEntry } from 'astro:content'
-import type { ReadTimeResults } from 'reading-time'
-import { execSync } from 'node:child_process'
-import fs from 'node:fs'
-import { getCollection, getEntry, render } from 'astro:content'
-import getReadingTime from 'reading-time'
-import slugify from 'slugify'
+import { getCollection, getEntry, render, z } from 'astro:content'
 
-export interface Post {
+const frontmatterSchema = z.object({
+  title: z.string(),
+  tagline: z.string().optional(),
+  series: z
+    .object({
+      name: z.string(),
+      slug: z.string(),
+    })
+    .optional(),
+  tags: z.array(z.string()).default([]),
+  published: z.string(),
+  updated: z.string().optional(),
+  revisions: z.string().optional(),
+  readingTime: z.object({
+    text: z.string(),
+    time: z.number(),
+    words: z.number(),
+    minutes: z.number(),
+  }),
+  brief: z
+    .object({
+      html: z.string(),
+      text: z.string(),
+    })
+    .optional(),
+  tocDepth: z.number().default(3),
+})
+
+export type PostMetadata = z.infer<typeof frontmatterSchema>
+
+export type Post = PostMetadata & {
   id: string
-  title: string
-  tagline?: string
-  series?: {
-    name: string
-    slug: string
-  }
-  tags: string[]
-  published: string
-  updated?: string
-  revisions?: string
-  readingTime: ReadTimeResults
-  brief?: string
-  description: string
   Content: AstroComponentFactory
   headings: MarkdownHeading[]
-  tocDepth: number
-}
-
-function gitHistory(p: CollectionEntry<'posts'>) {
-  let published
-  try {
-    published = p.data.published
-      ?? execSync(
-        `git log --follow --diff-filter=A --format="%as" -1 -- "${p.filePath}"`,
-      ).toString().trim()
-  }
-  catch {
-    published = new Date().toISOString().split('T')[0]
-  }
-
-  const content = fs.readFileSync(p.filePath!, 'utf8')
-
-  const fmLines = 2 + content.split('---')[1].split('\n').length
-  const totalLines = content.split('\n').length
-
-  let revisions
-  let updated
-  try {
-    revisions = execSync(
-      `git log --diff-filter=M --format="%as: %s" --no-patch "-L${fmLines},${totalLines}:${p.filePath}"`,
-    ).toString().trim()
-    updated = revisions.split('\n')[0].split(':')[0]
-  }
-  catch {}
-
-  return { published, revisions, updated }
-}
-
-function getBrief(p: CollectionEntry<'posts'>) {
-  if (p.data.brief !== undefined) {
-    return `<p>${p.data.brief}</p>`
-  }
-  return p.rendered!.html.substring(
-    p.rendered!.html.indexOf('<p'),
-    p.rendered!.html.indexOf('</p>'),
-  )
-}
-
-function getDescription(brief: string) {
-  return brief.replace(/<[^>]*>/g, '').replace(/\r\n|\n|\r/g, ' ')
 }
 
 async function transformPost(p: CollectionEntry<'posts'>) {
-  const { Content, headings } = await render(p)
+  const { Content, headings, remarkPluginFrontmatter } = await render(p)
 
-  const brief = getBrief(p)
+  const fm = frontmatterSchema.parse(remarkPluginFrontmatter)
 
   return {
-    ...gitHistory(p),
-    title: p.data.title,
-    tagline: p.data.tagline,
-    tags: p.data.tags,
-    series: p.data.series === undefined
-      ? undefined
-      : {
-          name: p.data.series,
-          slug: slugify(p.data.series, { lower: true }),
-        },
+    ...fm,
     id: p.id,
     Content,
     headings,
-    tocDepth: p.data.tocDepth ?? 3,
-    readingTime: getReadingTime(p.body!),
-    brief,
-    description: getDescription(brief),
   } satisfies Post
 }
 

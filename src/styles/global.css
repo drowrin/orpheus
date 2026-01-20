@@ -74,6 +74,13 @@
   word-break: break-word;
 }
 
+text {
+  font-size: clamp(1rem, 0.875rem + 0.5vw, 1.5rem);
+  font-family: var(--font-hyperlegible) !important;
+  color: var(--color-text) !important;
+  word-break: break-word;
+}
+
 code,
 samp,
 pre {
@@ -271,6 +278,15 @@ prose {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+  }
+
+  span:has(svg) {
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  svg {
+    max-width: 100%;
   }
 
   img {

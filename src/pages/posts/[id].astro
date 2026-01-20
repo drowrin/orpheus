@@ -14,9 +14,9 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params
 const { post } = Astro.props
-const { title, description } = post
+const { title, brief } = post
 ---
 
-<Layout title={title} description={description} largeImage>
+<Layout title={title} description={brief?.text} largeImage>
   <Post postId={id} />
 </Layout>
