@@ -17,7 +17,7 @@ if (post === undefined) {
 const { title, tagline, series, tags, published, readingTime, Content, brief, headings, tocDepth } = post
 ---
 
-<article class="post" transition:name={`post.${postId}`} transition:animate="initial" data-pagefind-body>
+<post-card transition:name={`post.${postId}`} transition:animate="initial" data-pagefind-body>
   <hgroup>
     {
       card ? (
@@ -70,10 +70,10 @@ const { title, tagline, series, tags, published, readingTime, Content, brief, he
       </>
     )
   }
-</article>
+</post-card>
 
 <style>
-  article.post {
+  post-card {
     hgroup {
       margin-inline: 1rem;
       margin-block: 0;

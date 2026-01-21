@@ -146,6 +146,15 @@ small {
   color: var(--color-muted);
 }
 
+post-card {
+  margin: 0;
+  display: block;
+  background-color: var(--color-base);
+  padding-block-start: 0.7rem;
+  padding-block-end: 0.05rem;
+  margin-block-end: 1rem;
+}
+
 prose-box {
   margin: 0;
   overflow: hidden;
@@ -325,12 +334,4 @@ prose-box {
   .spoiler:not(.revealed) > * {
     color: transparent;
   }
-}
-
-article {
-  margin: 0;
-  background-color: var(--color-base);
-  padding-block-start: 0.7rem;
-  padding-block-end: 0.05rem;
-  margin-block-end: 1rem;
 }

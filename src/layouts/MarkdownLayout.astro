@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props
 ---
 
 <Layout {...frontmatter}>
-  <article>
+  <post-card>
     <hgroup>
       <h1>{frontmatter.title}</h1>
       {frontmatter.tagline ? <p>{frontmatter.tagline}</p> : undefined}
@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props
     <prose-box>
       <slot />
     </prose-box>
-  </article>
+  </post-card>
 </Layout>
 
 <style>
