@@ -146,8 +146,9 @@ small {
   color: var(--color-muted);
 }
 
-prose {
+prose-box {
   margin: 0;
+  overflow: hidden;
 
   > * {
     margin-inline: 1rem;

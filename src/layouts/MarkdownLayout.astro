@@ -14,9 +14,9 @@ const { frontmatter } = Astro.props
       <h1>{frontmatter.title}</h1>
       {frontmatter.tagline ? <p>{frontmatter.tagline}</p> : undefined}
     </hgroup>
-    <prose>
+    <prose-box>
       <slot />
-    </prose>
+    </prose-box>
   </article>
 </Layout>
 

@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+import svelte from '@astrojs/svelte'
 import rehypeFigure from '@microflash/rehype-figure'
 import ViteYaml from '@modyfi/vite-plugin-yaml'
 import opengraphImages from 'astro-opengraph-images'
@@ -95,5 +96,5 @@ export default defineConfig({
       ],
     },
     render: ogRender,
-  }), mdx()],
+  }), mdx(), svelte()],
 })

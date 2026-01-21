@@ -60,13 +60,13 @@ const { title, tagline, series, tags, published, readingTime, Content, brief, he
   <hr />
   {
     card ? (
-      <prose set:html={brief?.html} />
+      <prose-box set:html={brief?.html} />
     ) : (
       <>
         <TOC headings={headings} tocDepth={tocDepth} />
-        <prose>
+        <prose-box>
           <Content />
-        </prose>
+        </prose-box>
       </>
     )
   }
