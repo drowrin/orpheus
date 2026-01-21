@@ -8,7 +8,7 @@ export interface Props {
 
 const { headings, tocDepth } = Astro.props
 
-const displayHeadings = headings.filter((h) => h.depth <= tocDepth)
+const displayHeadings = headings.filter((h) => h.depth - 1 <= tocDepth)
 
 type TocEntry = {
   slug: string
