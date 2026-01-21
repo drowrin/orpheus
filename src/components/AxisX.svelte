@@ -5,12 +5,12 @@
   Although this is marked as a percent-range component, you can also use it with a normal scale with no configuration needed. By default, if you have `percentRange={true}` it will use percentages, otherwise it will use pixels. This makes this component compatible with server-side and client-side rendered charts. Set the `units` prop to either `'%'` or `'px'` to override the default behavior.
  -->
 <script>
-  import { getContext } from 'svelte';
+  import { getContext } from 'svelte'
 
-  const { xScale, percentRange } = getContext('LayerCake');
+  const { xScale, percentRange } = getContext('LayerCake')
 
   /**
-   * @typedef {Object} Props
+   * @typedef {object} Props
    * @property {boolean} [tickMarks=false] - Show a vertical mark for each tick.
    * @property {boolean} [gridlines=true] - Show gridlines extending into the chart area.
    * @property {number} [tickMarkLength=6] - The length of the tick mark.
@@ -25,7 +25,7 @@
    */
 
   /** @type {Props} */
-  let {
+  const {
     tickMarks = false,
     gridlines = true,
     tickMarkLength = 6,
@@ -36,55 +36,55 @@
     tickGutter = 0,
     dx = 0,
     dy = 0,
-    units = $percentRange === true ? '%' : 'px'
-  } = $props();
+    units = $percentRange === true ? '%' : 'px',
+  } = $props()
 
-  let tickLen = $derived(tickMarks === true ? (tickMarkLength ?? 6) : 0);
+  const tickLen = $derived(tickMarks === true ? (tickMarkLength ?? 6) : 0)
 
-  let isBandwidth = $derived(typeof $xScale.bandwidth === 'function');
+  const isBandwidth = $derived(typeof $xScale.bandwidth === 'function')
 
   /** @type {Array<any>} */
-  let tickVals = $derived(
+  const tickVals = $derived(
     Array.isArray(ticks)
       ? ticks
       : isBandwidth
-        ? $xScale.domain()
-        : typeof ticks === 'function'
-          ? ticks($xScale.ticks())
-          : $xScale.ticks(ticks)
-  );
+      ? $xScale.domain()
+      : typeof ticks === 'function'
+      ? ticks($xScale.ticks())
+      : $xScale.ticks(ticks),
+  )
 
-  let halfBand = $derived(isBandwidth ? $xScale.bandwidth() / 2 : 0);
+  const halfBand = $derived(isBandwidth ? $xScale.bandwidth() / 2 : 0)
 </script>
 
-<div class="axis x-axis" class:snapLabels>
+<div class='axis x-axis' class:snapLabels>
   {#each tickVals as tick, i (tick)}
     {@const tickValUnits = $xScale(tick)}
 
     {#if baseline === true}
-      <div class="baseline" style="top:100%; width:100%;"></div>
+      <div class='baseline' style='top:100%; width:100%;'></div>
     {/if}
 
     {#if gridlines === true}
-      <div class="gridline" style:left="{tickValUnits}{units}" style="top:0; bottom:0;"></div>
+      <div class='gridline' style:left='{tickValUnits}{units}' style='top:0; bottom:0;'></div>
     {/if}
     {#if tickMarks === true}
       <div
-        class="tick-mark"
-        style:left="{tickValUnits + halfBand}{units}"
-        style:height="{tickLen}px"
-        style:bottom="{-tickLen - tickGutter}px"
+        class='tick-mark'
+        style:left='{tickValUnits + halfBand}{units}'
+        style:height='{tickLen}px'
+        style:bottom='{-tickLen - tickGutter}px'
       ></div>
     {/if}
     <div
-      class="tick tick-{i}"
-      style:left="{tickValUnits + halfBand}{units}"
-      style="top:calc(100% + {tickGutter}px);"
+      class='tick tick-{i}'
+      style:left='{tickValUnits + halfBand}{units}'
+      style='top:calc(100% + {tickGutter}px);'
     >
       <div
-        class="text"
-        style:top="{tickLen}px"
-        style:transform="translate(calc(-50% + {dx}px), {dy}px)"
+        class='text'
+        style:top='{tickLen}px'
+        style:transform='translate(calc(-50% + {dx}px), {dy}px)'
       >
         {format(tick)}
       </div>

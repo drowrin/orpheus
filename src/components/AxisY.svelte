@@ -5,12 +5,12 @@
   Although this is marked as a percent-range component, you can also use it with a normal scale with no configuration needed. By default, if you have `percentRange={true}` it will use percentages, otherwise it will use pixels. This makes this component compatible with server-side and client-side rendered charts. Set the `units` prop to either `'%'` or `'px'` to override the default behavior.
  -->
 <script>
-  import { getContext } from 'svelte';
+  import { getContext } from 'svelte'
 
-  const { xRange, yScale, percentRange } = getContext('LayerCake');
+  const { xRange, yScale, percentRange } = getContext('LayerCake')
 
   /**
-   * @typedef {Object} Props
+   * @typedef {object} Props
    * @property {boolean} [tickMarks=false] - Show marks next to the tick label.
    * @property {string} [labelPosition='even'] - Whether the label sits even with its value ('even') or sits on top ('above') the tick mark. Default is 'even'.
    * @property {boolean} [snapBaselineLabel=false] - When labelPosition='even', adjust the lowest label so that it sits above the tick mark.
@@ -26,7 +26,7 @@
    */
 
   /** @type {Props} */
-  let {
+  const {
     tickMarks = false,
     labelPosition = 'even',
     snapBaselineLabel = false,
@@ -38,68 +38,70 @@
     dx = 0,
     dy = -3,
     charPixelWidth = 7.25,
-    units = $percentRange === true ? '%' : 'px'
-  } = $props();
+    units = $percentRange === true ? '%' : 'px',
+  } = $props()
 
-  /** @param {number} sum
-   *  @param {string} val */
+  /**
+   * @param {number} sum
+     @param {string} val */
   function calcStringLength(sum, val) {
-    if (val === ',' || val === '.') return sum + charPixelWidth * 0.5;
-    return sum + charPixelWidth;
+    if (val === ',' || val === '.')
+      return sum + charPixelWidth * 0.5
+    return sum + charPixelWidth
   }
 
-  let isBandwidth = $derived(typeof $yScale.bandwidth === 'function');
+  const isBandwidth = $derived(typeof $yScale.bandwidth === 'function')
   /** @type {Array<any>} */
-  let tickVals = $derived(
+  const tickVals = $derived(
     Array.isArray(ticks)
       ? ticks
       : isBandwidth
-        ? $yScale.domain()
-        : typeof ticks === 'function'
-          ? ticks($yScale.ticks())
-          : $yScale.ticks(ticks)
-  );
-  let widestTickLen = $derived(
+      ? $yScale.domain()
+      : typeof ticks === 'function'
+      ? ticks($yScale.ticks())
+      : $yScale.ticks(ticks),
+  )
+  const widestTickLen = $derived(
     Math.max(
       10,
-      Math.max(...tickVals.map(d => format(d).toString().split('').reduce(calcStringLength, 0)))
-    )
-  );
-  let tickLen = $derived(
+      Math.max(...tickVals.map(d => format(d).toString().split('').reduce(calcStringLength, 0))),
+    ),
+  )
+  const tickLen = $derived(
     tickMarks === true
       ? labelPosition === 'above'
         ? (tickMarkLength ?? widestTickLen)
         : (tickMarkLength ?? 6)
-      : 0
-  );
-  let x1 = $derived(-tickGutter - (labelPosition === 'above' ? widestTickLen : tickLen));
-  let halfBand = $derived(isBandwidth ? $yScale.bandwidth() / 2 : 0);
-  let maxTickValUnits = $derived(Math.max(...tickVals.map($yScale)));
+      : 0,
+  )
+  const x1 = $derived(-tickGutter - (labelPosition === 'above' ? widestTickLen : tickLen))
+  const halfBand = $derived(isBandwidth ? $yScale.bandwidth() / 2 : 0)
+  const maxTickValUnits = $derived(Math.max(...tickVals.map($yScale)))
 </script>
 
-<div class="axis y-axis">
+<div class='axis y-axis'>
   {#each tickVals as tick, i (tick)}
     {@const tickValUnits = $yScale(tick)}
 
     <div
-      class="tick tick-{i}"
-      style="left:{$xRange[0]}{units};top:{tickValUnits + halfBand}{units};"
+      class='tick tick-{i}'
+      style='left:{$xRange[0]}{units};top:{tickValUnits + halfBand}{units};'
     >
       {#if gridlines === true}
-        <div class="gridline" style="top:0;" style:left="{x1}px" style:right="0px"></div>
+        <div class='gridline' style='top:0;' style:left='{x1}px' style:right='0px'></div>
       {/if}
       {#if tickMarks === true}
-        <div class="tick-mark" style:top="0" style:left="{x1}px" style:width="{tickLen}px"></div>
+        <div class='tick-mark' style:top='0' style:left='{x1}px' style:width='{tickLen}px'></div>
       {/if}
       <div
-        class="text"
-        style:top="0"
+        class='text'
+        style:top='0'
         style:text-align={labelPosition === 'even' ? 'right' : 'left'}
-        style:width="{widestTickLen}px"
+        style:width='{widestTickLen}px'
         style:left="{-widestTickLen - tickGutter - (labelPosition === 'even' ? tickLen : 0)}px"
-        style:transform="translate({dx + (labelPosition === 'even' ? -3 : 0)}px, calc(-50% + {dy +
-          (labelPosition === 'above' ||
-          (snapBaselineLabel === true && tickValUnits === maxTickValUnits)
+        style:transform="translate({dx + (labelPosition === 'even' ? -3 : 0)}px, calc(-50% + {dy
+          + (labelPosition === 'above'
+            || (snapBaselineLabel === true && tickValUnits === maxTickValUnits)
             ? -3
             : 4)}px))"
       >

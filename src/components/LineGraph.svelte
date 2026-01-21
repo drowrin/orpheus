@@ -1,4 +1,4 @@
-<script lang="ts" module>
+<script lang='ts' module>
   export type LineGraphPoint = {
     x: number
     normalize?: number
@@ -7,18 +7,18 @@
   export type LineGraphProps = {
     data: LineGraphPoint[]
     colors: Record<string, string>
-    padding?: {top?: number, right?: number, bottom?: number, left?: number}
+    padding?: { top?: number, right?: number, bottom?: number, left?: number }
   }
 </script>
 
-<script lang="ts">
-  import { LayerCake, ScaledSvg, Html, groupLonger, flatten } from 'layercake';
-  import { scaleOrdinal } from 'd3-scale';
+<script lang='ts'>
+  import { scaleOrdinal } from 'd3-scale'
+  import { flatten, groupLonger, Html, LayerCake, ScaledSvg } from 'layercake'
 
-  import MultiLine from "./MultiLine.svelte";
-  import AxisX from "./AxisX.svelte";
-  import AxisY from "./AxisY.svelte";
-  import GroupLabels from './GroupLabels.svelte';
+  import AxisX from './AxisX.svelte'
+  import AxisY from './AxisY.svelte'
+  import GroupLabels from './GroupLabels.svelte'
+  import MultiLine from './MultiLine.svelte'
 
   const props: LineGraphProps = $props()
 
@@ -39,16 +39,16 @@
       x: d.x,
       ...Object.fromEntries(
         Object.entries(d)
-          .filter(([k, _]) => k !== 'x' && k !=='normalize')
-          .map(([k, v]) => [k, v / d.normalize!])
-      )
+          .filter(([k, _]) => k !== 'x' && k !== 'normalize')
+          .map(([k, v]) => [k, v / d.normalize!]),
+      ),
     }
   }))
 
   const seriesNames = $derived(Object.keys(data[0]).filter(d => d !== 'x'))
   const seriesColors = $derived(seriesNames.map(n => props.colors[n]))
 
-  const groupedData = $derived(groupLonger(data, seriesNames, {valueTo: 'value', groupTo: 'cat'}))
+  const groupedData = $derived(groupLonger(data, seriesNames, { valueTo: 'value', groupTo: 'cat' }))
 </script>
 
 <style>
@@ -59,14 +59,14 @@
   }
 </style>
 
-<div class="chart-container">
+<div class='chart-container'>
   <LayerCake
     ssr
     percentRange
     padding={padding}
-    x={'x'}
-    y={'value'}
-    z={'cat'}
+    x='x'
+    y='value'
+    z='cat'
     yDomain={[0, null]}
     zScale={scaleOrdinal()}
     zRange={seriesColors}
@@ -74,14 +74,14 @@
     data={groupedData}
   >
     <Html>
-        <AxisX 
-          gridlines={false}
-          ticks={data.map(d => d['x']).sort((a, b) => a - b).filter((_, i) => i % 2 === 0)}
-          snapLabels
-          tickMarks
-          baseline
-        />
-        <AxisY />
+      <AxisX
+        gridlines={false}
+        ticks={data.map(d => d.x).sort((a, b) => a - b).filter((_, i) => i % 2 === 0)}
+        snapLabels
+        tickMarks
+        baseline
+      />
+      <AxisY />
       <GroupLabels />
     </Html>
     <ScaledSvg>
