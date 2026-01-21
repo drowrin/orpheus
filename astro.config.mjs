@@ -7,6 +7,7 @@ import ViteYaml from '@modyfi/vite-plugin-yaml'
 import embeds from 'astro-embed/integration'
 import opengraphImages from 'astro-opengraph-images'
 import { defineConfig, fontProviders } from 'astro/config'
+import rehypeExternalLinks from 'rehype-external-links'
 import rehypeShiftHeading from 'rehype-shift-heading'
 import remarkAttributes from 'remark-attributes'
 import { ogRender } from './src/ogRender'
@@ -54,6 +55,7 @@ export default defineConfig({
       rehypeEmdash,
       rehypeDetailsBlock,
       [rehypeShiftHeading, { shift: 1 }],
+      [rehypeExternalLinks, { rel: 'external', target: '_blank' }],
     ],
   },
 
@@ -83,25 +85,19 @@ export default defineConfig({
     ],
   },
 
-  integrations: [
-    sitemap(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: 'Atkinson Hyperlegible Next',
-            weight: 400,
-            style: 'normal',
-            data: fs.readFileSync(
-              'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff',
-            ),
-          },
-        ],
-      },
-      render: ogRender,
-    }),
-    embeds(),
-    mdx(),
-    svelte(),
-  ],
+  integrations: [sitemap(), opengraphImages({
+    options: {
+      fonts: [
+        {
+          name: 'Atkinson Hyperlegible Next',
+          weight: 400,
+          style: 'normal',
+          data: fs.readFileSync(
+            'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff',
+          ),
+        },
+      ],
+    },
+    render: ogRender,
+  }), embeds(), mdx(), svelte()],
 })

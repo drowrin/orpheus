@@ -155,6 +155,12 @@ post-card {
   margin-block-end: 1rem;
 }
 
+a[target='_blank']::after {
+  content: '↗';
+  display: inline-block;
+  margin-inline-start: 0.1rem;
+}
+
 prose-box {
   margin: 0;
   overflow: hidden;
