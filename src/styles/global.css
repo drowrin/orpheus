@@ -228,6 +228,16 @@ prose-box {
       font-size: 80%;
       color: var(--color-muted);
     }
+
+    &:has(blockquote) {
+      &::before {
+        float: inline-end;
+        font-size: 300%;
+        content: '❞';
+        color: var(--color-muted);
+        margin-inline-start: 1rem;
+      }
+    }
   }
 
   details {
