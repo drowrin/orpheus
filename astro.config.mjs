@@ -67,6 +67,7 @@ export default defineConfig({
         cssVariable: '--font-hyperlegible',
         fallbacks: ['Tahoma', 'system-ui', 'sans-serif'],
         subsets: ['latin'],
+        weights: [200, 400],
       },
       {
         provider: fontProviders.fontsource(),
