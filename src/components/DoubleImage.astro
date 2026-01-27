@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
+interface ImageData {
+  src: ImageMetadata
+  alt: string
+}
+
+interface Props {
+  under: ImageData
+  over: ImageData
+}
+
+const { under, over } = Astro.props
+---
+
+<double-img>
+  <Image src={under.src} alt={under.alt} />
+  <Image src={over.src} alt={over.alt} />
+</double-img>
+
+<style>
+  double-img {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    overflow: hidden;
+
+    img:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+
+      transition: opacity 0.8s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+</style>
