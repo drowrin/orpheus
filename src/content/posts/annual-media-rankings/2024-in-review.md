@@ -2,6 +2,7 @@
 title: 2024 in Review
 tagline: Insane ramblings of a sentimental nerd
 series: Annual Media Rankings
+tocDepth: 2
 tags:
   - reviews
   - games
