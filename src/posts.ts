@@ -29,6 +29,7 @@ const frontmatterSchema = z.object({
     })
     .optional(),
   tocDepth: z.number().default(3),
+  draft: z.boolean().default(false),
 })
 
 export type PostMetadata = z.infer<typeof frontmatterSchema>
@@ -70,7 +71,8 @@ export const getAllPosts = (() => {
 
     const collection = await getCollection('posts')
 
-    allPosts = await Promise.all(collection.map(transformPost))
+    allPosts = (await Promise.all(collection.map(transformPost)))
+      .filter(p => import.meta.env.MODE === 'development' || !p.draft)
 
     allPosts.sort((a, b) => b.published.localeCompare(a.published))
 
