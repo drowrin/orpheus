@@ -327,10 +327,18 @@ prose-box {
       margin-inline: 0;
       width: 100%;
     }
+    display: block;
+
+    img {
+      display: block;
+      margin: auto;
+    }
   }
 
   figcaption {
+    margin-top: 0.5rem;
     margin-inline: 1rem;
+    text-align: center;
   }
 
   .spoiler {
