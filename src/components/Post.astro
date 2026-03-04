@@ -104,9 +104,17 @@ const { title, tagline, series, tags, published, readingTime, Content, brief, he
       max-width: 100%;
     }
 
-    nav li::before {
-      content: '- ';
-      color: var(--color-muted);
+    nav li {
+      text-indent: -0.6rem;
+
+      a {
+        text-decoration: none;
+      }
+
+      &::before {
+        content: '- ';
+        color: var(--color-muted);
+      }
     }
   }
 </style>
