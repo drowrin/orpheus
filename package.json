@@ -7,7 +7,8 @@
     "build": "astro build --force && pagefind",
     "lint": "eslint && astro check",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -55,6 +56,7 @@
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-svelte": "^3.14.0",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.80.0"
   }
 }
