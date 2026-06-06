@@ -10,7 +10,7 @@ tags:
 This has been the most controversial remake in the series, for a number of
 reasons. The original game was already controversial enough. At least it has
 some new content: a spinoff game containing the backstory of some antagonists.
-But is is good?
+But is it good?
 
 No. Not really.
 
