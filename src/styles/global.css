@@ -247,9 +247,10 @@ prose-box {
 
     summary {
       line-height: 1;
+      cursor: pointer;
     }
 
-    > *:not(:first-child) {
+    > *:nth-child(2) {
       margin-block-start: 1rem;
     }
 
