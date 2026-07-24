@@ -1499,5 +1499,16 @@ and that's so raw and human to me. It tried its hardest, attempted to push the
 limits of the medium, and ended up not pleasing everyone. If that's not the
 spirit of Final Fantasy, I don't know what is.
 
+> > But I'm not alone. These burdens I carry---my sins, my pain, my sorrow---I
+> > see now that they are all a part of me.
+> 
+> --- Clive Rosfield
+
 Thank you, Final Fantasy XVI, for getting me started on this journey. You
 deserved better, but I will always be a fan.
+
+> > Don't forget, Clive. We all choose our own path. Believe in yours.
+> > 
+> > I do.
+>
+> --- Jill Warrick
