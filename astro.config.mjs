@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import svelte from '@astrojs/svelte'
@@ -34,51 +35,51 @@ export default defineConfig({
   },
 
   markdown: {
-    smartypants: true,
-    shikiConfig: {
-      themes: {
-        light: 'catppuccin-latte',
-        dark: 'catppuccin-mocha',
+    processor: unified({
+      smartypants: true,
+      shikiConfig: {
+        themes: {
+          light: 'catppuccin-latte',
+          dark: 'catppuccin-mocha',
+        },
       },
-    },
-    remarkPlugins: [
-      remarkAttributes,
-      remarkGitHistory,
-      remarkReadingTime,
-      remarkSeriesSlug,
-    ],
-    rehypePlugins: [
-      rehypeQuoteCitation,
-      rehypeBrief,
-      rehypeFigure,
-      rehypeRemoveNewlines,
-      rehypeEmdash,
-      rehypeDetailsBlock,
-      [rehypeShiftHeading, { shift: 1 }],
-      [rehypeExternalLinks, { rel: 'external', target: '_blank' }],
-    ],
+      remarkPlugins: [
+        remarkAttributes,
+        remarkGitHistory,
+        remarkReadingTime,
+        remarkSeriesSlug,
+      ],
+      rehypePlugins: [
+        rehypeQuoteCitation,
+        rehypeBrief,
+        rehypeFigure,
+        rehypeRemoveNewlines,
+        rehypeEmdash,
+        rehypeDetailsBlock,
+        [rehypeShiftHeading, { shift: 1 }],
+        [rehypeExternalLinks, { rel: 'external', target: '_blank' }],
+      ],
+    }),
   },
 
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.fontsource(),
-        name: 'Atkinson Hyperlegible Next',
-        cssVariable: '--font-hyperlegible',
-        fallbacks: ['Tahoma', 'system-ui', 'sans-serif'],
-        subsets: ['latin'],
-        weights: [200, 400],
-      },
-      {
-        provider: fontProviders.fontsource(),
-        name: 'Fira Code',
-        cssVariable: '--font-hyperlegible-mono',
-        fallbacks: ['Courier New', 'monospace'],
-        subsets: ['latin'],
-        featureSettings: 'liga on',
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Atkinson Hyperlegible Next',
+      cssVariable: '--font-hyperlegible',
+      fallbacks: ['Tahoma', 'system-ui', 'sans-serif'],
+      subsets: ['latin'],
+      weights: [200, 400],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Fira Code',
+      cssVariable: '--font-hyperlegible-mono',
+      fallbacks: ['Courier New', 'monospace'],
+      subsets: ['latin'],
+      featureSettings: 'liga on',
+    },
+  ],
 
   vite: {
     plugins: [
