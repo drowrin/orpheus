@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Post from '@/components/Post.astro'
+import Lightbox from '@/components/Lightbox.astro'
 
 import { getAllPosts } from '@/posts'
 
@@ -19,4 +20,5 @@ const { title, brief } = post
 
 <Layout title={title} description={brief?.text} largeImage>
   <Post postId={id} />
+  <Lightbox />
 </Layout>

@@ -1,0 +1,83 @@
+<div id="image-lightbox" popover="auto" aria-label="Expanded image">
+  <img id="image-lightbox-img" alt="" />
+</div>
+
+<style>
+  #image-lightbox {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+    margin: auto;
+  }
+
+  #image-lightbox::backdrop {
+    background: rgb(0 0 0 / 75%);
+  }
+
+  #image-lightbox img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    object-fit: contain;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 50%);
+  }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+    :global(post-card img[data-lightboxable='true']) {
+      cursor: zoom-in;
+    }
+  }
+</style>
+
+<script>
+  const enabledQuery = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 768px)')
+
+  const popover: HTMLDivElement = document.querySelector('#image-lightbox')!
+  const popoverImg: HTMLImageElement = document.querySelector('#image-lightbox-img')!
+
+  if (popover instanceof HTMLElement && popoverImg instanceof HTMLImageElement) {
+    const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('post-card img')
+
+    function enableImage(img: HTMLImageElement) {
+      if (!(img instanceof HTMLImageElement)) {
+        return
+      }
+
+      if (img.closest('a')) {
+        return
+      }
+
+      img.dataset.lightboxable = 'true'
+      img.tabIndex = 0
+      img.role = 'button'
+      img.ariaLabel = img.alt ? `View larger image: ${img.alt}` : 'View larger image'
+
+      function open() {
+        if (!enabledQuery.matches) {
+          return
+        }
+
+        popoverImg.src = img.currentSrc || img.src
+        popoverImg.alt = img.alt || ''
+
+        if ('showPopover' in popover) {
+          popover.showPopover()
+        }
+      }
+
+      img.addEventListener('click', open)
+
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          open()
+        }
+      })
+    }
+
+    images.forEach(enableImage)
+  }
+</script>
