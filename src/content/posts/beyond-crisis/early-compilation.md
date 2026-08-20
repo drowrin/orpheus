@@ -533,7 +533,8 @@ single game came out? Here are the elements I find significant:
   now more of a focus than mankind's hubris against nature.
 - There is a much stronger focus on action, especially over-the-top, superhuman,
   acrobatic combat and slicing through buildings.
-- There is a stronger focus on Vincent, Zack, AVALANCHE, and the Turks.
+- There is a stronger focus on Zack, AVALANCHE, the Turks, and party members
+  that didn't get as much love in the original.
 - The Lifestream can grant premonitions now.
 - The technology level of the world is significantly modernized.
 - There are super soldier programs other than SOLDIER. Some of these are more
@@ -541,6 +542,8 @@ single game came out? Here are the elements I find significant:
 - There are more "special" materia out there than just Meteor and Holy.
 - Sephiroth has that iconic new one-winged-angel look.
 - Cloud is slightly more of a brooding loner.
+- Characters who died are brought back through retcons, gotchas, and all new
+  lore invented for the sole purpose of bringing them back.
 
 It will be interesting to see which of these elements get expanded on by future
 Compilation entries, and which will be dropped.
