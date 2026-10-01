@@ -32,6 +32,7 @@ export default defineConfig({
   image: {
     layout: 'constrained',
     responsiveStyles: true,
+    remotePatterns: [{ protocol: 'https', hostname: 'images.igdb.com', pathname: '/igdb/image/upload/**' }],
   },
 
   markdown: {

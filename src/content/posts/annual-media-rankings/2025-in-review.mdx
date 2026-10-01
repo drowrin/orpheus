@@ -9,6 +9,7 @@ tocDepth: 1
 ---
 
 import GameEntry from '@/components/GameEntry.astro'
+import GameRanking from '@/components/GameRanking.astro'
 import DoubleImage from '@/components/DoubleImage.astro'
 import LineGraph from '@/components/LineGraph.svelte'
 
@@ -88,7 +89,7 @@ this section I'm focusing on the games I'm most excited about. Those games are
 _weak maybes_, these are the **strong maybes**.
 
 <GameEntry
-  cover={import('@img/look-outside-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9k8n.jpg'
   link='https://backloggd.com/games/look-outside/'
 >
 ## Look Outside
@@ -113,7 +114,7 @@ horror game.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/routine-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coay6e.jpg'
   link='https://backloggd.com/games/routine/'
 >
 ## Routine
@@ -132,7 +133,7 @@ horror. Could be a fun October pick. We'll see!
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/octopath-traveler-0-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa7is.jpg'
   awards={[
     'Backlog Highlight',
   ]}
@@ -161,7 +162,7 @@ I hope this becomes a pattern with other gacha games.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/rhythm-doctor-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9xi0.jpg'
   link='https://backloggd.com/games/rhythm-doctor/'
 >
 ## Rhythm Doctor
@@ -209,7 +210,7 @@ didn't even make it into the Honorable Mentions.
 Though I'll also admit that not all of these awards are strictly positive.
 
 <GameEntry
-  cover={import('@img/silent-hill-f-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9wy4.jpg'
   link='https://backloggd.com/games/silent-hill-f/'
   awards={[
     'Best Horror Game',
@@ -237,7 +238,7 @@ honestly pretty content with the first ending by itself.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/khazan-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8roc.jpg'
   link='https://backloggd.com/games/the-first-berserker-khazan/'
   awards={[
     ['Hardest Game', 1, 5],
@@ -265,7 +266,7 @@ boss, but I still had a blast.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/blue-prince-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9mzd.jpg'
   link='https://backloggd.com/games/blue-prince/'
   awards={[
     'Spite Finish',
@@ -299,7 +300,7 @@ It just happened to not work out for me personally.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/split-fiction-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co95gf.jpg'
   link='https://backloggd.com/games/split-fiction/'
   awards={[
     ['Best Innovation', 0.9, -5],
@@ -354,9 +355,10 @@ I scored higher than some of these honorable mentions. However, I felt these
 were more deserving of a shout-out for one reason or another. It's my list and I
 can contradict myself if I want to!
 
+<GameRanking>
+
 <GameEntry
-  cover={import('@img/lop-overture-cover.jpg')}
-  number={5}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9e24.jpg'
   link='https://backloggd.com/games/lies-of-p-overture/'
 >
 ## Lies of P: Overture
@@ -390,8 +392,7 @@ for it, but that's why it doesn't rise higher than this on my list.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/the-drifter-cover.jpg')}
-  number={4}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coabj2.jpg'
   link='https://backloggd.com/games/the-drifter/'
 >
 ## The Drifter
@@ -420,8 +421,7 @@ hit you fresh.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/and-roger-cover.jpg')}
-  number={3}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co94k9.jpg'
   link='https://backloggd.com/games/and-roger/'
 >
 ## and Roger
@@ -446,8 +446,7 @@ air---almost half the runtime. It's all worth it for the ending though.||
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/ghost-of-yotei-cover.jpg')}
-  number={2}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9coo.jpg'
   awards={[
     'Best Minigame',
   ]}
@@ -524,8 +523,7 @@ that.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/dispatch-cover.jpg')}
-  number={1}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob5ql.jpg'
   link='https://backloggd.com/games/dispatch--3/'
 >
 ## Dispatch
@@ -585,6 +583,8 @@ hero cartoon (which doesn't fall into Marvel-isms) since Invincible, give it a
 shot!
 </GameEntry>
 
+</GameRanking>
+
 # Top 10 Games
 
 We've arrived at the fun stuff---the hot take zone. As I've already mentioned,
@@ -602,9 +602,10 @@ really what this is all about.
 
 So, here they are---my top 10 games of 2025:
 
+<GameRanking>
+
 <GameEntry
-  cover={import('@img/roottrees-cover.jpg')}
-  number={10}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coas14.jpg'
   awards={[
     'Best Detective Game',
   ]}
@@ -699,8 +700,7 @@ If you are at all a fan of puzzles or mystery solving, this is a must play.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/despelote-cover.jpg')}
-  number={9}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9s7h.jpg'
   awards={[
     'Best Memoir Game',
     'Best Vibe',
@@ -764,8 +764,7 @@ it's up your alley after reading my thoughts.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/consume-me-cover.jpg')}
-  number={8}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coajxj.jpg'
   link='https://backloggd.com/games/consume-me/'
   awards={[
     ['Weirdest Game (good)', 0.9, 5],
@@ -852,8 +851,7 @@ Looking forward to more from Hexecutable in the future.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/death-stranding-2-cover.jpg')}
-  number={7}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9ipx.jpg'
   link='https://backloggd.com/games/death-stranding-2-on-the-beach/'
 >
 ## Death Stranding 2: On The Beach
@@ -936,7 +934,7 @@ I'm looking forward to the movie.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/of-the-devil-cover.jpg')}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaq5t.jpg'
   number={6.5}
   link='https://backloggd.com/games/of-the-devil/'
 >
@@ -1046,8 +1044,7 @@ confident that it's going to be a very good time.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/expedition-33-cover.jpg')}
-  number={6}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9gam.jpg'
   link='https://backloggd.com/games/clair-obscur-expedition-33/'
   awards={[
     ['Best Art Direction', 1, 5],
@@ -1156,8 +1153,7 @@ dislike for this game.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/hundred-line-cover.jpg')}
-  number={5}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobuwr.jpg'
   link='https://backloggd.com/games/the-hundred-line-last-defense-academy/'
   awards={[
     'Worst Title',
@@ -1259,8 +1255,7 @@ returning to this game for years.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/citizen-sleeper-2-cover.jpg')}
-  number={4}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9hpi.jpg'
   link='https://backloggd.com/games/citizen-sleeper-2-starward-vector/'
   awards={[
     'Best Narrative',
@@ -1323,8 +1318,7 @@ This is a profoundly hopeful game. I want to give Gareth a hug.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/unbeatable-cover.jpg')}
-  number={3}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9ozh.jpg'
   link='https://backloggd.com/games/unbeatable/'
   awards={[
     'Best Music',
@@ -1440,8 +1434,7 @@ it faster than any other.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/silksong-cover.jpg')}
-  number={2}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobebu.jpg'
   link='https://backloggd.com/games/hollow-knight-silksong/'
   awards={[
     'Best Action Game',
@@ -1535,8 +1528,7 @@ I am a hater no longer.
 </GameEntry>
 
 <GameEntry
-  cover={import('@img/kcd2-cover.jpg')}
-  number={1}
+  cover='https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8qmv.jpg'
   link='https://backloggd.com/games/kingdom-come-deliverance-ii/'
   awards={[
     'Best Acting',
@@ -1757,6 +1749,8 @@ about _how game writing can be done._
 > > --- Father Godwin
 
 </GameEntry>
+
+</GameRanking>
 
 # Final Thoughts
 

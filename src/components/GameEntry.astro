@@ -4,7 +4,7 @@ import type { ImageMetadata } from 'astro'
 import { parseHTML } from 'linkedom'
 
 interface Props {
-  cover?: ImageMetadata
+  cover?: ImageMetadata | Promise<{ default: ImageMetadata }> | string
   number?: number
   awards?: (string | [string, number?, number?])[]
   link?: string
@@ -135,7 +135,7 @@ const awards = Astro.props.awards?.map((a) => {
     height: 110px;
   }
 
-  .number {
+  .game-entry > :global(.number) {
     float: left;
     font-size: 500%;
     font-weight: 200;
@@ -149,7 +149,7 @@ const awards = Astro.props.awards?.map((a) => {
   }
 
   @media screen and (max-width: 60ch) {
-    .number {
+    .game-entry > :global(.number) {
       background-color: transparent;
       width: calc(100% - (max(8rem, 39%) + 0.5rem));
       margin-inline: 0;
@@ -158,12 +158,16 @@ const awards = Astro.props.awards?.map((a) => {
 </style>
 
 <div class="game-entry">
-  {number && <span class="number">{number}</span>}
+  {number !== undefined && <span class="number">{number}</span>}
 
   {
     cover && (
       <div class="cover">
-        <Image src={cover} alt={`Cover for ${title}`} />
+        {typeof cover === 'string' ? (
+          <Image src={cover} inferSize alt={`Cover for ${title}`} />
+        ) : (
+          <Image src={cover} alt={`Cover for ${title}`} />
+        )}
         {link && (
           <div class="backloggd-link">
             <a href={link} rel="external" target="_blank" set:text="View on Backloggd" />

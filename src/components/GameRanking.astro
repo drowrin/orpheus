@@ -1,0 +1,23 @@
+---
+import { parseHTML } from 'linkedom'
+
+interface Props {
+  order?: 'ascending' | 'descending'
+}
+
+const { order = 'descending' } = Astro.props
+const { document } = parseHTML((await Astro.slots.render('default')) ?? '')
+
+const entries = [...document.querySelectorAll('.game-entry')].filter(
+  (entry) => !entry.querySelector(':scope > .number'),
+)
+
+entries.forEach((entry, index) => {
+  const number = document.createElement('span')
+  number.className = 'number'
+  number.textContent = String(order === 'ascending' ? index + 1 : entries.length - index)
+  entry.prepend(number)
+})
+---
+
+<Fragment set:html={document.toString()} />
